@@ -91,7 +91,7 @@ export const testimonials = [
     id: 2,
     name: "Carlos Rodriguez",
     location: "Miami, FL",
-    comment: "Pedí una tabla personalizada para un evento corporativo y CheeseBoardly superó todas las expectativas. La herramienta de maridaje con IA es un toque fantástico.",
+    comment: "Pedí una tabla personalizada para un evento corporativo y paolo gourmet superó todas las expectativas. La herramienta de maridaje con IA es un toque fantástico.",
   },
   {
     id: 3,

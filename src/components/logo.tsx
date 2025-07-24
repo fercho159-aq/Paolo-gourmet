@@ -24,7 +24,7 @@ export function Logo() {
     <a href="/" className="flex items-center gap-2 text-foreground transition-colors hover:text-primary">
       <CheeseIcon className="h-8 w-8" />
       <span className="font-headline text-2xl font-bold tracking-tight">
-        CheeseBoardly
+        paolo gourmet
       </span>
     </a>
   );

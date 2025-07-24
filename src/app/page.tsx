@@ -60,7 +60,7 @@ function Testimonials() {
           <div className="space-y-2">
             <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">Lo que dicen nuestros clientes</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Escucha a nuestros clientes satisfechos y por qué aman CheeseBoardly.
+              Escucha a nuestros clientes satisfechos y por qué aman paolo gourmet.
             </p>
           </div>
         </div>
@@ -126,7 +126,7 @@ function Footer() {
     <footer className="w-full bg-secondary py-6">
       <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
         <Logo />
-        <p className="text-sm text-muted-foreground">&copy; 2024 CheeseBoardly. Todos los derechos reservados.</p>
+        <p className="text-sm text-muted-foreground">&copy; 2024 paolo gourmet. Todos los derechos reservados.</p>
         <div className="flex items-center space-x-4">
           <a href="#" className="text-muted-foreground hover:text-foreground">Política de privacidad</a>
           <a href="#" className="text-muted-foreground hover:text-foreground">Términos de servicio</a>

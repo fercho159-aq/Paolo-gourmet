@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'CheeseBoardly',
+  title: 'paolo gourmet',
   description: 'Tablas de queso seleccionadas para cada ocasión.',
 };
 
