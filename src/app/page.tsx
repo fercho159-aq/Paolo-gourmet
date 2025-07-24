@@ -10,6 +10,7 @@ import { Quote, Users, Mail, Leaf, Grape, Wheat } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { cheeseBoards, testimonials } from '@/lib/data';
 import CheeseBoardList from '@/components/cheese-board-list';
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
 
 function Header() {
   return (
@@ -28,26 +29,68 @@ function Header() {
 }
 
 function Hero() {
+  const slides = [
+    {
+      imgSrc: "https://placehold.co/1600x900.png",
+      imgAlt: "Una gran exhibición de tablas de queso",
+      imgHint: "tabla de quesos",
+      title: "Tablas de Queso Artesanales",
+      description: "Descubre tablas de queso meticulosamente elaboradas, perfectas para cualquier ocasión.",
+      buttonText: "Explora Nuestras Tablas",
+      buttonLink: "#boards"
+    },
+    {
+      imgSrc: "https://placehold.co/1600x900.png",
+      imgAlt: "Un primer plano de una tabla de quesos con frutas y nueces",
+      imgHint: "primer plano queso fruta",
+      title: "Ingredientes Frescos y de Calidad",
+      description: "Solo los mejores quesos y acompañamientos para una experiencia gourmet.",
+      buttonText: "Ver Ingredientes",
+      buttonLink: "#about"
+    },
+    {
+      imgSrc: "https://placehold.co/1600x900.png",
+      imgAlt: "Personas disfrutando de una tabla de quesos en una fiesta",
+      imgHint: "fiesta tabla de quesos",
+      title: "Perfecto para Cualquier Evento",
+      description: "Desde reuniones íntimas hasta grandes celebraciones, tenemos la tabla ideal para ti.",
+      buttonText: "Contáctanos",
+      buttonLink: "#contact"
+    }
+  ];
+
   return (
-    <section className="relative h-[60vh] min-h-[500px] w-full">
-      <Image
-        src="https://placehold.co/1600x900.png"
-        alt="Una gran exhibición de tablas de queso"
-        data-ai-hint="tabla de quesos"
-        fill
-        className="object-cover"
-        priority
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20" />
-      <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white">
-        <h1 className="font-headline text-5xl font-bold md:text-7xl">Tablas de Queso Artesanales</h1>
-        <p className="mt-4 max-w-2xl text-lg text-primary-foreground/90 md:text-xl">
-          Descubre tablas de queso meticulosamente elaboradas, perfectas para cualquier ocasión.
-        </p>
-        <Button size="lg" className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90" asChild>
-          <a href="#boards">Explora Nuestras Tablas</a>
-        </Button>
-      </div>
+    <section className="relative w-full">
+      <Carousel className="w-full" opts={{ loop: true }}>
+        <CarouselContent>
+          {slides.map((slide, index) => (
+            <CarouselItem key={index}>
+              <div className="relative h-[60vh] min-h-[500px] w-full">
+                <Image
+                  src={slide.imgSrc}
+                  alt={slide.imgAlt}
+                  data-ai-hint={slide.imgHint}
+                  fill
+                  className="object-cover"
+                  priority={index === 0}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20" />
+                <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white">
+                  <h1 className="font-headline text-5xl font-bold md:text-7xl">{slide.title}</h1>
+                  <p className="mt-4 max-w-2xl text-lg text-primary-foreground/90 md:text-xl">
+                    {slide.description}
+                  </p>
+                  <Button size="lg" className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+                    <a href={slide.buttonLink}>{slide.buttonText}</a>
+                  </Button>
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-20 text-white" />
+        <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-20 text-white" />
+      </Carousel>
     </section>
   );
 }
