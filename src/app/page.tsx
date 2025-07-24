@@ -9,7 +9,6 @@ import { Badge } from '@/components/ui/badge';
 import { Quote, Users, Mail, Leaf, Grape, Wheat } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { cheeseBoards, testimonials } from '@/lib/data';
-import AiPairingTool from '@/components/ai-pairing-tool';
 import CheeseBoardList from '@/components/cheese-board-list';
 
 function Header() {
@@ -19,7 +18,6 @@ function Header() {
         <Logo />
         <nav className="ml-auto flex items-center space-x-4">
           <Button variant="ghost" asChild><a href="#boards">Tablas</a></Button>
-          <Button variant="ghost" asChild><a href="#ai-tool">Herramienta de IA</a></Button>
           <Button variant="ghost" asChild><a href="#contact">Contacto</a></Button>
         </nav>
       </div>
@@ -142,11 +140,6 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <section id="ai-tool" className="py-12 md:py-24 lg:py-32">
-          <div className="container">
-            <AiPairingTool />
-          </div>
-        </section>
         <Separator />
         <section id="boards" className="py-12 md:py-24 lg:py-32 bg-secondary">
           <div className="container">
