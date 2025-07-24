@@ -82,10 +82,11 @@ function AboutUs() {
 
 function Gallery() {
   const galleryImages = [
-    { src: "https://placehold.co/600x400.png", alt: "Detalle de una tabla de quesos", hint: "primer plano queso" },
-    { src: "https://placehold.co/600x400.png", alt: "Gente disfrutando de las tablas de queso en un evento", hint: "amigos comiendo" },
-    { src: "https://placehold.co/600x400.png", alt: "Una tabla de quesos rústica con vino", hint: "queso vino" },
-    { src: "https://placehold.co/600x400.png", alt: "Tabla de quesos temática de postre", hint: "tabla de postres" },
+    { src: "https://placehold.co/600x400.png", alt: "Detalle de una tabla de quesos", hint: "primer plano queso", className: "col-span-2 row-span-1 md:col-span-1" },
+    { src: "https://placehold.co/600x800.png", alt: "Gente disfrutando de las tablas de queso en un evento", hint: "amigos comiendo", className: "col-span-1 row-span-1 md:row-span-2" },
+    { src: "https://placehold.co/600x400.png", alt: "Una tabla de quesos rústica con vino", hint: "queso vino", className: "col-span-1 row-span-1" },
+    { src: "https://placehold.co/600x400.png", alt: "Tabla de quesos temática de postre", hint: "tabla de postres", className: "col-span-1 row-span-1" },
+    { src: "https://placehold.co/600x400.png", alt: "Tabla de celebración grande", hint: "fiesta tabla grande", className: "col-span-2 row-span-1" },
   ];
 
   return (
@@ -97,16 +98,16 @@ function Gallery() {
             Un vistazo a nuestras creaciones y los momentos felices que ayudan a crear.
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 auto-rows-fr gap-4">
           {galleryImages.map((image, index) => (
-            <div key={index} className="overflow-hidden rounded-xl">
+            <div key={index} className={`overflow-hidden rounded-xl ${image.className}`}>
               <Image
                 src={image.src}
                 alt={image.alt}
                 data-ai-hint={image.hint}
                 width={600}
                 height={400}
-                className="aspect-square object-cover w-full h-full transition-transform duration-300 hover:scale-110"
+                className="aspect-auto object-cover w-full h-full transition-transform duration-300 hover:scale-105"
               />
             </div>
           ))}
