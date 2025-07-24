@@ -17,6 +17,7 @@ function Header() {
       <div className="container flex h-16 items-center">
         <Logo />
         <nav className="ml-auto flex items-center space-x-4">
+          <Button variant="ghost" asChild><a href="#about">Conócenos</a></Button>
           <Button variant="ghost" asChild><a href="#boards">Tablas</a></Button>
           <Button variant="ghost" asChild><a href="#contact">Contacto</a></Button>
         </nav>
@@ -45,6 +46,34 @@ function Hero() {
         <Button size="lg" className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90" asChild>
           <a href="#boards">Explora Nuestras Tablas</a>
         </Button>
+      </div>
+    </section>
+  );
+}
+
+function AboutUs() {
+  return (
+    <section id="about" className="w-full py-12 md:py-24 lg:py-32">
+      <div className="container px-4 md:px-6">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+          <div className="flex flex-col justify-center space-y-4">
+            <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">Nuestra Pasión por el Queso</h2>
+            <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              En paolo gourmet, creemos que el queso es más que un alimento, es una experiencia. Nuestra misión es seleccionar los mejores quesos artesanales de todo el mundo y combinarlos con los acompañamientos perfectos para crear tablas inolvidables que unen a las personas.
+            </p>
+            <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              Cada tabla está elaborada con amor y atención al detalle, asegurando una aventura gastronómica única en cada bocado. Desde reuniones íntimas hasta grandes celebraciones, estamos aquí para elevar tus momentos especiales.
+            </p>
+          </div>
+          <Image
+            src="https://placehold.co/600x400.png"
+            alt="El equipo de paolo gourmet preparando tablas de queso"
+            data-ai-hint="equipo personas felices"
+            width={600}
+            height={400}
+            className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
+          />
+        </div>
       </div>
     </section>
   );
@@ -140,6 +169,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <AboutUs />
         <Separator />
         <section id="boards" className="py-12 md:py-24 lg:py-32 bg-secondary">
           <div className="container">
