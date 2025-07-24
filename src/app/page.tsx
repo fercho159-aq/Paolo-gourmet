@@ -18,9 +18,9 @@ function Header() {
       <div className="container flex h-16 items-center">
         <Logo />
         <nav className="ml-auto flex items-center space-x-4">
-          <Button variant="ghost" asChild><a href="#boards">Boards</a></Button>
-          <Button variant="ghost" asChild><a href="#ai-tool">Pairing Tool</a></Button>
-          <Button variant="ghost" asChild><a href="#contact">Contact</a></Button>
+          <Button variant="ghost" asChild><a href="#boards">Tablas</a></Button>
+          <Button variant="ghost" asChild><a href="#ai-tool">Herramienta de IA</a></Button>
+          <Button variant="ghost" asChild><a href="#contact">Contacto</a></Button>
         </nav>
       </div>
     </header>
@@ -32,20 +32,20 @@ function Hero() {
     <section className="relative h-[60vh] min-h-[500px] w-full">
       <Image
         src="https://placehold.co/1600x900.png"
-        alt="A grand cheese board display"
-        data-ai-hint="cheese board"
+        alt="Una gran exhibición de tablas de queso"
+        data-ai-hint="tabla de quesos"
         fill
         className="object-cover"
         priority
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20" />
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white">
-        <h1 className="font-headline text-5xl font-bold md:text-7xl">Artisanal Cheese Boards</h1>
+        <h1 className="font-headline text-5xl font-bold md:text-7xl">Tablas de Queso Artesanales</h1>
         <p className="mt-4 max-w-2xl text-lg text-primary-foreground/90 md:text-xl">
-          Discover meticulously crafted cheese boards, perfect for any occasion.
+          Descubre tablas de queso meticulosamente elaboradas, perfectas para cualquier ocasión.
         </p>
         <Button size="lg" className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90" asChild>
-          <a href="#boards">Explore Our Boards</a>
+          <a href="#boards">Explora Nuestras Tablas</a>
         </Button>
       </div>
     </section>
@@ -58,9 +58,9 @@ function Testimonials() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">What Our Customers Say</h2>
+            <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">Lo que dicen nuestros clientes</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Hear from our satisfied clients and why they love CheeseBoardly.
+              Escucha a nuestros clientes satisfechos y por qué aman CheeseBoardly.
             </p>
           </div>
         </div>
@@ -93,27 +93,27 @@ function Contact() {
       <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
         <div className="space-y-3">
           <h2 className="font-headline text-3xl font-bold tracking-tighter md:text-4xl/tight">
-            Custom Orders & Inquiries
+            Pedidos Personalizados y Consultas
           </h2>
           <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Have a question or a special request? Fill out the form below to get in touch with us.
+            ¿Tienes alguna pregunta o una solicitud especial? Rellena el siguiente formulario para ponerte en contacto con nosotros.
           </p>
         </div>
         <div className="mx-auto w-full max-w-sm space-y-2">
           <form className="flex flex-col space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" placeholder="Enter your name" />
+              <Label htmlFor="name">Nombre</Label>
+              <Input id="name" placeholder="Escribe tu nombre" />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" placeholder="Enter your email" />
+              <Label htmlFor="email">Correo electrónico</Label>
+              <Input id="email" type="email" placeholder="Escribe tu correo electrónico" />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="message">Message</Label>
-              <Textarea id="message" placeholder="Enter your message" className="min-h-[100px]" />
+              <Label htmlFor="message">Mensaje</Label>
+              <Textarea id="message" placeholder="Escribe tu mensaje" className="min-h-[100px]" />
             </div>
-            <Button type="submit" className="bg-primary text-primary-foreground hover:bg-primary/90">Send Message</Button>
+            <Button type="submit" className="bg-primary text-primary-foreground hover:bg-primary/90">Enviar mensaje</Button>
           </form>
         </div>
       </div>
@@ -126,10 +126,10 @@ function Footer() {
     <footer className="w-full bg-secondary py-6">
       <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
         <Logo />
-        <p className="text-sm text-muted-foreground">&copy; 2024 CheeseBoardly. All rights reserved.</p>
+        <p className="text-sm text-muted-foreground">&copy; 2024 CheeseBoardly. Todos los derechos reservados.</p>
         <div className="flex items-center space-x-4">
-          <a href="#" className="text-muted-foreground hover:text-foreground">Privacy Policy</a>
-          <a href="#" className="text-muted-foreground hover:text-foreground">Terms of Service</a>
+          <a href="#" className="text-muted-foreground hover:text-foreground">Política de privacidad</a>
+          <a href="#" className="text-muted-foreground hover:text-foreground">Términos de servicio</a>
         </div>
       </div>
     </footer>
@@ -151,9 +151,9 @@ export default function Home() {
         <section id="boards" className="py-12 md:py-24 lg:py-32 bg-secondary">
           <div className="container">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-              <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">Our Cheese Boards</h2>
+              <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">Nuestras Tablas de Queso</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Explore our collection of curated cheese boards. Use the search to find the perfect one for your taste.
+                Explora nuestra colección de tablas de queso seleccionadas. Usa la búsqueda para encontrar la perfecta para tu gusto.
               </p>
             </div>
             <CheeseBoardList />

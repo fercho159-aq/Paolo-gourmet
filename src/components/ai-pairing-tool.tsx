@@ -15,8 +15,8 @@ import { useToast } from "@/hooks/use-toast"
 import { Loader2, Sparkles, Wand2 } from 'lucide-react';
 
 const formSchema = z.object({
-  flavorPreferences: z.string().min(1, 'Please select a flavor preference.'),
-  texturePreferences: z.string().min(1, 'Please select a texture preference.'),
+  flavorPreferences: z.string().min(1, 'Por favor, selecciona una preferencia de sabor.'),
+  texturePreferences: z.string().min(1, 'Por favor, selecciona una preferencia de textura.'),
   seasonalFruits: z.string().optional(),
 });
 
@@ -45,7 +45,7 @@ export default function AiPairingTool() {
     if (result.error) {
       toast({
         variant: "destructive",
-        title: "Oh no! Something went wrong.",
+        title: "¡Oh no! Algo salió mal.",
         description: result.error,
       })
     } else {
@@ -53,23 +53,23 @@ export default function AiPairingTool() {
     }
   };
   
-  const flavorOptions = ['Mild', 'Medium', 'Sharp', 'Creamy'];
-  const textureOptions = ['Soft', 'Semi-soft', 'Firm', 'Crumbly'];
+  const flavorOptions = ['Suave', 'Medio', 'Fuerte', 'Cremoso'];
+  const textureOptions = ['Blando', 'Semiblando', 'Firme', 'Desmenuzable'];
 
   return (
     <Card className="w-full max-w-4xl mx-auto shadow-lg">
       <CardHeader className="text-center">
         <Wand2 className="mx-auto h-12 w-12 text-primary" />
-        <CardTitle className="font-headline text-3xl">AI Cheese Pairing Tool</CardTitle>
+        <CardTitle className="font-headline text-3xl">Herramienta de Maridaje de Quesos con IA</CardTitle>
         <CardDescription className="text-lg">
-          Let our AI sommelier craft the perfect cheese board for you.
+          Deja que nuestro sumiller de IA elabore la tabla de quesos perfecta para ti.
         </CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-4">
-              <Label className="text-lg font-semibold">Flavor Profile</Label>
+              <Label className="text-lg font-semibold">Perfil de Sabor</Label>
               <Controller
                 name="flavorPreferences"
                 control={control}
@@ -87,7 +87,7 @@ export default function AiPairingTool() {
               {errors.flavorPreferences && <p className="text-sm text-destructive">{errors.flavorPreferences.message}</p>}
             </div>
             <div className="space-y-4">
-              <Label className="text-lg font-semibold">Texture Preference</Label>
+              <Label className="text-lg font-semibold">Preferencia de Textura</Label>
               <Controller
                 name="texturePreferences"
                 control={control}
@@ -108,44 +108,44 @@ export default function AiPairingTool() {
           
           <div className="space-y-2">
             <Label htmlFor="seasonalFruits" className="text-lg font-semibold">
-              Optional: Available Seasonal Fruits
+              Opcional: Frutas de Temporada Disponibles
             </Label>
             <Controller
               name="seasonalFruits"
               control={control}
               render={({ field }) => (
-                <Input {...field} id="seasonalFruits" placeholder="e.g., figs, grapes, pears" />
+                <Input {...field} id="seasonalFruits" placeholder="ej. higos, uvas, peras" />
               )}
             />
           </div>
 
           <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90" disabled={isLoading}>
             {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Sparkles className="mr-2 h-4 w-4" />}
-            Get Recommendations
+            Obtener Recomendaciones
           </Button>
         </form>
 
         {isLoading && (
           <div className="mt-8 text-center">
             <Loader2 className="mx-auto h-8 w-8 animate-spin text-primary" />
-            <p className="mt-2 text-muted-foreground">Crafting your perfect board...</p>
+            <p className="mt-2 text-muted-foreground">Creando tu tabla perfecta...</p>
           </div>
         )}
 
         {recommendations && (
           <div className="mt-8 space-y-6">
-            <h3 className="font-headline text-2xl text-center">Your Personalised Cheese Board</h3>
+            <h3 className="font-headline text-2xl text-center">Tu Tabla de Quesos Personalizada</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Card>
-                <CardHeader><CardTitle>Cheese Recommendations</CardTitle></CardHeader>
+                <CardHeader><CardTitle>Recomendaciones de Quesos</CardTitle></CardHeader>
                 <CardContent><p>{recommendations.cheeseRecommendations}</p></CardContent>
               </Card>
               <Card>
-                <CardHeader><CardTitle>Accompaniment Suggestions</CardTitle></CardHeader>
+                <CardHeader><CardTitle>Sugerencias de Acompañamientos</CardTitle></CardHeader>
                 <CardContent><p>{recommendations.accompanimentSuggestions}</p></CardContent>
               </Card>
               <Card>
-                <CardHeader><CardTitle>Serving Suggestions</CardTitle></CardHeader>
+                <CardHeader><CardTitle>Sugerencias para Servir</CardTitle></CardHeader>
                 <CardContent><p>{recommendations.servingSuggestions}</p></CardContent>
               </Card>
             </div>

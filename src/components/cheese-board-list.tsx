@@ -26,7 +26,7 @@ export default function CheeseBoardList() {
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
         <Input
           type="search"
-          placeholder="Search boards by name, ingredient, or theme..."
+          placeholder="Buscar tablas por nombre, ingrediente o tema..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="w-full pl-10"
@@ -55,11 +55,11 @@ export default function CheeseBoardList() {
               <CardContent className="flex-grow p-6 pt-0">
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-semibold flex items-center gap-2"><Leaf className="h-4 w-4 text-primary" />Cheeses</h4>
+                    <h4 className="font-semibold flex items-center gap-2"><Leaf className="h-4 w-4 text-primary" />Quesos</h4>
                     <p className="text-sm text-muted-foreground">{board.cheeses.join(', ')}</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold flex items-center gap-2"><Grape className="h-4 w-4 text-primary" />Accompaniments</h4>
+                    <h4 className="font-semibold flex items-center gap-2"><Grape className="h-4 w-4 text-primary" />Acompañamientos</h4>
                     <p className="text-sm text-muted-foreground">{board.accompaniments.join(', ')}</p>
                   </div>
                 </div>
@@ -67,7 +67,7 @@ export default function CheeseBoardList() {
               <CardFooter className="p-6 pt-0 flex justify-between items-center bg-secondary/50">
                 <div className="flex items-center gap-2 text-sm font-medium">
                   <Users className="h-4 w-4 text-primary" />
-                  <span>Serves {board.serving}</span>
+                  <span>Sirve para {board.serving}</span>
                 </div>
                 <div className="flex flex-wrap gap-1 justify-end">
                     {board.tags.slice(0, 2).map(tag => (
@@ -80,8 +80,8 @@ export default function CheeseBoardList() {
         </div>
       ) : (
         <div className="text-center py-16">
-            <p className="text-xl text-muted-foreground">No cheese boards found for "{searchTerm}".</p>
-            <p className="mt-2 text-sm">Try a different search term!</p>
+            <p className="text-xl text-muted-foreground">No se encontraron tablas de queso para "{searchTerm}".</p>
+            <p className="mt-2 text-sm">¡Intenta con otro término de búsqueda!</p>
         </div>
       )}
     </div>

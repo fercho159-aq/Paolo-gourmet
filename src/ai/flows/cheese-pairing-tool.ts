@@ -1,4 +1,4 @@
-// The AI cheese pairing tool flow for personalized cheese board recommendations.
+// El flujo de la herramienta de maridaje de quesos con IA para recomendaciones personalizadas de tablas de quesos.
 
 'use server';
 
@@ -8,14 +8,14 @@ import {z} from 'genkit';
 const CheesePairingInputSchema = z.object({
   flavorPreferences: z
     .string()
-    .describe('The user\'s flavor preferences (e.g., mild, sharp, creamy).'),
+    .describe('Las preferencias de sabor del usuario (por ejemplo, suave, fuerte, cremoso).'),
   texturePreferences: z
     .string()
-    .describe('The user\'s texture preferences (e.g., soft, firm, crumbly).'),
+    .describe('Las preferencias de textura del usuario (por ejemplo, blando, firme, desmenuzable).'),
   seasonalFruits: z
     .string()
     .optional()
-    .describe('The seasonal fruits available, if any.'),
+    .describe('Las frutas de temporada disponibles, si las hay.'),
 });
 export type CheesePairingInput = z.infer<typeof CheesePairingInputSchema>;
 
@@ -23,14 +23,14 @@ const CheesePairingOutputSchema = z.object({
   cheeseRecommendations: z
     .string()
     .describe(
-      'A list of recommended cheeses based on the user\'s preferences and seasonal fruits.'
+      'Una lista de quesos recomendados según las preferencias del usuario y las frutas de temporada.'
     ),
   accompanimentSuggestions: z
     .string()
-    .describe('Suggested accompaniments for the recommended cheeses.'),
+    .describe('Sugerencias de acompañamientos para los quesos recomendados.'),
   servingSuggestions: z
     .string()
-    .describe('Serving suggestions for the cheese board.'),
+    .describe('Sugerencias para servir la tabla de quesos.'),
 });
 export type CheesePairingOutput = z.infer<typeof CheesePairingOutputSchema>;
 
@@ -44,17 +44,17 @@ const prompt = ai.definePrompt({
   name: 'cheesePairingPrompt',
   input: {schema: CheesePairingInputSchema},
   output: {schema: CheesePairingOutputSchema},
-  prompt: `You are a cheese sommelier. Based on the user's flavor and texture preferences, recommend cheeses and accompaniments for a cheese board.
+  prompt: `Eres un sumiller de quesos. Basado en las preferencias de sabor y textura del usuario, recomienda quesos y acompañamientos para una tabla de quesos.
 
-Flavor Preferences: {{{flavorPreferences}}}
-Texture Preferences: {{{texturePreferences}}}
-Seasonal Fruits: {{#if seasonalFruits}}{{{seasonalFruits}}}{{else}}None{{/if}}
+Preferencias de sabor: {{{flavorPreferences}}}
+Preferencias de textura: {{{texturePreferences}}}
+Frutas de temporada: {{#if seasonalFruits}}{{{seasonalFruits}}}{{else}}Ninguna{{/if}}
 
-Provide cheese recommendations, accompaniment suggestions, and serving suggestions. Return the response in a user-friendly format.
+Proporciona recomendaciones de quesos, sugerencias de acompañamientos y sugerencias para servir. Devuelve la respuesta en un formato fácil de usar.
 
-Cheese Recommendations: 
-Accompaniment Suggestions:
-Serving Suggestions:`,
+Recomendaciones de Quesos: 
+Sugerencias de Acompañamientos:
+Sugerencias para Servir:`,
 });
 
 const cheesePairingFlow = ai.defineFlow(
