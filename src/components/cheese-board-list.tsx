@@ -64,12 +64,12 @@ export default function CheeseBoardList() {
                   </div>
                 </div>
               </CardContent>
-              <CardFooter className="p-6 pt-0 flex justify-between items-center bg-secondary/50">
+              <CardFooter className="p-6 pt-0 flex justify-between items-end bg-secondary/50">
                 <div className="flex items-center gap-2 text-sm font-medium">
                   <Users className="h-4 w-4 text-primary" />
                   <span>Sirve para {board.serving} personas</span>
                 </div>
-                <div className="flex flex-wrap gap-1 justify-end">
+                <div className="flex flex-wrap gap-1 justify-end min-h-[4.5rem] items-end">
                     {board.tags.slice(0, 2).map(tag => (
                         <Badge key={tag} variant="secondary" className="capitalize">{tag}</Badge>
                     ))}
