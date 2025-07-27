@@ -7,7 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
-import { Quote, Users, Mail, Leaf, Grape, Wheat, Phone, MapPin } from 'lucide-react';
+import { Quote, Users, Mail, Leaf, Grape, Wheat, Phone, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { cheeseBoards, testimonials } from '@/lib/data';
 import CheeseBoardList from '@/components/cheese-board-list';
@@ -227,12 +227,12 @@ function Contact() {
             Pedidos Personalizados y Consultas
           </h2>
           <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            ¿Tienes alguna pregunta o una solicitud especial? Rellena el siguiente formulario o contáctanos directamente.
+            ¿Tienes alguna pregunta o una solicitud especial? Contáctanos directamente.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="space-y-6">
+        <div className="flex flex-col items-center gap-12">
+          <div className="space-y-6 w-full max-w-md">
             <div className="bg-secondary/50 p-6 rounded-lg space-y-4">
               <h3 className="font-headline text-xl font-bold">Información de Contacto</h3>
               <div className="space-y-2 text-muted-foreground">
@@ -261,24 +261,23 @@ function Contact() {
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
-          </div>
-          
-          <div className="w-full">
-            <form className="flex flex-col space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="name">Nombre</Label>
-                <Input id="name" placeholder="Escribe tu nombre" />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="email">Correo electrónico</Label>
-                <Input id="email" type="email" placeholder="Escribe tu correo electrónico" />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="message">Mensaje</Label>
-                <Textarea id="message" placeholder="Escribe tu mensaje" className="min-h-[100px]" />
-              </div>
-              <Button type="submit" className="bg-primary text-primary-foreground hover:bg-primary/90">Enviar mensaje</Button>
-            </form>
+            <div className="flex justify-center gap-4">
+              <Button variant="outline" size="icon" asChild>
+                <a href="#" aria-label="Instagram">
+                  <Instagram className="h-6 w-6" />
+                </a>
+              </Button>
+              <Button variant="outline" size="icon" asChild>
+                <a href="#" aria-label="Facebook">
+                  <Facebook className="h-6 w-6" />
+                </a>
+              </Button>
+              <Button variant="outline" size="icon" asChild>
+                <a href="#" aria-label="Twitter">
+                  <Twitter className="h-6 w-6" />
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
