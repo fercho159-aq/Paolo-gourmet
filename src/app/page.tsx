@@ -1,4 +1,7 @@
 
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -7,11 +10,14 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
-import { Quote, Users, Mail, Leaf, Grape, Wheat, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
+import { Quote, Users, Mail, Leaf, Grape, Wheat, Phone, MapPin, Instagram, Facebook, Menu } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { cheeseBoards, testimonials } from '@/lib/data';
 import CheeseBoardList from '@/components/cheese-board-list';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import { useIsMobile } from '@/hooks/use-mobile';
+
 
 function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -21,10 +27,12 @@ function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
       fill="currentColor"
       {...props}
     >
+      <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 0 .17.02.25.04.5.12 1 .28 1.44.52.44.25.8.6 1.12 1.02.3.42.52.92.64 1.46.12.53.18 1.09.2 1.65.02 1.1.02 2.2.02 3.3s0 2.2-.02 3.3c-.02.56-.08 1.12-.2 1.65-.12.54-.34 1.04-.64 1.46-.32.42-.68.77-1.12 1.02-.44.24-.94.4-1.44.52-.08.02-.17.04-.25.04-1.3.01-2.6.02-3.91.02s-2.61.01-3.91-.02c-.08 0-.17-.02-.25-.04-.5-.12-1-.28-1.44-.52-.44-.25-.8-.6-1.12-1.02-.3-.42-.52-.92-.64-1.46-.12-.53-.18-1.09-.2-1.65-.02-1.1-.02-2.2-.02-3.3s0-2.2.02-3.3c.02-.56.08-1.12.2-1.65.12-.54.34-1.04.64-1.46.32.42.68.77 1.12 1.02.44.24.94.4 1.44.52.08.02.17.04.25.04 1.3.01 2.6.02 3.91.02z" clipRule="evenodd" />
       <path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.59H9.86a2.592 2.592 0 0 1-2.59-2.59V3H4.18v10.14a5.683 5.683 0 0 0 5.68 5.68h.04a5.683 5.683 0 0 0 5.68-5.68V8.75a6.923 6.923 0 0 0 4.33 1.5V6.6s-1.42-.21-2.23-1.27Z" />
     </svg>
   );
 }
+
 
 function WhatsAppIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -35,20 +43,53 @@ function WhatsAppIcon(props: React.SVGProps<SVGSVGElement>) {
 }
 
 function Header() {
+  const isMobile = useIsMobile();
+
+  const navLinks = [
+    { href: "#about", label: "Conócenos" },
+    { href: "#boards", label: "Tablas" },
+    { href: "#gallery", label: "Galería" },
+    { href: "#contact", label: "Contacto" },
+  ];
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <Logo />
-        <nav className="ml-auto flex items-center space-x-4">
-          <Button variant="ghost" asChild><a href="#about">Conócenos</a></Button>
-          <Button variant="ghost" asChild><a href="#boards">Tablas</a></Button>
-          <Button variant="ghost" asChild><a href="#gallery">Galería</a></Button>
-          <Button variant="ghost" asChild><a href="#contact">Contacto</a></Button>
-        </nav>
+        {isMobile ? (
+           <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="ml-auto">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Abrir menú</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right">
+              <nav className="flex flex-col gap-4 mt-8">
+                {navLinks.map((link) => (
+                  <SheetClose asChild key={link.href}>
+                    <a href={link.href} className="text-lg font-medium hover:text-primary">
+                      {link.label}
+                    </a>
+                  </SheetClose>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
+        ) : (
+          <nav className="ml-auto flex items-center space-x-4">
+            {navLinks.map((link) => (
+              <Button variant="ghost" asChild key={link.href}>
+                <a href={link.href}>{link.label}</a>
+              </Button>
+            ))}
+          </nav>
+        )}
       </div>
     </header>
   );
 }
+
 
 function Hero() {
   const slides = [
@@ -363,3 +404,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
