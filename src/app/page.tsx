@@ -19,10 +19,6 @@ function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      stroke="currentColor"
-      strokeWidth="0"
-      strokeLinecap="round"
-      strokeLinejoin="round"
       {...props}
     >
       <path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.59H9.86a2.592 2.592 0 0 1-2.59-2.59V3H4.18v10.14a5.683 5.683 0 0 0 5.68 5.68h.04a5.683 5.683 0 0 0 5.68-5.68V8.75a6.923 6.923 0 0 0 4.33 1.5V6.6s-1.42-.21-2.23-1.27Z" />
