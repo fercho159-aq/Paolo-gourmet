@@ -233,7 +233,7 @@ function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="space-y-6">
-            <div className="space-y-2">
+            <div className="bg-secondary/50 p-6 rounded-lg space-y-4">
               <h3 className="font-headline text-xl font-bold">Información de Contacto</h3>
               <div className="space-y-2 text-muted-foreground">
                 <div className="flex items-center gap-2">
