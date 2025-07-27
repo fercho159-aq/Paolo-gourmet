@@ -36,7 +36,7 @@ export default function CheeseBoardList() {
       {filteredBoards.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredBoards.map(board => (
-            <Card key={board.id} className="flex flex-col overflow-hidden shadow-md transition-shadow hover:shadow-xl">
+            <Card key={board.id} className="flex flex-col overflow-hidden shadow-md transition-shadow hover:shadow-xl h-full">
               <CardHeader className="p-0">
                 <div className="relative h-60 w-full">
                   <Image
