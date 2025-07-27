@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -6,7 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
-import { Quote, Users, Mail, Leaf, Grape, Wheat } from 'lucide-react';
+import { Quote, Users, Mail, Leaf, Grape, Wheat, Phone, MapPin } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { cheeseBoards, testimonials } from '@/lib/data';
 import CheeseBoardList from '@/components/cheese-board-list';
@@ -220,36 +221,71 @@ function Testimonials() {
 function Contact() {
   return (
     <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
-      <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
-        <div className="space-y-3">
+      <div className="container px-4 md:px-6">
+        <div className="space-y-3 mb-12 text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tighter md:text-4xl/tight">
             Pedidos Personalizados y Consultas
           </h2>
           <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            ¿Tienes alguna pregunta o una solicitud especial? Rellena el siguiente formulario para ponerte en contacto con nosotros.
+            ¿Tienes alguna pregunta o una solicitud especial? Rellena el siguiente formulario o contáctanos directamente.
           </p>
         </div>
-        <div className="mx-auto w-full max-w-sm space-y-2">
-          <form className="flex flex-col space-y-4">
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="space-y-6">
             <div className="space-y-2">
-              <Label htmlFor="name">Nombre</Label>
-              <Input id="name" placeholder="Escribe tu nombre" />
+              <h3 className="font-headline text-xl font-bold">Información de Contacto</h3>
+              <div className="space-y-2 text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <Phone className="h-5 w-5 text-primary" />
+                  <span>+52 55 1234 5678</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Mail className="h-5 w-5 text-primary" />
+                  <span>hola@paologourmet.com</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPin className="h-5 w-5 text-primary" />
+                  <span>Ciudad de México, México</span>
+                </div>
+              </div>
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="email">Correo electrónico</Label>
-              <Input id="email" type="email" placeholder="Escribe tu correo electrónico" />
+            <div className="w-full h-64 lg:h-80 rounded-lg overflow-hidden">
+               <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.527633198088!2d-99.1691350845686!3d19.43260778688439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f8d2b7a8a02d%3A0x8a2f4a4a8a2f4a4a!2sMonumento%20a%20la%20Revoluci%C3%B3n!5e0!3m2!1ses-419!2smx!4v1678886400000"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="message">Mensaje</Label>
-              <Textarea id="message" placeholder="Escribe tu mensaje" className="min-h-[100px]" />
-            </div>
-            <Button type="submit" className="bg-primary text-primary-foreground hover:bg-primary/90">Enviar mensaje</Button>
-          </form>
+          </div>
+          
+          <div className="w-full">
+            <form className="flex flex-col space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="name">Nombre</Label>
+                <Input id="name" placeholder="Escribe tu nombre" />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="email">Correo electrónico</Label>
+                <Input id="email" type="email" placeholder="Escribe tu correo electrónico" />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="message">Mensaje</Label>
+                <Textarea id="message" placeholder="Escribe tu mensaje" className="min-h-[100px]" />
+              </div>
+              <Button type="submit" className="bg-primary text-primary-foreground hover:bg-primary/90">Enviar mensaje</Button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
   );
 }
+
 
 function Footer() {
   return (
@@ -293,3 +329,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
