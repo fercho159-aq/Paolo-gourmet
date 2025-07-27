@@ -7,11 +7,31 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
-import { Quote, Users, Mail, Leaf, Grape, Wheat, Phone, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Quote, Users, Mail, Leaf, Grape, Wheat, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { cheeseBoards, testimonials } from '@/lib/data';
 import CheeseBoardList from '@/components/cheese-board-list';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
+
+function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M12.528 8.012a5.164 5.164 0 0 1 5.465 5.426v.044c-.004.015-.008.03-.012.044a5.164 5.164 0 0 1-5.465-5.426v-.044c.004-.015.008-.03.012-.044z" />
+      <path d="M12.528 8.012a5.164 5.164 0 0 1-4.43-5.02V2h-3.1v11.538A6.173 6.173 0 0 0 12.528 20v-3.846a2.33 2.33 0 0 1-2.33-2.327 2.33 2.33 0 0 1 2.33-2.327V8.012z" />
+    </svg>
+  );
+}
 
 function Header() {
   return (
@@ -250,7 +270,7 @@ function Contact() {
                 </div>
               </div>
             </div>
-             <div className="flex justify-start gap-4">
+             <div className="flex justify-center gap-4">
               <Button variant="outline" size="icon" asChild>
                 <a href="#" aria-label="Instagram">
                   <Instagram className="h-6 w-6" />
@@ -262,8 +282,8 @@ function Contact() {
                 </a>
               </Button>
               <Button variant="outline" size="icon" asChild>
-                <a href="#" aria-label="Twitter">
-                  <Twitter className="h-6 w-6" />
+                <a href="#" aria-label="TikTok">
+                  <TikTokIcon className="h-6 w-6" />
                 </a>
               </Button>
             </div>
