@@ -231,8 +231,8 @@ function Contact() {
           </p>
         </div>
 
-        <div className="flex flex-col items-center gap-12">
-          <div className="space-y-6 w-full max-w-md">
+        <div className="grid lg:grid-cols-2 gap-12 items-start max-w-4xl mx-auto">
+          <div className="space-y-6">
             <div className="bg-secondary/50 p-6 rounded-lg space-y-4">
               <h3 className="font-headline text-xl font-bold">Información de Contacto</h3>
               <div className="space-y-2 text-muted-foreground">
@@ -250,18 +250,7 @@ function Contact() {
                 </div>
               </div>
             </div>
-            <div className="w-full h-64 lg:h-80 rounded-lg overflow-hidden">
-               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.527633198088!2d-99.1691350845686!3d19.43260778688439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f8d2b7a8a02d%3A0x8a2f4a4a8a2f4a4a!2sMonumento%20a%20la%20Revoluci%C3%B3n!5e0!3m2!1ses-419!2smx!4v1678886400000"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen={false}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </div>
-            <div className="flex justify-center gap-4">
+             <div className="flex justify-start gap-4">
               <Button variant="outline" size="icon" asChild>
                 <a href="#" aria-label="Instagram">
                   <Instagram className="h-6 w-6" />
@@ -278,6 +267,17 @@ function Contact() {
                 </a>
               </Button>
             </div>
+          </div>
+          <div className="w-full h-80 lg:h-full rounded-lg overflow-hidden">
+             <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.527633198088!2d-99.1691350845686!3d19.43260778688439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f8d2b7a8a02d%3A0x8a2f4a4a8a2f4a4a!2sMonumento%20a%20la%20Revoluci%C3%B3n!5e0!3m2!1ses-419!2smx!4v1678886400000"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>
