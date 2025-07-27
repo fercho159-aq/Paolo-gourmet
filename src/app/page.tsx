@@ -315,7 +315,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">Nuestras Tablas de Queso</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Explora nuestra colección de tablas de queso seleccionadas. Usa la búsqueda para encontrar la perfecta para tu gusto.
+                Explora nuestra colección de tablas de queso seleccionadas.
               </p>
             </div>
             <CheeseBoardList />
@@ -329,5 +329,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
