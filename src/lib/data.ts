@@ -83,20 +83,38 @@ export const cheeseBoards: CheeseBoard[] = [
 export const testimonials = [
   {
     id: 1,
-    name: "Alice Johnson",
-    location: "Nueva York, NY",
-    comment: "La tabla 'El conocedor clásico' fue un éxito absoluto en mi cena. ¡La calidad y la presentación fueron excepcionales!",
+    name: "José García",
+    location: "Coyoacán, CDMX",
+    comment: "¡La tabla 'El conocedor clásico' fue un éxito en mi reunión! La calidad es increíble.",
   },
   {
     id: 2,
-    name: "Carlos Rodriguez",
-    location: "Miami, FL",
-    comment: "Pedí una tabla personalizada para un evento corporativo y paolo gourmet superó todas las expectativas. La herramienta de maridaje con IA es un toque fantástico.",
+    name: "María Hernández",
+    location: "Benito Juárez, CDMX",
+    comment: "Pedí la 'Delicia Mediterránea' y me transportó a Grecia. ¡Delicioso y súper fresco!",
   },
   {
     id: 3,
-    name: "Emily Sato",
-    location: "San Francisco, CA",
-    comment: "La 'Delicia Mediterránea' es mi favorita. Es tan fresca y sabrosa. ¡La recomiendo mucho para un picnic o un almuerzo ligero!",
+    name: "Sofía Martínez",
+    location: "Miguel Hidalgo, CDMX",
+    comment: "Perfecto para una tarde con amigas. La tabla 'Lo Dulce y Salado' es el balance ideal.",
+  },
+  {
+    id: 4,
+    name: "Alejandro López",
+    location: "Cuauhtémoc, CDMX",
+    comment: "Si te gusta el queso fuerte, 'El Audaz y el Azul' es para ti. Una experiencia de sabor única.",
+  },
+  {
+    id: 5,
+    name: "Valentina Rodríguez",
+    location: "Álvaro Obregón, CDMX",
+    comment: "El 'Beso Francés' es pura elegancia. Ideal para una cita romántica. ¡Nos encantó!",
+  },
+  {
+    id: 6,
+    name: "Mateo González",
+    location: "Tlalpan, CDMX",
+    comment: "¡La tabla para la 'Gran Celebración' es espectacular! Impresionó a todos mis invitados.",
   },
 ];
