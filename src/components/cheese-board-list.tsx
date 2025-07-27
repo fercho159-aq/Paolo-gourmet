@@ -67,7 +67,7 @@ export default function CheeseBoardList() {
               <CardFooter className="p-6 pt-0 flex justify-between items-center bg-secondary/50">
                 <div className="flex items-center gap-2 text-sm font-medium">
                   <Users className="h-4 w-4 text-primary" />
-                  <span>Sirve para {board.serving}</span>
+                  <span>Sirve para {board.serving} personas</span>
                 </div>
                 <div className="flex flex-wrap gap-1 justify-end">
                     {board.tags.slice(0, 2).map(tag => (

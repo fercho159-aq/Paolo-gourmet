@@ -19,7 +19,7 @@ export const cheeseBoards: CheeseBoard[] = [
     dataAiHint: "queso clásico",
     cheeses: ["Cheddar añejo", "Brie", "Gouda", "Queso azul"],
     accompaniments: ["Galletas saladas", "Mermelada de higos", "Uvas rojas", "Nueces"],
-    serving: "2-4 personas",
+    serving: "2-4",
     tags: ["clásico", "cheddar", "brie", "gouda", "equilibrado", "pequeño"],
   },
   {
@@ -30,7 +30,7 @@ export const cheeseBoards: CheeseBoard[] = [
     dataAiHint: "comida mediterranea",
     cheeses: ["Feta", "Manchego", "Halloumi", "Provolone"],
     accompaniments: ["Aceitunas Kalamata", "Tomates secos", "Pan de pita", "Hummus"],
-    serving: "3-5 personas",
+    serving: "3-5",
     tags: ["mediterráneo", "feta", "manchego", "aceitunas", "mediano"],
   },
   {
@@ -41,7 +41,7 @@ export const cheeseBoards: CheeseBoard[] = [
     dataAiHint: "dulce salado",
     cheeses: ["Queso de cabra", "Queso crema con arándanos", "Stilton", "Suizo"],
     accompaniments: ["Rodajas de manzana", "Panal de miel", "Prosciutto", "Chocolate negro"],
-    serving: "4-6 personas",
+    serving: "4-6",
     tags: ["dulce", "salado", "queso de cabra", "fruta", "miel", "grande"],
   },
   {
@@ -52,7 +52,7 @@ export const cheeseBoards: CheeseBoard[] = [
     dataAiHint: "queso azul",
     cheeses: ["Gorgonzola", "Roquefort", "Stilton", "Danablu"],
     accompaniments: ["Rodajas de pera", "Nueces pecanas confitadas", "Tostadas de centeno", "Mermelada de vino de Oporto"],
-    serving: "2-4 personas",
+    serving: "2-4",
     tags: ["audaz", "queso azul", "fuerte", "gorgonzola", "roquefort", "pequeño"],
   },
   {
@@ -63,7 +63,7 @@ export const cheeseBoards: CheeseBoard[] = [
     dataAiHint: "comida francesa",
     cheeses: ["Camembert", "Comté", "Chèvre", "Roquefort"],
     accompaniments: ["Baguette", "Cornichons", "Compota de cereza", "Almendras Marcona"],
-    serving: "3-5 personas",
+    serving: "3-5",
     tags: ["francés", "camembert", "comte", "romántico", "mediano"],
   },
   {
@@ -74,7 +74,7 @@ export const cheeseBoards: CheeseBoard[] = [
     dataAiHint: "fiesta celebración",
     cheeses: ["Parmigiano-Reggiano", "Brie triple crema", "Gouda ahumado", "Gruyère añejo", "Pepper Jack picante"],
     accompaniments: ["Surtido de embutidos", "Panes artesanales", "Aceitunas y encurtidos", "Albaricoques secos", "Selección de mostazas"],
-    serving: "8-12 personas",
+    serving: "8-12",
     tags: ["celebración", "fiesta", "grande", "lujoso", "surtido"],
   },
 ];
