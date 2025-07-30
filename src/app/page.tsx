@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import { useState } from 'react';
@@ -27,7 +28,7 @@ function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
       fill="currentColor"
       {...props}
     >
-      <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 0 .17.02.25.04.5.12 1 .28 1.44.52.44.25.8.6 1.12 1.02.3.42.52.92.64 1.46.12.53.18 1.09.2 1.65.02 1.1.02 2.2.02 3.3s0 2.2-.02 3.3c-.02.56-.08 1.12-.2 1.65-.12.54-.34 1.04-.64 1.46-.32.42-.68.77-1.12 1.02-.44.24-.94.4-1.44.52-.08.02-.17.04-.25.04-1.3.01-2.6.02-3.91.02s-2.61.01-3.91-.02c-.08 0-.17-.02-.25-.04-.5-.12-1-.28-1.44-.52-.44-.25-.8-.6-1.12-1.02-.3-.42-.52-.92-.64-1.46-.12-.53-.18-1.09-.2-1.65-.02-1.1-.02-2.2-.02-3.3s0-2.2.02-3.3c.02-.56.08-1.12.2-1.65.12-.54.34-1.04.64-1.46.32.42.68.77 1.12 1.02.44.24.94.4 1.44.52.08.02.17.04.25.04 1.3.01 2.6.02 3.91.02z" clipRule="evenodd" />
+      <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 0 .17.02.25.04.5.12 1 .28 1.44.52.44.25.8.6 1.12 1.02.3.42.52.92.64 1.46.12.53.18 1.09.2 1.65.02 1.1.02 2.2.02 3.3s0 2.2-.02 3.3c-.02.56-.08 1.12-.2 1.65-.12.54-.34 1.04-.64 1.46-.32.42-.68.77-1.12 1.02-.44.24-.94.4-1.44.52-.08.02-.17.04-.25.04-1.3.01-2.6.02-3.91.02s-2.61.01-3.91-.02c-.08 0-.17-.02-.25-.04-.5-.12-1-.28-1.44-.52-.44-.25-.8-.6-1.12-1.02-.3-.42-.52-.92-.64-1.46-.12-.53-.18-1.09-.2-1.65-.02-1.1-.02-2.2-.02-3.3s0-2.2.02-3.3c.02-.56.08 1.12.2-1.65.12-.54.34-1.04.64-1.46.32.42.68.77 1.12 1.02.44.24.94.4 1.44.52.08.02.17.04.25.04 1.3.01 2.6.02 3.91.02z" clipRule="evenodd" />
       <path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.59H9.86a2.592 2.592 0 0 1-2.59-2.59V3H4.18v10.14a5.683 5.683 0 0 0 5.68 5.68h.04a5.683 5.683 0 0 0 5.68-5.68V8.75a6.923 6.923 0 0 0 4.33 1.5V6.6s-1.42-.21-2.23-1.27Z" />
     </svg>
   );
@@ -164,7 +165,7 @@ function AboutUs() {
       <div className="container px-4 md:px-6">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
           <div className="flex flex-col justify-center space-y-4">
-            <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">Nuestra Pasión por el Queso</h2>
+            <h2 className="font-body text-3xl font-bold tracking-tighter sm:text-5xl">Nuestra Pasión por el Queso</h2>
             <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               En paolo gourmet, creemos que el queso es más que un alimento, es una experiencia. Nuestra misión es seleccionar los mejores quesos artesanales de todo el mundo y combinarlos con los acompañamientos perfectos para crear tablas inolvidables que unen a las personas.
             </p>
