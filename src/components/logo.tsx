@@ -7,8 +7,8 @@ export function Logo() {
       <Image
         src="https://paologourmet.com.mx/logo.png"
         alt="paolo gourmet logo"
-        width={50}
-        height={50}
+        width={36}
+        height={36}
         className="h-auto w-auto"
       />
     </a>
