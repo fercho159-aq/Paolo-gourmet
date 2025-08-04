@@ -9,7 +9,7 @@ export function Logo() {
         alt="paolo gourmet logo"
         width={50}
         height={50}
-        className="h-12 w-12"
+        className="h-auto w-auto"
       />
     </a>
   );
