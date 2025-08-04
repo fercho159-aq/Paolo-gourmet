@@ -18,6 +18,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'paologourmet.com.mx',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };
