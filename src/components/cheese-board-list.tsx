@@ -14,7 +14,7 @@ export default function CheeseBoardList() {
         {cheeseBoards.map(board => (
           <Card key={board.id} className="flex flex-col overflow-hidden shadow-md transition-shadow hover:shadow-xl h-full">
             <CardHeader className="p-0">
-              <div className="relative h-60 w-full">
+              <div className="relative h-[900px] w-full">
                 <Image
                   src={board.image}
                   alt={board.name}

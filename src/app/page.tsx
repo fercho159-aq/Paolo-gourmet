@@ -89,7 +89,7 @@ function Header() {
 function Hero() {
   const slides = [
     {
-      imgSrc: "/Imagen/Banner/Proyecto nuevo.jpg",
+      imgSrc: "/Imagen/Galeria/IMG_0833.jpg",
       imgAlt: "Una gran exhibición de tablas de queso",
       imgHint: "tabla de quesos",
       title: "Tablas de Queso Artesanales",
@@ -98,7 +98,7 @@ function Hero() {
       buttonLink: "#boards"
     },
     {
-      imgSrc: "/Imagen/Banner/Proyecto nuevo.jpg",
+      imgSrc: "/Imagen/Galeria/IMG_0852.jpg",
       imgAlt: "Un primer plano de una tabla de quesos con frutas y nueces",
       imgHint: "primer plano queso fruta",
       title: "Ingredientes Frescos y de Calidad",
@@ -107,7 +107,7 @@ function Hero() {
       buttonLink: "#about"
     },
     {
-      imgSrc: "/Imagen/Banner/Proyecto nuevo.jpg",
+      imgSrc: "/Imagen/Galeria/IMG_1243.jpg",
       imgAlt: "Personas disfrutando de una tabla de quesos en una fiesta",
       imgHint: "fiesta tabla de quesos",
       title: "Perfecto para Cualquier Evento",
