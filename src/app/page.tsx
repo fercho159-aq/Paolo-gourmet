@@ -89,7 +89,7 @@ function Header() {
 function Hero() {
   const slides = [
     {
-      imgSrc: "https://placehold.co/1600x900.png",
+      imgSrc: "/Imagen/Banner/Proyecto nuevo.jpg",
       imgAlt: "Una gran exhibición de tablas de queso",
       imgHint: "tabla de quesos",
       title: "Tablas de Queso Artesanales",
@@ -98,7 +98,7 @@ function Hero() {
       buttonLink: "#boards"
     },
     {
-      imgSrc: "https://placehold.co/1600x900.png",
+      imgSrc: "/Imagen/Banner/Proyecto nuevo.jpg",
       imgAlt: "Un primer plano de una tabla de quesos con frutas y nueces",
       imgHint: "primer plano queso fruta",
       title: "Ingredientes Frescos y de Calidad",
@@ -107,7 +107,7 @@ function Hero() {
       buttonLink: "#about"
     },
     {
-      imgSrc: "https://placehold.co/1600x900.png",
+      imgSrc: "/Imagen/Banner/Proyecto nuevo.jpg",
       imgAlt: "Personas disfrutando de una tabla de quesos en una fiesta",
       imgHint: "fiesta tabla de quesos",
       title: "Perfecto para Cualquier Evento",
@@ -168,7 +168,7 @@ function AboutUs() {
             </p>
           </div>
           <Image
-            src="https://placehold.co/555x299.png"
+            src="/Imagen/Home/IMG_1199.jpg"
             alt="El equipo de paolo gourmet preparando tablas de queso"
             data-ai-hint="equipo personas felices"
             width={555}
@@ -183,17 +183,17 @@ function AboutUs() {
 
 function Gallery() {
   const galleryImages = [
-    { src: "https://placehold.co/400x300.png", alt: "Detalle de una tabla de quesos", hint: "primer plano queso", className: "col-span-1 row-span-1" },
-    { src: "https://placehold.co/400x600.png", alt: "Gente disfrutando de las tablas de queso", hint: "amigos comiendo", className: "col-span-1 row-span-2" },
-    { src: "https://placehold.co/400x300.png", alt: "Tabla de quesos con vino", hint: "queso vino", className: "col-span-1 row-span-1" },
-    { src: "https://placehold.co/400x300.png", alt: "Tabla de quesos de postre", hint: "tabla de postres", className: "col-span-1 row-span-1" },
-    { src: "https://placehold.co/400x300.png", alt: "Quesos variados", hint: "quesos variados", className: "col-span-1 row-span-1" },
-    { src: "https://placehold.co/400x300.png", alt: "Tabla para un evento", hint: "evento tabla", className: "col-span-1 row-span-1" },
-    { src: "https://placehold.co/400x600.png", alt: "Tabla de quesos vertical", hint: "tabla vertical", className: "col-span-1 row-span-2" },
-    { src: "https://placehold.co/400x300.png", alt: "Preparando una tabla", hint: "preparando tabla", className: "col-span-1 row-span-1" },
-    { src: "https://placehold.co/400x300.png", alt: "Tabla rústica", hint: "tabla rústica", className: "col-span-1 row-span-1" },
-    { src: "https://placehold.co/400x300.png", alt: "Maridaje de quesos", hint: "maridaje quesos", className: "col-span-1 row-span-1" },
-
+    { src: "/Imagen/Galeria/IMG_0852.jpg", alt: "Detalle de una tabla de quesos", hint: "primer plano queso", className: "col-span-1 row-span-1" },
+    { src: "/Imagen/Galeria/IMG_0815.jpg", alt: "Gente disfrutando de las tablas de queso", hint: "amigos comiendo", className: "col-span-1 row-span-2" },
+    { src: "/Imagen/Galeria/IMG_0818.jpg", alt: "Tabla de quesos con vino", hint: "queso vino", className: "col-span-1 row-span-1" },
+    { src: "/Imagen/Galeria/IMG_1185.jpg", alt: "Tabla de quesos de postre", hint: "tabla de postres", className: "col-span-1 row-span-1" },
+    { src: "/Imagen/Galeria/IMG_1187.jpg", alt: "Quesos variados", hint: "quesos variados", className: "col-span-1 row-span-1" },
+    { src: "/Imagen/Galeria/IMG_1243.jpg", alt: "Tabla para un evento", hint: "evento tabla", className: "col-span-1 row-span-1" },
+    { src: "/Imagen/Galeria/IMG_1199.jpg", alt: "Tabla de quesos vertical", hint: "tabla vertical", className: "col-span-1 row-span-2" },
+    { src: "/Imagen/Galeria/IMG_0833.jpg", alt: "Preparando una tabla", hint: "preparando tabla", className: "col-span-1 row-span-1" },
+    { src: "/Imagen/Galeria/IMG_0836.jpg", alt: "Tabla rústica", hint: "tabla rústica", className: "col-span-1 row-span-1" },
+    { src: "/Imagen/Galeria/IMG_0852.jpg", alt: "Detalle de una tabla de quesos", hint: "primer plano queso", className: "col-span-1 row-span-1" },
+   
   ];
 
   return (
