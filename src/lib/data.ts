@@ -1,3 +1,4 @@
+
 export type CheeseBoard = {
   id: number;
   name: string;
@@ -13,14 +14,14 @@ export type CheeseBoard = {
 export const cheeseBoards: CheeseBoard[] = [
   {
     id: 1,
-    name: "El conocedor clásico",
-    description: "Una selección atemporal de quesos clásicos, perfecta para cualquier paladar. Presenta una mezcla equilibrada de texturas duras y blandas.",
+    name: "Kit 10 Vasos Signature",
+    description: "Vasitos individuales con nuestra icónica combinación de ingredientes Signature ideales para tus eventos.",
     image: "/Imagen/Productos/tabla 1.jpg",
-    dataAiHint: "queso clásico",
-    cheeses: ["Cheddar añejo", "Brie", "Gouda", "Queso azul"],
-    accompaniments: ["Galletas saladas", "Mermelada de higos", "Uvas rojas", "Nueces"],
-    serving: "2-4",
-    tags: ["clásico", "cheddar", "brie", "gouda", "equilibrado", "pequeño"],
+    dataAiHint: "vasos de queso",
+    cheeses: ["Cheddar", "Gouda/Monterey Jack/Pepper Jack/Asadero"],
+    accompaniments: ["Chorizo español", "Salami seco estilo italiano", "Frutas de temporada", "Nueces y aceitunas", "Galletas y pretzels"],
+    serving: "10",
+    tags: ["evento", "individual", "signature", "kit"],
   },
   {
     id: 2,
