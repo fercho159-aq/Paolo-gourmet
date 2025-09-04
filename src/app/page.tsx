@@ -136,8 +136,8 @@ function Hero() {
       />
       <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 flex h-full flex-col items-start justify-center text-left text-white container">
-        <h1 className="font-headline text-5xl font-bold md:text-7xl">Tablas de Queso Artesanales</h1>
-        <p className="mt-4 max-w-2xl text-lg text-white font-medium md:text-xl">
+        <h1 className="font-headline text-5xl font-extrabold md:text-7xl">Tablas de Queso Artesanales</h1>
+        <p className="mt-4 max-w-2xl text-lg text-white font-semibold md:text-xl">
           Descubre tablas de queso meticulosamente elaboradas, perfectas para cualquier ocasión.
         </p>
         <Button size="lg" className="mt-8" asChild>
@@ -279,7 +279,7 @@ function WhatsAppButton() {
       href="https://wa.me/525512345678"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-4 left-4 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#128C7E] transition-colors"
+      className="fixed bottom-4 right-4 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#128C7E] transition-colors"
       aria-label="Contactar por WhatsApp"
     >
       <WhatsAppIcon className="h-8 w-8" />
@@ -294,7 +294,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <div className="sticky top-0 z-50">
-        <div className="bg-blue-900 py-2 text-center text-sm text-white">
+        <div style={{ backgroundColor: '#dcd0b3' }} className="py-2 text-center text-sm text-foreground">
             <p>Envíos gratis en CDMX - El pedido necesita un día mínimo de anticipación.</p>
         </div>
         <Header />
