@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Carousel, CarouselContent, CarouselItem, CarouselApi, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
-import { Card, CardContent, CardFooter, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardTitle } from '@/components/ui/card';
 import { Users, Leaf, Grape, Send, Wine } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
@@ -41,21 +41,21 @@ function Header() {
 }
 
 function Footer() {
-  return (
-    <footer className="w-full text-white py-6 mt-auto" style={{ backgroundColor: '#c5b282' }}>
-      <div className="container flex items-center justify-between">
-        <Logo />
-        <div className="flex flex-col items-center gap-2">
-            <div className="flex items-center space-x-4">
-                <Link href="/politicas-de-privacidad" className="text-white hover:underline text-sm">Política de privacidad</Link>
-                <Link href="/terminos-de-servicio" className="text-white hover:underline text-sm">Términos de servicio</Link>
+    return (
+        <footer className="w-full text-white py-6 mt-auto" style={{ backgroundColor: '#c5b282' }}>
+            <div className="container flex items-center justify-between">
+                <Logo />
+                <div className="flex flex-col items-center gap-2">
+                    <div className="flex items-center space-x-4">
+                        <Link href="/politicas-de-privacidad" className="text-white hover:underline text-sm">Política de privacidad</Link>
+                        <Link href="/terminos-de-servicio" className="text-white hover:underline text-sm">Términos de servicio</Link>
+                    </div>
+                    <p className="text-sm text-white text-center">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
+                </div>
+                <div className="w-12"></div>
             </div>
-            <p className="text-sm text-white text-center">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
-        </div>
-        <div className="w-12"></div>
-      </div>
-    </footer>
-  );
+        </footer>
+    );
 }
 
 export default function ProductClientPage({ board }: { board: CheeseBoard }) {
@@ -197,31 +197,28 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                         {relatedProducts.map(relatedBoard => (
                         <CarouselItem key={relatedBoard.id} className="md:basis-1/3 lg:basis-1/4">
                             <div className="p-2">
-                                <Card className="flex flex-col overflow-hidden shadow-md transition-shadow hover:shadow-xl h-full rounded-none">
-                                    <div className="relative aspect-square w-full">
-                                    <Image
-                                        src={relatedBoard.image}
-                                        alt={relatedBoard.name}
-                                        data-ai-hint={relatedBoard.dataAiHint}
-                                        fill
-                                        className="object-cover"
-                                    />
-                                    </div>
-                                    <CardContent className="p-4 flex-grow flex flex-col">
-                                    <CardTitle className="font-headline text-xl mb-2">{relatedBoard.name}</CardTitle>
-                                    {relatedBoard.serving && (
-                                        <div className="flex items-center gap-2 text-sm text-muted-foreground mt-auto">
-                                            <Users className="h-4 w-4" />
-                                            <span>{relatedBoard.serving} personas</span>
+                                <Link href={`/product/${relatedBoard.id}`} className="block h-full">
+                                    <Card className="flex flex-col overflow-hidden shadow-md transition-shadow hover:shadow-xl h-full rounded-none">
+                                        <div className="relative aspect-square w-full">
+                                        <Image
+                                            src={relatedBoard.image}
+                                            alt={relatedBoard.name}
+                                            data-ai-hint={relatedBoard.dataAiHint}
+                                            fill
+                                            className="object-cover"
+                                        />
                                         </div>
-                                    )}
-                                    </CardContent>
-                                    <CardFooter className="p-4 pt-0">
-                                    <Button asChild className="w-full">
-                                        <Link href={`/product/${relatedBoard.id}`}>Ver más</Link>
-                                    </Button>
-                                    </CardFooter>
-                                </Card>
+                                        <CardContent className="p-4 flex-grow flex flex-col">
+                                        <CardTitle className="font-headline text-xl mb-2">{relatedBoard.name}</CardTitle>
+                                        {relatedBoard.serving && (
+                                            <div className="flex items-center gap-2 text-sm text-muted-foreground mt-auto">
+                                                <Users className="h-4 w-4" />
+                                                <span>{relatedBoard.serving} personas</span>
+                                            </div>
+                                        )}
+                                        </CardContent>
+                                    </Card>
+                                </Link>
                             </div>
                         </CarouselItem>
                         ))}
