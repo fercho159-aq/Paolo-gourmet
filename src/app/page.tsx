@@ -26,11 +26,8 @@ import Link from 'next/link';
 
 function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M16 4H12a4 4 0 0 0-4 4v4" />
-      <path d="M12 20V12" />
-      <path d="M12 12H8" />
-      <path d="M20 8a4 4 0 0 1-4 4h-4" />
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="currentColor" {...props}>
+      <path d="M22.86,8.23H20.2V17.5a2.53,2.53,0,1,1-2.52-2.52,2.52,2.52,0,0,1,1.89.84l1.89-1.63a5,5,0,1,0-4.3,5.43V5.75A2.48,2.48,0,0,1,17.65,3h2.64V0H17.65a5.13,5.13,0,0,0-5.13,5.13V17.4a5.21,5.21,0,1,0,5.21,5.21,5.16,5.16,0,0,0-1.38-.2V20a2.58,2.58,0,0,1,1.38.36,2.64,2.64,0,0,1,0-5.27V10.75h2.66Z"/>
     </svg>
   );
 }
@@ -52,6 +49,12 @@ function Header() {
       { href: "#cajas-boards", label: "Cajas", icon: <Box className="h-4 w-4" /> },
   ]
 
+  const navLinks = [
+    { href: "/nosotros", label: "Nosotros" },
+    { href: "/preguntas-frecuentes", label: "Preguntas Frecuentes" },
+    { href: "#contact", label: "Contacto" },
+  ]
+
   return (
     <header className="sticky top-0 z-50 w-full border-b" style={{ backgroundColor: '#f5f5f5' }}>
       <div className="container flex h-16 items-center">
@@ -67,10 +70,18 @@ function Header() {
             <SheetContent side="right">
               <nav className="flex flex-col gap-4 mt-8">
                  <SheetClose asChild>
-                    <Link href="/nosotros" className="text-lg font-medium hover:underline underline-offset-4">
-                      Nosotros
+                    <Link href="/" className="text-lg font-medium hover:underline underline-offset-4">
+                      Inicio
                     </Link>
                   </SheetClose>
+                  {navLinks.map(link => (
+                      <SheetClose asChild key={link.href}>
+                        <Link href={link.href} className="text-lg font-medium hover:underline underline-offset-4">
+                            {link.label}
+                        </Link>
+                      </SheetClose>
+                  ))}
+                  
                   <p className="text-lg font-medium">Productos</p>
                   <div className="flex flex-col gap-2 pl-4">
                     {productLinks.map(link => (
@@ -82,21 +93,14 @@ function Header() {
                         </SheetClose>
                     ))}
                   </div>
-                 <SheetClose asChild>
-                    <Link href="/preguntas-frecuentes" className="text-lg font-medium hover:underline underline-offset-4">
-                        Preguntas Frecuentes
-                    </Link>
-                 </SheetClose>
-                 <SheetClose asChild>
-                    <a href="#contact" className="text-lg font-medium hover:underline underline-offset-4">
-                      Contacto
-                    </a>
-                  </SheetClose>
               </nav>
             </SheetContent>
           </Sheet>
         ) : (
           <nav className="ml-auto flex items-center space-x-1">
+             <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
+                    <Link href="/">Inicio</Link>
+                </Button>
             <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
                 <Link href="/nosotros">Nosotros</Link>
             </Button>
@@ -237,7 +241,7 @@ function Contact() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="h-5 w-5 text-primary" />
-                  <span>hola@paologourmet.com</span>
+                  <a href="mailto:hola@paologourmet.com.mx" className="hover:underline">hola@paologourmet.com.mx</a>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="h-5 w-5 text-primary" />
@@ -360,7 +364,7 @@ export default function Home() {
           <div className="relative container text-center">
             <h3 className="text-2xl font-bold uppercase tracking-wider">DÉJANOS SER PARTE DE TUS EVENTOS</h3>
             <p className="mt-4 max-w-3xl mx-auto">
-              Envíanos un mail a hola@paologourmet.com.mx o escríbenos por Whatsapp para cotizarte. Tenemos opciones personalizadas en CDMX a partir de 20 personas.
+              Envíanos un mail a <a href="mailto:hola@paologourmet.com.mx" className="underline">hola@paologourmet.com.mx</a> o escríbenos por Whatsapp para cotizarte. Tenemos opciones personalizadas en CDMX a partir de 20 personas.
             </p>
             <Button asChild className="mt-6" style={{ backgroundColor: '#dcd0b3', color: '#000' }}>
               <a href="#contact">Contacto</a>

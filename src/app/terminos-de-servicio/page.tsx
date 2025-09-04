@@ -24,88 +24,88 @@ function Header() {
     ]
 
     const navLinks = [
-        { href: "/nosotros", label: "Nosotros" },
-        { href: "/preguntas-frecuentes", label: "Preguntas Frecuentes" },
-        { href: "/#contact", label: "Contacto" },
+      { href: "/nosotros", label: "Nosotros" },
+      { href: "/preguntas-frecuentes", label: "Preguntas Frecuentes" },
+      { href: "/#contact", label: "Contacto" },
     ]
-
+  
     return (
-        <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="sticky top-0 z-50 w-full border-b" style={{ backgroundColor: '#f5f5f5' }}>
         <div className="container flex h-16 items-center">
-            <Logo />
-            {isMobile ? (
-            <Sheet>
-                <SheetTrigger asChild>
+          <Logo />
+          {isMobile ? (
+             <Sheet>
+              <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="ml-auto">
-                    <Menu className="h-6 w-6" />
-                    <span className="sr-only">Abrir menú</span>
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Abrir menú</span>
                 </Button>
-                </SheetTrigger>
-                <SheetContent side="right">
+              </SheetTrigger>
+              <SheetContent side="right">
                 <nav className="flex flex-col gap-4 mt-8">
-                    <SheetClose asChild>
-                        <Link href="/" className="text-lg font-medium hover:underline underline-offset-4">
-                            Inicio
-                        </Link>
+                   <SheetClose asChild>
+                      <Link href="/" className="text-lg font-medium hover:underline underline-offset-4">
+                        Inicio
+                      </Link>
                     </SheetClose>
                     {navLinks.map(link => (
-                         <SheetClose asChild key={link.href}>
-                            <Link href={link.href} className="text-lg font-medium hover:underline underline-offset-4">
-                                {link.label}
-                            </Link>
+                        <SheetClose asChild key={link.href}>
+                          <Link href={link.href} className="text-lg font-medium hover:underline underline-offset-4">
+                              {link.label}
+                          </Link>
                         </SheetClose>
                     ))}
-
+                    
                     <p className="text-lg font-medium">Productos</p>
                     <div className="flex flex-col gap-2 pl-4">
-                        {productLinks.map(link => (
-                            <SheetClose asChild key={link.href}>
-                                <Link href={link.href} className="flex items-center gap-2 text-base text-muted-foreground hover:text-primary">
-                                    {link.icon}
-                                    {link.label}
-                                </Link>
-                            </SheetClose>
-                        ))}
+                      {productLinks.map(link => (
+                           <SheetClose asChild key={link.href}>
+                              <Link href={link.href} className="flex items-center gap-2 text-base text-muted-foreground hover:text-primary">
+                                  {link.icon}
+                                  {link.label}
+                              </Link>
+                          </SheetClose>
+                      ))}
                     </div>
                 </nav>
-                </SheetContent>
+              </SheetContent>
             </Sheet>
-            ) : (
+          ) : (
             <nav className="ml-auto flex items-center space-x-1">
-                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
-                    <Link href="/">Inicio</Link>
-                </Button>
-                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
-                    <Link href="/nosotros">Nosotros</Link>
-                </Button>
-
-                <DropdownMenu>
+               <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
+                      <Link href="/">Inicio</Link>
+                  </Button>
+              <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
+                  <Link href="/nosotros">Nosotros</Link>
+              </Button>
+  
+              <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" className="hover:bg-transparent hover:underline underline-offset-4">
+                  <Button variant="ghost" className="hover:bg-transparent hover:underline underline-offset-4">
                     Productos <ChevronDown className="ml-1 h-4 w-4" />
-                    </Button>
+                  </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
-                    <DropdownMenuItem asChild>
+                  <DropdownMenuItem asChild>
                     <Link href="/#premium-boards" className="flex items-center gap-2"><Crown className="h-4 w-4" />Tablas Premium</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
                     <Link href="/#cajas-boards" className="flex items-center gap-2"><Box className="h-4 w-4" />Cajas</Link>
-                    </DropdownMenuItem>
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
-                </DropdownMenu>
-
-                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
-                    <Link href="/preguntas-frecuentes">Preguntas Frecuentes</Link>
-                </Button>
-
-                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
-                    <a href="/#contact">Contacto</a>
-                </Button>
+              </DropdownMenu>
+  
+              <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
+                  <Link href="/preguntas-frecuentes">Preguntas Frecuentes</Link>
+              </Button>
+  
+              <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
+                  <a href="/#contact">Contacto</a>
+              </Button>
             </nav>
-            )}
+          )}
         </div>
-        </header>
+      </header>
     );
 }
 
@@ -186,7 +186,7 @@ export default function TermsOfServicePage() {
             <br />
             <strong>paolo gourmet</strong>
             <br />
-            Correo electrónico: hola@paologourmet.com.mx
+            Correo electrónico: <a href="mailto:hola@paologourmet.com.mx" className="underline">hola@paologourmet.com.mx</a>
           </p>
         </div>
       </main>
