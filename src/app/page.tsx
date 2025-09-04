@@ -328,6 +328,9 @@ function WhatsAppButton() {
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
+      <div className="bg-secondary py-2 text-center text-sm text-secondary-foreground">
+        <p>Envíos gratis en CDMX</p>
+      </div>
       <Header />
       <main>
         <Hero />
@@ -357,6 +360,7 @@ export default function Home() {
     
 
     
+
 
 
 
