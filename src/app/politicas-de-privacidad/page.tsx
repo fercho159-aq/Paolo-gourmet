@@ -12,7 +12,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Menu, ChevronDown, Crown, Box } from 'lucide-react';
+import { Menu, ChevronDown, Crown, Box, Instagram, Facebook } from 'lucide-react';
 
 function Header() {
     const isMobile = useIsMobile();
@@ -111,20 +111,37 @@ function Header() {
 function Footer() {
     return (
         <footer className="w-full text-white py-6" style={{ backgroundColor: '#c5b282' }}>
-            <div className="container flex items-center justify-between">
-                <Logo />
-                <div className="flex flex-col items-center gap-2">
+            <div className="container flex flex-col md:flex-row items-center justify-between">
+                <div className="flex flex-col items-center w-full md:w-auto md:items-start">
+                     <div className="mb-4 md:mb-0">
+                        <Logo />
+                    </div>
+                </div>
+                <div className="flex md:hidden flex-col items-center w-full mb-4">
+                     <div className="flex items-center space-x-6">
+                        <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer"><Instagram style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
+                        <a href="https://www.facebook.com/people/Tablas-Paolo-Gourmet/61578410386269/" target="_blank" rel="noopener noreferrer"><Facebook style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
+                        <a href="https://www.tiktok.com/@paolo.gourmet?_t=ZS-8zSIPIt2AER&_r=1" target="_blank" rel="noopener noreferrer"><TikTokIcon style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
+                    </div>
+                </div>
+                <div className="hidden md:flex flex-col items-center gap-2 text-center">
                     <div className="flex items-center space-x-4">
                         <Link href="/politicas-de-privacidad" className="text-white hover:underline text-sm">Política de privacidad</Link>
                         <Link href="/terminos-de-servicio" className="text-white hover:underline text-sm">Términos de servicio</Link>
                     </div>
-                    <p className="text-sm text-white text-center">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
+                    <p className="text-sm text-white">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
                 </div>
-                <div className="w-12"></div>
+                <div className="hidden md:flex items-center space-x-4">
+                     <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer"><Instagram style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
+                    <a href="https://www.facebook.com/people/Tablas-Paolo-Gourmet/61578410386269/" target="_blank" rel="noopener noreferrer"><Facebook style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
+                    <a href="https://www.tiktok.com/@paolo.gourmet?_t=ZS-8zSIPIt2AER&_r=1" target="_blank" rel="noopener noreferrer"><TikTokIcon style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
+                </div>
             </div>
         </footer>
     );
 }
+
+function TikTokIcon(props: React.SVGProps<SVGSVGElement>) { return ( <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="currentColor" {...props}> <path d="M22.86,8.23H20.2V17.5a2.53,2.53,0,1,1-2.52-2.52,2.52,2.52,0,0,1,1.89.84l1.89-1.63a5,5,0,1,0-4.3,5.43V5.75A2.48,2.48,0,0,1,17.65,3h2.64V0H17.65a5.13,5.13,0,0,0-5.13,5.13V17.4a5.21,5.21,0,1,0,5.21,5.21,5.16,5.16,0,0,0-1.38-.2V20a2.58,2.58,0,0,1,1.38.36,2.64,2.64,0,0,1,0-5.27V10.75h2.66Z"/> </svg> ); }
 
 
 export default function PrivacyPolicyPage() {

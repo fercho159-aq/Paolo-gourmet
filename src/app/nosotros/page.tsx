@@ -66,6 +66,11 @@ function Header() {
                 </SheetTrigger>
                 <SheetContent side="right">
                 <nav className="flex flex-col gap-4 mt-8">
+                    <SheetClose asChild>
+                        <Link href="/" className="text-lg font-medium hover:underline underline-offset-4">
+                            Inicio
+                        </Link>
+                    </SheetClose>
                     {navLinks.map(link => (
                          <SheetClose asChild key={link.href}>
                             <Link href={link.href} className="text-lg font-medium hover:underline underline-offset-4">
@@ -90,6 +95,9 @@ function Header() {
             </Sheet>
             ) : (
             <nav className="ml-auto flex items-center space-x-1">
+                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
+                    <Link href="/">Inicio</Link>
+                </Button>
                 <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
                     <Link href="/nosotros">Nosotros</Link>
                 </Button>
@@ -128,27 +136,43 @@ function Footer() {
     return (
         <footer className="w-full text-white py-6" style={{ backgroundColor: '#c5b282' }}>
             <div className="container flex flex-col md:flex-row items-center justify-between">
-                <div className="mb-4 md:mb-0">
-                    <Logo />
-                </div>
-                <div className="flex flex-col items-center gap-2 text-center">
-                    <div className="flex items-center space-x-4">
-                        <Link href="/politicas-de-privacidad" className="text-white hover:underline text-sm">Política de privacidad</Link>
-                        <Link href="/terminos-de-servicio" className="text-white hover:underline text-sm">Términos de servicio</Link>
+                <div className="flex flex-col items-center w-full">
+                    <div className="mb-4">
+                        <Logo />
                     </div>
-                    <p className="text-sm text-white">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
+                    <div className="flex md:hidden items-center space-x-4 mb-4">
+                        <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer"><Instagram style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
+                        <a href="https://www.facebook.com/people/Tablas-Paolo-Gourmet/61578410386269/" target="_blank" rel="noopener noreferrer"><Facebook style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
+                        <a href="https://www.tiktok.com/@paolo.gourmet?_t=ZS-8zSIPIt2AER&_r=1" target="_blank" rel="noopener noreferrer"><TikTokIcon style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
+                    </div>
+                    <div className="hidden md:flex flex-col items-center gap-2 text-center">
+                        <div className="flex items-center space-x-4">
+                            <Link href="/politicas-de-privacidad" className="text-white hover:underline text-sm">Política de privacidad</Link>
+                            <Link href="/terminos-de-servicio" className="text-white hover:underline text-sm">Términos de servicio</Link>
+                        </div>
+                        <p className="text-sm text-white">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
+                    </div>
                 </div>
-                <div className="w-12 hidden md:block"></div>
+                <div className="hidden md:flex items-center space-x-4">
+                    <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer"><Instagram style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
+                    <a href="https://www.facebook.com/people/Tablas-Paolo-Gourmet/61578410386269/" target="_blank" rel="noopener noreferrer"><Facebook style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
+                    <a href="https://www.tiktok.com/@paolo.gourmet?_t=ZS-8zSIPIt2AER&_r=1" target="_blank" rel="noopener noreferrer"><TikTokIcon style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
+                </div>
             </div>
         </footer>
     );
 }
 
+function Instagram(props: React.SVGProps<SVGSVGElement>) { return ( <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}> <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/> <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/> <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/> </svg> ); }
+function Facebook(props: React.SVGProps<SVGSVGElement>) { return ( <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}> <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/> </svg> ); }
+function TikTokIcon(props: React.SVGProps<SVGSVGElement>) { return ( <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="currentColor" {...props}> <path d="M22.86,8.23H20.2V17.5a2.53,2.53,0,1,1-2.52-2.52,2.52,2.52,0,0,1,1.89.84l1.89-1.63a5,5,0,1,0-4.3,5.43V5.75A2.48,2.48,0,0,1,17.65,3h2.64V0H17.65a5.13,5.13,0,0,0-5.13,5.13V17.4a5.21,5.21,0,1,0,5.21,5.21,5.16,5.16,0,0,0-1.38-.2V20a2.58,2.58,0,0,1,1.38.36,2.64,2.64,0,0,1,0-5.27V10.75h2.66Z"/> </svg> ); }
+
+
 export default function AboutUsPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
         <div className="sticky top-0 z-50">
-            <div style={{ backgroundColor: '#dcd0b3' }} className="py-2 text-center text-sm text-foreground">
+            <div style={{ backgroundColor: '#dcd0b3' }} className="py-2 text-center text-xs sm:text-sm text-foreground">
                 <p>Envíos gratis en CDMX - El pedido necesita un día mínimo de anticipación.</p>
             </div>
             <Header />
