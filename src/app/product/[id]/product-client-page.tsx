@@ -23,6 +23,16 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+} from "@/components/ui/alert-dialog"
 
 
 function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -173,6 +183,8 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
   const [api, setApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState(0)
   const [addWine, setAddWine] = useState(false);
+  const [isAlertOpen, setIsAlertOpen] = useState(false);
+
 
   const relatedProducts = cheeseBoards.filter(b => b.id !== board.id);
   const productTestimonials = testimonials.slice(0, 3);
@@ -192,6 +204,14 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
   const handleThumbnailClick = (index: number) => {
     api?.scrollTo(index)
   }
+  
+  const handleWineSwitchChange = (checked: boolean) => {
+    if (checked) {
+        setIsAlertOpen(true);
+    } else {
+        setAddWine(false);
+    }
+  };
 
   const getWhatsAppLink = () => {
     const baseLink = "https://wa.me/525512345678";
@@ -270,9 +290,26 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
               <Separator />
                <div className="flex items-center space-x-2">
                  <Wine className="h-5 w-5 text-primary" />
-                 <Switch id="add-wine" checked={addWine} onCheckedChange={setAddWine} />
+                 <Switch id="add-wine" checked={addWine} onCheckedChange={handleWineSwitchChange} />
                  <Label htmlFor="add-wine" className="text-md">Agregar botella de vino</Label>
                </div>
+               <AlertDialog open={isAlertOpen} onOpenChange={setIsAlertOpen}>
+                <AlertDialogContent>
+                    <AlertDialogHeader>
+                    <AlertDialogTitle>Verificación de Edad</AlertDialogTitle>
+                    <AlertDialogDescription>
+                        La venta de alcohol es exclusiva para mayores de edad. ¿Deseas continuar?
+                    </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                    <AlertDialogCancel onClick={() => setAddWine(false)}>Cancelar</AlertDialogCancel>
+                    <AlertDialogAction onClick={() => {
+                        setAddWine(true);
+                        setIsAlertOpen(false);
+                    }}>Continuar</AlertDialogAction>
+                    </AlertDialogFooter>
+                </AlertDialogContent>
+                </AlertDialog>
               <Separator />
 
 
@@ -330,7 +367,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                 >
                     <CarouselContent>
                         {relatedProducts.map(relatedBoard => (
-                        <CarouselItem key={relatedBoard.id} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
+                        <CarouselItem key={relatedBoard.id} className="basis-full md:basis-1/3 lg:basis-1/4">
                             <div className="p-2">
                                 <Link href={`/product/${relatedBoard.id}`} className="block h-full">
                                     <Card className="flex flex-col overflow-hidden shadow-md transition-shadow hover:shadow-xl h-full rounded-none">
@@ -368,5 +405,3 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
     </div>
   );
 }
-
-    
