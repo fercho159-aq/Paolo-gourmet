@@ -41,13 +41,13 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="w-full bg-secondary py-6 mt-auto">
+    <footer className="w-full bg-gray-800 text-white py-6 mt-auto">
       <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
         <Logo />
-        <p className="text-sm text-muted-foreground">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
+        <p className="text-sm text-gray-400">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
         <div className="flex items-center space-x-4">
-          <Link href="/politicas-de-privacidad" className="text-muted-foreground hover:text-foreground">Política de privacidad</Link>
-          <Link href="/terminos-de-servicio" className="text-muted-foreground hover:text-foreground">Términos de servicio</Link>
+          <Link href="/politicas-de-privacidad" className="text-gray-400 hover:text-white">Política de privacidad</Link>
+          <Link href="/terminos-de-servicio" className="text-gray-400 hover:text-white">Términos de servicio</Link>
         </div>
       </div>
     </footer>
@@ -103,7 +103,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                 <CarouselContent>
                   {productImages.map((src, index) => (
                     <CarouselItem key={index}>
-                      <Card className="overflow-hidden shadow-lg">
+                      <Card className="overflow-hidden shadow-lg rounded-none">
                         <CardContent className="p-0">
                           <div className="relative aspect-square w-full">
                             <Image

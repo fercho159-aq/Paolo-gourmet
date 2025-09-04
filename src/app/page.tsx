@@ -139,7 +139,7 @@ function Hero() {
         <p className="mt-4 max-w-2xl text-lg text-white font-medium md:text-xl">
           Descubre tablas de queso meticulosamente elaboradas, perfectas para cualquier ocasión.
         </p>
-        <Button size="lg" className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+        <Button size="lg" className="mt-8" asChild>
           <a href="#premium-boards">Explora Nuestras Tablas</a>
         </Button>
       </div>
@@ -256,13 +256,13 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="w-full bg-secondary py-6">
+    <footer className="w-full bg-gray-800 text-white py-6">
       <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
         <Logo />
-        <p className="text-sm text-muted-foreground">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
+        <p className="text-sm text-gray-400">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
         <div className="flex items-center space-x-4">
-          <Link href="/politicas-de-privacidad" className="text-muted-foreground hover:text-foreground">Política de privacidad</Link>
-          <Link href="/terminos-de-servicio" className="text-muted-foreground hover:text-foreground">Términos de servicio</Link>
+          <Link href="/politicas-de-privacidad" className="text-gray-400 hover:text-white">Política de privacidad</Link>
+          <Link href="/terminos-de-servicio" className="text-gray-400 hover:text-white">Términos de servicio</Link>
         </div>
       </div>
     </footer>

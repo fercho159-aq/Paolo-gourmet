@@ -22,7 +22,7 @@ export const cheeseBoards: CheeseBoard[] = [
     dataAiHint: "conos de queso",
     cheeses: ["Cheddar", "Gouda", "Monterey Jack"],
     accompaniments: ["Chorizo español", "Salami", "Frutas", "Nueces", "Galletas"],
-    serving: "12",
+    serving: "",
     tags: ["evento", "individual", "conos"],
   },
   {
@@ -34,7 +34,7 @@ export const cheeseBoards: CheeseBoard[] = [
     dataAiHint: "caja de queso mediana",
     cheeses: ["Manchego", "Provolone", "Queso de cabra"],
     accompaniments: ["Tomates secos", "Aceitunas", "Pan de pita", "Hummus"],
-    serving: "4-6",
+    serving: "1-2",
     tags: ["mediana", "reunión", "compartir"],
   },
   {
@@ -46,7 +46,7 @@ export const cheeseBoards: CheeseBoard[] = [
     dataAiHint: "caja de queso grande",
     cheeses: ["Suizo", "Queso crema con arándanos", "Stilton"],
     accompaniments: ["Rodajas de manzana", "Panal de miel", "Prosciutto", "Chocolate negro"],
-    serving: "8-10",
+    serving: "1-3",
     tags: ["grande", "celebración", "fiesta"],
   },
   {
@@ -58,7 +58,7 @@ export const cheeseBoards: CheeseBoard[] = [
     dataAiHint: "tabla de queso chica",
     cheeses: ["Gorgonzola", "Danablu"],
     accompaniments: ["Rodajas de pera", "Nueces pecanas confitadas", "Tostadas de centeno"],
-    serving: "2-4",
+    serving: "1-2",
     tags: ["premium", "chica", "intenso"],
   },
   {
@@ -70,7 +70,7 @@ export const cheeseBoards: CheeseBoard[] = [
     dataAiHint: "tabla de queso premium mediana",
     cheeses: ["Camembert", "Comté", "Chèvre", "Roquefort"],
     accompaniments: ["Baguette", "Cornichons", "Compota de cereza", "Almendras Marcona"],
-    serving: "5-7",
+    serving: "2-3",
     tags: ["premium", "mediana", "francés", "gourmet"],
   },
   {
@@ -82,7 +82,7 @@ export const cheeseBoards: CheeseBoard[] = [
     dataAiHint: "tabla de queso premium grande",
     cheeses: ["Parmigiano-Reggiano", "Brie triple crema", "Gouda ahumado", "Gruyère añejo"],
     accompaniments: ["Surtido de embutidos", "Panes artesanales", "Aceitunas y encurtidos", "Albaricoques secos"],
-    serving: "10-15",
+    serving: "2-4",
     tags: ["premium", "grande", "lujoso", "celebración"],
   },
 ];
@@ -160,5 +160,3 @@ export const testimonials = [
     rating: 4,
   },
 ];
-
-    
