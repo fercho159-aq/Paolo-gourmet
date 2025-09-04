@@ -24,7 +24,13 @@ import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 
 
-function TikTokIcon(props: React.SVGProps<SVGSVGElement>) { return ( <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="currentColor" {...props}> <path d="M22.86,8.23H20.2V17.5a2.53,2.53,0,1,1-2.52-2.52,2.52,2.52,0,0,1,1.89.84l1.89-1.63a5,5,0,1,0-4.3,5.43V5.75A2.48,2.48,0,0,1,17.65,3h2.64V0H17.65a5.13,5.13,0,0,0-5.13,5.13V17.4a5.21,5.21,0,1,0,5.21,5.21,5.16,5.16,0,0,0-1.38-.2V20a2.58,2.58,0,0,1,1.38.36,2.64,2.64,0,0,1,0-5.27V10.75h2.66Z"/> </svg> ); }
+function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" {...props}>
+      <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/>
+    </svg>
+  );
+}
 
 
 function WhatsAppIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -62,7 +68,7 @@ function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
-              <nav className="flex flex-col gap-4 mt-8">
+              <nav className="flex flex-col gap-4 mt-8 h-full">
                  <SheetClose asChild>
                     <Link href="/" className="text-lg font-medium hover:underline underline-offset-4">
                       Inicio
@@ -86,6 +92,12 @@ function Header() {
                             </a>
                         </SheetClose>
                     ))}
+                  </div>
+
+                  <div className="mt-auto flex justify-center space-x-6 pb-8">
+                        <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer"><Instagram style={{ color: '#c5b282' }} className="h-7 w-7" /></a>
+                        <a href="https://www.facebook.com/people/Tablas-Paolo-Gourmet/61578410386269/" target="_blank" rel="noopener noreferrer"><Facebook style={{ color: '#c5b282' }} className="h-7 w-7" /></a>
+                        <a href="https://www.tiktok.com/@paolo.gourmet?_t=ZS-8zSIPIt2AER&_r=1" target="_blank" rel="noopener noreferrer"><TikTokIcon style={{ color: '#c5b282' }} className="h-7 w-7" /></a>
                   </div>
               </nav>
             </SheetContent>
@@ -143,7 +155,7 @@ function Hero() {
       />
       <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 flex h-full flex-col items-start justify-center text-left text-white container">
-        <h1 className="font-headline text-4xl sm:text-5xl font-extrabold md:text-7xl">Tablas de Queso Artesanales</h1>
+        <h1 className="font-headline text-4xl sm:text-5xl font-extrabold md:text-7xl lg:max-w-md">Tablas de Queso Artesanales</h1>
         <p className="mt-4 max-w-2xl text-lg text-white font-semibold md:text-xl">
           Descubre tablas de queso meticulosamente elaboradas, perfectas para cualquier ocasión.
         </p>
@@ -279,33 +291,43 @@ function Contact() {
 
 
 function Footer() {
+    const isMobile = useIsMobile();
+    
     return (
         <footer className="w-full text-white py-6" style={{ backgroundColor: '#c5b282' }}>
             <div className="container flex flex-col md:flex-row items-center justify-between">
-                <div className="flex flex-col items-center w-full md:w-auto md:items-start">
-                     <div className="mb-4 md:mb-0">
-                        <Logo />
+                {isMobile ? (
+                    <div className="flex flex-col items-center w-full">
+                        <div className="mb-4">
+                            <Logo />
+                        </div>
+                        <div className="flex items-center space-x-6">
+                            <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer"><Instagram style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
+                            <a href="https://www.facebook.com/people/Tablas-Paolo-Gourmet/61578410386269/" target="_blank" rel="noopener noreferrer"><Facebook style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
+                            <a href="https://www.tiktok.com/@paolo.gourmet?_t=ZS-8zSIPIt2AER&_r=1" target="_blank" rel="noopener noreferrer"><TikTokIcon style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
+                        </div>
                     </div>
-                </div>
-                <div className="flex md:hidden flex-col items-center w-full mb-4">
-                     <div className="flex items-center space-x-6">
-                        <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer"><Instagram style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
-                        <a href="https://www.facebook.com/people/Tablas-Paolo-Gourmet/61578410386269/" target="_blank" rel="noopener noreferrer"><Facebook style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
-                        <a href="https://www.tiktok.com/@paolo.gourmet?_t=ZS-8zSIPIt2AER&_r=1" target="_blank" rel="noopener noreferrer"><TikTokIcon style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
-                    </div>
-                </div>
-                <div className="hidden md:flex flex-col items-center gap-2 text-center">
-                    <div className="flex items-center space-x-4">
-                        <Link href="/politicas-de-privacidad" className="text-white hover:underline text-sm">Política de privacidad</Link>
-                        <Link href="/terminos-de-servicio" className="text-white hover:underline text-sm">Términos de servicio</Link>
-                    </div>
-                    <p className="text-sm text-white">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
-                </div>
-                <div className="hidden md:flex items-center space-x-4">
-                     <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer"><Instagram style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
-                    <a href="https://www.facebook.com/people/Tablas-Paolo-Gourmet/61578410386269/" target="_blank" rel="noopener noreferrer"><Facebook style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
-                    <a href="https://www.tiktok.com/@paolo.gourmet?_t=ZS-8zSIPIt2AER&_r=1" target="_blank" rel="noopener noreferrer"><TikTokIcon style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
-                </div>
+                ) : (
+                    <>
+                        <div className="flex flex-col items-center w-full md:w-auto md:items-start">
+                            <div className="mb-4 md:mb-0">
+                                <Logo />
+                            </div>
+                        </div>
+                        <div className="flex flex-col items-center gap-2 text-center">
+                            <div className="flex items-center space-x-4">
+                                <Link href="/politicas-de-privacidad" className="text-white hover:underline text-sm">Política de privacidad</Link>
+                                <Link href="/terminos-de-servicio" className="text-white hover:underline text-sm">Términos de servicio</Link>
+                            </div>
+                            <p className="text-sm text-white">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
+                        </div>
+                        <div className="flex items-center space-x-4">
+                            <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer"><Instagram style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
+                            <a href="https://www.facebook.com/people/Tablas-Paolo-Gourmet/61578410386269/" target="_blank" rel="noopener noreferrer"><Facebook style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
+                            <a href="https://www.tiktok.com/@paolo.gourmet?_t=ZS-8zSIPIt2AER&_r=1" target="_blank" rel="noopener noreferrer"><TikTokIcon style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
+                        </div>
+                    </>
+                )}
             </div>
         </footer>
     );
@@ -333,7 +355,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <div className="sticky top-0 z-50">
-        <div style={{ backgroundColor: '#dcd0b3' }} className="py-2 text-center text-xs sm:text-sm text-foreground">
+        <div style={{ backgroundColor: '#dcd0b3' }} className="py-2 text-center text-xs md:text-sm text-foreground">
             <p>Envíos gratis en CDMX - El pedido necesita un día mínimo de anticipación.</p>
         </div>
         <Header />
@@ -371,7 +393,7 @@ export default function Home() {
           <div className="relative container text-center">
             <h3 className="text-2xl font-bold uppercase tracking-wider">DÉJANOS SER PARTE DE TUS EVENTOS</h3>
             <p className="mt-4 max-w-3xl mx-auto">
-              Envíanos un mail a <a href="mailto:hola@paologourmet.com.mx" className="underline">hola@paologourmet.com.mx</a> o escríbenos por Whatsapp para cotizarte. Tenemos opciones personalizadas en CDMX a partir de 20 personas.
+              Envíanos un mail a <a href="mailto:hola@paologourmet.com.mx" className="underline">hola@paologourmet.com.mx</a> o <a href="https://api.whatsapp.com/send/?phone=525512345678&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="underline">escríbenos por Whatsapp</a> para cotizarte. Tenemos opciones personalizadas en CDMX a partir de 20 personas.
             </p>
             <Button asChild className="mt-6" style={{ backgroundColor: '#dcd0b3', color: '#000' }}>
               <a href="#contact">Contacto</a>
