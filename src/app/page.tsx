@@ -45,14 +45,14 @@ function Header() {
   const isMobile = useIsMobile();
 
   const productLinks = [
-      { href: "#premium-boards", label: "Tablas Premium", icon: <Crown className="h-4 w-4" /> },
-      { href: "#cajas-boards", label: "Cajas", icon: <Box className="h-4 w-4" /> },
+      { href: "/#premium-boards", label: "Tablas Premium", icon: <Crown className="h-4 w-4" /> },
+      { href: "/#cajas-boards", label: "Cajas", icon: <Box className="h-4 w-4" /> },
   ]
 
   const navLinks = [
     { href: "/nosotros", label: "Nosotros" },
     { href: "/preguntas-frecuentes", label: "Preguntas Frecuentes" },
-    { href: "#contact", label: "Contacto" },
+    { href: "/#contact", label: "Contacto" },
   ]
 
   return (
@@ -119,10 +119,10 @@ function Header() {
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem asChild>
-                  <a href="#premium-boards" className="flex items-center gap-2"><Crown className="h-4 w-4" />Tablas Premium</a>
+                  <a href="/#premium-boards" className="flex items-center gap-2"><Crown className="h-4 w-4" />Tablas Premium</a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <a href="#cajas-boards" className="flex items-center gap-2"><Box className="h-4 w-4" />Cajas</a>
+                  <a href="/#cajas-boards" className="flex items-center gap-2"><Box className="h-4 w-4" />Cajas</a>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -154,8 +154,8 @@ function Hero() {
         className="absolute top-0 left-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-black/60" />
-      <div className="relative z-10 flex h-full flex-col items-start justify-center text-left text-white container">
-        <h1 className="font-headline text-4xl sm:text-5xl font-extrabold md:text-7xl lg:max-w-md">Tablas de Queso Artesanales</h1>
+      <div className="relative z-10 flex h-full flex-col items-start justify-center text-left text-white container animate-fade-in-up">
+        <h1 className="font-headline text-4xl sm:text-5xl font-extrabold md:text-6xl lg:max-w-md">Tablas de Queso Artesanales</h1>
         <p className="mt-4 max-w-2xl text-lg text-white font-semibold md:text-xl">
           Descubre tablas de queso meticulosamente elaboradas, perfectas para cualquier ocasión.
         </p>
@@ -169,7 +169,7 @@ function Hero() {
 
 function Testimonials() {
   return (
-    <section id="testimonials" className="w-full py-16 md:py-20 lg:py-24 bg-secondary">
+    <section id="testimonials" className="w-full py-16 md:py-20 lg:py-24 bg-secondary animate-fade-in-up">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
@@ -225,7 +225,7 @@ function Testimonials() {
 
 function Contact() {
   return (
-    <section id="contact" className="w-full py-16 md:py-20 lg:py-24">
+    <section id="contact" className="w-full py-16 md:py-20 lg:py-24 animate-fade-in-up">
       <div className="container px-4 md:px-6">
         <div className="space-y-3 mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
@@ -361,10 +361,10 @@ export default function Home() {
         <Header />
       </div>
       
-      <main className="animate-fade-in-up">
+      <main>
         <Hero />
         
-        <section id="premium-boards" className="py-12">
+        <section id="premium-boards" className="py-12 animate-fade-in-up">
           <div className="container">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Tablas Premium</h2>
@@ -376,7 +376,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="cajas-boards" className="py-8">
+        <section id="cajas-boards" className="py-8 animate-fade-in-up">
           <div className="container">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Cajas</h2>
@@ -388,7 +388,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="relative py-24 text-white bg-cover bg-center bg-fixed bg-events-bg">
+        <section className="relative py-24 text-white bg-cover bg-center bg-fixed bg-events-bg animate-fade-in-up">
           <div className="absolute inset-0 bg-black/50"></div>
           <div className="relative container text-center">
             <h3 className="text-2xl font-bold uppercase tracking-wider">DÉJANOS SER PARTE DE TUS EVENTOS</h3>

@@ -232,17 +232,18 @@ export default function FaqPage() {
             <Header />
         </div>
         <main className="flex-grow animate-fade-in-up">
-            <section id="faq" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
-              <div className="container px-4 md:px-6">
-                <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-                  <HelpCircle className="h-12 w-12 text-primary" />
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Preguntas Frecuentes</h2>
-                  <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    Resolvemos tus dudas para que disfrutes de la mejor experiencia.
-                  </p>
+            <section className="w-full py-12 md:py-16 text-white" style={{ backgroundColor: '#dcd0b3' }}>
+                <div className="container px-4 md:px-6 text-center animate-fade-in-up">
+                    <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Preguntas Frecuentes</h1>
+                    <p className="mx-auto max-w-[700px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mt-4">
+                        Resolvemos tus dudas para que disfrutes de la mejor experiencia.
+                    </p>
                 </div>
-                <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center max-w-6xl mx-auto">
-                  <div>
+            </section>
+            <section id="faq" className="w-full py-12 md:py-24 lg:py-32">
+              <div className="container px-4 md:px-6">
+                <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start max-w-6xl mx-auto">
+                  <div className="flex flex-col justify-center">
                     <Accordion type="single" collapsible className="w-full">
                         {faqItems.map((item) => (
                              <AccordionItem key={item.value} value={item.value}>

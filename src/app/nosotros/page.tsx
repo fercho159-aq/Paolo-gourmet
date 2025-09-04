@@ -197,24 +197,32 @@ export default function AboutUsPage() {
             </div>
             <Header />
         </div>
-        <main className="flex-grow animate-fade-in-up">
-            <section id="about" className="w-full py-12 md:py-24 lg:py-32">
+        <main className="flex-grow">
+            <section className="w-full py-12 md:py-16 text-white" style={{ backgroundColor: '#dcd0b3' }}>
+                <div className="container px-4 md:px-6 text-center animate-fade-in-up">
+                    <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Sobre Paolo Gourmet</h1>
+                    <p className="mx-auto max-w-[700px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mt-4">
+                        Descubre la pasión y el arte detrás de cada una de nuestras tablas de queso.
+                    </p>
+                </div>
+            </section>
+            <section id="about" className="w-full py-12 md:py-24 lg:py-32 animate-fade-in-up">
                 <div className="container px-4 md:px-6">
                     <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
                         <div className="flex flex-col justify-center space-y-4">
-                            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Nosotros</h2>
+                            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Nuestra Historia</h2>
                             <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                             En paolo gourmet, creemos que el queso es más que un alimento, es una experiencia. Nuestra misión es seleccionar los mejores quesos artesanales y combinarlos con los acompañamientos perfectos para crear tablas inolvidables que unen a las personas.
                             </p>
                         </div>
-                        <div className="w-full aspect-[9/16] max-w-sm mx-auto">
-                            <video
-                                src="/Video/0904.mp4" 
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                className="w-full h-full object-cover rounded-xl shadow-lg"
+                        <div className="w-full max-w-sm mx-auto">
+                           <Image
+                                src="/Imagen/Galeria/IMG_0818.jpg"
+                                alt="El equipo de Paolo Gourmet"
+                                width={400}
+                                height={500}
+                                className="object-cover rounded-xl shadow-lg w-full h-full"
+                                data-ai-hint="team portrait"
                             />
                         </div>
                     </div>
