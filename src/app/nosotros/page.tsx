@@ -43,16 +43,18 @@ function Header() {
 function Footer() {
     return (
         <footer className="w-full text-white py-6" style={{ backgroundColor: '#c5b282' }}>
-            <div className="container flex items-center justify-between">
-                <Logo />
-                <div className="flex flex-col items-center gap-2">
+            <div className="container flex flex-col md:flex-row items-center justify-between">
+                <div className="mb-4 md:mb-0">
+                    <Logo />
+                </div>
+                <div className="flex flex-col items-center gap-2 text-center">
                     <div className="flex items-center space-x-4">
                         <Link href="/politicas-de-privacidad" className="text-white hover:underline text-sm">Política de privacidad</Link>
                         <Link href="/terminos-de-servicio" className="text-white hover:underline text-sm">Términos de servicio</Link>
                     </div>
-                    <p className="text-sm text-white text-center">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
+                    <p className="text-sm text-white">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
                 </div>
-                <div className="w-12"></div>
+                <div className="w-12 hidden md:block"></div>
             </div>
         </footer>
     );
