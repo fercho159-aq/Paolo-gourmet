@@ -25,8 +25,11 @@ import { ChevronDown } from 'lucide-react';
 
 function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="currentColor" {...props}>
-      <path d="M14.28.19A.5.5 0 0 1 14.75 0h4.5a.5.5 0 0 1 .5.5v4.5a.5.5 0 0 1-.94.22L13.1 2.28a.5.5 0 0 1-.22-.94L14.28.19zM23.5 9.25a.5.5 0 0 1 .5-.5h4.5a.5.5 0 0 1 .5.5v4.5a.5.5 0 0 1-.94.22l-5.71-8.6a.5.5 0 0 1 .15-.72zM9.25.5a.5.5 0 0 1 .5.5v4.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zM4.5 9.25a.5.5 0 0 1 .5-.5h4.5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM0 14.75a.5.5 0 0 1 .5-.5h28a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zM9.75 23.5a.5.5 0 0 1 .5.5v4.5a.5.5 0 0 1-1 0V24a.5.5 0 0 1 .5-.5zM5 19.25a.5.5 0 0 1 .5-.5h4.5a.5.5 0 0 1 0 1H5.5a.5.5 0 0 1-.5-.5z" />
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M16 4H12a4 4 0 0 0-4 4v4" />
+      <path d="M12 20V12" />
+      <path d="M12 12H8" />
+      <path d="M20 8a4 4 0 0 1-4 4h-4" />
     </svg>
   );
 }
@@ -134,10 +137,10 @@ function Hero() {
         playsInline
         className="absolute top-0 left-0 w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20" />
+      <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 flex h-full flex-col items-start justify-center text-left text-white container">
-        <h1 className="font-headline text-5xl font-normal md:text-7xl" style={{ fontWeight: 400 }}>Tablas de Queso Artesanales</h1>
-        <p className="mt-4 max-w-2xl text-lg text-primary-foreground/90 md:text-xl">
+        <h1 className="font-headline text-5xl font-bold md:text-7xl">Tablas de Queso Artesanales</h1>
+        <p className="mt-4 max-w-2xl text-lg text-white font-medium md:text-xl">
           Descubre tablas de queso meticulosamente elaboradas, perfectas para cualquier ocasión.
         </p>
         <Button size="lg" className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90" asChild>
