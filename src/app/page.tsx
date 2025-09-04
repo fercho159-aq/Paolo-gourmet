@@ -1,5 +1,4 @@
 
-
 'use client';
 
 import { useState } from 'react';
@@ -48,7 +47,7 @@ function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b" style={{ backgroundColor: '#f5f5f5' }}>
       <div className="container flex h-16 items-center">
         <Logo />
         {isMobile ? (
@@ -98,8 +97,8 @@ function Hero() {
         className="absolute top-0 left-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20" />
-      <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white">
-        <h1 className="font-headline text-5xl font-bold md:text-7xl">Tablas de Queso Artesanales</h1>
+      <div className="relative z-10 flex h-full flex-col items-start justify-center text-left text-white container">
+        <h1 className="font-headline text-5xl font-normal md:text-7xl">Tablas de Queso Artesanales</h1>
         <p className="mt-4 max-w-2xl text-lg text-primary-foreground/90 md:text-xl">
           Descubre tablas de queso meticulosamente elaboradas, perfectas para cualquier ocasión.
         </p>
@@ -146,7 +145,6 @@ function Gallery() {
     { src: "/Imagen/Galeria/IMG_0818.jpg", alt: "Tabla de quesos con vino", hint: "queso vino", className: "col-span-1 row-span-1" },
     { src: "/Imagen/Galeria/IMG_1185.jpg", alt: "Tabla de quesos de postre", hint: "tabla de postres", className: "col-span-1 row-span-1" },
     { src: "/Imagen/Galeria/IMG_1187.jpg", alt: "Quesos variados", hint: "quesos variados", className: "col-span-1 row-span-1" },
-    { src: "/Imagen/Galeria/IMG_1243.jpg", alt: "Tabla para un evento", hint: "evento tabla", className: "col-span-1 row-span-1" },
     { src: "/Imagen/Galeria/IMG_0836.jpg", alt: "Tabla rústica", hint: "tabla rústica", className: "col-span-1 row-span-1" },
   ];
 
@@ -328,8 +326,8 @@ function WhatsAppButton() {
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <div className="bg-secondary py-2 text-center text-sm text-secondary-foreground">
-        <p>Envíos gratis en CDMX</p>
+      <div style={{ backgroundColor: '#c7c7c7' }} className="py-2 text-center text-sm text-secondary-foreground">
+        <p>Envíos gratis en CDMX - El pedido necesita un día mínimo de anticipación.</p>
       </div>
       <Header />
       <main>
@@ -356,11 +354,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-    
-
-
-
-
