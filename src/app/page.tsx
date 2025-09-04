@@ -170,7 +170,7 @@ function Testimonials() {
             {testimonials.map((testimonial) => (
               <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-4">
-                  <Card className="h-full">
+                  <Card className="h-full shadow-lg">
                     <CardHeader>
                       <div className="flex items-center justify-between">
                          <div className="flex items-center gap-4">
@@ -313,7 +313,7 @@ export default function Home() {
         <Header />
       </div>
       
-      <main>
+      <main className="animate-fade-in-up">
         <Hero />
         
         <section id="premium-boards" className="py-12 md:py-24 lg:py-32 bg-secondary">

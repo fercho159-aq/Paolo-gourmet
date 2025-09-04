@@ -89,7 +89,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
         <p>Envíos gratis en CDMX - El pedido necesita un día mínimo de anticipación.</p>
       </div>
       <Header />
-      <main className="flex-grow py-12 md:py-16 lg:py-20">
+      <main className="flex-grow py-12 md:py-16 lg:py-20 animate-fade-in-up">
         <div className="container">
           <Button variant="outline" asChild className="mb-8">
             <Link href="/#boards">
@@ -103,7 +103,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                 <CarouselContent>
                   {productImages.map((src, index) => (
                     <CarouselItem key={index}>
-                      <Card className="overflow-hidden">
+                      <Card className="overflow-hidden shadow-lg">
                         <CardContent className="p-0">
                           <div className="relative aspect-square w-full">
                             <Image
@@ -172,7 +172,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                 </div>
               </div>
 
-               <Button size="lg" className="w-full md:w-auto" asChild>
+               <Button size="lg" className="w-full md:w-auto shadow-md hover:shadow-lg transition-shadow" asChild>
                 <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer">
                   <Send className="mr-2 h-4 w-4" />
                   Solicitar Cotización
@@ -187,5 +187,3 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
     </div>
   );
 }
-
-    
