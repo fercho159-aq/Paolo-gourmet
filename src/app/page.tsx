@@ -86,10 +86,10 @@ function Header() {
                   <div className="flex flex-col gap-2 pl-4">
                     {productLinks.map(link => (
                          <SheetClose asChild key={link.href}>
-                            <a href={link.href} className="flex items-center gap-2 text-base text-muted-foreground hover:text-primary">
+                            <Link href={link.href} className="flex items-center gap-2 text-base text-muted-foreground hover:text-primary">
                                 {link.icon}
                                 {link.label}
-                            </a>
+                            </Link>
                         </SheetClose>
                     ))}
                   </div>
@@ -119,10 +119,10 @@ function Header() {
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem asChild>
-                  <a href="/#premium-boards" className="flex items-center gap-2"><Crown className="h-4 w-4" />Tablas Premium</a>
+                  <Link href="/#premium-boards" className="flex items-center gap-2"><Crown className="h-4 w-4" />Tablas Premium</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <a href="/#cajas-boards" className="flex items-center gap-2"><Box className="h-4 w-4" />Cajas</a>
+                  <Link href="/#cajas-boards" className="flex items-center gap-2"><Box className="h-4 w-4" />Cajas</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -157,7 +157,7 @@ function Hero() {
       <div className="relative z-10 flex h-full flex-col items-start justify-center text-left text-white container animate-fade-in-up">
         <h1 className="font-headline text-4xl sm:text-5xl font-extrabold md:text-6xl lg:max-w-md">Tablas de Queso Artesanales</h1>
         <p className="mt-4 max-w-2xl text-lg text-white font-semibold md:text-xl">
-          Descubre tablas de queso meticulosamente elaboradas, perfectas para cualquier ocasión.
+          Descubre tablas de <i>queso</i> meticulosamente elaboradas, <i>perfectas</i> para cualquier <i>ocasión</i>.
         </p>
         <Button size="lg" className="mt-8 text-white" asChild style={{ backgroundColor: '#c5b282' }}>
           <a href="#premium-boards">Explora Nuestras Tablas</a>
