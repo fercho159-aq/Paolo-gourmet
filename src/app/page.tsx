@@ -21,6 +21,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { ChevronDown } from 'lucide-react';
+import Link from 'next/link';
 
 
 function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -46,11 +47,6 @@ function WhatsAppIcon(props: React.SVGProps<SVGSVGElement>) {
 function Header() {
   const isMobile = useIsMobile();
 
-  const navLinks = [
-    { href: "#about", label: "Conócenos" },
-    { href: "#contact", label: "Contacto" },
-  ];
-
   const productLinks = [
       { href: "#premium-boards", label: "Tablas Premium" },
       { href: "#cajas-boards", label: "Cajas" },
@@ -71,9 +67,9 @@ function Header() {
             <SheetContent side="right">
               <nav className="flex flex-col gap-4 mt-8">
                  <SheetClose asChild>
-                    <a href="#about" className="text-lg font-medium hover:text-primary">
-                      Conócenos
-                    </a>
+                    <Link href="/nosotros" className="text-lg font-medium hover:text-primary">
+                      Nosotros
+                    </Link>
                   </SheetClose>
                   <p className="text-lg font-medium">Productos</p>
                   <div className="flex flex-col gap-2 pl-4">
@@ -96,7 +92,7 @@ function Header() {
         ) : (
           <nav className="ml-auto flex items-center space-x-1">
             <Button variant="ghost" asChild>
-                <a href="#about">Conócenos</a>
+                <Link href="/nosotros">Nosotros</Link>
             </Button>
 
             <DropdownMenu>
@@ -150,49 +146,6 @@ function Hero() {
     </section>
   );
 }
-
-function AboutUs() {
-  return (
-    <section id="about" className="w-full py-12 md:py-24 lg:py-32">
-      <div className="container px-4 md:px-6">
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
-          <div className="flex flex-col justify-center space-y-4">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Conócenos</h2>
-            <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              En paolo gourmet, creemos que el queso es más que un alimento, es una experiencia. Nuestra misión es seleccionar los mejores quesos artesanales y combinarlos con los acompañamientos perfectos para crear tablas inolvidables que unen a las personas.
-            </p>
-            <div className="flex justify-start gap-4 pt-4">
-              <Button variant="outline" size="icon" asChild>
-                <a href="#" aria-label="Instagram">
-                  <Instagram className="h-6 w-6" />
-                </a>
-              </Button>
-              <Button variant="outline" size="icon" asChild>
-                <a href="#" aria-label="Facebook">
-                  <Facebook className="h-6 w-6" />
-                </a>
-              </Button>
-              <Button variant="outline" size="icon" asChild>
-                <a href="#" aria-label="TikTok">
-                  <TikTokIcon className="h-6 w-6" />
-                </a>
-              </Button>
-            </div>
-          </div>
-          <Image
-            src="/Imagen/Home/IMG_1199.jpg"
-            alt="El equipo de paolo gourmet preparando tablas de queso"
-            data-ai-hint="equipo personas felices"
-            width={555}
-            height={369}
-            className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
-          />
-        </div>
-      </div>
-    </section>
-  );
-}
-
 
 function Testimonials() {
   return (
@@ -282,23 +235,6 @@ function Contact() {
                 </div>
               </div>
             </div>
-             <div className="flex justify-center gap-4">
-              <Button variant="outline" size="icon" asChild>
-                <a href="#" aria-label="Instagram">
-                  <Instagram className="h-6 w-6" />
-                </a>
-              </Button>
-              <Button variant="outline" size="icon" asChild>
-                <a href="#" aria-label="Facebook">
-                  <Facebook className="h-6 w-6" />
-                </a>
-              </Button>
-              <Button variant="outline" size="icon" asChild>
-                <a href="#" aria-label="TikTok">
-                  <TikTokIcon className="h-6 w-6" />
-                </a>
-              </Button>
-            </div>
           </div>
           <div className="w-full h-80 lg:h-full rounded-lg overflow-hidden">
              <iframe
@@ -323,6 +259,23 @@ function Footer() {
     <footer className="w-full bg-secondary py-6">
       <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
         <Logo />
+        <div className="flex justify-center gap-4">
+            <Button variant="outline" size="icon" asChild>
+                <a href="#" aria-label="Instagram">
+                <Instagram className="h-6 w-6" />
+                </a>
+            </Button>
+            <Button variant="outline" size="icon" asChild>
+                <a href="#" aria-label="Facebook">
+                <Facebook className="h-6 w-6" />
+                </a>
+            </Button>
+            <Button variant="outline" size="icon" asChild>
+                <a href="#" aria-label="TikTok">
+                <TikTokIcon className="h-6 w-6" />
+                </a>
+            </Button>
+        </div>
         <p className="text-sm text-muted-foreground">&copy; 2024 paolo gourmet. Todos los derechos reservados.</p>
         <div className="flex items-center space-x-4">
           <a href="#" className="text-muted-foreground hover:text-foreground">Política de privacidad</a>
@@ -353,14 +306,15 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <div style={{ backgroundColor: '#c7c7c7' }} className="py-2 text-center text-sm text-secondary-foreground">
-        <p>Envíos gratis en CDMX - El pedido necesita un día mínimo de anticipación.</p>
+      <div className="sticky top-0 z-50">
+        <div style={{ backgroundColor: '#c7c7c7' }} className="py-2 text-center text-sm text-secondary-foreground">
+            <p>Envíos gratis en CDMX - El pedido necesita un día mínimo de anticipación.</p>
+        </div>
+        <Header />
       </div>
-      <Header />
+      
       <main>
         <Hero />
-        <AboutUs />
-        <Separator />
         
         <section id="premium-boards" className="py-12 md:py-24 lg:py-32 bg-secondary">
           <div className="container">
@@ -386,6 +340,18 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="bg-gray-800 text-white py-12">
+          <div className="container text-center">
+            <h3 className="text-2xl font-bold uppercase tracking-wider">DÉJANOS SER PARTE DE TUS EVENTOS</h3>
+            <p className="mt-4 max-w-3xl mx-auto">
+              Envíanos un mail a hola@paologourmet.com.mx o escríbenos por Whatsapp para cotizarte. Tenemos opciones personalizadas en CDMX a partir de 20 personas.
+            </p>
+            <Button asChild className="mt-6">
+              <a href="#contact">Contacto</a>
+            </Button>
+          </div>
+        </section>
+
         <Testimonials />
         <Contact />
       </main>
@@ -394,5 +360,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
