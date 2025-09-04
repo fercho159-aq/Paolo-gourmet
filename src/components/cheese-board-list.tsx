@@ -24,7 +24,7 @@ export default function CheeseBoardList() {
                 />
               </div>
               <div className="p-6">
-                <CardTitle className="font-body text-2xl">{board.name}</CardTitle>
+                <CardTitle className="font-headline text-2xl">{board.name}</CardTitle>
                 <CardDescription className="mt-2">{board.description}</CardDescription>
               </div>
             </CardHeader>

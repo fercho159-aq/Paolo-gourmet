@@ -134,7 +134,7 @@ function Hero() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20" />
                 <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white">
-                  <h1 className="font-body text-5xl font-bold md:text-7xl">{slide.title}</h1>
+                  <h1 className="font-headline text-5xl font-bold md:text-7xl">{slide.title}</h1>
                   <p className="mt-4 max-w-2xl text-lg text-primary-foreground/90 md:text-xl">
                     {slide.description}
                   </p>
@@ -157,7 +157,7 @@ function AboutUs() {
       <div className="container px-4 md:px-6">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
           <div className="flex flex-col justify-center space-y-4">
-            <h2 className="font-body text-3xl font-bold tracking-tighter sm:text-5xl">Nuestra Pasión por el Queso</h2>
+            <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">Nuestra Pasión por el Queso</h2>
             <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               En paolo gourmet, creemos que el queso es más que un alimento, es una experiencia. Nuestra misión es seleccionar los mejores quesos artesanales de todo el mundo y combinarlos con los acompañamientos perfectos para crear tablas inolvidables que unen a las personas.
             </p>
@@ -186,10 +186,10 @@ function Gallery() {
     { src: "/Imagen/Galeria/IMG_0818.jpg", alt: "Tabla de quesos con vino", hint: "queso vino", className: "col-span-1 row-span-1" },
     { src: "/Imagen/Galeria/IMG_1185.jpg", alt: "Tabla de quesos de postre", hint: "tabla de postres", className: "col-span-1 row-span-1" },
     { src: "/Imagen/Galeria/IMG_1187.jpg", alt: "Quesos variados", hint: "quesos variados", className: "col-span-1 row-span-1" },
-    { src: "/Imagen/Galeria/IMG_1199.jpg", alt: "Tabla de quesos vertical", hint: "tabla vertical", className: "col-span-1 row-span-2" },
-    { src: "/Imagen/Galeria/IMG_1243.jpg", alt: "Tabla para un evento", hint: "evento tabla", className: "col-span-1 row-span-1" },
-    { src: "/Imagen/Galeria/IMG_0833.jpg", alt: "Preparando una tabla", hint: "preparando tabla", className: "col-span-1 row-span-1" },
     { src: "/Imagen/Galeria/IMG_0836.jpg", alt: "Tabla rústica", hint: "tabla rústica", className: "col-span-1 row-span-1" },
+    { src: "/Imagen/Galeria/IMG_1243.jpg", alt: "Tabla para un evento", hint: "evento tabla", className: "col-span-1 row-span-1" },
+    { src: "/Imagen/Galeria/IMG_1199.jpg", alt: "Tabla de quesos vertical", hint: "tabla vertical", className: "col-span-1 row-span-2" },
+    { src: "/Imagen/Galeria/IMG_0833.jpg", alt: "Preparando una tabla", hint: "preparando tabla", className: "col-span-1 row-span-1" },
     { src: "/Imagen/Galeria/IMG_0852.jpg", alt: "Detalle de una tabla de quesos", hint: "primer plano queso", className: "col-span-1 row-span-1" },
    
   ];
@@ -198,7 +198,7 @@ function Gallery() {
     <section id="gallery" className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <h2 className="font-body text-3xl font-bold tracking-tighter sm:text-5xl">Nuestra Galería</h2>
+          <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">Nuestra Galería</h2>
           <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             Un vistazo a nuestras creaciones y los momentos felices que ayudan a crear.
           </p>
@@ -229,7 +229,7 @@ function Testimonials() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="font-body text-3xl font-bold tracking-tighter sm:text-5xl">Llegamos a todas las Alcaldías de la CDMX</h2>
+            <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">Llegamos a todas las Alcaldías de la CDMX</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Clientes satisfechos en cada rincón de la ciudad.
             </p>
@@ -277,7 +277,7 @@ function Contact() {
     <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
         <div className="space-y-3 mb-12 text-center">
-          <h2 className="font-body text-3xl font-bold tracking-tighter md:text-4xl/tight">
+          <h2 className="font-headline text-3xl font-bold tracking-tighter md:text-4xl/tight">
             Pedidos Personalizados y Consultas
           </h2>
           <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -288,7 +288,7 @@ function Contact() {
         <div className="grid lg:grid-cols-2 gap-12 items-start max-w-4xl mx-auto">
           <div className="space-y-6">
             <div className="bg-secondary/50 p-6 rounded-lg space-y-4">
-              <h3 className="font-body text-xl font-bold">Información de Contacto</h3>
+              <h3 className="font-headline text-xl font-bold">Información de Contacto</h3>
               <div className="space-y-2 text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <Phone className="h-5 w-5 text-primary" />
@@ -380,7 +380,7 @@ export default function Home() {
         <section id="boards" className="py-12 md:py-24 lg:py-32 bg-secondary">
           <div className="container">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-              <h2 className="font-body text-3xl font-bold tracking-tighter sm:text-5xl">Nuestras Tablas de Queso</h2>
+              <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">Nuestras Tablas de Queso</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Explora nuestra colección de tablas de queso seleccionadas.
               </p>
@@ -401,3 +401,4 @@ export default function Home() {
     
 
     
+
