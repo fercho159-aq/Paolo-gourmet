@@ -8,10 +8,12 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Carousel, CarouselContent, CarouselItem, CarouselApi } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
-import { Users, Leaf, Grape, ArrowLeft, Send } from 'lucide-react';
+import { Users, Leaf, Grape, ArrowLeft, Send, Wine } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import type { CheeseBoard } from '@/lib/data';
+import { Switch } from "@/components/ui/switch"
+import { Label } from "@/components/ui/label"
 
 function Header() {
   return (
@@ -56,6 +58,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
   const productImages = [board.image, "/Imagen/Galeria/IMG_0852.jpg", "/Imagen/Galeria/IMG_0818.jpg"];
   const [api, setApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState(0)
+  const [addWine, setAddWine] = useState(false);
 
   useEffect(() => {
     if (!api) {
@@ -73,6 +76,13 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
     api?.scrollTo(index)
   }
 
+  const getWhatsAppLink = () => {
+    const baseLink = "https://wa.me/525512345678";
+    const message = `Hola, me gustaría solicitar una cotización para el producto: ${board.name}${addWine ? ' con una botella de vino' : ''}.`;
+    return `${baseLink}?text=${encodeURIComponent(message)}`;
+  }
+
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <div style={{ backgroundColor: '#c7c7c7' }} className="py-2 text-center text-sm text-secondary-foreground">
@@ -84,7 +94,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
           <Button variant="outline" asChild className="mb-8">
             <Link href="/#boards">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Volver a las tablas
+              Volver a los productos
             </Link>
           </Button>
           <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
@@ -128,6 +138,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
 
             <div className="flex flex-col space-y-6">
               <div>
+                <Badge variant="secondary" className="capitalize text-sm mb-2">{board.line}</Badge>
                 <h1 className="text-3xl lg:text-4xl font-bold font-headline">{board.name}</h1>
                 <p className="text-muted-foreground mt-2 text-lg">{board.description}</p>
               </div>
@@ -146,21 +157,23 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
               </div>
               
               <Separator />
+               <div className="flex items-center space-x-2">
+                 <Wine className="h-5 w-5 text-primary" />
+                 <Switch id="add-wine" checked={addWine} onCheckedChange={setAddWine} />
+                 <Label htmlFor="add-wine" className="text-md">Agregar botella de vino</Label>
+               </div>
+              <Separator />
+
 
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2 text-md font-medium">
                     <Users className="h-5 w-5 text-primary" />
                     <span>Sirve para {board.serving} personas</span>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                    {board.tags.map(tag => (
-                        <Badge key={tag} variant="secondary" className="capitalize text-sm">{tag}</Badge>
-                    ))}
-                </div>
               </div>
 
                <Button size="lg" className="w-full md:w-auto" asChild>
-                <a href="https://wa.me/525512345678" target="_blank" rel="noopener noreferrer">
+                <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer">
                   <Send className="mr-2 h-4 w-4" />
                   Solicitar Cotización
                 </a>
@@ -174,3 +187,5 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
     </div>
   );
 }
+
+    

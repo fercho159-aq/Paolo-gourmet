@@ -10,7 +10,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
-import { Quote, Users, Mail, Leaf, Grape, Wheat, Phone, MapPin, Instagram, Facebook, Menu } from 'lucide-react';
+import { Quote, Users, Mail, Leaf, Grape, Wheat, Phone, MapPin, Instagram, Facebook, Menu, Star } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { cheeseBoards, testimonials } from '@/lib/data';
 import CheeseBoardList from '@/components/cheese-board-list';
@@ -98,7 +98,7 @@ function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20" />
       <div className="relative z-10 flex h-full flex-col items-start justify-center text-left text-white container">
-        <h1 className="font-headline text-5xl font-normal md:text-7xl">Tablas de Queso Artesanales</h1>
+        <h1 className="font-headline text-5xl font-normal md:text-7xl" style={{ fontWeight: 400 }}>Tablas de Queso Artesanales</h1>
         <p className="mt-4 max-w-2xl text-lg text-primary-foreground/90 md:text-xl">
           Descubre tablas de queso meticulosamente elaboradas, perfectas para cualquier ocasión.
         </p>
@@ -145,7 +145,6 @@ function Gallery() {
     { src: "/Imagen/Galeria/IMG_0818.jpg", alt: "Tabla de quesos con vino", hint: "queso vino", className: "col-span-1 row-span-1" },
     { src: "/Imagen/Galeria/IMG_1185.jpg", alt: "Tabla de quesos de postre", hint: "tabla de postres", className: "col-span-1 row-span-1" },
     { src: "/Imagen/Galeria/IMG_1187.jpg", alt: "Quesos variados", hint: "quesos variados", className: "col-span-1 row-span-1" },
-    { src: "/Imagen/Galeria/IMG_0836.jpg", alt: "Tabla rústica", hint: "tabla rústica", className: "col-span-1 row-span-1" },
   ];
 
   return (
@@ -183,7 +182,7 @@ function Testimonials() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Llegamos a todas las Alcaldías de la CDMX</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Lo que dicen nuestros clientes</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Clientes satisfechos en cada rincón de la ciudad.
             </p>
@@ -202,11 +201,18 @@ function Testimonials() {
                 <div className="p-4">
                   <Card className="h-full">
                     <CardHeader>
-                      <div className="flex items-center gap-4">
-                        <Quote className="h-8 w-8 text-primary" />
-                        <div className="grid gap-1">
-                          <p className="text-sm font-bold">{testimonial.name}</p>
-                          <p className="text-xs text-muted-foreground">{testimonial.location}</p>
+                      <div className="flex items-center justify-between">
+                         <div className="flex items-center gap-4">
+                            <Quote className="h-8 w-8 text-primary" />
+                            <div>
+                                <p className="text-sm font-bold">{testimonial.name}</p>
+                                <p className="text-xs text-muted-foreground">{testimonial.location}</p>
+                            </div>
+                         </div>
+                         <div className="flex items-center gap-0.5">
+                            {Array.from({ length: 5 }).map((_, i) => (
+                                <Star key={i} className={`h-4 w-4 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-muted-foreground'}`} />
+                            ))}
                         </div>
                       </div>
                     </CardHeader>
@@ -337,9 +343,9 @@ export default function Home() {
         <section id="boards" className="py-12 md:py-24 lg:py-32 bg-secondary">
           <div className="container">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Nuestras Tablas de Queso</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Nuestros Productos</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Explora nuestra colección de tablas de queso seleccionadas.
+                Explora nuestra selección de cajas y tablas premium.
               </p>
             </div>
             <CheeseBoardList />
@@ -354,3 +360,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
