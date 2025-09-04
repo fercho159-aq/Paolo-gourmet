@@ -149,9 +149,6 @@ function Gallery() {
     { src: "/Imagen/Galeria/IMG_1243.jpg", alt: "Tabla para un evento", hint: "evento tabla", className: "col-span-1 row-span-1" },
     { src: "/Imagen/Galeria/IMG_0836.jpg", alt: "Tabla rústica", hint: "tabla rústica", className: "col-span-1 row-span-1" },
     { src: "/Imagen/Galeria/IMG_1199.jpg", alt: "Tabla de quesos vertical", hint: "tabla vertical", className: "col-span-1 row-span-2" },
-    { src: "/Imagen/Galeria/IMG_0833.jpg", alt: "Preparando una tabla", hint: "preparando tabla", className: "col-span-1 row-span-1" },
-    { src: "/Imagen/Galeria/IMG_0852.jpg", alt: "Detalle de una tabla de quesos", hint: "primer plano queso", className: "col-span-1 row-span-1" },
-   
   ];
 
   return (
@@ -361,5 +358,6 @@ export default function Home() {
     
 
     
+
 
 
