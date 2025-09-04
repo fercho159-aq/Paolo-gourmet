@@ -1,6 +1,7 @@
 
 'use client';
 
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardFooter, CardTitle } from '@/components/ui/card';
@@ -8,14 +9,20 @@ import { Button } from '@/components/ui/button';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
 import type { CheeseBoard } from '@/lib/data';
 import { Users } from 'lucide-react';
+import Autoplay from "embla-carousel-autoplay"
 
 export default function CheeseBoardCarousel({ boards }: { boards: CheeseBoard[] }) {
+  const plugin = React.useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: true, stopOnMouseEnter: true })
+  )
+    
   return (
     <Carousel
       opts={{
         align: "start",
         loop: true,
       }}
+      plugins={[plugin.current]}
       className="w-full max-w-6xl mx-auto"
     >
       <CarouselContent>

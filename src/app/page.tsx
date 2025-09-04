@@ -124,29 +124,30 @@ function Header() {
 
 
 function Hero() {
-  return (
-    <section className="relative w-full h-[60vh] min-h-[500px] overflow-hidden">
-      <video
-        src="/Video/0904.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 bg-black/60" />
-      <div className="relative z-10 flex h-full flex-col items-start justify-center text-left text-white container">
-        <h1 className="font-headline text-5xl font-extrabold md:text-7xl">Tablas de Queso Artesanales</h1>
-        <p className="mt-4 max-w-2xl text-lg text-white font-semibold md:text-xl">
-          Descubre tablas de queso meticulosamente elaboradas, perfectas para cualquier ocasión.
-        </p>
-        <Button size="lg" className="mt-8" asChild>
-          <a href="#premium-boards">Explora Nuestras Tablas</a>
-        </Button>
-      </div>
-    </section>
-  );
-}
+    return (
+      <section className="relative w-full h-[60vh] min-h-[500px] overflow-hidden">
+        <video
+          src="/Video/0904.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent" />
+        <div className="relative z-10 flex h-full flex-col items-start justify-center text-left text-white container">
+          <h1 className="font-headline text-5xl font-extrabold md:text-7xl">Tablas de Queso Artesanales</h1>
+          <p className="mt-4 max-w-2xl text-lg text-white font-semibold md:text-xl">
+            Descubre tablas de queso meticulosamente elaboradas, perfectas para cualquier ocasión.
+          </p>
+          <Button size="lg" className="mt-8" asChild>
+            <a href="#premium-boards">Explora Nuestras Tablas</a>
+          </Button>
+        </div>
+      </section>
+    );
+  }
 
 function Testimonials() {
   return (
@@ -267,21 +268,21 @@ function Contact() {
 
 
 function Footer() {
-  return (
-    <footer className="w-full text-white py-6" style={{ backgroundColor: '#c5b282' }}>
-      <div className="container flex items-center justify-between">
-        <Logo />
-        <div className="flex flex-col items-center gap-2">
-            <div className="flex items-center space-x-4">
-                <Link href="/politicas-de-privacidad" className="text-white hover:underline text-sm">Política de privacidad</Link>
-                <Link href="/terminos-de-servicio" className="text-white hover:underline text-sm">Términos de servicio</Link>
+    return (
+        <footer className="w-full text-white py-6" style={{ backgroundColor: '#c5b282' }}>
+            <div className="container flex items-center justify-between">
+                <Logo />
+                <div className="flex flex-col items-center gap-2">
+                    <div className="flex items-center space-x-4">
+                        <Link href="/politicas-de-privacidad" className="text-white hover:underline text-sm">Política de privacidad</Link>
+                        <Link href="/terminos-de-servicio" className="text-white hover:underline text-sm">Términos de servicio</Link>
+                    </div>
+                    <p className="text-sm text-white text-center">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
+                </div>
+                <div className="w-12"></div>
             </div>
-            <p className="text-sm text-white text-center">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
-        </div>
-        <div className="w-12"></div>
-      </div>
-    </footer>
-  );
+        </footer>
+    );
 }
 
 function WhatsAppButton() {
