@@ -140,7 +140,7 @@ function Hero() {
           <p className="mt-4 max-w-2xl text-lg text-white font-semibold md:text-xl">
             Descubre tablas de queso meticulosamente elaboradas, perfectas para cualquier ocasión.
           </p>
-          <Button size="lg" className="mt-8" asChild style={{ backgroundColor: '#c5b282' }}>
+          <Button size="lg" className="mt-8 text-white" asChild style={{ backgroundColor: '#c5b282' }}>
             <a href="#premium-boards">Explora Nuestras Tablas</a>
           </Button>
         </div>
@@ -290,7 +290,7 @@ function WhatsAppButton() {
       href="https://wa.me/525512345678"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-4 right-4 z-50 text-foreground p-4 rounded-full shadow-lg transition-colors"
+      className="fixed bottom-4 right-4 z-50 text-white p-4 rounded-full shadow-lg transition-colors"
       style={{ backgroundColor: '#dcd0b3' }}
       aria-label="Contactar por WhatsApp"
     >
