@@ -149,7 +149,7 @@ function Hero() {
 
 function Testimonials() {
   return (
-    <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
+    <section id="testimonials" className="w-full py-16 md:py-20 lg:py-24 bg-secondary">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
@@ -205,7 +205,7 @@ function Testimonials() {
 
 function Contact() {
   return (
-    <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
+    <section id="contact" className="w-full py-16 md:py-20 lg:py-24">
       <div className="container px-4 md:px-6">
         <div className="space-y-3 mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
@@ -316,7 +316,7 @@ export default function Home() {
       <main className="animate-fade-in-up">
         <Hero />
         
-        <section id="premium-boards" className="py-12 md:py-24 lg:py-32 bg-secondary">
+        <section id="premium-boards" className="py-16 md:py-20 bg-secondary">
           <div className="container">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Tablas Premium</h2>
@@ -328,7 +328,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="cajas-boards" className="py-12 md:py-24 lg:py-32">
+        <section id="cajas-boards" className="py-16 md:py-20">
           <div className="container">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Cajas</h2>
@@ -360,3 +360,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
