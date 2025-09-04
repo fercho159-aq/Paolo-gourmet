@@ -32,7 +32,7 @@ function Header() {
             <Link href="/#premium-boards">Productos</Link>
           </Button>
           <Button variant="ghost" asChild>
-            <Link href="/nosotros#faq">Preguntas Frecuentes</Link>
+            <Link href="/preguntas-frecuentes">Preguntas Frecuentes</Link>
           </Button>
           <Button variant="ghost" asChild>
             <Link href="/#contact">Contacto</Link>

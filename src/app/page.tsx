@@ -83,7 +83,7 @@ function Header() {
                     ))}
                   </div>
                  <SheetClose asChild>
-                    <Link href="/nosotros#faq" className="text-lg font-medium hover:underline underline-offset-4">
+                    <Link href="/preguntas-frecuentes" className="text-lg font-medium hover:underline underline-offset-4">
                         Preguntas Frecuentes
                     </Link>
                  </SheetClose>
@@ -118,7 +118,7 @@ function Header() {
             </DropdownMenu>
 
             <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
-                <Link href="/nosotros#faq">Preguntas Frecuentes</Link>
+                <Link href="/preguntas-frecuentes">Preguntas Frecuentes</Link>
             </Button>
 
             <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
@@ -355,7 +355,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="relative py-24 text-white bg-cover bg-center bg-fixed bg-[url('/Imagen/Productos/Tabla_5.jpg')]">
+        <section className="relative py-24 text-white bg-cover bg-center bg-fixed bg-events-bg">
           <div className="absolute inset-0 bg-black/50"></div>
           <div className="relative container text-center">
             <h3 className="text-2xl font-bold uppercase tracking-wider">DÉJANOS SER PARTE DE TUS EVENTOS</h3>
