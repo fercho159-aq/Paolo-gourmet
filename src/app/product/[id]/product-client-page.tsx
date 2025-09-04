@@ -1,13 +1,14 @@
 
 'use client';
 
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem, CarouselApi } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
-import { Users, Leaf, Grape, ArrowLeft } from 'lucide-react';
+import { Users, Leaf, Grape, ArrowLeft, Send } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import type { CheeseBoard } from '@/lib/data';
@@ -53,6 +54,24 @@ function Footer() {
 
 export default function ProductClientPage({ board }: { board: CheeseBoard }) {
   const productImages = [board.image, "/Imagen/Galeria/IMG_0852.jpg", "/Imagen/Galeria/IMG_0818.jpg"];
+  const [api, setApi] = useState<CarouselApi>()
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    if (!api) {
+      return
+    }
+
+    setCurrent(api.selectedScrollSnap())
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap())
+    })
+  }, [api])
+
+  const handleThumbnailClick = (index: number) => {
+    api?.scrollTo(index)
+  }
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -70,7 +89,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
           </Button>
           <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
             <div className="space-y-4">
-               <Carousel className="w-full">
+              <Carousel setApi={setApi} className="w-full">
                 <CarouselContent>
                   {productImages.map((src, index) => (
                     <CarouselItem key={index}>
@@ -89,9 +108,22 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="left-2" />
-                <CarouselNext className="right-2" />
               </Carousel>
+              <div className="grid grid-cols-5 gap-2">
+                {productImages.map((src, index) => (
+                  <button key={index} onClick={() => handleThumbnailClick(index)} className={`overflow-hidden rounded-md focus:ring-2 focus:ring-ring focus:outline-none ${current === index ? 'ring-2 ring-primary' : ''}`}>
+                    <div className="relative aspect-square w-full">
+                        <Image
+                            src={src}
+                            alt={`Thumbnail ${index + 1}`}
+                            fill
+                            className="object-cover"
+                        />
+                         {current !== index && <div className="absolute inset-0 bg-black/30"></div>}
+                    </div>
+                  </button>
+                ))}
+              </div>
             </div>
 
             <div className="flex flex-col space-y-6">
@@ -127,7 +159,12 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                 </div>
               </div>
 
-              <Button size="lg" className="w-full md:w-auto">Añadir al carrito</Button>
+               <Button size="lg" className="w-full md:w-auto" asChild>
+                <a href="https://wa.me/525512345678" target="_blank" rel="noopener noreferrer">
+                  <Send className="mr-2 h-4 w-4" />
+                  Solicitar Cotización
+                </a>
+              </Button>
 
             </div>
           </div>
