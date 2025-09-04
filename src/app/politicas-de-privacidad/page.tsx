@@ -50,11 +50,6 @@ function Header() {
               </SheetTrigger>
               <SheetContent side="right">
                 <nav className="flex flex-col gap-4 mt-8 h-full">
-                   <SheetClose asChild>
-                      <Link href="/" className="text-lg font-medium hover:underline underline-offset-4">
-                        Inicio
-                      </Link>
-                    </SheetClose>
                     {navLinks.map(link => (
                         <SheetClose asChild key={link.href}>
                           <Link href={link.href} className="text-lg font-medium hover:underline underline-offset-4">
@@ -84,9 +79,6 @@ function Header() {
             </Sheet>
           ) : (
             <nav className="ml-auto flex items-center space-x-1">
-               <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
-                      <Link href="/">Inicio</Link>
-                  </Button>
               <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
                   <Link href="/nosotros">Nosotros</Link>
               </Button>
@@ -246,3 +238,5 @@ export default function PrivacyPolicyPage() {
     </div>
   );
 }
+
+    

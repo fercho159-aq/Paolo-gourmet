@@ -3,7 +3,7 @@
 
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Truck, HelpCircle, Clock, Award, Users, Menu, Crown, Box, ChevronDown, Instagram, Facebook } from 'lucide-react';
+import { Truck, Clock, Award, Users, Menu, Crown, Box, ChevronDown, Instagram, Facebook } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import {
@@ -81,11 +81,6 @@ function Header() {
                 </SheetTrigger>
                 <SheetContent side="right">
                 <nav className="flex flex-col gap-4 mt-8 h-full">
-                    <SheetClose asChild>
-                        <Link href="/" className="text-lg font-medium hover:underline underline-offset-4">
-                            Inicio
-                        </Link>
-                    </SheetClose>
                     {navLinks.map(link => (
                          <SheetClose asChild key={link.href}>
                             <Link href={link.href} className="text-lg font-medium hover:underline underline-offset-4">
@@ -115,9 +110,6 @@ function Header() {
             </Sheet>
             ) : (
             <nav className="ml-auto flex items-center space-x-1">
-                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
-                    <Link href="/">Inicio</Link>
-                </Button>
                 <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
                     <Link href="/nosotros">Nosotros</Link>
                 </Button>
@@ -232,7 +224,7 @@ export default function FaqPage() {
             <Header />
         </div>
         <main className="flex-grow animate-fade-in-up">
-            <section className="w-full py-12 md:py-16 text-white" style={{ backgroundColor: '#dcd0b3' }}>
+            <section className="w-full py-12 md:py-16 text-white" style={{ backgroundColor: '#c5b282' }}>
                 <div className="container px-4 md:px-6 text-center animate-fade-in-up">
                     <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Preguntas Frecuentes</h1>
                     <p className="mx-auto max-w-[700px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mt-4">
@@ -279,3 +271,5 @@ export default function FaqPage() {
     </div>
   );
 }
+
+    

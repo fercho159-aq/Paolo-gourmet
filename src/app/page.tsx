@@ -69,11 +69,6 @@ function Header() {
             </SheetTrigger>
             <SheetContent side="right">
               <nav className="flex flex-col gap-4 mt-8 h-full">
-                 <SheetClose asChild>
-                    <Link href="/" className="text-lg font-medium hover:underline underline-offset-4">
-                      Inicio
-                    </Link>
-                  </SheetClose>
                   {navLinks.map(link => (
                       <SheetClose asChild key={link.href}>
                         <Link href={link.href} className="text-lg font-medium hover:underline underline-offset-4">
@@ -104,9 +99,6 @@ function Header() {
           </Sheet>
         ) : (
           <nav className="ml-auto flex items-center space-x-1">
-             <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
-                    <Link href="/">Inicio</Link>
-                </Button>
             <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
                 <Link href="/nosotros">Nosotros</Link>
             </Button>
@@ -155,7 +147,10 @@ function Hero() {
       />
       <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 flex h-full flex-col items-start justify-center text-left text-white container animate-fade-in-up">
-        <h1 className="font-headline text-3xl sm:text-5xl font-extrabold md:text-6xl lg:max-w-md">Tablas de Queso Artesanales</h1>
+        <h1 className="font-headline text-3xl sm:text-5xl font-extrabold md:text-6xl lg:max-w-md">
+          <span className="block">Tablas de Queso</span>
+          <span className="block">Artesanales</span>
+        </h1>
         <p className="mt-4 max-w-2xl text-lg text-white font-semibold md:text-xl">
           Descubre tablas de <i>queso</i> meticulosamente elaboradas, <i>perfectas</i> para cualquier <i>ocasión</i>.
         </p>
@@ -236,7 +231,7 @@ function Contact() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
           <div className="space-y-6">
             <div className="bg-secondary/50 p-6 rounded-lg space-y-4">
               <h3 className="text-xl font-bold">Información de Contacto</h3>
@@ -265,17 +260,6 @@ function Contact() {
                         <TikTokIcon style={{ color: '#c5b282' }} className="h-6 w-6" />
                     </a>
                 </div>
-            </div>
-            <div className="w-full h-80 lg:h-full rounded-lg overflow-hidden">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.527633198088!2d-99.1691350845686!3d19.43260778688439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f8d2b7a8a02d%3A0x8a2f4a4a8a2f4a4a!2sMonumento%20a%20la%20Revoluci%C3%B3n!5e0!3m2!1ses-419!2smx!4v1678886400000"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen={false}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
             </div>
           </div>
           <div className="w-full h-full flex items-center justify-center">
@@ -409,3 +393,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
