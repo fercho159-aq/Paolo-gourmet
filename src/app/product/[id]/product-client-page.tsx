@@ -8,11 +8,11 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Carousel, CarouselContent, CarouselItem, CarouselApi, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
-import { Users, Leaf, Grape, Send, Wine } from 'lucide-react';
+import { Users, Leaf, Grape, Send, Wine, Star } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import type { CheeseBoard } from '@/lib/data';
-import { cheeseBoards } from '@/lib/data';
+import { cheeseBoards, testimonials } from '@/lib/data';
 import { Switch } from "@/components/ui/switch"
 import { Label } from "@/components/ui/label"
 
@@ -43,16 +43,18 @@ function Header() {
 function Footer() {
     return (
         <footer className="w-full text-white py-6 mt-auto" style={{ backgroundColor: '#c5b282' }}>
-            <div className="container flex items-center justify-between">
-                <Logo />
-                <div className="flex flex-col items-center gap-2">
+            <div className="container flex flex-col md:flex-row items-center justify-between">
+                <div className="mb-4 md:mb-0">
+                    <Logo />
+                </div>
+                <div className="flex flex-col items-center gap-2 text-center">
                     <div className="flex items-center space-x-4">
                         <Link href="/politicas-de-privacidad" className="text-white hover:underline text-sm">Política de privacidad</Link>
                         <Link href="/terminos-de-servicio" className="text-white hover:underline text-sm">Términos de servicio</Link>
                     </div>
-                    <p className="text-sm text-white text-center">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
+                    <p className="text-sm text-white">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
                 </div>
-                <div className="w-12"></div>
+                <div className="w-12 hidden md:block"></div>
             </div>
         </footer>
     );
@@ -65,6 +67,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
   const [addWine, setAddWine] = useState(false);
 
   const relatedProducts = cheeseBoards.filter(b => b.id !== board.id);
+  const productTestimonials = testimonials.slice(0, 3);
 
   useEffect(() => {
     if (!api) {
@@ -178,6 +181,30 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                   Solicitar Cotización
                 </a>
               </Button>
+              
+              <div className="space-y-4 pt-4">
+                <h3 className="font-semibold text-lg">Lo que nuestros clientes dicen</h3>
+                <div className="grid grid-cols-1 gap-4">
+                  {productTestimonials.map((testimonial) => (
+                    <Card key={testimonial.id} className="p-4 shadow-sm">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-grow">
+                          <div className="flex items-center justify-between">
+                            <p className="font-semibold text-sm">{testimonial.name}</p>
+                            <div className="flex items-center gap-0.5">
+                                {Array.from({ length: 5 }).map((_, i) => (
+                                    <Star key={i} className={`h-4 w-4 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-muted-foreground'}`} />
+                                ))}
+                            </div>
+                          </div>
+                          <p className="text-sm text-muted-foreground mt-1">{testimonial.comment}</p>
+                        </div>
+                      </div>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+
 
             </div>
           </div>
@@ -209,13 +236,13 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                                         />
                                         </div>
                                         <CardContent className="p-4 flex-grow flex flex-col">
-                                        <CardTitle className="font-headline text-xl mb-2">{relatedBoard.name}</CardTitle>
-                                        {relatedBoard.serving && (
-                                            <div className="flex items-center gap-2 text-sm text-muted-foreground mt-auto">
-                                                <Users className="h-4 w-4" />
-                                                <span>{relatedBoard.serving} personas</span>
-                                            </div>
-                                        )}
+                                          <CardTitle className="font-headline text-xl mb-2">{relatedBoard.name}</CardTitle>
+                                          {relatedBoard.serving && (
+                                              <div className="flex items-center gap-2 text-sm text-muted-foreground mt-auto">
+                                                  <Users className="h-4 w-4" />
+                                                  <span>{relatedBoard.serving} personas</span>
+                                              </div>
+                                          )}
                                         </CardContent>
                                     </Card>
                                 </Link>
