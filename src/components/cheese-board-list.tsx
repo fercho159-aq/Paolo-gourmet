@@ -4,7 +4,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardFooter, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { cheeseBoards } from '@/lib/data';
 
@@ -23,7 +22,6 @@ export default function CheeseBoardList() {
             />
           </div>
           <CardContent className="p-4 flex-grow flex flex-col">
-             <Badge variant="secondary" className="capitalize text-sm mb-2 w-fit">{board.line}</Badge>
              <CardTitle className="font-headline text-xl mb-auto">{board.name}</CardTitle>
           </CardContent>
           <CardFooter className="p-4 pt-0">

@@ -5,18 +5,22 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
-import { Quote, Users, Mail, Leaf, Grape, Wheat, Phone, MapPin, Instagram, Facebook, Menu, Star } from 'lucide-react';
+import { Quote, Users, Mail, Leaf, Grape, Phone, MapPin, Instagram, Facebook, Menu, Star } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { cheeseBoards, testimonials } from '@/lib/data';
-import CheeseBoardList from '@/components/cheese-board-list';
+import CheeseBoardCarousel from '@/components/cheese-board-carousel';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { useIsMobile } from '@/hooks/use-mobile';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { ChevronDown } from 'lucide-react';
 
 
 function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -41,10 +45,13 @@ function Header() {
 
   const navLinks = [
     { href: "#about", label: "Conócenos" },
-    { href: "#boards", label: "Tablas" },
-    { href: "#gallery", label: "Galería" },
     { href: "#contact", label: "Contacto" },
   ];
+
+  const productLinks = [
+      { href: "#premium-boards", label: "Tablas Premium" },
+      { href: "#cajas-boards", label: "Cajas" },
+  ]
 
   return (
     <header className="sticky top-0 z-50 w-full border-b" style={{ backgroundColor: '#f5f5f5' }}>
@@ -60,23 +67,54 @@ function Header() {
             </SheetTrigger>
             <SheetContent side="right">
               <nav className="flex flex-col gap-4 mt-8">
-                {navLinks.map((link) => (
-                  <SheetClose asChild key={link.href}>
-                    <a href={link.href} className="text-lg font-medium hover:text-primary">
-                      {link.label}
+                 <SheetClose asChild>
+                    <a href="#about" className="text-lg font-medium hover:text-primary">
+                      Conócenos
                     </a>
                   </SheetClose>
-                ))}
+                  <p className="text-lg font-medium">Productos</p>
+                  <div className="flex flex-col gap-2 pl-4">
+                    {productLinks.map(link => (
+                         <SheetClose asChild key={link.href}>
+                            <a href={link.href} className="text-base text-muted-foreground hover:text-primary">
+                                {link.label}
+                            </a>
+                        </SheetClose>
+                    ))}
+                  </div>
+                 <SheetClose asChild>
+                    <a href="#contact" className="text-lg font-medium hover:text-primary">
+                      Contacto
+                    </a>
+                  </SheetClose>
               </nav>
             </SheetContent>
           </Sheet>
         ) : (
-          <nav className="ml-auto flex items-center space-x-4">
-            {navLinks.map((link) => (
-              <Button variant="ghost" asChild key={link.href}>
-                <a href={link.href}>{link.label}</a>
-              </Button>
-            ))}
+          <nav className="ml-auto flex items-center space-x-1">
+            <Button variant="ghost" asChild>
+                <a href="#about">Conócenos</a>
+            </Button>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost">
+                  Productos <ChevronDown className="ml-1 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem asChild>
+                  <a href="#premium-boards">Tablas Premium</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="#cajas-boards">Cajas</a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <Button variant="ghost" asChild>
+                <a href="#contact">Contacto</a>
+            </Button>
           </nav>
         )}
       </div>
@@ -103,7 +141,7 @@ function Hero() {
           Descubre tablas de queso meticulosamente elaboradas, perfectas para cualquier ocasión.
         </p>
         <Button size="lg" className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90" asChild>
-          <a href="#boards">Explora Nuestras Tablas</a>
+          <a href="#premium-boards">Explora Nuestras Tablas</a>
         </Button>
       </div>
     </section>
@@ -114,61 +152,38 @@ function AboutUs() {
   return (
     <section id="about" className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
           <div className="flex flex-col justify-center space-y-4">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Nuestra Pasión por el Queso</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Conócenos</h2>
             <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              En paolo gourmet, creemos que el queso es más que un alimento, es una experiencia. Nuestra misión es seleccionar los mejores quesos artesanales de todo el mundo y combinarlos con los acompañamientos perfectos para crear tablas inolvidables que unen a las personas.
+              En paolo gourmet, creemos que el queso es más que un alimento, es una experiencia. Nuestra misión es seleccionar los mejores quesos artesanales y combinarlos con los acompañamientos perfectos para crear tablas inolvidables que unen a las personas.
             </p>
-            <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Cada tabla está elaborada con amor y atención al detalle, asegurando una aventura gastronómica única en cada bocado. Desde reuniones íntimas hasta grandes celebraciones, estamos aquí para elevar tus momentos especiales.
-            </p>
+            <div className="flex justify-start gap-4 pt-4">
+              <Button variant="outline" size="icon" asChild>
+                <a href="#" aria-label="Instagram">
+                  <Instagram className="h-6 w-6" />
+                </a>
+              </Button>
+              <Button variant="outline" size="icon" asChild>
+                <a href="#" aria-label="Facebook">
+                  <Facebook className="h-6 w-6" />
+                </a>
+              </Button>
+              <Button variant="outline" size="icon" asChild>
+                <a href="#" aria-label="TikTok">
+                  <TikTokIcon className="h-6 w-6" />
+                </a>
+              </Button>
+            </div>
           </div>
           <Image
             src="/Imagen/Home/IMG_1199.jpg"
             alt="El equipo de paolo gourmet preparando tablas de queso"
             data-ai-hint="equipo personas felices"
             width={555}
-            height={299}
+            height={369}
             className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
           />
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Gallery() {
-  const galleryImages = [
-    { src: "/Imagen/Galeria/IMG_0852.jpg", alt: "Detalle de una tabla de quesos", hint: "primer plano queso", className: "col-span-1 row-span-1" },
-    { src: "/Imagen/Galeria/IMG_0815.jpg", alt: "Gente disfrutando de las tablas de queso", hint: "amigos comiendo", className: "col-span-1 row-span-2" },
-    { src: "/Imagen/Galeria/IMG_0818.jpg", alt: "Tabla de quesos con vino", hint: "queso vino", className: "col-span-1 row-span-1" },
-    { src: "/Imagen/Galeria/IMG_1185.jpg", alt: "Tabla de quesos de postre", hint: "tabla de postres", className: "col-span-1 row-span-1" },
-    { src: "/Imagen/Galeria/IMG_1187.jpg", alt: "Quesos variados", hint: "quesos variados", className: "col-span-1 row-span-1" },
-  ];
-
-  return (
-    <section id="gallery" className="w-full py-12 md:py-24 lg:py-32">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Nuestra Galería</h2>
-          <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Un vistazo a nuestras creaciones y los momentos felices que ayudan a crear.
-          </p>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 auto-rows-fr gap-4">
-          {galleryImages.map((image, index) => (
-            <div key={index} className={`overflow-hidden rounded-xl ${image.className}`}>
-              <Image
-                src={image.src}
-                alt={image.alt}
-                data-ai-hint={image.hint}
-                width={400}
-                height={300}
-                className="aspect-auto object-cover w-full h-full transition-transform duration-300 hover:scale-105"
-              />
-            </div>
-          ))}
         </div>
       </div>
     </section>
@@ -330,6 +345,9 @@ function WhatsAppButton() {
 }
 
 export default function Home() {
+  const premiumBoards = cheeseBoards.filter(b => b.line === 'Tablas Premium');
+  const cajasBoards = cheeseBoards.filter(b => b.line === 'Cajas');
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <div style={{ backgroundColor: '#c7c7c7' }} className="py-2 text-center text-sm text-secondary-foreground">
@@ -340,18 +358,31 @@ export default function Home() {
         <Hero />
         <AboutUs />
         <Separator />
-        <section id="boards" className="py-12 md:py-24 lg:py-32 bg-secondary">
+        
+        <section id="premium-boards" className="py-12 md:py-24 lg:py-32 bg-secondary">
           <div className="container">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Nuestros Productos</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Tablas Premium</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Explora nuestra selección de cajas y tablas premium.
+                Una experiencia gourmet con quesos premium que te transportará.
               </p>
             </div>
-            <CheeseBoardList />
+            <CheeseBoardCarousel boards={premiumBoards} />
           </div>
         </section>
-        <Gallery />
+
+        <section id="cajas-boards" className="py-12 md:py-24 lg:py-32">
+          <div className="container">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Cajas</h2>
+              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Selecciones equilibradas y deliciosas, perfectas para compartir.
+              </p>
+            </div>
+            <CheeseBoardCarousel boards={cajasBoards} />
+          </div>
+        </section>
+
         <Testimonials />
         <Contact />
       </main>
