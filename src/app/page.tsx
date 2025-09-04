@@ -259,15 +259,10 @@ function Contact() {
                 ></iframe>
             </div>
           </div>
-          <div className="w-full aspect-[9/16] mx-auto max-w-sm">
-            <video
-                src="/Video/0904.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover"
-            />
+          <div className="w-full h-full flex items-center justify-center">
+            <div className="w-48 h-48">
+              <Logo />
+            </div>
           </div>
         </div>
       </div>
