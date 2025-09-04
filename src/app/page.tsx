@@ -140,7 +140,7 @@ function Hero() {
           <p className="mt-4 max-w-2xl text-lg text-white font-semibold md:text-xl">
             Descubre tablas de queso meticulosamente elaboradas, perfectas para cualquier ocasión.
           </p>
-          <Button size="lg" className="mt-8" asChild>
+          <Button size="lg" className="mt-8" asChild style={{ backgroundColor: '#c5b282' }}>
             <a href="#premium-boards">Explora Nuestras Tablas</a>
           </Button>
         </div>
@@ -345,7 +345,7 @@ export default function Home() {
             <p className="mt-4 max-w-3xl mx-auto">
               Envíanos un mail a hola@paologourmet.com.mx o escríbenos por Whatsapp para cotizarte. Tenemos opciones personalizadas en CDMX a partir de 20 personas.
             </p>
-            <Button asChild className="mt-6">
+            <Button asChild className="mt-6" style={{ backgroundColor: '#dcd0b3', color: '#000' }}>
               <a href="#contact">Contacto</a>
             </Button>
           </div>
