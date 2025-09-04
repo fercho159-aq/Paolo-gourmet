@@ -3,10 +3,16 @@
 
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Instagram, Facebook, Truck, MapPin } from 'lucide-react';
+import { Instagram, Facebook, Truck, MapPin, HelpCircle, Clock, Award, Users } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -60,17 +66,34 @@ function Footer() {
     );
 }
 
-export default function AboutUsPage() {
-  const centralDelegations = [
-    "Álvaro Obregón", "Azcapotzalco", "Benito Juárez", "Coyoacán", 
-    "Cuauhtémoc", "Gustavo A. Madero", "Iztacalco", "Iztapalapa", 
-    "Miguel Hidalgo", "Venustiano Carranza"
-  ];
-  const extendedDelegations = [
-    "Cuajimalpa", "Magdalena Contreras", "Milpa Alta", 
-    "Tláhuac", "Tlalpan", "Xochimilco"
-  ];
+const faqItems = [
+    {
+      value: "item-1",
+      question: "¿Cuáles son las zonas de entrega y los costos?",
+      answer: "Cubrimos toda la Ciudad de México. El costo de envío varía según la zona: Zona Céntrica (Álvaro Obregón, Azcapotzalco, Benito Juárez, Coyoacán, Cuauhtémoc, GAM, Iztacalco, Iztapalapa, Miguel Hidalgo, Venustiano Carranza) tiene un costo de $99 MXN. Para la Zona Extendida (Cuajimalpa, Magdalena Contreras, Milpa Alta, Tláhuac, Tlalpan, Xochimilco) el costo es de $150 MXN.",
+      icon: <Truck className="h-5 w-5 text-primary" />
+    },
+    {
+      value: "item-2",
+      question: "¿Con cuánto tiempo de anticipación debo hacer mi pedido?",
+      answer: "Para asegurar la frescura y calidad de nuestros ingredientes, todos los pedidos requieren un mínimo de 24 horas de anticipación. Para eventos grandes, te recomendamos contactarnos con al menos una semana de antelación.",
+      icon: <Clock className="h-5 w-5 text-primary" />
+    },
+    {
+      value: "item-3",
+      question: "¿Qué garantía de calidad ofrecen?",
+      answer: "En paolo gourmet, nuestra prioridad es tu satisfacción. Seleccionamos cuidadosamente cada ingrediente y preparamos tu tabla el mismo día de la entrega para garantizar la máxima frescura. Si por alguna razón no estás satisfecho con tu pedido, por favor contáctanos dentro de las primeras 3 horas de haberlo recibido para encontrar una solución.",
+      icon: <Award className="h-5 w-5 text-primary" />
+    },
+    {
+      value: "item-4",
+      question: "¿Puedo personalizar mi tabla de quesos?",
+      answer: "¡Claro que sí! Ofrecemos opciones personalizadas para eventos a partir de 20 personas. Podemos adaptar las tablas a tus gustos, preferencias o restricciones alimentarias. Contáctanos por WhatsApp o correo electrónico para cotizar un pedido especial.",
+      icon: <Users className="h-5 w-5 text-primary" />
+    }
+  ]
 
+export default function AboutUsPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
         <div className="sticky top-0 z-50">
@@ -102,55 +125,43 @@ export default function AboutUsPage() {
                     </div>
                 </div>
             </section>
-            <section id="delivery-zones" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
+            <section id="faq" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
               <div className="container px-4 md:px-6">
                 <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-                  <Truck className="h-12 w-12 text-primary" />
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Nuestras Zonas de Entrega</h2>
+                  <HelpCircle className="h-12 w-12 text-primary" />
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Preguntas Frecuentes</h2>
                   <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    Cubrimos toda la Ciudad de México. Consulta nuestros costos de envío por delegación.
+                    Resolvemos tus dudas para que disfrutes de la mejor experiencia.
                   </p>
                 </div>
-                <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-start">
-                  <div className="w-full h-[400px] lg:h-full rounded-lg overflow-hidden shadow-lg">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d240863.02196947753!2d-99.29019295116788!3d19.39067941919934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0026db3a9c0d%3A0x6b2b350c4f8339a3!2sCiudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1689886400000"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen={false}
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                    ></iframe>
+                <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center max-w-6xl mx-auto">
+                  <div>
+                    <Accordion type="single" collapsible className="w-full">
+                        {faqItems.map((item) => (
+                             <AccordionItem key={item.value} value={item.value}>
+                                <AccordionTrigger>
+                                    <div className="flex items-center gap-4">
+                                        {item.icon}
+                                        <span className="text-left">{item.question}</span>
+                                    </div>
+                                </AccordionTrigger>
+                                <AccordionContent className="text-muted-foreground">
+                                    {item.answer}
+                                </AccordionContent>
+                             </AccordionItem>
+                        ))}
+                    </Accordion>
                   </div>
-                  <div className="flex flex-col gap-6">
-                    <Card>
-                      <CardHeader>
-                        <CardTitle className="flex items-center gap-2">
-                          <MapPin className="text-primary" />
-                          Zona Céntrica - $99 MXN
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-muted-foreground">
-                          {centralDelegations.map(delegation => <li key={delegation}>{delegation}</li>)}
-                        </ul>
-                      </CardContent>
-                    </Card>
-                    <Card>
-                      <CardHeader>
-                        <CardTitle className="flex items-center gap-2">
-                          <MapPin className="text-primary" />
-                           Zona Extendida - $150 MXN
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-muted-foreground">
-                           {extendedDelegations.map(delegation => <li key={delegation}>{delegation}</li>)}
-                        </ul>
-                      </CardContent>
-                    </Card>
-                  </div>
+                   <div className="w-full aspect-w-4 aspect-h-3 rounded-lg overflow-hidden shadow-lg">
+                        <Image
+                            src="/Imagen/Galeria/IMG_0852.jpg"
+                            alt="Tabla de quesos en un evento"
+                            width={600}
+                            height={450}
+                            className="object-cover"
+                            data-ai-hint="cheese board event"
+                        />
+                   </div>
                 </div>
               </div>
             </section>
