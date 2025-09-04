@@ -42,13 +42,13 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="w-full bg-blue-900 text-white py-6 mt-auto">
+    <footer className="w-full text-white py-6 mt-auto" style={{ backgroundColor: '#c5b282' }}>
       <div className="container flex items-center justify-between">
         <Logo />
         <div className="flex flex-col items-center gap-2">
             <div className="flex items-center space-x-4">
-                <Link href="/politicas-de-privacidad" className="text-gray-400 hover:text-white text-sm">Política de privacidad</Link>
-                <Link href="/terminos-de-servicio" className="text-gray-400 hover:text-white text-sm">Términos de servicio</Link>
+                <Link href="/politicas-de-privacidad" className="text-white hover:underline text-sm">Política de privacidad</Link>
+                <Link href="/terminos-de-servicio" className="text-white hover:underline text-sm">Términos de servicio</Link>
             </div>
             <p className="text-sm text-white text-center">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
         </div>

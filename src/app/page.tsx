@@ -235,6 +235,17 @@ function Contact() {
                   <span>Ciudad de México, México</span>
                 </div>
               </div>
+                <div className="flex items-center gap-4 pt-4">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                        <Instagram style={{ color: '#c5b282' }} className="h-6 w-6" />
+                    </a>
+                     <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                        <Facebook style={{ color: '#c5b282' }} className="h-6 w-6" />
+                    </a>
+                     <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
+                        <TikTokIcon style={{ color: '#c5b282' }} className="h-6 w-6" />
+                    </a>
+                </div>
             </div>
           </div>
           <div className="w-full h-80 lg:h-full rounded-lg overflow-hidden">
@@ -257,13 +268,13 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="w-full bg-blue-900 text-white py-6">
+    <footer className="w-full text-white py-6" style={{ backgroundColor: '#c5b282' }}>
       <div className="container flex items-center justify-between">
         <Logo />
         <div className="flex flex-col items-center gap-2">
             <div className="flex items-center space-x-4">
-                <Link href="/politicas-de-privacidad" className="text-gray-400 hover:text-white text-sm">Política de privacidad</Link>
-                <Link href="/terminos-de-servicio" className="text-gray-400 hover:text-white text-sm">Términos de servicio</Link>
+                <Link href="/politicas-de-privacidad" className="text-white hover:underline text-sm">Política de privacidad</Link>
+                <Link href="/terminos-de-servicio" className="text-white hover:underline text-sm">Términos de servicio</Link>
             </div>
             <p className="text-sm text-white text-center">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
         </div>
@@ -279,7 +290,8 @@ function WhatsAppButton() {
       href="https://wa.me/525512345678"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-4 right-4 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#128C7E] transition-colors"
+      className="fixed bottom-4 right-4 z-50 text-foreground p-4 rounded-full shadow-lg transition-colors"
+      style={{ backgroundColor: '#dcd0b3' }}
       aria-label="Contactar por WhatsApp"
     >
       <WhatsAppIcon className="h-8 w-8" />
@@ -315,7 +327,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="cajas-boards" className="py-12">
+        <section id="cajas-boards" className="py-8">
           <div className="container">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Cajas</h2>
@@ -327,7 +339,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-blue-900 text-white py-12">
+        <section className="text-white py-12" style={{ backgroundColor: '#c5b282' }}>
           <div className="container text-center">
             <h3 className="text-2xl font-bold uppercase tracking-wider">DÉJANOS SER PARTE DE TUS EVENTOS</h3>
             <p className="mt-4 max-w-3xl mx-auto">
