@@ -346,8 +346,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="text-white py-12" style={{ backgroundColor: '#c5b282' }}>
-          <div className="container text-center">
+        <section className="relative py-24 text-white bg-cover bg-center bg-fixed bg-[url('/Imagen/Productos/Tabla_5.jpg')]">
+          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="relative container text-center">
             <h3 className="text-2xl font-bold uppercase tracking-wider">DÉJANOS SER PARTE DE TUS EVENTOS</h3>
             <p className="mt-4 max-w-3xl mx-auto">
               Envíanos un mail a hola@paologourmet.com.mx o escríbenos por Whatsapp para cotizarte. Tenemos opciones personalizadas en CDMX a partir de 20 personas.
