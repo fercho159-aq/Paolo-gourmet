@@ -42,13 +42,13 @@ function Header() {
 function Footer() {
     return (
         <footer className="w-full bg-blue-900 text-white py-6">
-        <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
+        <div className="container flex flex-col items-center gap-4">
             <Logo />
-            <p className="text-sm text-gray-400">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
             <div className="flex items-center space-x-4">
-            <Link href="/politicas-de-privacidad" className="text-gray-400 hover:text-white">Política de privacidad</Link>
-            <Link href="/terminos-de-servicio" className="text-gray-400 hover:text-white">Términos de servicio</Link>
+                <Link href="/politicas-de-privacidad" className="text-gray-400 hover:text-white text-sm">Política de privacidad</Link>
+                <Link href="/terminos-de-servicio" className="text-gray-400 hover:text-white text-sm">Términos de servicio</Link>
             </div>
+            <p className="text-sm text-white text-center">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
         </div>
         </footer>
     );

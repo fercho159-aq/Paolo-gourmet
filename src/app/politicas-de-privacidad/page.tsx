@@ -31,14 +31,14 @@ function Header() {
 
 function Footer() {
     return (
-        <footer className="w-full bg-gray-800 text-white py-6">
-        <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
+        <footer className="w-full bg-blue-900 text-white py-6">
+        <div className="container flex flex-col items-center gap-4">
             <Logo />
-            <p className="text-sm text-gray-400">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
             <div className="flex items-center space-x-4">
-            <Link href="/politicas-de-privacidad" className="text-gray-400 hover:text-white">Política de privacidad</Link>
-            <Link href="/terminos-de-servicio" className="text-gray-400 hover:text-white">Términos de servicio</Link>
+                <Link href="/politicas-de-privacidad" className="text-gray-400 hover:text-white text-sm">Política de privacidad</Link>
+                <Link href="/terminos-de-servicio" className="text-gray-400 hover:text-white text-sm">Términos de servicio</Link>
             </div>
+            <p className="text-sm text-white text-center">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
         </div>
         </footer>
     );
@@ -105,7 +105,7 @@ export default function PrivacyPolicyPage() {
 
           <h2 className="mt-8 text-2xl font-semibold">7. Cambios a esta Política</h2>
           <p>
-            Podemos actualizar esta Política de Privacidad de vez en cuando. Le notificaremos sobre cualquier cambio publicando la nueva política en esta página. Le recomendamos que revise esta política periódicamente.
+            Podemos actualizar esta Política de Privacidad de vez en quando. Le notificaremos sobre cualquier cambio publicando la nueva política en esta página. Le recomendamos que revise esta política periódicamente.
           </p>
 
           <h2 className="mt-8 text-2xl font-semibold">8. Contacto</h2>
