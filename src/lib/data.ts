@@ -78,7 +78,7 @@ export const cheeseBoards: CheeseBoard[] = [
     line: "Tablas Premium",
     name: "Tabla Grande",
     description: "Nuestra tabla más lujosa, diseñada para ser el centro de atención de cualquier evento. Un festín para la vista y el paladar.",
-    image: "/Imagen/Home/Rectangle 29-5.jpg",
+    image: "/Imagen/Productos/Tabla 3 (1).jpg",
     dataAiHint: "tabla de queso premium grande",
     cheeses: ["Parmigiano-Reggiano", "Brie triple crema", "Gouda ahumado", "Gruyère añejo"],
     accompaniments: ["Surtido de embutidos", "Panes artesanales", "Aceitunas y encurtidos", "Albaricoques secos"],
