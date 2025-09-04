@@ -13,7 +13,7 @@ export default function CheeseBoardCarousel({ boards }: { boards: CheeseBoard[] 
     <Carousel
       opts={{
         align: "start",
-        loop: boards.length > 3,
+        loop: true,
       }}
       className="w-full max-w-6xl mx-auto"
     >
