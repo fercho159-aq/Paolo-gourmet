@@ -135,7 +135,6 @@ function Hero() {
           className="absolute top-0 left-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/60" />
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent" />
         <div className="relative z-10 flex h-full flex-col items-start justify-center text-left text-white container">
           <h1 className="font-headline text-5xl font-extrabold md:text-7xl">Tablas de Queso Artesanales</h1>
           <p className="mt-4 max-w-2xl text-lg text-white font-semibold md:text-xl">
