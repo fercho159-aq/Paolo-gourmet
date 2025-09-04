@@ -155,7 +155,7 @@ function Hero() {
       />
       <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 flex h-full flex-col items-start justify-center text-left text-white container animate-fade-in-up">
-        <h1 className="font-headline text-4xl sm:text-5xl font-extrabold md:text-6xl lg:max-w-md">Tablas de Queso Artesanales</h1>
+        <h1 className="font-headline text-3xl sm:text-5xl font-extrabold md:text-6xl lg:max-w-md">Tablas de Queso Artesanales</h1>
         <p className="mt-4 max-w-2xl text-lg text-white font-semibold md:text-xl">
           Descubre tablas de <i>queso</i> meticulosamente elaboradas, <i>perfectas</i> para cualquier <i>ocasión</i>.
         </p>
