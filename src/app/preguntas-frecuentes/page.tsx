@@ -3,7 +3,7 @@
 
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Truck, HelpCircle, Clock, Award, Users } from 'lucide-react';
+import { Truck, HelpCircle, Clock, Award, Users, Menu, Crown, Box, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import {
@@ -11,7 +11,16 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
+} from "@/components/ui/accordion";
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import { useIsMobile } from '@/hooks/use-mobile';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
 
 function WhatsAppIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -37,31 +46,98 @@ function WhatsAppButton() {
 }
 
 function Header() {
+    const isMobile = useIsMobile();
+
+    const productLinks = [
+        { href: "/#premium-boards", label: "Tablas Premium", icon: <Crown className="h-4 w-4" /> },
+        { href: "/#cajas-boards", label: "Cajas", icon: <Box className="h-4 w-4" /> },
+    ]
+
+    const navLinks = [
+        { href: "/nosotros", label: "Nosotros" },
+        { href: "/preguntas-frecuentes", label: "Preguntas Frecuentes" },
+        { href: "/#contact", label: "Contacto" },
+    ]
+
     return (
-      <header className="sticky top-0 z-50 w-full border-b" style={{ backgroundColor: '#f5f5f5' }}>
+        <header className="sticky top-0 z-50 w-full border-b" style={{ backgroundColor: '#f5f5f5' }}>
         <div className="container flex h-16 items-center">
-          <Logo />
-          <nav className="ml-auto flex items-center space-x-4">
-            <Button variant="ghost" asChild>
-              <Link href="/">Inicio</Link>
-            </Button>
-             <Button variant="ghost" asChild>
-                <Link href="/nosotros">Nosotros</Link>
-            </Button>
-            <Button variant="ghost" asChild>
-              <Link href="/#premium-boards">Productos</Link>
-            </Button>
-            <Button variant="ghost" asChild>
-                <Link href="/preguntas-frecuentes">Preguntas Frecuentes</Link>
-            </Button>
-            <Button variant="ghost" asChild>
-              <Link href="/#contact">Contacto</Link>
-            </Button>
-          </nav>
+            <Logo />
+            {isMobile ? (
+            <Sheet>
+                <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="ml-auto">
+                    <Menu className="h-6 w-6" />
+                    <span className="sr-only">Abrir menú</span>
+                </Button>
+                </SheetTrigger>
+                <SheetContent side="right">
+                <nav className="flex flex-col gap-4 mt-8">
+                    <SheetClose asChild>
+                        <Link href="/" className="text-lg font-medium hover:underline underline-offset-4">
+                            Inicio
+                        </Link>
+                    </SheetClose>
+                    {navLinks.map(link => (
+                         <SheetClose asChild key={link.href}>
+                            <Link href={link.href} className="text-lg font-medium hover:underline underline-offset-4">
+                                {link.label}
+                            </Link>
+                        </SheetClose>
+                    ))}
+
+                    <p className="text-lg font-medium">Productos</p>
+                    <div className="flex flex-col gap-2 pl-4">
+                        {productLinks.map(link => (
+                            <SheetClose asChild key={link.href}>
+                                <Link href={link.href} className="flex items-center gap-2 text-base text-muted-foreground hover:text-primary">
+                                    {link.icon}
+                                    {link.label}
+                                </Link>
+                            </SheetClose>
+                        ))}
+                    </div>
+                </nav>
+                </SheetContent>
+            </Sheet>
+            ) : (
+            <nav className="ml-auto flex items-center space-x-1">
+                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
+                    <Link href="/">Inicio</Link>
+                </Button>
+                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
+                    <Link href="/nosotros">Nosotros</Link>
+                </Button>
+
+                <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" className="hover:bg-transparent hover:underline underline-offset-4">
+                    Productos <ChevronDown className="ml-1 h-4 w-4" />
+                    </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                    <DropdownMenuItem asChild>
+                    <Link href="/#premium-boards" className="flex items-center gap-2"><Crown className="h-4 w-4" />Tablas Premium</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                    <Link href="/#cajas-boards" className="flex items-center gap-2"><Box className="h-4 w-4" />Cajas</Link>
+                    </DropdownMenuItem>
+                </DropdownMenuContent>
+                </DropdownMenu>
+
+                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
+                    <Link href="/preguntas-frecuentes">Preguntas Frecuentes</Link>
+                </Button>
+
+                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
+                    <a href="/#contact">Contacto</a>
+                </Button>
+            </nav>
+            )}
         </div>
-      </header>
+        </header>
     );
-  }
+}
   
 function Footer() {
     return (
