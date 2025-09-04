@@ -139,7 +139,7 @@ function Hero() {
         <p className="mt-4 max-w-2xl text-lg text-white font-medium md:text-xl">
           Descubre tablas de queso meticulosamente elaboradas, perfectas para cualquier ocasión.
         </p>
-        <Button size="lg" className="mt-8" asChild>
+        <Button size="lg" className="mt-8 bg-blue-600 hover:bg-blue-700" asChild>
           <a href="#premium-boards">Explora Nuestras Tablas</a>
         </Button>
       </div>
@@ -256,7 +256,7 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="w-full bg-gray-800 text-white py-6">
+    <footer className="w-full bg-blue-900 text-white py-6">
       <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
         <Logo />
         <p className="text-sm text-gray-400">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
@@ -290,7 +290,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <div className="sticky top-0 z-50">
-        <div style={{ backgroundColor: '#c7c7c7' }} className="py-2 text-center text-sm text-secondary-foreground">
+        <div className="bg-blue-900 py-2 text-center text-sm text-white">
             <p>Envíos gratis en CDMX - El pedido necesita un día mínimo de anticipación.</p>
         </div>
         <Header />
@@ -299,7 +299,7 @@ export default function Home() {
       <main className="animate-fade-in-up">
         <Hero />
         
-        <section id="premium-boards" className="py-12 md:py-16 bg-secondary">
+        <section id="premium-boards" className="py-12">
           <div className="container">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Tablas Premium</h2>
@@ -311,7 +311,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="cajas-boards" className="py-12 md:py-16">
+        <section id="cajas-boards" className="py-12">
           <div className="container">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Cajas</h2>
@@ -323,13 +323,13 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-gray-800 text-white py-12">
+        <section className="bg-blue-900 text-white py-12">
           <div className="container text-center">
             <h3 className="text-2xl font-bold uppercase tracking-wider">DÉJANOS SER PARTE DE TUS EVENTOS</h3>
             <p className="mt-4 max-w-3xl mx-auto">
               Envíanos un mail a hola@paologourmet.com.mx o escríbenos por Whatsapp para cotizarte. Tenemos opciones personalizadas en CDMX a partir de 20 personas.
             </p>
-            <Button asChild className="mt-6">
+            <Button asChild className="mt-6 bg-blue-600 hover:bg-blue-700">
               <a href="#contact">Contacto</a>
             </Button>
           </div>

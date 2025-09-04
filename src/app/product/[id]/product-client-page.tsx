@@ -6,14 +6,16 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { Carousel, CarouselContent, CarouselItem, CarouselApi } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem, CarouselApi, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
 import { Users, Leaf, Grape, ArrowLeft, Send, Wine } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import type { CheeseBoard } from '@/lib/data';
+import { cheeseBoards } from '@/lib/data';
 import { Switch } from "@/components/ui/switch"
 import { Label } from "@/components/ui/label"
+import CheeseBoardCarousel from '@/components/cheese-board-carousel';
 
 function Header() {
   return (
@@ -41,7 +43,7 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="w-full bg-gray-800 text-white py-6 mt-auto">
+    <footer className="w-full bg-blue-900 text-white py-6 mt-auto">
       <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
         <Logo />
         <p className="text-sm text-gray-400">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
@@ -59,6 +61,8 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
   const [api, setApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState(0)
   const [addWine, setAddWine] = useState(false);
+
+  const relatedProducts = cheeseBoards.filter(b => b.id !== board.id);
 
   useEffect(() => {
     if (!api) {
@@ -85,18 +89,12 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <div style={{ backgroundColor: '#c7c7c7' }} className="py-2 text-center text-sm text-secondary-foreground">
+      <div className="bg-blue-900 py-2 text-center text-sm text-white">
         <p>Envíos gratis en CDMX - El pedido necesita un día mínimo de anticipación.</p>
       </div>
       <Header />
       <main className="flex-grow py-12 md:py-16 lg:py-20 animate-fade-in-up">
         <div className="container">
-          <Button variant="outline" asChild className="mb-8">
-            <Link href="/#premium-boards">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Volver a los productos
-            </Link>
-          </Button>
           <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
             <div className="space-y-4">
               <Carousel setApi={setApi} className="w-full">
@@ -172,7 +170,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                 </div>
               </div>
 
-               <Button size="lg" className="w-full md:w-auto shadow-md hover:shadow-lg transition-shadow" asChild>
+               <Button size="lg" className="w-full md:w-auto shadow-md hover:shadow-lg transition-shadow bg-blue-600 hover:bg-blue-700" asChild>
                 <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer">
                   <Send className="mr-2 h-4 w-4" />
                   Solicitar Cotización
@@ -182,6 +180,55 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
             </div>
           </div>
         </div>
+
+        <section id="related-products" className="w-full py-16 md:py-20 lg:py-24 mt-16 bg-secondary">
+            <div className="container">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center mb-12">También te puede interesar</h2>
+                <Carousel
+                    opts={{
+                        align: "start",
+                        loop: true,
+                    }}
+                    className="w-full max-w-6xl mx-auto"
+                >
+                    <CarouselContent>
+                        {relatedProducts.map(relatedBoard => (
+                        <CarouselItem key={relatedBoard.id} className="md:basis-1/3 lg:basis-1/4">
+                            <div className="p-2">
+                                <Card className="flex flex-col overflow-hidden shadow-md transition-shadow hover:shadow-xl h-full rounded-none">
+                                    <div className="relative aspect-square w-full">
+                                    <Image
+                                        src={relatedBoard.image}
+                                        alt={relatedBoard.name}
+                                        data-ai-hint={relatedBoard.dataAiHint}
+                                        fill
+                                        className="object-cover"
+                                    />
+                                    </div>
+                                    <CardContent className="p-4 flex-grow flex flex-col">
+                                    <CardTitle className="font-headline text-xl mb-2">{relatedBoard.name}</CardTitle>
+                                    {relatedBoard.serving && (
+                                        <div className="flex items-center gap-2 text-sm text-muted-foreground mt-auto">
+                                            <Users className="h-4 w-4" />
+                                            <span>{relatedBoard.serving} personas</span>
+                                        </div>
+                                    )}
+                                    </CardContent>
+                                    <CardFooter className="p-4 pt-0">
+                                    <Button asChild className="w-full bg-blue-600 hover:bg-blue-700">
+                                        <Link href={`/product/${relatedBoard.id}`}>Ver más</Link>
+                                    </Button>
+                                    </CardFooter>
+                                </Card>
+                            </div>
+                        </CarouselItem>
+                        ))}
+                    </CarouselContent>
+                    <CarouselPrevious />
+                    <CarouselNext />
+                </Carousel>
+            </div>
+        </section>
       </main>
       <Footer />
     </div>
