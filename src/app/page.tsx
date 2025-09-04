@@ -83,6 +83,11 @@ function Header() {
                     ))}
                   </div>
                  <SheetClose asChild>
+                    <Link href="/nosotros#faq" className="text-lg font-medium hover:underline underline-offset-4">
+                        Preguntas Frecuentes
+                    </Link>
+                 </SheetClose>
+                 <SheetClose asChild>
                     <a href="#contact" className="text-lg font-medium hover:underline underline-offset-4">
                       Contacto
                     </a>
@@ -111,6 +116,10 @@ function Header() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+
+            <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
+                <Link href="/nosotros#faq">Preguntas Frecuentes</Link>
+            </Button>
 
             <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
                 <a href="#contact">Contacto</a>

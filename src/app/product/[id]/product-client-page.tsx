@@ -23,13 +23,16 @@ function Header() {
         <Logo />
         <nav className="ml-auto flex items-center space-x-4">
           <Button variant="ghost" asChild>
-            <Link href="/#about">Conócenos</Link>
+            <Link href="/">Inicio</Link>
           </Button>
           <Button variant="ghost" asChild>
-            <Link href="/#boards">Tablas</Link>
+            <Link href="/nosotros">Nosotros</Link>
           </Button>
           <Button variant="ghost" asChild>
-            <Link href="/#gallery">Galería</Link>
+            <Link href="/#premium-boards">Productos</Link>
+          </Button>
+          <Button variant="ghost" asChild>
+            <Link href="/nosotros#faq">Preguntas Frecuentes</Link>
           </Button>
           <Button variant="ghost" asChild>
             <Link href="/#contact">Contacto</Link>

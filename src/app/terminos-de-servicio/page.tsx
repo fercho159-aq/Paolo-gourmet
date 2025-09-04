@@ -21,6 +21,9 @@ function Header() {
                 <Link href="/#premium-boards">Productos</Link>
             </Button>
             <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
+                <Link href="/nosotros#faq">Preguntas Frecuentes</Link>
+            </Button>
+            <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
                 <Link href="/#contact">Contacto</Link>
             </Button>
           </nav>
