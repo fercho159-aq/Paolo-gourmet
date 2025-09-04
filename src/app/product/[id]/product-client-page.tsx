@@ -169,7 +169,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                 </div>
               </div>
 
-               <Button size="lg" className="w-full md:w-auto shadow-md hover:shadow-lg transition-shadow bg-blue-600 hover:bg-blue-700" asChild>
+               <Button size="lg" className="w-full md:w-auto shadow-md hover:shadow-lg transition-shadow" asChild>
                 <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer">
                   <Send className="mr-2 h-4 w-4" />
                   Solicitar Cotización
@@ -214,7 +214,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                                     )}
                                     </CardContent>
                                     <CardFooter className="p-4 pt-0">
-                                    <Button asChild className="w-full bg-blue-600 hover:bg-blue-700">
+                                    <Button asChild className="w-full">
                                         <Link href={`/product/${relatedBoard.id}`}>Ver más</Link>
                                     </Button>
                                     </CardFooter>

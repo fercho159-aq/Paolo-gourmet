@@ -41,7 +41,7 @@ function Header() {
   
 function Footer() {
     return (
-        <footer className="w-full bg-gray-800 text-white py-6">
+        <footer className="w-full bg-blue-900 text-white py-6">
         <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
             <Logo />
             <p className="text-sm text-gray-400">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
@@ -58,7 +58,7 @@ export default function AboutUsPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
         <div className="sticky top-0 z-50">
-            <div style={{ backgroundColor: '#c7c7c7' }} className="py-2 text-center text-sm text-secondary-foreground">
+            <div style={{ backgroundColor: '#c7c7c7' }} className="bg-blue-900 py-2 text-center text-sm text-white">
                 <p>Envíos gratis en CDMX - El pedido necesita un día mínimo de anticipación.</p>
             </div>
             <Header />
