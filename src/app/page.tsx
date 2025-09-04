@@ -148,7 +148,6 @@ function Gallery() {
     { src: "/Imagen/Galeria/IMG_1187.jpg", alt: "Quesos variados", hint: "quesos variados", className: "col-span-1 row-span-1" },
     { src: "/Imagen/Galeria/IMG_1243.jpg", alt: "Tabla para un evento", hint: "evento tabla", className: "col-span-1 row-span-1" },
     { src: "/Imagen/Galeria/IMG_0836.jpg", alt: "Tabla rústica", hint: "tabla rústica", className: "col-span-1 row-span-1" },
-    { src: "/Imagen/Galeria/IMG_1199.jpg", alt: "Tabla de quesos vertical", hint: "tabla vertical", className: "col-span-1 row-span-2" },
   ];
 
   return (
