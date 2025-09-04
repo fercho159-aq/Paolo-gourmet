@@ -7,15 +7,14 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Carousel, CarouselContent, CarouselItem, CarouselApi, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
-import { Card, CardContent } from '@/components/ui/card';
-import { Users, Leaf, Grape, ArrowLeft, Send, Wine } from 'lucide-react';
+import { Card, CardContent, CardFooter, CardTitle } from '@/components/ui/card';
+import { Users, Leaf, Grape, Send, Wine } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import type { CheeseBoard } from '@/lib/data';
 import { cheeseBoards } from '@/lib/data';
 import { Switch } from "@/components/ui/switch"
 import { Label } from "@/components/ui/label"
-import CheeseBoardCarousel from '@/components/cheese-board-carousel';
 
 function Header() {
   return (
