@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
-import { Quote, Users, Mail, Leaf, Grape, Phone, MapPin, Instagram, Facebook, Menu, Star } from 'lucide-react';
+import { Quote, Users, Mail, Leaf, Grape, Phone, MapPin, Instagram, Facebook, Menu, Star, Crown, Box } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { cheeseBoards, testimonials } from '@/lib/data';
 import CheeseBoardCarousel from '@/components/cheese-board-carousel';
@@ -48,8 +48,8 @@ function Header() {
   const isMobile = useIsMobile();
 
   const productLinks = [
-      { href: "#premium-boards", label: "Tablas Premium" },
-      { href: "#cajas-boards", label: "Cajas" },
+      { href: "#premium-boards", label: "Tablas Premium", icon: <Crown className="h-4 w-4" /> },
+      { href: "#cajas-boards", label: "Cajas", icon: <Box className="h-4 w-4" /> },
   ]
 
   return (
@@ -75,7 +75,8 @@ function Header() {
                   <div className="flex flex-col gap-2 pl-4">
                     {productLinks.map(link => (
                          <SheetClose asChild key={link.href}>
-                            <a href={link.href} className="text-base text-muted-foreground hover:text-primary">
+                            <a href={link.href} className="flex items-center gap-2 text-base text-muted-foreground hover:text-primary">
+                                {link.icon}
                                 {link.label}
                             </a>
                         </SheetClose>
@@ -103,10 +104,10 @@ function Header() {
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem asChild>
-                  <a href="#premium-boards">Tablas Premium</a>
+                  <a href="#premium-boards" className="flex items-center gap-2"><Crown className="h-4 w-4" />Tablas Premium</a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <a href="#cajas-boards">Cajas</a>
+                  <a href="#cajas-boards" className="flex items-center gap-2"><Box className="h-4 w-4" />Cajas</a>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -257,13 +258,16 @@ function Contact() {
 function Footer() {
   return (
     <footer className="w-full bg-blue-900 text-white py-6">
-      <div className="container flex flex-col items-center gap-4">
+      <div className="container flex items-center justify-between">
         <Logo />
-        <div className="flex items-center space-x-4">
-          <Link href="/politicas-de-privacidad" className="text-gray-400 hover:text-white text-sm">Política de privacidad</Link>
-          <Link href="/terminos-de-servicio" className="text-gray-400 hover:text-white text-sm">Términos de servicio</Link>
+        <div className="flex flex-col items-center gap-2">
+            <div className="flex items-center space-x-4">
+                <Link href="/politicas-de-privacidad" className="text-gray-400 hover:text-white text-sm">Política de privacidad</Link>
+                <Link href="/terminos-de-servicio" className="text-gray-400 hover:text-white text-sm">Términos de servicio</Link>
+            </div>
+            <p className="text-sm text-white text-center">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
         </div>
-        <p className="text-sm text-white text-center">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
+        <div className="w-12"></div>
       </div>
     </footer>
   );

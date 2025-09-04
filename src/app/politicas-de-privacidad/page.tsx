@@ -32,14 +32,17 @@ function Header() {
 function Footer() {
     return (
         <footer className="w-full bg-blue-900 text-white py-6">
-        <div className="container flex flex-col items-center gap-4">
-            <Logo />
-            <div className="flex items-center space-x-4">
-                <Link href="/politicas-de-privacidad" className="text-gray-400 hover:text-white text-sm">Política de privacidad</Link>
-                <Link href="/terminos-de-servicio" className="text-gray-400 hover:text-white text-sm">Términos de servicio</Link>
+            <div className="container flex items-center justify-between">
+                <Logo />
+                <div className="flex flex-col items-center gap-2">
+                    <div className="flex items-center space-x-4">
+                        <Link href="/politicas-de-privacidad" className="text-gray-400 hover:text-white text-sm">Política de privacidad</Link>
+                        <Link href="/terminos-de-servicio" className="text-gray-400 hover:text-white text-sm">Términos de servicio</Link>
+                    </div>
+                    <p className="text-sm text-white text-center">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
+                </div>
+                <div className="w-12"></div>
             </div>
-            <p className="text-sm text-white text-center">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
-        </div>
         </footer>
     );
 }
@@ -80,7 +83,7 @@ export default function PrivacyPolicyPage() {
 
           <h2 className="mt-8 text-2xl font-semibold">3. Uso de Cookies</h2>
           <p>
-            Nuestro sitio web utiliza cookies para mejorar su experiencia de navegación. Las cookies son pequeños archivos de datos que se almacenan en su dispositivo. Utilizamos cookies para recordar sus preferencias, analizar el tráfico del sitio y para fines de marketing. Puede configurar su navegador para que rechace las cookies, pero esto puede afectar la funcionalidad de nuestro sitio.
+            Nuestro sitio web utiliza cookies para mejorar su experiencia de navegación. Las cookies son pequeños archivos de datos que se almacenan en su dispositivo. Utilizamos cookies para recordar sus preferences, analizar el tráfico del sitio y para fines de marketing. Puede configurar su navegador para que rechace las cookies, pero esto puede afectar la funcionalidad de nuestro sitio.
           </p>
 
           <h2 className="mt-8 text-2xl font-semibold">4. Intercambio de Información</h2>

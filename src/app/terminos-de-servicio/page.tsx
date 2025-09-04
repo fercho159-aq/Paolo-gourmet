@@ -32,14 +32,17 @@ function Header() {
 function Footer() {
     return (
         <footer className="w-full bg-blue-900 text-white py-6">
-        <div className="container flex flex-col items-center gap-4">
-            <Logo />
-            <div className="flex items-center space-x-4">
-                <Link href="/politicas-de-privacidad" className="text-gray-400 hover:text-white text-sm">Política de privacidad</Link>
-                <Link href="/terminos-de-servicio" className="text-gray-400 hover:text-white text-sm">Términos de servicio</Link>
+            <div className="container flex items-center justify-between">
+                <Logo />
+                <div className="flex flex-col items-center gap-2">
+                    <div className="flex items-center space-x-4">
+                        <Link href="/politicas-de-privacidad" className="text-gray-400 hover:text-white text-sm">Política de privacidad</Link>
+                        <Link href="/terminos-de-servicio" className="text-gray-400 hover:text-white text-sm">Términos de servicio</Link>
+                    </div>
+                    <p className="text-sm text-white text-center">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
+                </div>
+                <div className="w-12"></div>
             </div>
-            <p className="text-sm text-white text-center">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
-        </div>
         </footer>
     );
 }
@@ -89,7 +92,7 @@ export default function TermsOfServicePage() {
 
           <h2 className="mt-8 text-2xl font-semibold">7. Modificaciones de los Términos</h2>
           <p>
-            Nos reservamos el derecho de modificar estos Términos de Servicio en cualquier momento. Su uso continuado del sitio después de cualquier cambio constituye su aceptación de los nuevos términos.
+            Nos reservamos el derecho de modificar estos Términos de Servicio en cualquier momento. Su uso continuado del sitio después de cualquier cambio constitutes su aceptación de los nuevos términos.
           </p>
           
           <h2 className="mt-8 text-2xl font-semibold">8. Ley Aplicable</h2>
