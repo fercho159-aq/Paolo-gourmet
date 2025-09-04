@@ -5,11 +5,11 @@ export function Logo() {
   return (
     <a href="/" className="flex items-center text-foreground transition-colors hover:text-primary">
       <Image
-        src="/Imagen/logo/logo (1).png"
+        src="/Imagen/logo/4.png"
         alt="paolo gourmet logo"
-        width={6}
-        height={6}
-        className="h-12 w-auto"
+        width={8}
+        height={8}
+        className="h-16 w-auto"
       />
     </a>
   );

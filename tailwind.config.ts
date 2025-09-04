@@ -16,6 +16,9 @@ export default {
       },
     },
     extend: {
+      backgroundImage: {
+        'events-bg': "url('/Imagen/Productos/Tabla 5.jpg')",
+      },
       fontFamily: {
         body: ['Montserrat', 'sans-serif'],
         headline: ['Montserrat', 'serif'],
