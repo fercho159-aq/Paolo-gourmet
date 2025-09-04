@@ -67,7 +67,7 @@ function Header() {
             <SheetContent side="right">
               <nav className="flex flex-col gap-4 mt-8">
                  <SheetClose asChild>
-                    <Link href="/nosotros" className="text-lg font-medium hover:text-primary">
+                    <Link href="/nosotros" className="text-lg font-medium hover:underline underline-offset-4">
                       Nosotros
                     </Link>
                   </SheetClose>
@@ -82,7 +82,7 @@ function Header() {
                     ))}
                   </div>
                  <SheetClose asChild>
-                    <a href="#contact" className="text-lg font-medium hover:text-primary">
+                    <a href="#contact" className="text-lg font-medium hover:underline underline-offset-4">
                       Contacto
                     </a>
                   </SheetClose>
@@ -91,13 +91,13 @@ function Header() {
           </Sheet>
         ) : (
           <nav className="ml-auto flex items-center space-x-1">
-            <Button variant="ghost" asChild>
+            <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
                 <Link href="/nosotros">Nosotros</Link>
             </Button>
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost">
+                <Button variant="ghost" className="hover:bg-transparent hover:underline underline-offset-4">
                   Productos <ChevronDown className="ml-1 h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
@@ -111,7 +111,7 @@ function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Button variant="ghost" asChild>
+            <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
                 <a href="#contact">Contacto</a>
             </Button>
           </nav>
@@ -259,27 +259,10 @@ function Footer() {
     <footer className="w-full bg-secondary py-6">
       <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
         <Logo />
-        <div className="flex justify-center gap-4">
-            <Button variant="outline" size="icon" asChild>
-                <a href="#" aria-label="Instagram">
-                <Instagram className="h-6 w-6" />
-                </a>
-            </Button>
-            <Button variant="outline" size="icon" asChild>
-                <a href="#" aria-label="Facebook">
-                <Facebook className="h-6 w-6" />
-                </a>
-            </Button>
-            <Button variant="outline" size="icon" asChild>
-                <a href="#" aria-label="TikTok">
-                <TikTokIcon className="h-6 w-6" />
-                </a>
-            </Button>
-        </div>
-        <p className="text-sm text-muted-foreground">&copy; 2024 paolo gourmet. Todos los derechos reservados.</p>
+        <p className="text-sm text-muted-foreground">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
         <div className="flex items-center space-x-4">
-          <a href="#" className="text-muted-foreground hover:text-foreground">Política de privacidad</a>
-          <a href="#" className="text-muted-foreground hover:text-foreground">Términos de servicio</a>
+          <Link href="/politicas-de-privacidad" className="text-muted-foreground hover:text-foreground">Política de privacidad</Link>
+          <Link href="/terminos-de-servicio" className="text-muted-foreground hover:text-foreground">Términos de servicio</Link>
         </div>
       </div>
     </footer>
@@ -316,7 +299,7 @@ export default function Home() {
       <main className="animate-fade-in-up">
         <Hero />
         
-        <section id="premium-boards" className="py-16 md:py-20 bg-secondary">
+        <section id="premium-boards" className="py-12 md:py-16 bg-secondary">
           <div className="container">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Tablas Premium</h2>
@@ -328,7 +311,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="cajas-boards" className="py-16 md:py-20">
+        <section id="cajas-boards" className="py-12 md:py-16">
           <div className="container">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Cajas</h2>
@@ -360,5 +343,3 @@ export default function Home() {
     </div>
   );
 }
-
-    

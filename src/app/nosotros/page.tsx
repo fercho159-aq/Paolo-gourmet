@@ -44,27 +44,10 @@ function Footer() {
         <footer className="w-full bg-secondary py-6">
         <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
             <Logo />
-            <div className="flex justify-center gap-4">
-                <Button variant="outline" size="icon" asChild>
-                    <a href="#" aria-label="Instagram">
-                    <Instagram className="h-6 w-6" />
-                    </a>
-                </Button>
-                <Button variant="outline" size="icon" asChild>
-                    <a href="#" aria-label="Facebook">
-                    <Facebook className="h-6 w-6" />
-                    </a>
-                </Button>
-                <Button variant="outline" size="icon" asChild>
-                    <a href="#" aria-label="TikTok">
-                    <TikTokIcon className="h-6 w-6" />
-                    </a>
-                </Button>
-            </div>
-            <p className="text-sm text-muted-foreground">&copy; 2024 paolo gourmet. Todos los derechos reservados.</p>
+            <p className="text-sm text-muted-foreground">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
             <div className="flex items-center space-x-4">
-            <a href="#" className="text-muted-foreground hover:text-foreground">Política de privacidad</a>
-            <a href="#" className="text-muted-foreground hover:text-foreground">Términos de servicio</a>
+            <Link href="/politicas-de-privacidad" className="text-muted-foreground hover:text-foreground">Política de privacidad</Link>
+            <Link href="/terminos-de-servicio" className="text-muted-foreground hover:text-foreground">Términos de servicio</Link>
             </div>
         </div>
         </footer>
@@ -84,37 +67,22 @@ export default function AboutUsPage() {
             <section id="about" className="w-full py-12 md:py-24 lg:py-32">
                 <div className="container px-4 md:px-6">
                     <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
-                    <div className="flex flex-col justify-center space-y-4">
-                        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Nosotros</h2>
-                        <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                        En paolo gourmet, creemos que el queso es más que un alimento, es una experiencia. Nuestra misión es seleccionar los mejores quesos artesanales y combinarlos con los acompañamientos perfectos para crear tablas inolvidables que unen a las personas.
-                        </p>
-                        <div className="flex justify-start gap-4 pt-4">
-                        <Button variant="outline" size="icon" asChild>
-                            <a href="#" aria-label="Instagram">
-                            <Instagram className="h-6 w-6" />
-                            </a>
-                        </Button>
-                        <Button variant="outline" size="icon" asChild>
-                            <a href="#" aria-label="Facebook">
-                            <Facebook className="h-6 w-6" />
-                            </a>
-                        </Button>
-                        <Button variant="outline" size="icon" asChild>
-                            <a href="#" aria-label="TikTok">
-                            <TikTokIcon className="h-6 w-6" />
-                            </a>
-                        </Button>
+                        <div className="flex flex-col justify-center space-y-4">
+                            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Nosotros</h2>
+                            <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                            En paolo gourmet, creemos que el queso es más que un alimento, es una experiencia. Nuestra misión es seleccionar los mejores quesos artesanales y combinarlos con los acompañamientos perfectos para crear tablas inolvidables que unen a las personas.
+                            </p>
                         </div>
-                    </div>
-                    <Image
-                        src="/Imagen/Home/IMG_1199.jpg"
-                        alt="El equipo de paolo gourmet preparando tablas de queso"
-                        data-ai-hint="equipo personas felices"
-                        width={555}
-                        height={369}
-                        className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full shadow-lg"
-                    />
+                        <div className="w-full aspect-[9/16] max-w-sm mx-auto">
+                            <video
+                                src="/Video/0904.mp4" 
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                className="w-full h-full object-cover rounded-xl shadow-lg"
+                            />
+                        </div>
                     </div>
                 </div>
             </section>

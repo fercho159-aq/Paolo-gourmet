@@ -44,10 +44,10 @@ function Footer() {
     <footer className="w-full bg-secondary py-6 mt-auto">
       <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
         <Logo />
-        <p className="text-sm text-muted-foreground">&copy; 2024 paolo gourmet. Todos los derechos reservados.</p>
+        <p className="text-sm text-muted-foreground">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
         <div className="flex items-center space-x-4">
-          <a href="#" className="text-muted-foreground hover:text-foreground">Política de privacidad</a>
-          <a href="#" className="text-muted-foreground hover:text-foreground">Términos de servicio</a>
+          <Link href="/politicas-de-privacidad" className="text-muted-foreground hover:text-foreground">Política de privacidad</Link>
+          <Link href="/terminos-de-servicio" className="text-muted-foreground hover:text-foreground">Términos de servicio</Link>
         </div>
       </div>
     </footer>
@@ -92,7 +92,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
       <main className="flex-grow py-12 md:py-16 lg:py-20 animate-fade-in-up">
         <div className="container">
           <Button variant="outline" asChild className="mb-8">
-            <Link href="/#boards">
+            <Link href="/#premium-boards">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Volver a los productos
             </Link>
