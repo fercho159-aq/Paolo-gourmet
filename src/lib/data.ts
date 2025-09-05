@@ -56,7 +56,7 @@ export const cheeseBoards: CheeseBoard[] = [
   {
     id: 4,
     line: "Tablas Premium",
-    name: "TablaChica",
+    name: "Tabla Chica",
     description: "Una tabla elegante y sofisticada para momentos íntimos, con sabores intensos y refinados.",
     image: "/Imagen/ProductosAldo/11.jpg",
     gallery: ["/Imagen/ProductosAldo/11.jpg", "/Imagen/ProductosAldo/12.jpg", "/Imagen/ProductosAldo/13.jpg", "/Imagen/ProductosAldo/14.jpg"],
