@@ -188,7 +188,7 @@ function Testimonials() {
         >
           <CarouselContent>
             {fullTestimonials.map((testimonial) => (
-              <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/2">
                 <div className="p-4 h-full">
                   <Card className="h-full shadow-lg flex flex-col">
                     <CardContent className="p-6 flex-grow">
@@ -275,9 +275,14 @@ function Contact() {
             </div>
           </div>
           <div className="w-full h-full flex items-center justify-center">
-            <div className="w-48 h-48">
-              <Logo />
-            </div>
+            <Image
+                src="https://picsum.photos/450/450"
+                alt="Tabla de quesos variada"
+                width={450}
+                height={450}
+                className="object-cover rounded-xl shadow-lg"
+                data-ai-hint="cheese board"
+            />
           </div>
         </div>
       </div>
