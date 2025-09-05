@@ -369,11 +369,9 @@ export default function Home() {
               </p>
             </div>
              <div className="mb-8">
-              <h3 className="text-2xl font-normal tracking-tighter sm:text-3xl mb-4 text-center">Tablas Premium</h3>
               <CheeseBoardCarousel boards={premiumBoards} />
             </div>
             <div id="cajas-boards">
-              <h3 className="text-2xl font-normal tracking-tighter sm:text-3xl mb-4 text-center">Cajas</h3>
               <CheeseBoardCarousel boards={cajasBoards} />
             </div>
           </div>
