@@ -183,7 +183,7 @@ function Footer() {
 }
 
 export default function ProductClientPage({ board }: { board: CheeseBoard }) {
-  const productImages = [board.image, "/Imagen/Galeria/IMG_0852.jpg", "/Imagen/Galeria/IMG_0818.jpg"];
+  const productImages = board.gallery;
   const [api, setApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState(0)
   const [addWine, setAddWine] = useState(false);

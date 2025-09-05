@@ -5,6 +5,7 @@ export type CheeseBoard = {
   name: string;
   description: string;
   image: string;
+  gallery: string[];
   dataAiHint: string;
   cheeses: string[];
   accompaniments: string[];
@@ -18,7 +19,8 @@ export const cheeseBoards: CheeseBoard[] = [
     line: "Cajas",
     name: "Set de 12 Conos",
     description: "Vasitos individuales con nuestra icónica combinación de ingredientes Signature, ideales para tus eventos.",
-    image: "/Imagen/Productos/tabla 1.jpg",
+    image: "/Imagen/Productos Aldo/tabla 1.jpg",
+    gallery: ["/Imagen/Productos Aldo/tabla 1.jpg", "/Imagen/Galeria/IMG_0818.jpg", "/Imagen/Galeria/IMG_0852.jpg"],
     dataAiHint: "conos de queso",
     cheeses: ["Cheddar", "Gouda", "Monterey Jack"],
     accompaniments: ["Chorizo español", "Salami", "Frutas", "Nueces", "Galletas"],
@@ -31,6 +33,7 @@ export const cheeseBoards: CheeseBoard[] = [
     name: "Caja Mediana",
     description: "Una selección equilibrada y deliciosa, perfecta para compartir en pequeñas reuniones.",
     image: "/Imagen/Productos/Tabla 2 (1).jpg",
+    gallery: ["/Imagen/Productos/Tabla 2 (1).jpg", "/Imagen/Galeria/IMG_0818.jpg", "/Imagen/Galeria/IMG_0852.jpg"],
     dataAiHint: "caja de queso mediana",
     cheeses: ["Manchego", "Provolone", "Queso de cabra"],
     accompaniments: ["Tomates secos", "Aceitunas", "Pan de pita", "Hummus"],
@@ -43,6 +46,7 @@ export const cheeseBoards: CheeseBoard[] = [
     name: "Caja Grande",
     description: "Ideal para celebraciones más grandes, esta caja está llena de una variedad de sabores para complacer a todos.",
     image: "/Imagen/Productos/Tabla 3 (1).jpg",
+    gallery: ["/Imagen/Productos/Tabla 3 (1).jpg", "/Imagen/Galeria/IMG_0818.jpg", "/Imagen/Galeria/IMG_0852.jpg"],
     dataAiHint: "caja de queso grande",
     cheeses: ["Suizo", "Queso crema con arándanos", "Stilton"],
     accompaniments: ["Rodajas de manzana", "Panal de miel", "Prosciutto", "Chocolate negro"],
@@ -55,6 +59,7 @@ export const cheeseBoards: CheeseBoard[] = [
     name: "Tabla Chica",
     description: "Una tabla elegante y sofisticada para momentos íntimos, con sabores intensos y refinados.",
     image: "/Imagen/Productos/Tabla 4.jpg",
+    gallery: ["/Imagen/Productos/Tabla 4.jpg", "/Imagen/Galeria/IMG_0818.jpg", "/Imagen/Galeria/IMG_0852.jpg"],
     dataAiHint: "tabla de queso chica",
     cheeses: ["Gorgonzola", "Danablu"],
     accompaniments: ["Rodajas de pera", "Nueces pecanas confitadas", "Tostadas de centeno"],
@@ -67,6 +72,7 @@ export const cheeseBoards: CheeseBoard[] = [
     name: "Tabla Mediana",
     description: "Una experiencia gourmet con quesos premium franceses que te transportará a un café parisino.",
     image: "/Imagen/Productos/Tabla 5.jpg",
+    gallery: ["/Imagen/Productos/Tabla 5.jpg", "/Imagen/Galeria/IMG_0818.jpg", "/Imagen/Galeria/IMG_0852.jpg"],
     dataAiHint: "tabla de queso premium mediana",
     cheeses: ["Camembert", "Comté", "Chèvre", "Roquefort"],
     accompaniments: ["Baguette", "Cornichons", "Compota de cereza", "Almendras Marcona"],
@@ -79,6 +85,7 @@ export const cheeseBoards: CheeseBoard[] = [
     name: "Tabla Grande",
     description: "Nuestra tabla más lujosa, diseñada para ser el centro de atención de cualquier evento. Un festín para la vista y el paladar.",
     image: "/Imagen/Productos/Tabla 3 (1).jpg",
+    gallery: ["/Imagen/Productos/Tabla 3 (1).jpg", "/Imagen/Galeria/IMG_0818.jpg", "/Imagen/Galeria/IMG_0852.jpg"],
     dataAiHint: "tabla de queso premium grande",
     cheeses: ["Parmigiano-Reggiano", "Brie triple crema", "Gouda ahumado", "Gruyère añejo"],
     accompaniments: ["Surtido de embutidos", "Panes artesanales", "Aceitunas y encurtidos", "Albaricoques secos"],
