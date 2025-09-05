@@ -276,7 +276,7 @@ function Contact() {
           </div>
           <div className="w-full h-full flex items-center justify-center">
             <Image
-                src="https://picsum.photos/450/450"
+                src="/Imagen/FOOTER.png"
                 alt="Tabla de quesos variada"
                 width={450}
                 height={450}
