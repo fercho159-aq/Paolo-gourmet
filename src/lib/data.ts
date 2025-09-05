@@ -118,7 +118,7 @@ export const testimonials: Testimonial[] = [
     name: "María Hernández",
     location: "Benito Juárez, CDMX",
     comment: ["Pedí la Tabla Mediana Premium y me transportó a Francia. ¡", "Delicioso", " y súper fresco!"],
-    rating: 5,
+    rating: 4,
     productId: 5,
   },
   {
@@ -126,7 +126,7 @@ export const testimonials: Testimonial[] = [
     name: "Sofía Martínez",
     location: "Miguel Hidalgo, CDMX",
     comment: ["Perfecto para una tarde con amigas. Los conos son muy ", "prácticos", " y elegantes."],
-    rating: 4,
+    rating: 5,
     productId: 1,
   },
   {
@@ -134,7 +134,7 @@ export const testimonials: Testimonial[] = [
     name: "Alejandro López",
     location: "Cuauhtémoc, CDMX",
     comment: ["Si te gusta el queso fuerte, la Tabla Chica Premium es para ti. Una experiencia de sabor ", "única", "."],
-    rating: 5,
+    rating: 4,
     productId: 4,
   },
   {
@@ -150,7 +150,7 @@ export const testimonials: Testimonial[] = [
     name: "Mateo González",
     location: "Tlalpan, CDMX",
     comment: ["¡La Tabla Grande Premium es ", "espectacular", "! Impresionó a todos mis invitados en la fiesta."],
-    rating: 5,
+    rating: 4,
     productId: 6,
   },
    {
@@ -158,7 +158,7 @@ export const testimonials: Testimonial[] = [
     name: "Camila Flores",
     location: "Iztapalapa, CDMX",
     comment: ["Buena ", "variedad", " en la Caja Grande, aunque me hubiera gustado un poco más de fruta."],
-    rating: 4,
+    rating: 5,
     productId: 3,
   },
   {
@@ -166,7 +166,7 @@ export const testimonials: Testimonial[] = [
     name: "Sebastián Reyes",
     location: "Gustavo A. Madero, CDMX",
     comment: ["Los conos son una idea ", "genial", " para eventos. Todos preguntaron de dónde eran."],
-    rating: 5,
+    rating: 4,
     productId: 1,
   },
   {
