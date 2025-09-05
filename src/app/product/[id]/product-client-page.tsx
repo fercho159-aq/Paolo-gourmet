@@ -11,7 +11,7 @@ import { Card, CardContent, CardTitle } from '@/components/ui/card';
 import { Users, Leaf, Grape, Send, Wine, Star, Menu, Crown, Box, ChevronDown, Instagram, Facebook } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
-import type { CheeseBoard } from '@/lib/data';
+import type { CheeseBoard, Testimonial } from '@/lib/data';
 import { cheeseBoards, testimonials } from '@/lib/data';
 import { Switch } from "@/components/ui/switch"
 import { Label } from "@/components/ui/label"
@@ -233,7 +233,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <div style={{ backgroundColor: '#c4b282' }} className="py-2 text-center text-xs sm:text-sm text-white">
-        <p>Envíos gratis en CDMX - El pedido necesita <span className="font-bold">un día mínimo</span> de anticipación.</p>
+        <p>Envíos gratis en CDMX - <span className="font-bold">un día mínimo</span> de anticipación.</p>
       </div>
       <Header />
       <main className="flex-grow py-12 md:py-16 lg:py-20 animate-fade-in-up">
@@ -356,7 +356,11 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                                 ))}
                             </div>
                           </div>
-                          <p className="text-sm text-muted-foreground mt-1">"{testimonial.comment}"</p>
+                          <p className="text-sm text-muted-foreground mt-1">
+                                  "{testimonial.comment[0]}
+                                  <span className="font-bold" style={{ color: '#c4b282' }}>{testimonial.comment[1]}</span>
+                                  {testimonial.comment[2]}"
+                          </p>
                         </div>
                       </div>
                     </Card>

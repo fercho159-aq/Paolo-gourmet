@@ -9,7 +9,7 @@ import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
 import { Quote, Users, Mail, Leaf, Grape, Phone, MapPin, Instagram, Facebook, Menu, Star, Crown, Box } from 'lucide-react';
 import { Logo } from '@/components/logo';
-import { cheeseBoards, testimonials } from '@/lib/data';
+import { cheeseBoards, testimonials, Testimonial } from '@/lib/data';
 import CheeseBoardCarousel from '@/components/cheese-board-carousel';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
@@ -214,7 +214,11 @@ function Testimonials() {
                                       ))}
                                   </div>
                               </div>
-                              <p className="text-sm text-foreground/80 italic mt-2">"{testimonial.comment}"</p>
+                              <p className="text-sm text-foreground/80 italic mt-2">
+                                  "{testimonial.comment[0]}
+                                  <span className="font-bold" style={{ color: '#c4b282' }}>{testimonial.comment[1]}</span>
+                                  {testimonial.comment[2]}"
+                              </p>
                           </div>
                       </div>
                     </CardContent>
@@ -353,7 +357,7 @@ export default function Home() {
     <div className="flex min-h-screen flex-col bg-background">
       <div className="sticky top-0 z-50">
         <div style={{ backgroundColor: '#c4b282' }} className="py-2 text-center text-xs md:text-sm text-white">
-            <p>Envíos gratis en CDMX - El pedido necesita <span className="font-bold">un día mínimo</span> de anticipación.</p>
+            <p>Envíos gratis en CDMX - <span className="font-bold">un día mínimo</span> de anticipación.</p>
         </div>
         <Header />
       </div>

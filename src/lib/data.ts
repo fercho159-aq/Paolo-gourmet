@@ -95,12 +95,21 @@ export const cheeseBoards: CheeseBoard[] = [
 ];
 
 
-export const testimonials = [
+export type Testimonial = {
+    id: number;
+    name: string;
+    location: string;
+    comment: [string, string, string];
+    rating: number;
+    productId: number;
+}
+
+export const testimonials: Testimonial[] = [
   {
     id: 1,
     name: "José García",
     location: "Coyoacán, CDMX",
-    comment: "¡La Caja Mediana fue un éxito en mi reunión! La calidad y la presentación son increíbles.",
+    comment: ["¡La Caja Mediana fue un ", "éxito", " en mi reunión! La calidad y la presentación son increíbles."],
     rating: 5,
     productId: 2,
   },
@@ -108,7 +117,7 @@ export const testimonials = [
     id: 2,
     name: "María Hernández",
     location: "Benito Juárez, CDMX",
-    comment: "Pedí la Tabla Mediana Premium y me transportó a Francia. ¡Delicioso y súper fresco!",
+    comment: ["Pedí la Tabla Mediana Premium y me transportó a Francia. ¡", "Delicioso", " y súper fresco!"],
     rating: 5,
     productId: 5,
   },
@@ -116,7 +125,7 @@ export const testimonials = [
     id: 3,
     name: "Sofía Martínez",
     location: "Miguel Hidalgo, CDMX",
-    comment: "Perfecto para una tarde con amigas. Los conos son muy prácticos y elegantes.",
+    comment: ["Perfecto para una tarde con amigas. Los conos son muy ", "prácticos", " y elegantes."],
     rating: 4,
     productId: 1,
   },
@@ -124,7 +133,7 @@ export const testimonials = [
     id: 4,
     name: "Alejandro López",
     location: "Cuauhtémoc, CDMX",
-    comment: "Si te gusta el queso fuerte, la Tabla Chica Premium es para ti. Una experiencia de sabor única.",
+    comment: ["Si te gusta el queso fuerte, la Tabla Chica Premium es para ti. Una experiencia de sabor ", "única", "."],
     rating: 5,
     productId: 4,
   },
@@ -132,7 +141,7 @@ export const testimonials = [
     id: 5,
     name: "Valentina Rodríguez",
     location: "Álvaro Obregón, CDMX",
-    comment: "La Tabla Mediana es pura elegancia. Ideal para una cita romántica. ¡Nos encantó!",
+    comment: ["La Tabla Mediana es pura ", "elegancia", ". Ideal para una cita romántica. ¡Nos encantó!"],
     rating: 5,
     productId: 5,
   },
@@ -140,7 +149,7 @@ export const testimonials = [
     id: 6,
     name: "Mateo González",
     location: "Tlalpan, CDMX",
-    comment: "¡La Tabla Grande Premium es espectacular! Impresionó a todos mis invitados en la fiesta.",
+    comment: ["¡La Tabla Grande Premium es ", "espectacular", "! Impresionó a todos mis invitados en la fiesta."],
     rating: 5,
     productId: 6,
   },
@@ -148,7 +157,7 @@ export const testimonials = [
     id: 7,
     name: "Camila Flores",
     location: "Iztapalapa, CDMX",
-    comment: "Buena variedad en la Caja Grande, aunque me hubiera gustado un poco más de fruta.",
+    comment: ["Buena ", "variedad", " en la Caja Grande, aunque me hubiera gustado un poco más de fruta."],
     rating: 4,
     productId: 3,
   },
@@ -156,7 +165,7 @@ export const testimonials = [
     id: 8,
     name: "Sebastián Reyes",
     location: "Gustavo A. Madero, CDMX",
-    comment: "Los conos son una idea genial para eventos. Todos preguntaron de dónde eran.",
+    comment: ["Los conos son una idea ", "genial", " para eventos. Todos preguntaron de dónde eran."],
     rating: 5,
     productId: 1,
   },
@@ -164,7 +173,7 @@ export const testimonials = [
     id: 9,
     name: "Renata Castillo",
     location: "Azcapotzalco, CDMX",
-    comment: "Muy buena atención y el producto llegó perfecto. La calidad de los quesos es notable.",
+    comment: ["Muy buena ", "atención", " y el producto llegó perfecto. La calidad de los quesos es notable."],
     rating: 5,
     productId: 2,
   },
@@ -172,7 +181,7 @@ export const testimonials = [
     id: 10,
     name: "Diego Jiménez",
     location: "Xochimilco, CDMX",
-    comment: "La tabla llegó a tiempo y muy bien presentada. Buen servicio en general.",
+    comment: ["La tabla llegó a tiempo y muy bien ", "presentada", ". Buen servicio en general."],
     rating: 4,
     productId: 3,
   },

@@ -16,7 +16,7 @@ import {
 import { Menu, ChevronDown, Crown, Box, Instagram, Facebook, Star, Quote } from 'lucide-react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
-import { testimonials, cheeseBoards } from '@/lib/data';
+import { testimonials, cheeseBoards, Testimonial } from '@/lib/data';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -190,7 +190,7 @@ function Footer() {
 
 function TestimonialsCarousel() {
     const fullTestimonials = testimonials.map(testimonial => {
-        const product = cheeseBoards.find(p => p.id === (testimonial.id % cheeseBoards.length) + 1) || cheeseBoards[0];
+        const product = cheeseBoards.find(p => p.id === testimonial.productId) || cheeseBoards[0];
         return { ...testimonial, product };
     });
 
@@ -226,7 +226,11 @@ function TestimonialsCarousel() {
                                         ))}
                                     </div>
                                 </div>
-                                <p className="text-sm text-foreground/80 italic mt-2">"{testimonial.comment}"</p>
+                                <p className="text-sm text-foreground/80 italic mt-2">
+                                  "{testimonial.comment[0]}
+                                  <span className="font-bold" style={{ color: '#c4b282' }}>{testimonial.comment[1]}</span>
+                                  {testimonial.comment[2]}"
+                                </p>
                             </div>
                         </div>
                     </CardContent>
@@ -247,7 +251,7 @@ export default function AboutUsPage() {
     <div className="flex min-h-screen flex-col bg-background">
         <div className="sticky top-0 z-50">
             <div style={{ backgroundColor: '#c4b282' }} className="py-2 text-center text-xs sm:text-sm text-white">
-                <p>Envíos gratis en CDMX - El pedido necesita <span className="font-bold">un día mínimo</span> de anticipación.</p>
+                <p>Envíos gratis en CDMX - <span className="font-bold">un día mínimo</span> de anticipación.</p>
             </div>
             <Header />
         </div>
