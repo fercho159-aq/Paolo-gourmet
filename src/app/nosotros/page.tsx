@@ -190,12 +190,12 @@ function Footer() {
 
 function TestimonialsCarousel() {
     const fullTestimonials = testimonials.map(testimonial => {
-        const product = cheeseBoards[testimonial.id % cheeseBoards.length];
+        const product = cheeseBoards.find(p => p.id === (testimonial.id % cheeseBoards.length) + 1) || cheeseBoards[0];
         return { ...testimonial, product };
     });
 
   return (
-    <div className="w-full">
+    <div className="w-full mt-8">
         <h3 className="text-2xl font-normal tracking-tighter text-center mb-4">Lo que dicen nuestros clientes</h3>
         <Carousel
           opts={{
@@ -211,7 +211,7 @@ function TestimonialsCarousel() {
                   <Card className="h-full shadow-lg overflow-hidden">
                     <CardContent className="p-6 flex flex-col justify-center">
                         <div className="flex items-center gap-4">
-                           <Avatar className="h-12 w-12">
+                           <Avatar className="h-12 w-12 flex-shrink-0">
                                 <AvatarImage src={testimonial.product.image} alt={testimonial.product.name} />
                                 <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
                            </Avatar>
@@ -269,6 +269,7 @@ export default function AboutUsPage() {
                             <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                             En paolo gourmet, creemos que el queso es más que un alimento, es una experiencia. Nuestra misión es seleccionar los mejores quesos artesanales y combinarlos con los acompañamientos perfectos para crear tablas inolvidables que unen a las personas.
                             </p>
+                            <TestimonialsCarousel />
                         </div>
                         <div className="flex flex-col justify-center items-center space-y-8">
                            <Image
@@ -279,7 +280,6 @@ export default function AboutUsPage() {
                                 className="object-cover rounded-xl shadow-lg w-full max-w-sm"
                                 data-ai-hint="team portrait"
                             />
-                            <TestimonialsCarousel />
                         </div>
                     </div>
                 </div>
