@@ -310,8 +310,8 @@ function Contact() {
             <Image
                 src="/Imagen/FOOTER.png"
                 alt="Tabla de quesos variada"
-                width={450}
-                height={450}
+                width={225}
+                height={225}
                 className="object-cover rounded-xl shadow-lg"
                 data-ai-hint="cheese board"
             />
