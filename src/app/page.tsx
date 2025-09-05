@@ -236,7 +236,7 @@ function Contact() {
     <section id="contact" className="w-full py-16 md:py-20 lg:py-24 animate-fade-in-up">
       <div className="container px-4 md:px-6">
         <div className="space-y-3 mb-12 text-center">
-          <h2 className="text-3xl font-normal tracking-tighter md:text-4xl/tight">
+          <h2 className="text-3xl font-normal tracking-tighter md:text-4xl/tight" style={{ color: '#c4b282' }}>
             Pedidos Personalizados y Consultas
           </h2>
           <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
