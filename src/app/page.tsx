@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
-import { Quote, Users, Mail, Leaf, Grape, Phone, MapPin, Instagram, Facebook, Menu, Star, Box } from 'lucide-react';
+import { Quote, Users, Mail, Leaf, Grape, Phone, MapPin, Instagram, Facebook, Menu, Star, Box, Ruler } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { cheeseBoards, testimonials, Testimonial } from '@/lib/data';
 import CheeseBoardCarousel from '@/components/cheese-board-carousel';
@@ -411,8 +411,12 @@ export default function Home() {
                     </p>
                 </div>
                 <div className="space-y-16">
-                    <CheeseBoardCarousel boards={premiumBoards} />
-                    <CheeseBoardCarousel boards={cajasBoards} />
+                    <div id="premium-boards">
+                        <CheeseBoardCarousel boards={premiumBoards} />
+                    </div>
+                    <div id="cajas-boards">
+                        <CheeseBoardCarousel boards={cajasBoards} />
+                    </div>
                 </div>
             </div>
         </section>
