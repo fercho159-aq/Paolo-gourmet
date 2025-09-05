@@ -232,10 +232,12 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
-       <div style={{ backgroundColor: '#c4b282' }} className="py-2 text-center text-xs sm:text-sm text-white">
-          <p>Envíos gratis en CDMX - <span className="font-bold">un día mínimo</span> de anticipación.</p>
+       <div className="sticky top-0 z-50">
+        <div style={{ backgroundColor: '#c4b282' }} className="py-2 text-center text-xs sm:text-sm text-white">
+            <p>Envíos gratis en CDMX - <span className="font-bold">un día mínimo</span> de anticipación.</p>
+        </div>
+        <Header />
       </div>
-      <Header />
       <main className="flex-grow py-12 md:py-16 lg:py-20 animate-fade-in-up">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
@@ -398,7 +400,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                 >
                     <CarouselContent>
                         {relatedProducts.map(relatedBoard => (
-                        <CarouselItem key={relatedBoard.id} className="basis-full md:basis-1/2 lg:basis-1/3">
+                        <CarouselItem key={relatedBoard.id} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
                             <div className="p-2">
                                 <Link href={`/product/${relatedBoard.id}`} className="block h-full">
                                     <Card className="flex flex-col overflow-hidden shadow-md transition-shadow hover:shadow-xl h-full rounded-none">
