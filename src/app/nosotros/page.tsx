@@ -17,6 +17,7 @@ import { Menu, ChevronDown, Crown, Box, Instagram, Facebook, Star, Quote } from 
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
 import { testimonials, cheeseBoards } from '@/lib/data';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -187,78 +188,58 @@ function Footer() {
     );
 }
 
-function TestimonialsAbout() {
+function TestimonialsCarousel() {
     const fullTestimonials = testimonials.map(testimonial => {
-        // This is a mock association. In a real app, you'd have a product ID in the testimonial.
         const product = cheeseBoards[testimonial.id % cheeseBoards.length];
         return { ...testimonial, product };
     });
 
   return (
-    <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32 bg-secondary animate-fade-in-up">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-normal tracking-tighter sm:text-5xl">Lo que dicen nuestros clientes</h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Clientes satisfechos en cada rincón de la ciudad.
-            </p>
-          </div>
-        </div>
+    <div className="w-full">
+        <h3 className="text-2xl font-normal tracking-tighter text-center mb-4">Lo que dicen nuestros clientes</h3>
         <Carousel
           opts={{
             align: "start",
             loop: true,
           }}
-          className="w-full max-w-4xl mx-auto mt-12"
+          className="w-full max-w-md mx-auto"
         >
           <CarouselContent>
             {fullTestimonials.map((testimonial) => (
               <CarouselItem key={testimonial.id}>
-                <div className="p-4 h-full">
+                <div className="p-1 h-full">
                   <Card className="h-full shadow-lg overflow-hidden">
-                    <div className="grid md:grid-cols-2 h-full">
-                        <div className="flex flex-col p-6 justify-center">
-                            <CardHeader>
-                            <div className="flex items-center justify-between">
-                                <div className="flex items-center gap-4">
-                                    <Quote className="h-8 w-8 text-primary" />
+                    <CardContent className="p-6 flex flex-col justify-center">
+                        <div className="flex items-center gap-4">
+                           <Avatar className="h-12 w-12">
+                                <AvatarImage src={testimonial.product.image} alt={testimonial.product.name} />
+                                <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                           </Avatar>
+                            <div className="flex-grow">
+                                <div className="flex justify-between items-start">
                                     <div>
                                         <p className="text-sm font-bold">{testimonial.name}</p>
                                         <p className="text-xs text-muted-foreground">{testimonial.location}</p>
                                     </div>
+                                    <div className="flex items-center gap-0.5 flex-shrink-0">
+                                        {Array.from({ length: 5 }).map((_, i) => (
+                                            <Star key={i} className={`h-4 w-4 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-muted-foreground'}`} />
+                                        ))}
+                                    </div>
                                 </div>
-                                <div className="flex items-center gap-0.5">
-                                    {Array.from({ length: 5 }).map((_, i) => (
-                                        <Star key={i} className={`h-4 w-4 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-muted-foreground'}`} />
-                                    ))}
-                                </div>
+                                <p className="text-sm text-foreground/80 italic mt-2">"{testimonial.comment}"</p>
                             </div>
-                            </CardHeader>
-                            <CardContent>
-                                <p className="text-sm text-foreground/80 italic">"{testimonial.comment}"</p>
-                            </CardContent>
                         </div>
-                        <div className="relative w-full h-64 md:h-full">
-                            <Image
-                                src={testimonial.product.image}
-                                alt={`Producto comprado por ${testimonial.name}`}
-                                layout="fill"
-                                objectFit="cover"
-                                className="w-full h-full"
-                            />
-                        </div>
-                    </div>
+                    </CardContent>
                   </Card>
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="ml-10" />
-          <CarouselNext className="mr-10" />
+          <CarouselPrevious className="-left-4" />
+          <CarouselNext className="-right-4" />
         </Carousel>
       </div>
-    </section>
   );
 }
 
@@ -289,25 +270,23 @@ export default function AboutUsPage() {
                             En paolo gourmet, creemos que el queso es más que un alimento, es una experiencia. Nuestra misión es seleccionar los mejores quesos artesanales y combinarlos con los acompañamientos perfectos para crear tablas inolvidables que unen a las personas.
                             </p>
                         </div>
-                        <div className="w-full max-w-sm mx-auto">
+                        <div className="flex flex-col justify-center items-center space-y-8">
                            <Image
                                 src="/Imagen/Galeria/IMG_0818.jpg"
                                 alt="El equipo de Paolo Gourmet"
                                 width={400}
-                                height={500}
-                                className="object-cover rounded-xl shadow-lg w-full h-full"
+                                height={300}
+                                className="object-cover rounded-xl shadow-lg w-full max-w-sm"
                                 data-ai-hint="team portrait"
                             />
+                            <TestimonialsCarousel />
                         </div>
                     </div>
                 </div>
             </section>
-            <TestimonialsAbout />
         </main>
         <Footer />
         <WhatsAppButton />
     </div>
   );
 }
-
-    
