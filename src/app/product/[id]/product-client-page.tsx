@@ -326,7 +326,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2 text-md font-medium" style={{ color: '#c4b282' }}>
                     <Users className="h-5 w-5" />
-                    <span>Sirve para {board.serving} personas</span>
+                    <span className="font-medium">Sirve para {board.serving} personas</span>
                 </div>
               </div>
 
@@ -337,36 +337,49 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                 </a>
               </Button>
               
-              <div className="space-y-4 pt-4">
-                <h3 className="font-normal text-lg text-center">Lo que nuestros clientes dicen</h3>
-                <div className="grid grid-cols-1 gap-4">
-                  {fullTestimonials.map((testimonial) => (
-                    <Card key={testimonial.id} className="p-4 shadow-sm">
-                      <div className="flex items-start gap-4">
-                        <Avatar className="h-12 w-12 flex-shrink-0">
-                           <AvatarImage src={testimonial.product.image} alt={testimonial.product.name} />
-                           <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                        </Avatar>
-                        <div className="flex-grow">
-                          <div className="flex items-center justify-between">
-                            <p className="font-semibold text-sm">{testimonial.name}</p>
-                            <div className="flex items-center gap-0.5">
-                                {Array.from({ length: 5 }).map((_, i) => (
-                                    <Star key={i} className={`h-4 w-4 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-muted-foreground'}`} />
-                                ))}
-                            </div>
-                          </div>
-                          <p className="text-sm text-muted-foreground mt-1">
-                                  "{testimonial.comment[0]}
-                                  <span className="font-bold" style={{ color: '#c4b282' }}>{testimonial.comment[1]}</span>
-                                  {testimonial.comment[2]}"
-                          </p>
-                        </div>
-                      </div>
-                    </Card>
-                  ))}
+                <div className="space-y-4 pt-4">
+                    <Carousel
+                        opts={{
+                            align: "start",
+                            loop: true,
+                        }}
+                        className="w-full max-w-md mx-auto"
+                    >
+                        <CarouselContent>
+                            {fullTestimonials.map((testimonial) => (
+                                <CarouselItem key={testimonial.id}>
+                                    <div className="p-1 h-full">
+                                        <Card className="p-4 shadow-sm h-full">
+                                            <div className="flex items-start gap-4">
+                                                <Avatar className="h-12 w-12 flex-shrink-0">
+                                                    <AvatarImage src={testimonial.product.image} alt={testimonial.product.name} />
+                                                    <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                                                </Avatar>
+                                                <div className="flex-grow">
+                                                    <div className="flex items-center justify-between">
+                                                        <p className="font-semibold text-sm">{testimonial.name}</p>
+                                                        <div className="flex items-center gap-0.5">
+                                                            {Array.from({ length: 5 }).map((_, i) => (
+                                                                <Star key={i} className={`h-4 w-4 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-muted-foreground'}`} />
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                    <p className="text-sm text-muted-foreground mt-1">
+                                                        "{testimonial.comment[0]}
+                                                        <span className="font-bold" style={{ color: '#c4b282' }}>{testimonial.comment[1]}</span>
+                                                        {testimonial.comment[2]}"
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </Card>
+                                    </div>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <CarouselPrevious className="-left-4" />
+                        <CarouselNext className="-right-4" />
+                    </Carousel>
                 </div>
-              </div>
 
 
             </div>
@@ -401,9 +414,9 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                                         <CardContent className="p-4 flex-grow flex flex-col">
                                           <CardTitle className="font-headline text-xl mb-2">{relatedBoard.name}</CardTitle>
                                           {relatedBoard.serving && (
-                                              <div className="flex items-center gap-2 text-sm text-muted-foreground mt-auto">
+                                              <div className="flex items-center gap-2 text-sm mt-auto" style={{ color: '#c4b282' }}>
                                                   <Users className="h-4 w-4" />
-                                                  <span>{relatedBoard.serving} personas</span>
+                                                  <span className="font-medium">{relatedBoard.serving} personas</span>
                                               </div>
                                           )}
                                         </CardContent>
