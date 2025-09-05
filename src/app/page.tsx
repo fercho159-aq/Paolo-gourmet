@@ -247,6 +247,16 @@ function Testimonials() {
           <CarouselPrevious />
           <CarouselNext />
         </Carousel>
+        <div className="mt-12">
+            <Image
+                src="/Imagen/Galeria/IMG_0852.jpg"
+                alt="Tabla de quesos en un evento"
+                width={1200}
+                height={400}
+                className="w-full h-auto object-cover rounded-lg shadow-lg"
+                data-ai-hint="cheese board event"
+            />
+        </div>
       </div>
     </section>
   );
