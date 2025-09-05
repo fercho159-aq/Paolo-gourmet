@@ -188,7 +188,7 @@ function Testimonials() {
         >
           <CarouselContent>
             {fullTestimonials.map((testimonial) => (
-              <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/2">
+              <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-4 h-full">
                   <Card className="h-full shadow-lg flex flex-col">
                     <CardContent className="p-6 flex-grow">
@@ -364,24 +364,26 @@ export default function Home() {
       
       <main>
         <Hero />
+        <section className="bg-gray-800 text-white py-4">
+          <div className="container text-center">
+            <p className="text-lg">El arte de compartir, una <i>experiencia</i> en cada tabla.</p>
+          </div>
+        </section>
         
         <section id="premium-boards" className="py-12 animate-fade-in-up">
           <div className="container">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-              <h2 className="text-3xl font-normal tracking-tighter sm:text-5xl">Nuestros Productos</h2>
-              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Creaciones artesanales para cada ocasión, desde reuniones íntimas hasta grandes celebraciones.
-              </p>
-            </div>
-             <div className="mb-8">
-              <CheeseBoardCarousel boards={premiumBoards} />
-            </div>
-            <div id="cajas-boards">
-              <CheeseBoardCarousel boards={cajasBoards} />
-            </div>
+            <h2 className="text-3xl font-normal tracking-tighter sm:text-5xl mb-12 text-center">Tablas Premium</h2>
+            <CheeseBoardCarousel boards={premiumBoards} />
           </div>
         </section>
-
+        
+        <section id="cajas-boards" className="py-12 animate-fade-in-up">
+          <div className="container">
+            <h2 className="text-3xl font-normal tracking-tighter sm:text-5xl mb-12 text-center">Cajas</h2>
+            <CheeseBoardCarousel boards={cajasBoards} />
+          </div>
+        </section>
+        
         <section className="relative py-24 text-white bg-cover bg-center bg-fixed bg-events-bg animate-fade-in-up">
           <div className="absolute inset-0 bg-black/60"></div>
           <div className="relative container text-center">
@@ -389,7 +391,7 @@ export default function Home() {
             <p className="mt-4 max-w-3xl mx-auto">
               Envíanos un mail a <a href="mailto:hola@paologourmet.com.mx" className="underline">hola@paologourmet.com.mx</a> o <a href="https://api.whatsapp.com/send/?phone=525562206020&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="underline">escríbenos por Whatsapp</a> para cotizarte. Tenemos opciones personalizadas en CDMX a partir de 20 personas.
             </p>
-            <Button asChild className="mt-6" style={{ backgroundColor: '#dcd0b3', color: '#ffffff' }}>
+            <Button asChild className="mt-6" style={{ backgroundColor: '#dcd0b3', color: '#000' }}>
               <a href="#contact">Contacto</a>
             </Button>
           </div>
@@ -403,3 +405,6 @@ export default function Home() {
     </div>
   );
 }
+
+
+    
