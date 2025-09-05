@@ -384,7 +384,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
           </div>
         </div>
 
-        <section id="related-products" className="w-full py-16 md:py-20 lg:py-24 mt-16 bg-secondary">
+        <section id="related-products" className="w-full py-12 mt-8 bg-secondary">
             <div className="container">
                 <h2 className="text-3xl font-normal tracking-tighter sm:text-4xl text-center mb-12">También te puede interesar</h2>
                 <Carousel
