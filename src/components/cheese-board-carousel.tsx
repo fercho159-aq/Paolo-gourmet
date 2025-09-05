@@ -17,7 +17,7 @@ function CuttingBoardIcon(props: React.SVGProps<SVGSVGElement>) {
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
-      viewBox="0 0 24"
+      viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
@@ -64,7 +64,7 @@ export default function CheeseBoardCarousel({ boards }: { boards: CheeseBoard[] 
                     />
                   </div>
                   <CardContent className="p-4 flex-grow flex flex-col">
-                    <CardTitle className="text-xl mb-2">{board.name}</CardTitle>
+                    <CardTitle className="text-lg mb-2">{board.name}</CardTitle>
                     {board.serving && (
                       <div className="flex items-center justify-between mt-auto">
                         <div className="flex items-center gap-2 text-sm" style={{ color: '#c4b282' }}>
@@ -89,4 +89,3 @@ export default function CheeseBoardCarousel({ boards }: { boards: CheeseBoard[] 
     </Carousel>
   );
 }
-

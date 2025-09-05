@@ -69,7 +69,7 @@ export const cheeseBoards: CheeseBoard[] = [
   {
     id: 5,
     line: "Tablas Premium",
-    name: "Tabla Mediana",
+    name: "Tabla grande con carnes frias y quesos",
     description: "Una experiencia gourmet con quesos premium franceses que te transportará a un café parisino.",
     image: "/Imagen/ProductosAldo/11.jpg",
     gallery: ["/Imagen/ProductosAldo/11.jpg", "/Imagen/ProductosAldo/12.jpg", "/Imagen/ProductosAldo/13.jpg", "/Imagen/ProductosAldo/14.jpg"],
@@ -82,7 +82,7 @@ export const cheeseBoards: CheeseBoard[] = [
   {
     id: 6,
     line: "Tablas Premium",
-    name: "Tabla Grande",
+    name: "Tabla grande de solo quesos",
     description: "Nuestra tabla más lujosa, diseñada para ser el centro de atención de cualquier evento. Un festín para la vista y el paladar.",
     image: "/Imagen/Productos/Tabla 3 (1).jpg",
     gallery: ["/Imagen/Productos/Tabla 3 (1).jpg", "/Imagen/Galeria/IMG_0818.jpg", "/Imagen/Galeria/IMG_0852.jpg"],
