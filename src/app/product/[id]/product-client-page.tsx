@@ -323,11 +323,11 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
 
 
               <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2 text-md font-medium" style={{ color: '#c4b282' }}>
+                <div className="flex items-center gap-2 text-md" style={{ color: '#c4b282' }}>
                     <Users className="h-5 w-5" />
                     <span className="font-medium">Sirve para {board.serving} personas</span>
                 </div>
-                <Badge style={{ backgroundColor: '#c4b282', color: 'white' }} className="capitalize text-sm">{board.line}</Badge>
+                <Badge style={{ backgroundColor: '#c5b282', color: 'white' }} className="capitalize text-sm">{board.line}</Badge>
               </div>
 
                <Button size="lg" className="w-full md:w-auto shadow-md hover:shadow-lg transition-shadow" asChild>
@@ -414,9 +414,15 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                                         <CardContent className="p-4 flex-grow flex flex-col">
                                           <CardTitle className="font-headline text-xl mb-2">{relatedBoard.name}</CardTitle>
                                           {relatedBoard.serving && (
-                                              <div className="flex items-center gap-2 text-sm mt-auto" style={{ color: '#c4b282' }}>
-                                                  <Users className="h-4 w-4" />
-                                                  <span className="font-medium">{relatedBoard.serving} personas</span>
+                                              <div className="flex items-center justify-between mt-auto">
+                                                <div className="flex items-center gap-2 text-sm" style={{ color: '#c4b282' }}>
+                                                    <Users className="h-4 w-4" />
+                                                    <span className="font-medium">{relatedBoard.serving} personas</span>
+                                                </div>
+                                                <Badge style={{ backgroundColor: '#c5b282', color: 'white' }} className="capitalize text-xs">
+                                                  {relatedBoard.line === 'Tablas Premium' ? <Crown className="h-3 w-3 mr-1" /> : <Box className="h-3 w-3 mr-1" />}
+                                                  {relatedBoard.line}
+                                                </Badge>
                                               </div>
                                           )}
                                         </CardContent>
