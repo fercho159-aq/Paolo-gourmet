@@ -8,7 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Carousel, CarouselContent, CarouselItem, CarouselApi, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
-import { Users, Leaf, Grape, Send, Wine, Star, Menu, Box, ChevronDown, Instagram, Facebook } from 'lucide-react';
+import { Users, Leaf, Grape, Send, Wine, Star, Menu, Box, ChevronDown, Instagram, Facebook, Ruler } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import type { CheeseBoard, Testimonial } from '@/lib/data';
@@ -349,6 +349,12 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                     <Users className="h-5 w-5" />
                     <span className="font-medium">Sirve para {board.serving} personas</span>
                 </div>
+                {board.dimensions && (
+                    <div className="flex items-center gap-2 text-md" style={{ color: '#c4b282' }}>
+                        <Ruler className="h-5 w-5" />
+                        <span className="font-medium">{board.dimensions}</span>
+                    </div>
+                )}
                 <Badge style={{ backgroundColor: '#c5b282', color: 'white' }} className="capitalize text-sm">{board.line}</Badge>
               </div>
 
@@ -435,18 +441,22 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                                         </div>
                                         <CardContent className="p-4 flex-grow flex flex-col">
                                           <CardTitle className="text-lg mb-2">{relatedBoard.name}</CardTitle>
-                                          {relatedBoard.serving && (
-                                              <div className="flex items-center justify-between mt-auto">
+                                            <div className="flex items-center justify-between mt-auto">
                                                 <div className="flex items-center gap-2 text-sm" style={{ color: '#c4b282' }}>
                                                     <Users className="h-4 w-4" />
                                                     <span className="font-medium">{relatedBoard.serving}</span>
                                                 </div>
+                                                {relatedBoard.dimensions && (
+                                                    <div className="flex items-center gap-2 text-sm" style={{ color: '#c4b282' }}>
+                                                        <Ruler className="h-4 w-4" />
+                                                        <span className="font-medium">{relatedBoard.dimensions}</span>
+                                                    </div>
+                                                )}
                                                 <Badge style={{ backgroundColor: '#c5b282', color: 'white' }} className="capitalize text-xs">
                                                   {relatedBoard.line === 'Tablas Premium' ? <CuttingBoardIcon className="h-3 w-3 mr-1" /> : <Box className="h-3 w-3 mr-1" />}
                                                   {relatedBoard.line === 'Tablas Premium' ? 'Tablas' : relatedBoard.line}
                                                 </Badge>
-                                              </div>
-                                          )}
+                                            </div>
                                         </CardContent>
                                     </Card>
                                 </Link>

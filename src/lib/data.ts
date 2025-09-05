@@ -10,6 +10,7 @@ export type CheeseBoard = {
   cheeses: string[];
   accompaniments: string[];
   serving: string;
+  dimensions?: string;
   tags: string[];
 };
 
@@ -38,6 +39,7 @@ export const cheeseBoards: CheeseBoard[] = [
     cheeses: ["Manchego", "Provolone", "Queso de cabra"],
     accompaniments: ["Tomates secos", "Aceitunas", "Pan de pita", "Hummus"],
     serving: "1-2",
+    dimensions: "17x17 cm",
     tags: ["mediana", "reunión", "compartir"],
   },
   {
@@ -51,6 +53,7 @@ export const cheeseBoards: CheeseBoard[] = [
     cheeses: ["Suizo", "Queso crema con arándanos", "Stilton"],
     accompaniments: ["Rodajas de manzana", "Panal de miel", "Prosciutto", "Chocolate negro"],
     serving: "1-3",
+    dimensions: "22x26 cm",
     tags: ["grande", "celebración", "fiesta"],
   },
   {
@@ -64,6 +67,7 @@ export const cheeseBoards: CheeseBoard[] = [
     cheeses: ["Gorgonzola", "Danablu"],
     accompaniments: ["Rodajas de pera", "Nueces pecanas confitadas", "Tostadas de centeno"],
     serving: "1-2",
+    dimensions: "20x30 cm",
     tags: ["premium", "chica", "intenso"],
   },
   {
@@ -77,6 +81,7 @@ export const cheeseBoards: CheeseBoard[] = [
     cheeses: ["Camembert", "Comté", "Chèvre", "Roquefort"],
     accompaniments: ["Baguette", "Cornichons", "Compota de cereza", "Almendras Marcona"],
     serving: "2-3",
+    dimensions: "40x22 cm",
     tags: ["premium", "mediana", "francés", "gourmet"],
   },
   {
@@ -90,6 +95,7 @@ export const cheeseBoards: CheeseBoard[] = [
     cheeses: ["Parmigiano-Reggiano", "Brie triple crema", "Gouda ahumado", "Gruyère añejo"],
     accompaniments: ["Surtido de embutidos", "Panes artesanales", "Aceitunas y encurtidos", "Albaricoques secos"],
     serving: "2-4",
+    dimensions: "40x22 cm",
     tags: ["premium", "grande", "lujoso", "celebración"],
   },
 ];
