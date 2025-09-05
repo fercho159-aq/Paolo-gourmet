@@ -72,7 +72,7 @@ function Header() {
               <nav className="flex flex-col gap-4 mt-8 h-full">
                   {navLinks.map(link => (
                       <SheetClose asChild key={link.href}>
-                        <Link href={link.href} className="text-lg font-medium hover:underline hover:text-[#c5b282] underline-offset-4">
+                        <Link href={link.href} className="text-lg font-medium hover:underline hover:text-[#B8860B] underline-offset-4">
                             {link.label}
                         </Link>
                       </SheetClose>
@@ -100,13 +100,13 @@ function Header() {
           </Sheet>
         ) : (
           <nav className="ml-auto flex items-center space-x-1">
-            <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-[#c5b282] underline-offset-4">
+            <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-[#B8860B] underline-offset-4">
                 <Link href="/nosotros">Nosotros</Link>
             </Button>
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="hover:bg-transparent hover:underline hover:text-[#c5b282] underline-offset-4">
+                <Button variant="ghost" className="hover:bg-transparent hover:underline hover:text-[#B8860B] underline-offset-4">
                   Productos <ChevronDown className="ml-1 h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
@@ -120,11 +120,11 @@ function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-[#c5b282] underline-offset-4">
+            <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-[#B8860B] underline-offset-4">
                 <Link href="/preguntas-frecuentes">Preguntas Frecuentes</Link>
             </Button>
 
-            <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-[#c5b282] underline-offset-4">
+            <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-[#B8860B] underline-offset-4">
                 <a href="#contact">Contacto</a>
             </Button>
           </nav>
@@ -389,7 +389,7 @@ export default function Home() {
             <p className="mt-4 max-w-3xl mx-auto">
               Envíanos un mail a <a href="mailto:hola@paologourmet.com.mx" className="underline">hola@paologourmet.com.mx</a> o <a href="https://api.whatsapp.com/send/?phone=525562206020&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="underline">escríbenos por Whatsapp</a> para cotizarte. Tenemos opciones personalizadas en CDMX a partir de 20 personas.
             </p>
-            <Button asChild className="mt-6" style={{ backgroundColor: '#dcd0b3', color: '#000' }}>
+            <Button asChild className="mt-6" style={{ backgroundColor: '#dcd0b3', color: '#ffffff' }}>
               <a href="#contact">Contacto</a>
             </Button>
           </div>
