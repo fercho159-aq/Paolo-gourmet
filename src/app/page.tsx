@@ -53,6 +53,7 @@ function Header() {
     { href: "/nosotros", label: "Nosotros" },
     { href: "/preguntas-frecuentes", label: "Preguntas Frecuentes" },
     { href: "/#contact", label: "Contacto" },
+    { href: "/gallery", label: "Galería" },
   ]
 
   return (
@@ -126,6 +127,10 @@ function Header() {
             <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
                 <a href="#contact">Contacto</a>
             </Button>
+
+            <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
+                <Link href="/gallery">Galería</Link>
+            </Button>
           </nav>
         )}
       </div>
@@ -147,7 +152,7 @@ function Hero() {
       />
       <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 flex h-full flex-col items-start justify-center text-left text-white container animate-fade-in-up">
-        <h1 className="font-headline text-3xl sm:text-5xl font-extrabold md:text-6xl lg:max-w-md">
+        <h1 className="font-headline text-3xl sm:text-5xl font-normal md:text-6xl lg:max-w-md">
           <span className="block">Tablas de Queso</span>
           <span className="block">Artesanales</span>
         </h1>
@@ -168,7 +173,7 @@ function Testimonials() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Lo que dicen nuestros clientes</h2>
+            <h2 className="text-3xl font-normal tracking-tighter sm:text-5xl">Lo que dicen nuestros clientes</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Clientes satisfechos en cada rincón de la ciudad.
             </p>
@@ -223,7 +228,7 @@ function Contact() {
     <section id="contact" className="w-full py-16 md:py-20 lg:py-24 animate-fade-in-up">
       <div className="container px-4 md:px-6">
         <div className="space-y-3 mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+          <h2 className="text-3xl font-normal tracking-tighter md:text-4xl/tight">
             Pedidos Personalizados y Consultas
           </h2>
           <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -234,7 +239,7 @@ function Contact() {
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
           <div className="space-y-6">
             <div className="bg-secondary/50 p-6 rounded-lg space-y-4">
-              <h3 className="text-xl font-bold">Información de Contacto</h3>
+              <h3 className="text-xl font-normal">Información de Contacto</h3>
               <div className="space-y-2 text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <Phone className="h-5 w-5 text-primary" />
@@ -351,7 +356,7 @@ export default function Home() {
         <section id="premium-boards" className="py-12 animate-fade-in-up">
           <div className="container">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Tablas Premium</h2>
+              <h2 className="text-3xl font-normal tracking-tighter sm:text-5xl">Tablas Premium</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Una experiencia gourmet con quesos premium que te transportará.
               </p>
@@ -363,7 +368,7 @@ export default function Home() {
         <section id="cajas-boards" className="py-8 animate-fade-in-up">
           <div className="container">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Cajas</h2>
+              <h2 className="text-3xl font-normal tracking-tighter sm:text-5xl">Cajas</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Selecciones equilibradas y deliciosas, perfectas para compartir.
               </p>
@@ -373,9 +378,9 @@ export default function Home() {
         </section>
 
         <section className="relative py-24 text-white bg-cover bg-center bg-fixed bg-events-bg animate-fade-in-up">
-          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
           <div className="relative container text-center">
-            <h3 className="text-2xl font-bold uppercase tracking-wider">DÉJANOS SER PARTE DE TUS EVENTOS</h3>
+            <h3 className="text-2xl font-normal uppercase tracking-wider">DÉJANOS SER PARTE DE TUS EVENTOS</h3>
             <p className="mt-4 max-w-3xl mx-auto">
               Envíanos un mail a <a href="mailto:hola@paologourmet.com.mx" className="underline">hola@paologourmet.com.mx</a> o <a href="https://api.whatsapp.com/send/?phone=525512345678&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="underline">escríbenos por Whatsapp</a> para cotizarte. Tenemos opciones personalizadas en CDMX a partir de 20 personas.
             </p>
@@ -393,5 +398,3 @@ export default function Home() {
     </div>
   );
 }
-
-    

@@ -65,6 +65,7 @@ function Header() {
         { href: "/nosotros", label: "Nosotros" },
         { href: "/preguntas-frecuentes", label: "Preguntas Frecuentes" },
         { href: "/#contact", label: "Contacto" },
+        { href: "/gallery", label: "Galería" },
     ]
 
     return (
@@ -136,6 +137,10 @@ function Header() {
 
                 <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
                     <a href="/#contact">Contacto</a>
+                </Button>
+
+                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
+                    <Link href="/gallery">Galería</Link>
                 </Button>
             </nav>
             )}
@@ -226,7 +231,7 @@ export default function FaqPage() {
         <main className="flex-grow animate-fade-in-up">
             <section className="w-full py-12 md:py-16 text-white" style={{ backgroundColor: '#c5b282' }}>
                 <div className="container px-4 md:px-6 text-center animate-fade-in-up">
-                    <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Preguntas Frecuentes</h1>
+                    <h1 className="text-3xl font-normal tracking-tighter sm:text-5xl">Preguntas Frecuentes</h1>
                     <p className="mx-auto max-w-[700px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mt-4">
                         Resolvemos tus dudas para que disfrutes de la mejor experiencia.
                     </p>
@@ -271,5 +276,3 @@ export default function FaqPage() {
     </div>
   );
 }
-
-    

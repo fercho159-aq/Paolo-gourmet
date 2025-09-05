@@ -55,6 +55,7 @@ function Header() {
         { href: "/nosotros", label: "Nosotros" },
         { href: "/preguntas-frecuentes", label: "Preguntas Frecuentes" },
         { href: "/#contact", label: "Contacto" },
+        { href: "/gallery", label: "Galería" },
     ]
 
     return (
@@ -126,6 +127,9 @@ function Header() {
 
                 <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
                     <a href="/#contact">Contacto</a>
+                </Button>
+                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
+                    <Link href="/gallery">Galería</Link>
                 </Button>
             </nav>
             )}
@@ -270,7 +274,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
             <div className="flex flex-col space-y-6">
               <div>
                 <Badge variant="secondary" className="capitalize text-sm mb-2">{board.line}</Badge>
-                <h1 className="text-3xl lg:text-4xl font-bold font-headline">{board.name}</h1>
+                <h1 className="text-3xl lg:text-4xl font-normal font-headline">{board.name}</h1>
                 <p className="text-muted-foreground mt-2 text-lg">{board.description}</p>
               </div>
 
@@ -278,11 +282,11 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
 
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-semibold text-lg flex items-center gap-2 mb-2"><Leaf className="h-5 w-5 text-primary" />Quesos</h3>
+                  <h3 className="font-normal text-lg flex items-center gap-2 mb-2"><Leaf className="h-5 w-5 text-primary" />Quesos</h3>
                   <p className="text-muted-foreground">{board.cheeses.join(', ')}</p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg flex items-center gap-2 mb-2"><Grape className="h-5 w-5 text-primary" />Acompañamientos</h3>
+                  <h3 className="font-normal text-lg flex items-center gap-2 mb-2"><Grape className="h-5 w-5 text-primary" />Acompañamientos</h3>
                   <p className="text-muted-foreground">{board.accompaniments.join(', ')}</p>
                 </div>
               </div>
@@ -328,7 +332,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
               </Button>
               
               <div className="space-y-4 pt-4">
-                <h3 className="font-semibold text-lg">Lo que nuestros clientes dicen</h3>
+                <h3 className="font-normal text-lg text-center">Lo que nuestros clientes dicen</h3>
                 <div className="grid grid-cols-1 gap-4">
                   {productTestimonials.map((testimonial) => (
                     <Card key={testimonial.id} className="p-4 shadow-sm">
@@ -357,7 +361,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
 
         <section id="related-products" className="w-full py-16 md:py-20 lg:py-24 mt-16 bg-secondary">
             <div className="container">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center mb-12">También te puede interesar</h2>
+                <h2 className="text-3xl font-normal tracking-tighter sm:text-4xl text-center mb-12">También te puede interesar</h2>
                 <Carousel
                     opts={{
                         align: "start",
@@ -367,7 +371,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                 >
                     <CarouselContent>
                         {relatedProducts.map(relatedBoard => (
-                        <CarouselItem key={relatedBoard.id} className="basis-full md:basis-1/3 lg:basis-1/4">
+                        <CarouselItem key={relatedBoard.id} className="basis-full md:basis-1/3 lg:basis-1/2">
                             <div className="p-2">
                                 <Link href={`/product/${relatedBoard.id}`} className="block h-full">
                                     <Card className="flex flex-col overflow-hidden shadow-md transition-shadow hover:shadow-xl h-full rounded-none">
