@@ -156,7 +156,7 @@ function Hero() {
           Descubre tablas de <i>queso</i> meticulosamente elaboradas, <i>perfectas</i> para cualquier <i>ocasión</i>.
         </p>
         <Button size="lg" className="mt-8 text-white" asChild style={{ backgroundColor: '#c5b282' }}>
-          <a href="#premium-boards">Explora Nuestras Tablas</a>
+          <a href="#products">Explora Nuestras Tablas</a>
         </Button>
       </div>
     </section>
@@ -364,24 +364,25 @@ export default function Home() {
       
       <main>
         <Hero />
-        <section className="bg-gray-800 text-white py-4">
+        <section className="bg-secondary/50 py-4">
           <div className="container text-center">
             <p className="text-lg">El arte de compartir, una <i>experiencia</i> en cada tabla.</p>
           </div>
         </section>
         
-        <section id="premium-boards" className="py-12 animate-fade-in-up">
-          <div className="container">
-            <h2 className="text-3xl font-normal tracking-tighter sm:text-5xl mb-12 text-center">Tablas Premium</h2>
-            <CheeseBoardCarousel boards={premiumBoards} />
-          </div>
-        </section>
-        
-        <section id="cajas-boards" className="py-12 animate-fade-in-up">
-          <div className="container">
-            <h2 className="text-3xl font-normal tracking-tighter sm:text-5xl mb-12 text-center">Cajas</h2>
-            <CheeseBoardCarousel boards={cajasBoards} />
-          </div>
+        <section id="products" className="py-12 animate-fade-in-up">
+            <div className="container">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl font-normal tracking-tighter sm:text-5xl">Nuestros Productos</h2>
+                    <p className="max-w-[900px] mx-auto text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mt-4">
+                        Explora nuestra selección de tablas y cajas, cada una creada con los ingredientes más frescos y de la más alta calidad para una experiencia inolvidable.
+                    </p>
+                </div>
+                <div className="space-y-16">
+                    <CheeseBoardCarousel boards={premiumBoards} />
+                    <CheeseBoardCarousel boards={cajasBoards} />
+                </div>
+            </div>
         </section>
         
         <section className="relative py-24 text-white bg-cover bg-center bg-fixed bg-events-bg animate-fade-in-up">
@@ -405,6 +406,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-    
