@@ -7,9 +7,32 @@ import Link from 'next/link';
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
 import type { CheeseBoard } from '@/lib/data';
-import { Users, Crown, Box } from 'lucide-react';
+import { Users, Box } from 'lucide-react';
 import Autoplay from "embla-carousel-autoplay"
 import { Badge } from '@/components/ui/badge';
+
+function CuttingBoardIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M14 8h.01" />
+      <path d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4" />
+      <path d="M16 4h2a2 2 0 0 1 2 2v2" />
+      <path d="M22 10a2 2 0 0 0-2-2m0 0a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2z" />
+    </svg>
+  );
+}
+
 
 export default function CheeseBoardCarousel({ boards }: { boards: CheeseBoard[] }) {
   const plugin = React.useRef(
@@ -49,7 +72,7 @@ export default function CheeseBoardCarousel({ boards }: { boards: CheeseBoard[] 
                             <span className="font-medium">{board.serving}</span>
                         </div>
                         <Badge style={{ backgroundColor: '#c5b282', color: 'white' }} className="capitalize text-xs">
-                          {board.line === 'Tablas Premium' ? <Crown className="h-3 w-3 mr-1" /> : <Box className="h-3 w-3 mr-1" />}
+                          {board.line === 'Tablas Premium' ? <CuttingBoardIcon className="h-3 w-3 mr-1" /> : <Box className="h-3 w-3 mr-1" />}
                           {board.line === 'Tablas Premium' ? 'Tablas' : board.line}
                         </Badge>
                       </div>
@@ -66,3 +89,4 @@ export default function CheeseBoardCarousel({ boards }: { boards: CheeseBoard[] 
     </Carousel>
   );
 }
+

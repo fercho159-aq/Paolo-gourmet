@@ -12,7 +12,29 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Menu, ChevronDown, Crown, Box, Instagram, Facebook } from 'lucide-react';
+import { Menu, ChevronDown, Box, Instagram, Facebook } from 'lucide-react';
+
+function CuttingBoardIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M14 8h.01" />
+      <path d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4" />
+      <path d="M16 4h2a2 2 0 0 1 2 2v2" />
+      <path d="M22 10a2 2 0 0 0-2-2m0 0a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2z" />
+    </svg>
+  );
+}
 
 function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -26,7 +48,7 @@ function Header() {
     const isMobile = useIsMobile();
 
     const productLinks = [
-        { href: "/#premium-boards", label: "Tablas Premium", icon: <Crown className="h-4 w-4" /> },
+        { href: "/#premium-boards", label: "Tablas Premium", icon: <CuttingBoardIcon className="h-4 w-4" /> },
         { href: "/#cajas-boards", label: "Cajas", icon: <Box className="h-4 w-4" /> },
     ]
 
@@ -91,7 +113,7 @@ function Header() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                   <DropdownMenuItem asChild>
-                    <Link href="/#premium-boards" className="flex items-center gap-2"><Crown className="h-4 w-4" />Tablas Premium</Link>
+                    <Link href="/#premium-boards" className="flex items-center gap-2"><CuttingBoardIcon className="h-4 w-4" />Tablas Premium</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link href="/#cajas-boards" className="flex items-center gap-2"><Box className="h-4 w-4" />Cajas</Link>

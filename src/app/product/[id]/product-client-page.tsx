@@ -8,7 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Carousel, CarouselContent, CarouselItem, CarouselApi, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
-import { Users, Leaf, Grape, Send, Wine, Star, Menu, Crown, Box, ChevronDown, Instagram, Facebook } from 'lucide-react';
+import { Users, Leaf, Grape, Send, Wine, Star, Menu, Box, ChevronDown, Instagram, Facebook } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import type { CheeseBoard, Testimonial } from '@/lib/data';
@@ -36,9 +36,31 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 
+function CuttingBoardIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M14 8h.01" />
+      <path d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4" />
+      <path d="M16 4h2a2 2 0 0 1 2 2v2" />
+      <path d="M22 10a2 2 0 0 0-2-2m0 0a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2z" />
+    </svg>
+  );
+}
+
 function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0-0 448 512" fill="currentColor" {...props}>
       <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/>
     </svg>
   );
@@ -48,7 +70,7 @@ function Header() {
     const isMobile = useIsMobile();
 
     const productLinks = [
-        { href: "/#premium-boards", label: "Tablas Premium", icon: <Crown className="h-4 w-4" /> },
+        { href: "/#premium-boards", label: "Tablas Premium", icon: <CuttingBoardIcon className="h-4 w-4" /> },
         { href: "/#cajas-boards", label: "Cajas", icon: <Box className="h-4 w-4" /> },
     ]
 
@@ -113,7 +135,7 @@ function Header() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                     <DropdownMenuItem asChild>
-                    <Link href="/#premium-boards" className="flex items-center gap-2"><Crown className="h-4 w-4" />Tablas Premium</Link>
+                    <Link href="/#premium-boards" className="flex items-center gap-2"><CuttingBoardIcon className="h-4 w-4" />Tablas Premium</Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
                     <Link href="/#cajas-boards" className="flex items-center gap-2"><Box className="h-4 w-4" />Cajas</Link>
@@ -257,6 +279,8 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
               </Carousel>
               <div className="grid grid-cols-5 gap-2">
                 {productImages.map((src, index) => (
@@ -418,7 +442,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                                                     <span className="font-medium">{relatedBoard.serving}</span>
                                                 </div>
                                                 <Badge style={{ backgroundColor: '#c5b282', color: 'white' }} className="capitalize text-xs">
-                                                  {relatedBoard.line === 'Tablas Premium' ? <Crown className="h-3 w-3 mr-1" /> : <Box className="h-3 w-3 mr-1" />}
+                                                  {relatedBoard.line === 'Tablas Premium' ? <CuttingBoardIcon className="h-3 w-3 mr-1" /> : <Box className="h-3 w-3 mr-1" />}
                                                   {relatedBoard.line === 'Tablas Premium' ? 'Tablas' : relatedBoard.line}
                                                 </Badge>
                                               </div>
@@ -440,3 +464,4 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
     </div>
   );
 }
+

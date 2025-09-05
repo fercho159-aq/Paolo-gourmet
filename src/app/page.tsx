@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
-import { Quote, Users, Mail, Leaf, Grape, Phone, MapPin, Instagram, Facebook, Menu, Star, Crown, Box } from 'lucide-react';
+import { Quote, Users, Mail, Leaf, Grape, Phone, MapPin, Instagram, Facebook, Menu, Star, Box } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { cheeseBoards, testimonials, Testimonial } from '@/lib/data';
 import CheeseBoardCarousel from '@/components/cheese-board-carousel';
@@ -24,6 +24,28 @@ import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
+
+function CuttingBoardIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M14 8h.01" />
+      <path d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4" />
+      <path d="M16 4h2a2 2 0 0 1 2 2v2" />
+      <path d="M22 10a2 2 0 0 0-2-2m0 0a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2z" />
+    </svg>
+  );
+}
 
 function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -46,7 +68,7 @@ function Header() {
   const isMobile = useIsMobile();
 
   const productLinks = [
-      { href: "/#premium-boards", label: "Tablas Premium", icon: <Crown className="h-4 w-4" /> },
+      { href: "/#premium-boards", label: "Tablas Premium", icon: <CuttingBoardIcon className="h-4 w-4" /> },
       { href: "/#cajas-boards", label: "Cajas", icon: <Box className="h-4 w-4" /> },
   ]
 
@@ -112,7 +134,7 @@ function Header() {
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem asChild>
-                  <Link href="/#premium-boards" className="flex items-center gap-2"><Crown className="h-4 w-4" />Tablas Premium</Link>
+                  <Link href="/#premium-boards" className="flex items-center gap-2"><CuttingBoardIcon className="h-4 w-4" />Tablas Premium</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link href="/#cajas-boards" className="flex items-center gap-2"><Box className="h-4 w-4" />Cajas</Link>
@@ -188,7 +210,7 @@ function Testimonials() {
         >
           <CarouselContent>
             {fullTestimonials.map((testimonial) => (
-              <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/2">
                 <div className="p-4 h-full">
                   <Card className="h-full shadow-lg flex flex-col">
                     <CardContent className="p-6 flex-grow">
@@ -392,7 +414,7 @@ export default function Home() {
             <p className="mt-4 max-w-3xl mx-auto">
               Envíanos un mail a <a href="mailto:hola@paologourmet.com.mx" className="underline">hola@paologourmet.com.mx</a> o <a href="https://api.whatsapp.com/send/?phone=525562206020&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="underline">escríbenos por Whatsapp</a> para cotizarte. Tenemos opciones personalizadas en CDMX a partir de 20 personas.
             </p>
-            <Button asChild className="mt-6" style={{ backgroundColor: '#dcd0b3', color: '#000' }}>
+            <Button asChild className="mt-6" style={{ backgroundColor: '#dcd0b3', color: '#ffffff' }}>
               <a href="#contact">Contacto</a>
             </Button>
           </div>
@@ -406,3 +428,4 @@ export default function Home() {
     </div>
   );
 }
+
