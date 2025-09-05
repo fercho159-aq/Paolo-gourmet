@@ -363,18 +363,19 @@ export default function Home() {
         <section id="premium-boards" className="py-12 animate-fade-in-up">
           <div className="container">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-              <h2 className="text-3xl font-normal tracking-tighter sm:text-5xl">Tablas Premium</h2>
+              <h2 className="text-3xl font-normal tracking-tighter sm:text-5xl">Nuestros Productos</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Una experiencia gourmet con quesos premium que te transportará.
+                Creaciones artesanales para cada ocasión, desde reuniones íntimas hasta grandes celebraciones.
               </p>
             </div>
-            <CheeseBoardCarousel boards={premiumBoards} />
-          </div>
-        </section>
-
-        <section id="cajas-boards" className="py-8 animate-fade-in-up">
-          <div className="container">
-            <CheeseBoardCarousel boards={cajasBoards} />
+             <div className="mb-8">
+              <h3 className="text-2xl font-normal tracking-tighter sm:text-3xl mb-4 text-center">Tablas Premium</h3>
+              <CheeseBoardCarousel boards={premiumBoards} />
+            </div>
+            <div id="cajas-boards">
+              <h3 className="text-2xl font-normal tracking-tighter sm:text-3xl mb-4 text-center">Cajas</h3>
+              <CheeseBoardCarousel boards={cajasBoards} />
+            </div>
           </div>
         </section>
 
@@ -399,6 +400,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-    
