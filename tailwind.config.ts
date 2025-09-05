@@ -1,3 +1,4 @@
+
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -21,7 +22,7 @@ export default {
       },
       fontFamily: {
         body: ['Montserrat', 'sans-serif'],
-        headline: ['Montserrat', 'serif'],
+        headline: ['Antic Didone', 'serif'],
         code: ['monospace'],
       },
       colors: {

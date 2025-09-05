@@ -285,11 +285,11 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
 
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-normal text-lg flex items-center gap-2 mb-2"><Leaf className="h-5 w-5 text-primary" />Quesos</h3>
+                  <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Leaf className="h-5 w-5 text-primary" />Quesos</h3>
                   <p className="text-muted-foreground">{board.cheeses.join(', ')}</p>
                 </div>
                 <div>
-                  <h3 className="font-normal text-lg flex items-center gap-2 mb-2"><Grape className="h-5 w-5 text-primary" />Acompañamientos</h3>
+                  <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Grape className="h-5 w-5 text-primary" />Acompañamientos</h3>
                   <p className="text-muted-foreground">{board.accompaniments.join(', ')}</p>
                 </div>
               </div>
@@ -440,5 +440,3 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
     </div>
   );
 }
-
-    
