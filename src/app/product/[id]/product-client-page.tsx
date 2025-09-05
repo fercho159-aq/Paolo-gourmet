@@ -324,8 +324,8 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
 
 
               <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2 text-md font-medium">
-                    <Users className="h-5 w-5 text-primary" />
+                <div className="flex items-center gap-2 text-md font-medium" style={{ color: '#c4b282' }}>
+                    <Users className="h-5 w-5" />
                     <span>Sirve para {board.serving} personas</span>
                 </div>
               </div>

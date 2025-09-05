@@ -42,9 +42,9 @@ export default function CheeseBoardCarousel({ boards }: { boards: CheeseBoard[] 
                   <CardContent className="p-4 flex-grow flex flex-col">
                     <CardTitle className="font-headline text-xl mb-2">{board.name}</CardTitle>
                     {board.serving && (
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground mt-auto">
+                      <div className="flex items-center gap-2 text-sm mt-auto" style={{ color: '#c4b282' }}>
                           <Users className="h-4 w-4" />
-                          <span>{board.serving} personas</span>
+                          <span className="font-medium">{board.serving} personas</span>
                       </div>
                     )}
                   </CardContent>
