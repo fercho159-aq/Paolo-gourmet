@@ -160,8 +160,8 @@ export default function PrivacyPolicyPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
        <div className="sticky top-0 z-50">
-        <div style={{ backgroundColor: '#dcd0b3' }} className="py-2 text-center text-xs md:text-sm text-foreground">
-            <p>Envíos gratis en CDMX - El pedido necesita un día mínimo de anticipación.</p>
+        <div style={{ backgroundColor: '#c4b282' }} className="py-2 text-center text-xs md:text-sm text-white">
+            <p>Envíos gratis en CDMX - El pedido necesita <span className="font-bold">un día mínimo</span> de anticipación.</p>
         </div>
         <Header />
       </div>

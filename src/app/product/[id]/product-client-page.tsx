@@ -226,8 +226,8 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <div style={{ backgroundColor: '#dcd0b3' }} className="py-2 text-center text-xs sm:text-sm text-foreground">
-        <p>Envíos gratis en CDMX - El pedido necesita un día mínimo de anticipación.</p>
+      <div style={{ backgroundColor: '#c4b282' }} className="py-2 text-center text-xs sm:text-sm text-white">
+        <p>Envíos gratis en CDMX - El pedido necesita <span className="font-bold">un día mínimo</span> de anticipación.</p>
       </div>
       <Header />
       <main className="flex-grow py-12 md:py-16 lg:py-20 animate-fade-in-up">
