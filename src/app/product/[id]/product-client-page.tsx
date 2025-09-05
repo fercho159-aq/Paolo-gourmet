@@ -232,8 +232,8 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <div style={{ backgroundColor: '#c4b282' }} className="py-2 text-center text-xs sm:text-sm text-white">
-        <p>Envíos gratis en CDMX - <span className="font-bold">un día mínimo</span> de anticipación.</p>
+       <div style={{ backgroundColor: '#c4b282' }} className="py-2 text-center text-xs sm:text-sm text-white">
+          <p>Envíos gratis en CDMX - <span className="font-bold">un día mínimo</span> de anticipación.</p>
       </div>
       <Header />
       <main className="flex-grow py-12 md:py-16 lg:py-20 animate-fade-in-up">
@@ -279,7 +279,6 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
 
             <div className="flex flex-col space-y-6">
               <div>
-                <Badge variant="secondary" className="capitalize text-sm mb-2">{board.line}</Badge>
                 <h1 className="text-3xl lg:text-4xl font-normal font-headline">{board.name}</h1>
                 <p className="text-muted-foreground mt-2 text-lg">{board.description}</p>
               </div>
@@ -328,6 +327,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                     <Users className="h-5 w-5" />
                     <span className="font-medium">Sirve para {board.serving} personas</span>
                 </div>
+                <Badge style={{ backgroundColor: '#c4b282', color: 'white' }} className="capitalize text-sm">{board.line}</Badge>
               </div>
 
                <Button size="lg" className="w-full md:w-auto shadow-md hover:shadow-lg transition-shadow" asChild>
@@ -398,7 +398,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                 >
                     <CarouselContent>
                         {relatedProducts.map(relatedBoard => (
-                        <CarouselItem key={relatedBoard.id} className="basis-full md:basis-1/3 lg:basis-1/2">
+                        <CarouselItem key={relatedBoard.id} className="basis-full md:basis-1/2 lg:basis-1/3">
                             <div className="p-2">
                                 <Link href={`/product/${relatedBoard.id}`} className="block h-full">
                                     <Card className="flex flex-col overflow-hidden shadow-md transition-shadow hover:shadow-xl h-full rounded-none">
