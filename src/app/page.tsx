@@ -269,12 +269,22 @@ function Contact() {
           <div className="space-y-6">
             <div className="bg-secondary/50 p-6 rounded-lg space-y-4">
               <h3 className="text-xl font-normal">Información de Contacto</h3>
-              <div className="space-y-2 text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <Phone className="h-5 w-5 text-primary" />
-                  <span>+52 55 6220 6020</span>
-                </div>
-                <div className="flex items-center gap-2">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button asChild className="flex-1" style={{ backgroundColor: '#c5b282', color: 'white' }}>
+                    <a href="tel:+525562206020">
+                        <Phone className="mr-2 h-4 w-4" />
+                        Llamar
+                    </a>
+                </Button>
+                <Button asChild className="flex-1" style={{ backgroundColor: '#c5b282', color: 'white' }}>
+                    <a href="https://wa.me/525562206020" target="_blank" rel="noopener noreferrer">
+                        <WhatsAppIcon className="mr-2 h-5 w-5" />
+                        WhatsApp
+                    </a>
+                </Button>
+              </div>
+              <div className="space-y-2 text-muted-foreground pt-4">
+                 <div className="flex items-center gap-2">
                   <Mail className="h-5 w-5 text-primary" />
                   <a href="mailto:hola@paologourmet.com.mx" className="hover:underline">hola@paologourmet.com.mx</a>
                 </div>
@@ -428,4 +438,3 @@ export default function Home() {
     </div>
   );
 }
-
