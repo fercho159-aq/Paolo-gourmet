@@ -196,7 +196,6 @@ function TestimonialsCarousel() {
 
   return (
     <div className="w-full mt-8">
-        <h3 className="text-2xl font-normal tracking-tighter text-center mb-4">Lo que dicen nuestros clientes</h3>
         <Carousel
           opts={{
             align: "start",
