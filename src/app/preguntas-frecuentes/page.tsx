@@ -280,7 +280,7 @@ export default function FaqPage() {
                   </div>
                    <div className="flex justify-center items-center">
                         <Image
-                            src="/Imagen/PAOLO GOURMET POST (2000 x 300 px).png"
+                            src="/Imagen/Galeria/PAOLO GOURMET POST (2000 x 300 px).png"
                             alt="Tabla de quesos en un evento"
                             width={300}
                             height={400}
