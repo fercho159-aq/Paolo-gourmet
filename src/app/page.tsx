@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 
 function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -168,6 +169,10 @@ function Hero() {
 }
 
 function Testimonials() {
+  const fullTestimonials = testimonials.map(testimonial => {
+      const product = cheeseBoards.find(p => p.id === testimonial.productId) || cheeseBoards[0];
+      return { ...testimonial, product };
+  });
   return (
     <section id="testimonials" className="w-full py-16 md:py-20 lg:py-24 bg-secondary animate-fade-in-up">
       <div className="container px-4 md:px-6">
@@ -187,28 +192,31 @@ function Testimonials() {
           className="w-full max-w-5xl mx-auto mt-12"
         >
           <CarouselContent>
-            {testimonials.map((testimonial) => (
+            {fullTestimonials.map((testimonial) => (
               <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3">
-                <div className="p-4">
-                  <Card className="h-full shadow-lg">
-                    <CardHeader>
-                      <div className="flex items-center justify-between">
-                         <div className="flex items-center gap-4">
-                            <Quote className="h-8 w-8 text-primary" />
-                            <div>
-                                <p className="text-sm font-bold">{testimonial.name}</p>
-                                <p className="text-xs text-muted-foreground">{testimonial.location}</p>
-                            </div>
-                         </div>
-                         <div className="flex items-center gap-0.5">
-                            {Array.from({ length: 5 }).map((_, i) => (
-                                <Star key={i} className={`h-4 w-4 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-muted-foreground'}`} />
-                            ))}
-                        </div>
+                <div className="p-4 h-full">
+                  <Card className="h-full shadow-lg flex flex-col">
+                    <CardContent className="p-6 flex-grow">
+                      <div className="flex items-start gap-4">
+                         <Avatar className="h-12 w-12 flex-shrink-0">
+                              <AvatarImage src={testimonial.product.image} alt={testimonial.product.name} />
+                              <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                         </Avatar>
+                          <div className="flex-grow">
+                              <div className="flex justify-between items-start">
+                                  <div>
+                                      <p className="text-sm font-bold">{testimonial.name}</p>
+                                      <p className="text-xs text-muted-foreground">{testimonial.location}</p>
+                                  </div>
+                                  <div className="flex items-center gap-0.5 flex-shrink-0">
+                                      {Array.from({ length: 5 }).map((_, i) => (
+                                          <Star key={i} className={`h-4 w-4 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-muted-foreground'}`} />
+                                      ))}
+                                  </div>
+                              </div>
+                              <p className="text-sm text-foreground/80 italic mt-2">"{testimonial.comment}"</p>
+                          </div>
                       </div>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-foreground/80">{testimonial.comment}</p>
                     </CardContent>
                   </Card>
                 </div>

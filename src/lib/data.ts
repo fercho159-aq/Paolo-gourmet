@@ -102,6 +102,7 @@ export const testimonials = [
     location: "Coyoacán, CDMX",
     comment: "¡La Caja Mediana fue un éxito en mi reunión! La calidad y la presentación son increíbles.",
     rating: 5,
+    productId: 2,
   },
   {
     id: 2,
@@ -109,6 +110,7 @@ export const testimonials = [
     location: "Benito Juárez, CDMX",
     comment: "Pedí la Tabla Mediana Premium y me transportó a Francia. ¡Delicioso y súper fresco!",
     rating: 5,
+    productId: 5,
   },
   {
     id: 3,
@@ -116,6 +118,7 @@ export const testimonials = [
     location: "Miguel Hidalgo, CDMX",
     comment: "Perfecto para una tarde con amigas. Los conos son muy prácticos y elegantes.",
     rating: 4,
+    productId: 1,
   },
   {
     id: 4,
@@ -123,6 +126,7 @@ export const testimonials = [
     location: "Cuauhtémoc, CDMX",
     comment: "Si te gusta el queso fuerte, la Tabla Chica Premium es para ti. Una experiencia de sabor única.",
     rating: 5,
+    productId: 4,
   },
   {
     id: 5,
@@ -130,6 +134,7 @@ export const testimonials = [
     location: "Álvaro Obregón, CDMX",
     comment: "La Tabla Mediana es pura elegancia. Ideal para una cita romántica. ¡Nos encantó!",
     rating: 5,
+    productId: 5,
   },
   {
     id: 6,
@@ -137,6 +142,7 @@ export const testimonials = [
     location: "Tlalpan, CDMX",
     comment: "¡La Tabla Grande Premium es espectacular! Impresionó a todos mis invitados en la fiesta.",
     rating: 5,
+    productId: 6,
   },
    {
     id: 7,
@@ -144,6 +150,7 @@ export const testimonials = [
     location: "Iztapalapa, CDMX",
     comment: "Buena variedad en la Caja Grande, aunque me hubiera gustado un poco más de fruta.",
     rating: 4,
+    productId: 3,
   },
   {
     id: 8,
@@ -151,6 +158,7 @@ export const testimonials = [
     location: "Gustavo A. Madero, CDMX",
     comment: "Los conos son una idea genial para eventos. Todos preguntaron de dónde eran.",
     rating: 5,
+    productId: 1,
   },
   {
     id: 9,
@@ -158,6 +166,7 @@ export const testimonials = [
     location: "Azcapotzalco, CDMX",
     comment: "Muy buena atención y el producto llegó perfecto. La calidad de los quesos es notable.",
     rating: 5,
+    productId: 2,
   },
   {
     id: 10,
@@ -165,5 +174,6 @@ export const testimonials = [
     location: "Xochimilco, CDMX",
     comment: "La tabla llegó a tiempo y muy bien presentada. Buen servicio en general.",
     rating: 4,
+    productId: 3,
   },
 ];

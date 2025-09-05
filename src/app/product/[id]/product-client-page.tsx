@@ -33,6 +33,7 @@ import {
     AlertDialogHeader,
     AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 
 function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -189,9 +190,14 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
   const [addWine, setAddWine] = useState(false);
   const [isAlertOpen, setIsAlertOpen] = useState(false);
 
-
   const relatedProducts = cheeseBoards.filter(b => b.id !== board.id);
-  const productTestimonials = testimonials.slice(0, 3);
+
+  const productTestimonials = testimonials.filter(t => t.productId === board.id);
+
+  const fullTestimonials = (productTestimonials.length > 0 ? productTestimonials : testimonials.slice(0,3)).map(testimonial => {
+    const product = cheeseBoards.find(p => p.id === testimonial.productId) || board;
+    return { ...testimonial, product };
+  });
 
   useEffect(() => {
     if (!api) {
@@ -334,9 +340,13 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
               <div className="space-y-4 pt-4">
                 <h3 className="font-normal text-lg text-center">Lo que nuestros clientes dicen</h3>
                 <div className="grid grid-cols-1 gap-4">
-                  {productTestimonials.map((testimonial) => (
+                  {fullTestimonials.map((testimonial) => (
                     <Card key={testimonial.id} className="p-4 shadow-sm">
                       <div className="flex items-start gap-4">
+                        <Avatar className="h-12 w-12 flex-shrink-0">
+                           <AvatarImage src={testimonial.product.image} alt={testimonial.product.name} />
+                           <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                        </Avatar>
                         <div className="flex-grow">
                           <div className="flex items-center justify-between">
                             <p className="font-semibold text-sm">{testimonial.name}</p>
@@ -346,7 +356,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                                 ))}
                             </div>
                           </div>
-                          <p className="text-sm text-muted-foreground mt-1">{testimonial.comment}</p>
+                          <p className="text-sm text-muted-foreground mt-1">"{testimonial.comment}"</p>
                         </div>
                       </div>
                     </Card>
