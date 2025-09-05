@@ -366,10 +366,10 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                                                             ))}
                                                         </div>
                                                     </div>
-                                                    <p className="text-sm text-muted-foreground mt-1">
-                                                        "{testimonial.comment[0]}
-                                                        <span className="font-bold" style={{ color: '#c4b282' }}>{testimonial.comment[1]}</span>
-                                                        {testimonial.comment[2]}"
+                                                     <p className="text-sm text-muted-foreground mt-1">
+                                                      "{testimonial.comment[0]}
+                                                      <span className="font-bold" style={{ color: '#c4b282' }}>{testimonial.comment[1]}</span>
+                                                      {testimonial.comment[2]}"
                                                     </p>
                                                 </div>
                                             </div>
@@ -400,7 +400,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                 >
                     <CarouselContent>
                         {relatedProducts.map(relatedBoard => (
-                        <CarouselItem key={relatedBoard.id} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
+                        <CarouselItem key={relatedBoard.id} className="basis-1/2 lg:basis-1/4">
                             <div className="p-2">
                                 <Link href={`/product/${relatedBoard.id}`} className="block h-full">
                                     <Card className="flex flex-col overflow-hidden shadow-md transition-shadow hover:shadow-xl h-full rounded-none">
@@ -419,11 +419,11 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                                               <div className="flex items-center justify-between mt-auto">
                                                 <div className="flex items-center gap-2 text-sm" style={{ color: '#c4b282' }}>
                                                     <Users className="h-4 w-4" />
-                                                    <span className="font-medium">{relatedBoard.serving} personas</span>
+                                                    <span className="font-medium">{relatedBoard.serving}</span>
                                                 </div>
                                                 <Badge style={{ backgroundColor: '#c5b282', color: 'white' }} className="capitalize text-xs">
                                                   {relatedBoard.line === 'Tablas Premium' ? <Crown className="h-3 w-3 mr-1" /> : <Box className="h-3 w-3 mr-1" />}
-                                                  {relatedBoard.line}
+                                                  {relatedBoard.line === 'Tablas Premium' ? 'Tablas' : relatedBoard.line}
                                                 </Badge>
                                               </div>
                                           )}

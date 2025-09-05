@@ -46,11 +46,11 @@ export default function CheeseBoardCarousel({ boards }: { boards: CheeseBoard[] 
                       <div className="flex items-center justify-between mt-auto">
                         <div className="flex items-center gap-2 text-sm" style={{ color: '#c4b282' }}>
                             <Users className="h-4 w-4" />
-                            <span className="font-medium">{board.serving} personas</span>
+                            <span className="font-medium">{board.serving}</span>
                         </div>
                         <Badge style={{ backgroundColor: '#c5b282', color: 'white' }} className="capitalize text-xs">
                           {board.line === 'Tablas Premium' ? <Crown className="h-3 w-3 mr-1" /> : <Box className="h-3 w-3 mr-1" />}
-                          {board.line}
+                          {board.line === 'Tablas Premium' ? 'Tablas' : board.line}
                         </Badge>
                       </div>
                     )}
