@@ -65,7 +65,6 @@ function Header() {
         { href: "/nosotros", label: "Nosotros" },
         { href: "/preguntas-frecuentes", label: "Preguntas Frecuentes" },
         { href: "/#contact", label: "Contacto" },
-        { href: "/gallery", label: "Galería" },
     ]
 
     return (
@@ -84,7 +83,7 @@ function Header() {
                 <nav className="flex flex-col gap-4 mt-8 h-full">
                     {navLinks.map(link => (
                          <SheetClose asChild key={link.href}>
-                            <Link href={link.href} className="text-lg font-medium hover:underline underline-offset-4">
+                            <Link href={link.href} className="text-lg font-medium hover:underline hover:text-[#c5b282] underline-offset-4">
                                 {link.label}
                             </Link>
                         </SheetClose>
@@ -111,13 +110,13 @@ function Header() {
             </Sheet>
             ) : (
             <nav className="ml-auto flex items-center space-x-1">
-                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
+                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-[#c5b282] underline-offset-4">
                     <Link href="/nosotros">Nosotros</Link>
                 </Button>
 
                 <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" className="hover:bg-transparent hover:underline underline-offset-4">
+                    <Button variant="ghost" className="hover:bg-transparent hover:underline hover:text-[#c5b282] underline-offset-4">
                     Productos <ChevronDown className="ml-1 h-4 w-4" />
                     </Button>
                 </DropdownMenuTrigger>
@@ -131,16 +130,12 @@ function Header() {
                 </DropdownMenuContent>
                 </DropdownMenu>
 
-                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
+                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-[#c5b282] underline-offset-4">
                     <Link href="/preguntas-frecuentes">Preguntas Frecuentes</Link>
                 </Button>
 
-                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
+                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-[#c5b282] underline-offset-4">
                     <a href="/#contact">Contacto</a>
-                </Button>
-
-                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline underline-offset-4">
-                    <Link href="/gallery">Galería</Link>
                 </Button>
             </nav>
             )}
@@ -276,3 +271,5 @@ export default function FaqPage() {
     </div>
   );
 }
+
+    
