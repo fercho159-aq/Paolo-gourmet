@@ -34,7 +34,7 @@ function WhatsAppIcon(props: React.SVGProps<SVGSVGElement>) {
 function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/525512345678"
+      href="https://wa.me/525562206020"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-4 right-4 z-50 text-white p-4 rounded-full shadow-lg transition-colors"

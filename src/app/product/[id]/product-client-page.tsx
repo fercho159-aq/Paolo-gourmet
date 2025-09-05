@@ -218,7 +218,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
   };
 
   const getWhatsAppLink = () => {
-    const baseLink = "https://wa.me/525512345678";
+    const baseLink = "https://wa.me/525562206020";
     const message = `Hola, me gustaría solicitar una cotización para el producto: ${board.name}${addWine ? ' con una botella de vino' : ''}.`;
     return `${baseLink}?text=${encodeURIComponent(message)}`;
   }

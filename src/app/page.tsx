@@ -243,7 +243,7 @@ function Contact() {
               <div className="space-y-2 text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <Phone className="h-5 w-5 text-primary" />
-                  <span>+52 55 1234 5678</span>
+                  <span>+52 55 6220 6020</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="h-5 w-5 text-primary" />
@@ -325,7 +325,7 @@ function Footer() {
 function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/525512345678"
+      href="https://wa.me/525562206020"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-4 right-4 z-50 text-white p-4 rounded-full shadow-lg transition-colors"
@@ -382,7 +382,7 @@ export default function Home() {
           <div className="relative container text-center">
             <h3 className="text-2xl font-normal uppercase tracking-wider">DÉJANOS SER PARTE DE TUS EVENTOS</h3>
             <p className="mt-4 max-w-3xl mx-auto">
-              Envíanos un mail a <a href="mailto:hola@paologourmet.com.mx" className="underline">hola@paologourmet.com.mx</a> o <a href="https://api.whatsapp.com/send/?phone=525512345678&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="underline">escríbenos por Whatsapp</a> para cotizarte. Tenemos opciones personalizadas en CDMX a partir de 20 personas.
+              Envíanos un mail a <a href="mailto:hola@paologourmet.com.mx" className="underline">hola@paologourmet.com.mx</a> o <a href="https://api.whatsapp.com/send/?phone=525562206020&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="underline">escríbenos por Whatsapp</a> para cotizarte. Tenemos opciones personalizadas en CDMX a partir de 20 personas.
             </p>
             <Button asChild className="mt-6" style={{ backgroundColor: '#dcd0b3', color: '#000' }}>
               <a href="#contact">Contacto</a>
