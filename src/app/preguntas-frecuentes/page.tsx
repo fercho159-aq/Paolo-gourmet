@@ -187,32 +187,36 @@ function Footer() {
     );
 }
 
+const Highlight = ({ children }: { children: React.ReactNode }) => (
+    <span className="font-bold" style={{ color: '#c5b282' }}>{children}</span>
+);
+
 const faqItems = [
     {
       value: "item-1",
       question: "¿Cuáles son las zonas de entrega y los costos?",
-      answer: "Cubrimos toda la Ciudad de México. El costo de envío varía según la zona: Zona Céntrica (Álvaro Obregón, Azcapotzalco, Benito Juárez, Coyoacán, Cuauhtémoc, GAM, Iztacalco, Iztapalapa, Miguel Hidalgo, Venustiano Carranza) tiene un costo de $99 MXN. Para la Zona Extendida (Cuajimalpa, Magdalena Contreras, Milpa Alta, Tláhuac, Tlalpan, Xochimilco) el costo es de $150 MXN.",
+      answer: <>Cubrimos <Highlight>toda la Ciudad de México</Highlight>. El costo de envío varía según la zona: Zona Céntrica (Álvaro Obregón, Azcapotzalco, Benito Juárez, Coyoacán, Cuauhtémoc, GAM, Iztacalco, Iztapalapa, Miguel Hidalgo, Venustiano Carranza) tiene un <Highlight>costo de $99 MXN</Highlight>. Para la Zona Extendida (Cuajimalpa, Magdalena Contreras, Milpa Alta, Tláhuac, Tlalpan, Xochimilco) el costo es de $150 MXN.</>,
       icon: <Truck className="h-5 w-5 text-primary" />
     },
     {
       value: "item-2",
       question: "¿Con cuánto tiempo de anticipación debo hacer mi pedido?",
-      answer: "Para asegurar la frescura y calidad de nuestros ingredientes, todos los pedidos requieren un mínimo de 24 horas de anticipación. Para eventos grandes, te recomendamos contactarnos con al menos una semana de antelación.",
+      answer: <>Para asegurar la frescura y calidad de nuestros ingredientes, todos los pedidos requieren un <Highlight>mínimo de 24 horas</Highlight> de anticipación. Para <Highlight>eventos grandes</Highlight>, te recomendamos contactarnos con al menos una semana de antelación.</>,
       icon: <Clock className="h-5 w-5 text-primary" />
     },
     {
       value: "item-3",
       question: "¿Qué garantía de calidad ofrecen?",
-      answer: "En paolo gourmet, nuestra prioridad es tu satisfacción. Seleccionamos cuidadosamente cada ingrediente y preparamos tu tabla el mismo día de la entrega para garantizar la máxima frescura. Si por alguna razón no estás satisfecho con tu pedido, por favor contáctanos dentro de las primeras 3 horas de haberlo recibido para encontrar una solución.",
+      answer: <>En paolo gourmet, nuestra prioridad es tu <Highlight>satisfacción total</Highlight>. Seleccionamos cuidadosamente cada ingrediente y preparamos tu tabla el mismo día de la entrega para garantizar la <Highlight>máxima frescura</Highlight>. Si por alguna razón no estás satisfecho con tu pedido, por favor contáctanos dentro de las primeras 3 horas de haberlo recibido para encontrar una solución.</>,
       icon: <Award className="h-5 w-5 text-primary" />
     },
     {
       value: "item-4",
       question: "¿Puedo personalizar mi tabla de quesos?",
-      answer: "¡Claro que sí! Ofrecemos opciones personalizadas para eventos a partir de 20 personas. Podemos adaptar las tablas a tus gustos, preferencias o restricciones alimentarias. Contáctanos por WhatsApp o correo electrónico para cotizar un pedido especial.",
+      answer: <>¡Claro que sí! Ofrecemos <Highlight>opciones personalizadas</Highlight> para eventos a partir de 20 personas. Podemos adaptar las tablas a tus gustos, preferencias o <Highlight>restricciones alimentarias</Highlight>. Contáctanos por WhatsApp o correo electrónico para cotizar un pedido especial.</>,
       icon: <Users className="h-5 w-5 text-primary" />
     }
-  ]
+]
 
 export default function FaqPage() {
   return (
@@ -236,7 +240,7 @@ export default function FaqPage() {
               <div className="container px-4 md:px-6">
                 <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start max-w-6xl mx-auto">
                   <div className="flex flex-col justify-center">
-                    <Accordion type="single" collapsible className="w-full">
+                    <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
                         {faqItems.map((item) => (
                              <AccordionItem key={item.value} value={item.value}>
                                 <AccordionTrigger>
@@ -271,5 +275,3 @@ export default function FaqPage() {
     </div>
   );
 }
-
-    
