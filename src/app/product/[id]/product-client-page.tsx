@@ -410,7 +410,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                                         />
                                         </div>
                                         <CardContent className="p-4 flex-grow flex flex-col">
-                                          <CardTitle className="font-headline text-xl mb-2">{relatedBoard.name}</CardTitle>
+                                          <CardTitle className="text-xl mb-2">{relatedBoard.name}</CardTitle>
                                           {relatedBoard.serving && (
                                               <div className="flex items-center justify-between mt-auto">
                                                 <div className="flex items-center gap-2 text-sm" style={{ color: '#c4b282' }}>
