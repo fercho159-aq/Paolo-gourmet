@@ -427,7 +427,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                     <CarouselContent>
                         {relatedProducts.map(relatedBoard => (
                         <CarouselItem key={relatedBoard.id} className="basis-1/2 lg:basis-1/4">
-                            <div className="p-2">
+                            <div className="p-2 h-full">
                                 <Link href={`/product/${relatedBoard.id}`} className="block h-full">
                                     <Card className="flex flex-col overflow-hidden shadow-md transition-shadow hover:shadow-xl h-full rounded-none">
                                         <div className="relative aspect-square w-full">

@@ -51,7 +51,7 @@ export default function CheeseBoardCarousel({ boards }: { boards: CheeseBoard[] 
       <CarouselContent>
         {boards.map(board => (
           <CarouselItem key={board.id} className="basis-1/2 lg:basis-1/3">
-            <div className="p-2">
+            <div className="p-2 h-full">
               <Link href={`/product/${board.id}`} className="block h-full">
                 <Card className="flex flex-col overflow-hidden shadow-md transition-shadow hover:shadow-xl h-full rounded-none">
                   <div className="relative aspect-square w-full">
