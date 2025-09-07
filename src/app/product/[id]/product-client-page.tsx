@@ -440,7 +440,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                                         />
                                         </div>
                                         <CardContent className="p-4 flex-grow flex flex-col">
-                                          <CardTitle className="text-sm mb-2">{relatedBoard.name}</CardTitle>
+                                            <CardTitle className="text-sm mb-2 flex-grow">{relatedBoard.name}</CardTitle>
                                             <div className="flex items-center justify-between mt-auto">
                                                 <div className="flex items-center gap-2 text-sm" style={{ color: '#c4b282' }}>
                                                     <Users className="h-4 w-4" />
