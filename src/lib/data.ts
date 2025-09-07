@@ -26,6 +26,7 @@ export const cheeseBoards: CheeseBoard[] = [
     cheeses: ["Cheddar", "Gouda", "Monterey Jack"],
     accompaniments: ["Chorizo español", "Salami", "Frutas", "Nueces", "Galletas"],
     serving: "6-12",
+    dimensions: "22x26 cm",
     tags: ["evento", "individual", "conos"],
   },
   {
@@ -39,7 +40,7 @@ export const cheeseBoards: CheeseBoard[] = [
     cheeses: ["Manchego", "Provolone", "Queso de cabra"],
     accompaniments: ["Tomates secos", "Aceitunas", "Pan de pita", "Hummus"],
     serving: "1-2",
-    dimensions: "17x17 cm",
+    dimensions: "22x26 cm",
     tags: ["mediana", "reunión", "compartir"],
   },
   {
