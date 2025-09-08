@@ -50,10 +50,10 @@ export default function CheeseBoardCarousel({ boards }: { boards: CheeseBoard[] 
     >
       <CarouselContent>
         {boards.map(board => (
-          <CarouselItem key={board.id} className="basis-1/2 lg:basis-1/3">
+          <CarouselItem key={board.id} className="basis-full md:basis-1/2 lg:basis-1/3">
             <div className="p-2 h-full">
               <Link href={`/product/${board.id}`} className="block h-full">
-                <Card className="flex flex-col overflow-hidden shadow-md transition-shadow hover:shadow-xl h-full rounded-none">
+                <Card className="flex flex-col overflow-hidden transition-shadow hover:shadow-xl h-full">
                   <div className="relative aspect-square w-full">
                     <Image
                       src={board.image}
@@ -88,8 +88,8 @@ export default function CheeseBoardCarousel({ boards }: { boards: CheeseBoard[] 
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="hidden md:flex" />
+      <CarouselNext className="hidden md:flex" />
     </Carousel>
   );
 }

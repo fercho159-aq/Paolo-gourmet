@@ -264,7 +264,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                 <CarouselContent>
                   {productImages.map((src, index) => (
                     <CarouselItem key={index}>
-                      <Card className="overflow-hidden shadow-lg rounded-none">
+                      <Card className="overflow-hidden">
                         <CardContent className="p-0">
                           <div className="relative aspect-square w-full">
                             <Image
@@ -426,10 +426,10 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                 >
                     <CarouselContent>
                         {relatedProducts.map(relatedBoard => (
-                        <CarouselItem key={relatedBoard.id} className="basis-1/2 lg:basis-1/4">
+                        <CarouselItem key={relatedBoard.id} className="basis-full md:basis-1/2 lg:basis-1/4">
                             <div className="p-2 h-full">
                                 <Link href={`/product/${relatedBoard.id}`} className="block h-full">
-                                    <Card className="flex flex-col overflow-hidden shadow-md transition-shadow hover:shadow-xl h-full rounded-none">
+                                    <Card className="flex flex-col overflow-hidden transition-shadow hover:shadow-xl h-full">
                                         <div className="relative aspect-square w-full">
                                         <Image
                                             src={relatedBoard.image}
@@ -464,8 +464,8 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                         </CarouselItem>
                         ))}
                     </CarouselContent>
-                    <CarouselPrevious />
-                    <CarouselNext />
+                    <CarouselPrevious className="md:-left-8" />
+                    <CarouselNext className="md:-right-8" />
                 </Carousel>
             </div>
         </section>
