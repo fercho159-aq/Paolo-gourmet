@@ -351,7 +351,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                     <span className="font-medium">Sirve para {board.serving} personas</span>
                 </div>
                 {board.dimensions && (
-                    <div className="hidden md:flex items-center gap-2 text-md" style={{ color: '#c4b282' }}>
+                    <div className={cn("items-center gap-2 text-md", board.name === "Set de 12 Conos" ? "flex" : "hidden md:flex")} style={{ color: '#c4b282' }}>
                         <Ruler className="h-5 w-5" />
                         <span className="font-medium">{board.dimensions}</span>
                     </div>
@@ -448,7 +448,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                                                     <span className="font-medium">{relatedBoard.serving}</span>
                                                 </div>
                                                 {relatedBoard.dimensions && (
-                                                    <div className="hidden md:flex items-center gap-2 text-sm" style={{ color: '#c4b282' }}>
+                                                    <div className={cn("items-center gap-2 text-sm", relatedBoard.name === "Set de 12 Conos" ? "flex" : "hidden md:flex")} style={{ color: '#c4b282' }}>
                                                         <Ruler className="h-4 w-4" />
                                                         <span className="font-medium">{relatedBoard.dimensions}</span>
                                                     </div>
