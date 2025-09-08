@@ -10,6 +10,7 @@ import type { CheeseBoard } from '@/lib/data';
 import { Users, Box, Ruler } from 'lucide-react';
 import Autoplay from "embla-carousel-autoplay"
 import { Badge } from '@/components/ui/badge';
+import { cn } from '@/lib/utils';
 
 function CuttingBoardIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -64,14 +65,16 @@ export default function CheeseBoardCarousel({ boards }: { boards: CheeseBoard[] 
                     />
                   </div>
                   <CardContent className="p-4 flex-grow flex flex-col">
-                    <CardTitle className="text-sm mb-2 flex-grow">{board.name}</CardTitle>
+                  <CardTitle className={cn("text-sm mb-2 flex-grow", board.name === "Tabla grande de solo quesos" && "text-destructive")}>
+                        {board.name}
+                    </CardTitle>
                     <div className="flex items-center justify-between mt-auto">
                         <div className="flex items-center gap-2 text-sm" style={{ color: '#c4b282' }}>
                             <Users className="h-4 w-4" />
                             <span className="font-medium">{board.serving}</span>
                         </div>
                         {board.dimensions && (
-                            <div className="flex items-center gap-2 text-sm" style={{ color: '#c4b282' }}>
+                            <div className="hidden md:flex items-center gap-2 text-sm" style={{ color: '#c4b282' }}>
                                 <Ruler className="h-4 w-4" />
                                 <span className="font-medium">{board.dimensions}</span>
                             </div>

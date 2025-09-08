@@ -34,6 +34,7 @@ import {
     AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { cn } from '@/lib/utils';
 
 
 function CuttingBoardIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -138,7 +139,7 @@ function Header() {
                         <Link href="/#premium-boards" className="flex items-center gap-2"><CuttingBoardIcon className="h-4 w-4" />Tablas Premium</Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
-                        <Link href="/#cajas-boards" className="flex items-center gap-2"><Box className="h-4 w-4" />Cajas</Link>
+                         <Link href="/#cajas-boards" className="flex items-center gap-2"><Box className="h-4 w-4" />Cajas</Link>
                     </DropdownMenuItem>
                 </DropdownMenuContent>
                 </DropdownMenu>
@@ -264,7 +265,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                 <CarouselContent>
                   {productImages.map((src, index) => (
                     <CarouselItem key={index}>
-                      <Card className="overflow-hidden">
+                      <Card className="overflow-hidden rounded-none shadow-none">
                         <CardContent className="p-0">
                           <div className="relative aspect-square w-full">
                             <Image
@@ -350,7 +351,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                     <span className="font-medium">Sirve para {board.serving} personas</span>
                 </div>
                 {board.dimensions && (
-                    <div className="flex items-center gap-2 text-md" style={{ color: '#c4b282' }}>
+                    <div className="hidden md:flex items-center gap-2 text-md" style={{ color: '#c4b282' }}>
                         <Ruler className="h-5 w-5" />
                         <span className="font-medium">{board.dimensions}</span>
                     </div>
@@ -429,7 +430,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                         <CarouselItem key={relatedBoard.id} className="basis-full md:basis-1/2 lg:basis-1/4">
                             <div className="p-2 h-full">
                                 <Link href={`/product/${relatedBoard.id}`} className="block h-full">
-                                    <Card className="flex flex-col overflow-hidden transition-shadow hover:shadow-xl h-full">
+                                    <Card className="flex flex-col overflow-hidden transition-shadow hover:shadow-xl h-full rounded-none shadow-none">
                                         <div className="relative aspect-square w-full">
                                         <Image
                                             src={relatedBoard.image}
@@ -440,14 +441,14 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                                         />
                                         </div>
                                         <CardContent className="p-4 flex-grow flex flex-col">
-                                            <CardTitle className="text-sm mb-2 flex-grow">{relatedBoard.name}</CardTitle>
+                                            <CardTitle className={cn("text-xs mb-2 flex-grow", relatedBoard.name === "Tabla grande de solo quesos" && "text-destructive")}>{relatedBoard.name}</CardTitle>
                                             <div className="flex items-center justify-between mt-auto">
                                                 <div className="flex items-center gap-2 text-sm" style={{ color: '#c4b282' }}>
                                                     <Users className="h-4 w-4" />
                                                     <span className="font-medium">{relatedBoard.serving}</span>
                                                 </div>
                                                 {relatedBoard.dimensions && (
-                                                    <div className="flex items-center gap-2 text-sm" style={{ color: '#c4b282' }}>
+                                                    <div className="hidden md:flex items-center gap-2 text-sm" style={{ color: '#c4b282' }}>
                                                         <Ruler className="h-4 w-4" />
                                                         <span className="font-medium">{relatedBoard.dimensions}</span>
                                                     </div>
