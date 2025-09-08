@@ -249,8 +249,3 @@ export default function TermsOfServicePage() {
     </div>
   );
 }
-
-    
-
-    
-
