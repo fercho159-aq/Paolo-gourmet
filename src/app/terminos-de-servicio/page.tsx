@@ -102,7 +102,8 @@ function Header() {
           ) : (
             <nav className="ml-auto flex items-center space-x-1">
               <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-[#c5b282] underline-offset-4">
-                  <Link href="/nosotros">Nosotros</Link>              </Button>
+                  <Link href="/nosotros">Nosotros</Link>
+              </Button>
   
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
