@@ -249,7 +249,7 @@ function Testimonials() {
         </Carousel>
         <div className="mt-12">
             <Image
-                src="/Imagen/Galeria/IMG_0852.jpg"
+                src="/Imagen/PAOLO GOURMET POST (2000 x 300 px).png"
                 alt="Tabla de quesos en un evento"
                 width={1200}
                 height={400}
