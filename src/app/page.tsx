@@ -191,7 +191,7 @@ function Testimonials() {
       return { ...testimonial, product };
   });
   return (
-    <section id="testimonials" className="w-full py-16 md:py-20 lg:py-24 bg-secondary animate-fade-in-up">
+    <section id="testimonials" className="w-full pt-16 md:pt-20 lg:pt-24 bg-secondary animate-fade-in-up">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
@@ -254,7 +254,7 @@ function Testimonials() {
             alt="Tabla de quesos en un evento"
             width={2000}
             height={300}
-            className="w-full h-auto object-cover"
+            className="w-full h-auto object-cover -mx-5"
             data-ai-hint="cheese board event"
         />
       </div>

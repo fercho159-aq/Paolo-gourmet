@@ -265,7 +265,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                 <CarouselContent>
                   {productImages.map((src, index) => (
                     <CarouselItem key={index}>
-                      <Card className="overflow-hidden rounded-none shadow-none">
+                      <Card className="overflow-hidden rounded-none border-0 shadow-none">
                         <CardContent className="p-0">
                           <div className="relative aspect-square w-full">
                             <Image
@@ -372,7 +372,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                             align: "start",
                             loop: true,
                         }}
-                        className="w-full max-w-md mx-auto"
+                        className="w-full max-w-full md:max-w-md mx-auto"
                     >
                         <CarouselContent>
                             {fullTestimonials.map((testimonial) => (
@@ -428,40 +428,38 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                     <CarouselContent>
                         {relatedProducts.map(relatedBoard => (
                         <CarouselItem key={relatedBoard.id} className="basis-full md:basis-1/2 lg:basis-1/4">
-                            <div className="p-2 h-full">
-                                <Link href={`/product/${relatedBoard.id}`} className="block h-full">
-                                    <Card className="flex flex-col overflow-hidden transition-shadow hover:shadow-xl h-full rounded-none shadow-none">
-                                        <div className="relative aspect-square w-full">
-                                        <Image
-                                            src={relatedBoard.image}
-                                            alt={relatedBoard.name}
-                                            data-ai-hint={relatedBoard.dataAiHint}
-                                            fill
-                                            className="object-cover"
-                                        />
-                                        </div>
-                                        <CardContent className="p-4 flex-grow flex flex-col">
-                                            <CardTitle className={cn("text-xs mb-2 flex-grow", relatedBoard.name === "Tabla grande de solo quesos" && "text-destructive")}>{relatedBoard.name}</CardTitle>
-                                            <div className="flex items-center justify-between mt-auto">
-                                                <div className="flex items-center gap-2 text-sm" style={{ color: '#c4b282' }}>
-                                                    <Users className="h-4 w-4" />
-                                                    <span className="font-medium">{relatedBoard.serving}</span>
-                                                </div>
-                                                {relatedBoard.dimensions && (
-                                                    <div className={cn("items-center gap-2 text-sm", relatedBoard.name === "Set de 12 Conos" ? "flex" : "hidden md:flex")} style={{ color: '#c4b282' }}>
-                                                        <Ruler className="h-4 w-4" />
-                                                        <span className="font-medium">{relatedBoard.dimensions}</span>
-                                                    </div>
-                                                )}
-                                                <Badge style={{ backgroundColor: '#c5b282', color: 'white' }} className="capitalize text-xs">
-                                                  {relatedBoard.line === 'Tablas Premium' ? <CuttingBoardIcon className="h-3 w-3 mr-1" /> : <Box className="h-3 w-3 mr-1" />}
-                                                  {relatedBoard.line === 'Tablas Premium' ? 'Tablas' : relatedBoard.line}
-                                                </Badge>
+                            <Link href={`/product/${relatedBoard.id}`} className="block h-full">
+                                <Card className="flex flex-col h-full overflow-hidden transition-shadow hover:shadow-xl rounded-none border-0 shadow-none">
+                                    <div className="relative aspect-square w-full">
+                                    <Image
+                                        src={relatedBoard.image}
+                                        alt={relatedBoard.name}
+                                        data-ai-hint={relatedBoard.dataAiHint}
+                                        fill
+                                        className="object-cover"
+                                    />
+                                    </div>
+                                    <CardContent className="p-4 flex-grow flex flex-col">
+                                        <CardTitle className={cn("text-xs mb-2 flex-grow", relatedBoard.name === "Tabla grande de solo quesos" && "text-destructive")}>{relatedBoard.name}</CardTitle>
+                                        <div className="flex items-center justify-between mt-auto">
+                                            <div className="flex items-center gap-2 text-sm" style={{ color: '#c4b282' }}>
+                                                <Users className="h-4 w-4" />
+                                                <span className="font-medium">{relatedBoard.serving}</span>
                                             </div>
-                                        </CardContent>
-                                    </Card>
-                                </Link>
-                            </div>
+                                            {relatedBoard.dimensions && (
+                                                <div className={cn("items-center gap-2 text-sm", relatedBoard.name === "Set de 12 Conos" ? "flex" : "hidden md:flex")} style={{ color: '#c4b282' }}>
+                                                    <Ruler className="h-4 w-4" />
+                                                    <span className="font-medium">{relatedBoard.dimensions}</span>
+                                                </div>
+                                            )}
+                                            <Badge style={{ backgroundColor: '#c5b282', color: 'white' }} className="capitalize text-xs">
+                                                {relatedBoard.line === 'Tablas Premium' ? <CuttingBoardIcon className="h-3 w-3 mr-1" /> : <Box className="h-3 w-3 mr-1" />}
+                                                {relatedBoard.line === 'Tablas Premium' ? 'Tablas' : relatedBoard.line}
+                                            </Badge>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            </Link>
                         </CarouselItem>
                         ))}
                     </CarouselContent>
