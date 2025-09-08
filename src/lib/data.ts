@@ -25,7 +25,7 @@ export const cheeseBoards: CheeseBoard[] = [
     dataAiHint: "conos de queso",
     cheeses: ["Cheddar", "Gouda", "Monterey Jack"],
     accompaniments: ["Chorizo español", "Salami", "Frutas", "Nueces", "Galletas"],
-    serving: "6-12",
+    serving: "6x12",
     dimensions: "22x26 cm",
     tags: ["evento", "individual", "conos"],
   },
