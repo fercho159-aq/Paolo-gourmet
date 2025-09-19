@@ -8,7 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Carousel, CarouselContent, CarouselItem, CarouselApi, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
-import { Users, Leaf, Grape, Send, Wine, Star, Menu, Box, ChevronDown, Instagram, Facebook, Ruler } from 'lucide-react';
+import { Users, Leaf, Grape, Send, Wine, Star, Menu, Box, ChevronDown, Instagram, Facebook, Ruler, Apple } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import type { CheeseBoard, Testimonial } from '@/lib/data';
@@ -314,9 +314,16 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                   <p className="text-muted-foreground">{board.cheeses.join(', ')}</p>
                 </div>
                 <div>
+                  <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Apple className="h-5 w-5 text-primary" />Frutos</h3>
+                  <p className="text-muted-foreground">{board.fruits.join(', ')}</p>
+                </div>
+                <div>
                   <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Grape className="h-5 w-5 text-primary" />Acompañamientos</h3>
                   <p className="text-muted-foreground">{board.accompaniments.join(', ')}</p>
                 </div>
+                <p className="text-sm text-muted-foreground italic">
+                    *Las imágenes son de carácter ilustrativo. La variedad de frutos puede cambiar según la temporada, garantizando siempre la máxima frescura y calidad.
+                </p>
               </div>
               
               <Separator />
@@ -473,5 +480,3 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
     </div>
   );
 }
-
-    

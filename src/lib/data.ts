@@ -8,6 +8,7 @@ export type CheeseBoard = {
   gallery: string[];
   dataAiHint: string;
   cheeses: string[];
+  fruits: string[];
   accompaniments: string[];
   serving: string;
   dimensions?: string;
@@ -24,7 +25,8 @@ export const cheeseBoards: CheeseBoard[] = [
     gallery: ["/Imagen/Conos/IMG_5197.JPG", "/Imagen/Conos/IMG_5202.JPG", "/Imagen/Conos/IMG_5219.JPG","/Imagen/Conos/IMG_5227.JPG"],
     dataAiHint: "conos de queso",
     cheeses: ["Cheddar", "Gouda", "Monterey Jack"],
-    accompaniments: ["Chorizo español", "Salami", "Frutas", "Nueces", "Galletas"],
+    fruits: ["Frutas de temporada"],
+    accompaniments: ["Chorizo español", "Salami", "Nueces", "Galletas"],
     serving: "6-12",
     dimensions: "22x26 cm",
     tags: ["evento", "individual", "conos"],
@@ -38,6 +40,7 @@ export const cheeseBoards: CheeseBoard[] = [
     gallery: ["/Imagen/Caja1/IMG_5247.JPG", "/Imagen/Caja1/IMG_5250.JPG", "/Imagen/Caja1/IMG_5257.JPG","/Imagen/Caja1/IMG_5260.JPG"],
     dataAiHint: "caja de queso mediana",
     cheeses: ["Manchego", "Provolone", "Queso de cabra"],
+    fruits: ["Frutas de temporada"],
     accompaniments: ["Tomates secos", "Aceitunas", "Pan de pita", "Hummus"],
     serving: "1-2",
     dimensions: "22x26 cm",
@@ -52,7 +55,8 @@ export const cheeseBoards: CheeseBoard[] = [
     gallery: ["/Imagen/Caja grande/1.jpg", "/Imagen/Caja grande/2.jpg", "/Imagen/Caja grande/3.jpg","/Imagen/Caja grande/4.jpg","/Imagen/Caja grande/5.jpg","/Imagen/Caja grande/6.jpg"],
     dataAiHint: "caja de queso grande",
     cheeses: ["Suizo", "Queso crema con arándanos", "Stilton"],
-    accompaniments: ["Rodajas de manzana", "Panal de miel", "Prosciutto", "Chocolate negro"],
+    fruits: ["Rodajas de manzana", "Frutas de temporada"],
+    accompaniments: ["Panal de miel", "Prosciutto", "Chocolate negro"],
     serving: "1-3",
     dimensions: "22x26 cm",
     tags: ["grande", "celebración", "fiesta"],
@@ -66,7 +70,8 @@ export const cheeseBoards: CheeseBoard[] = [
     gallery: ["/Imagen/ProductosAldo/32.jpg", "/Imagen/ProductosAldo/33.jpg", "/Imagen/ProductosAldo/31.jpg", "/Imagen/ProductosAldo/11.jpg"],
     dataAiHint: "tabla de queso chica",
     cheeses: ["Gorgonzola", "Danablu"],
-    accompaniments: ["Rodajas de pera", "Nueces pecanas confitadas", "Tostadas de centeno"],
+    fruits: ["Rodajas de pera", "Frutas de temporada"],
+    accompaniments: ["Nueces pecanas confitadas", "Tostadas de centeno"],
     serving: "1-2",
     dimensions: "20x30 cm",
     tags: ["premium", "chica", "intenso"],
@@ -80,7 +85,8 @@ export const cheeseBoards: CheeseBoard[] = [
     gallery: ["/Imagen/ProductosAldo/11.jpg", "/Imagen/ProductosAldo/12.jpg", "/Imagen/ProductosAldo/13.jpg", "/Imagen/ProductosAldo/14.jpg"],
     dataAiHint: "tabla de queso premium mediana",
     cheeses: ["Camembert", "Comté", "Chèvre", "Roquefort"],
-    accompaniments: ["Baguette", "Cornichons", "Compota de cereza", "Almendras Marcona"],
+    fruits: ["Compota de cereza", "Frutas de temporada"],
+    accompaniments: ["Baguette", "Cornichons", "Almendras Marcona"],
     serving: "2-3",
     dimensions: "40x22 cm",
     tags: ["premium", "mediana", "francés", "gourmet"],
@@ -94,7 +100,8 @@ export const cheeseBoards: CheeseBoard[] = [
     gallery: ["https://picsum.photos/seed/board1/600/600", "https://picsum.photos/seed/board2/600/600", "https://picsum.photos/seed/board3/600/600", "https://picsum.photos/seed/board4/600/600"],
     dataAiHint: "tabla de queso premium grande",
     cheeses: ["Parmigiano-Reggiano", "Brie triple crema", "Gouda ahumado", "Gruyère añejo"],
-    accompaniments: ["Surtido de embutidos", "Panes artesanales", "Aceitunas y encurtidos", "Albaricoques secos"],
+    fruits: ["Albaricoques secos", "Frutas de temporada"],
+    accompaniments: ["Surtido de embutidos", "Panes artesanales", "Aceitunas y encurtidos"],
     serving: "2-4",
     dimensions: "40x22 cm",
     tags: ["premium", "grande", "lujoso", "celebración"],
