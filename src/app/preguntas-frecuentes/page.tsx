@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Truck, Clock, Award, Users, Menu, Box, ChevronDown, Instagram, Facebook } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
+import { LogoBlanco } from '@/components/logo-blanco';
 import {
   Accordion,
   AccordionContent,
@@ -175,7 +176,7 @@ function Footer() {
                 {isMobile ? (
                     <div className="flex flex-col items-center w-full">
                         <div className="mb-4">
-                            <Logo />
+                            <LogoBlanco />
                         </div>
                         <div className="flex items-center space-x-6">
                             <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer"><Instagram style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
@@ -187,7 +188,7 @@ function Footer() {
                     <>
                         <div className="flex flex-col items-center w-full md:w-auto md:items-start">
                             <div className="mb-4 md:mb-0">
-                                <Logo />
+                                <LogoBlanco />
                             </div>
                         </div>
                         <div className="flex flex-col items-center gap-2 text-center">

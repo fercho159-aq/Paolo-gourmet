@@ -9,6 +9,7 @@ import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
 import { Quote, Users, Mail, Leaf, Grape, Phone, MapPin, Instagram, Facebook, Menu, Star, Box, Ruler } from 'lucide-react';
 import { Logo } from '@/components/logo';
+import { LogoBlanco } from '@/components/logo-blanco';
 import { cheeseBoards, testimonials, Testimonial } from '@/lib/data';
 import CheeseBoardCarousel from '@/components/cheese-board-carousel';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
@@ -210,7 +211,7 @@ function Testimonials() {
         >
           <CarouselContent>
             {fullTestimonials.map((testimonial) => (
-              <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/2">
+              <CarouselItem key={testimonial.id} className="basis-full md:basis-1/2 lg:basis-1/2">
                 <div className="p-4 h-full">
                   <Card className="h-full shadow-lg flex flex-col">
                     <CardContent className="p-6 flex-grow">
@@ -342,7 +343,7 @@ function Footer() {
                 {isMobile ? (
                     <div className="flex flex-col items-center w-full">
                         <div className="mb-4">
-                            <Logo />
+                            <LogoBlanco />
                         </div>
                         <div className="flex items-center space-x-6">
                             <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer"><Instagram style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
@@ -354,7 +355,7 @@ function Footer() {
                     <>
                         <div className="flex flex-col items-center w-full md:w-auto md:items-start">
                             <div className="mb-4 md:mb-0">
-                                <Logo />
+                                <LogoBlanco />
                             </div>
                         </div>
                         <div className="flex flex-col items-center gap-2 text-center">

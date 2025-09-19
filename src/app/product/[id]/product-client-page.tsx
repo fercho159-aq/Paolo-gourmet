@@ -11,6 +11,7 @@ import { Card, CardContent, CardTitle } from '@/components/ui/card';
 import { Users, Leaf, Grape, Send, Wine, Star, Menu, Box, ChevronDown, Instagram, Facebook, Ruler, Apple } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
+import { LogoBlanco } from '@/components/logo-blanco';
 import type { CheeseBoard, Testimonial } from '@/lib/data';
 import { cheeseBoards, testimonials } from '@/lib/data';
 import { Switch } from "@/components/ui/switch"
@@ -168,7 +169,7 @@ function Footer() {
                  {isMobile ? (
                     <div className="flex flex-col items-center w-full">
                         <div className="mb-4">
-                            <Logo />
+                            <LogoBlanco />
                         </div>
                         <div className="flex items-center space-x-6">
                             <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer"><Instagram style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
@@ -180,7 +181,7 @@ function Footer() {
                     <>
                         <div className="flex flex-col items-center w-full md:w-auto md:items-start">
                             <div className="mb-4 md:mb-0">
-                                <Logo />
+                                <LogoBlanco />
                             </div>
                         </div>
                         <div className="flex flex-col items-center gap-2 text-center">

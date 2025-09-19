@@ -4,7 +4,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Logo } from '@/components/logo';
+import { LogoBlanco } from '@/components/logo-blanco';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { useIsMobile } from '@/hooks/use-mobile';
 import {
@@ -18,6 +18,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
 import { testimonials, cheeseBoards, Testimonial } from '@/lib/data';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Logo } from '@/components/logo';
 
 function CuttingBoardIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -172,7 +173,7 @@ function Footer() {
                 {isMobile ? (
                     <div className="flex flex-col items-center w-full">
                         <div className="mb-4">
-                            <Logo />
+                            <LogoBlanco />
                         </div>
                         <div className="flex items-center space-x-6">
                             <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer"><Instagram style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
@@ -184,7 +185,7 @@ function Footer() {
                     <>
                         <div className="flex flex-col items-center w-full md:w-auto md:items-start">
                             <div className="mb-4 md:mb-0">
-                                <Logo />
+                                <LogoBlanco />
                             </div>
                         </div>
                         <div className="flex flex-col items-center gap-2 text-center">
