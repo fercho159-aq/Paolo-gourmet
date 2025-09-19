@@ -481,3 +481,5 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
     </div>
   );
 }
+
+    

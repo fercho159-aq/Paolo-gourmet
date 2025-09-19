@@ -7,10 +7,12 @@ export function Logo() {
       <Image
         src="/Imagen/logo/4.png"
         alt="paolo gourmet logo"
-        width={200}
-        height={200}
-        className="h-auto w-auto"
+        width={8}
+        height={8}
+        className="h-20 w-auto"
       />
     </a>
   );
 }
+
+    
