@@ -249,16 +249,6 @@ function Testimonials() {
           <CarouselNext />
         </Carousel>
       </div>
-      <div className="mt-12 w-full">
-        <Image
-            src="/Imagen/PAOLO GOURMET POST (2000 x 300 px).png"
-            alt="Tabla de quesos en un evento"
-            width={2000}
-            height={300}
-            className="w-full h-auto object-cover -mx-5"
-            data-ai-hint="cheese board event"
-        />
-      </div>
     </section>
   );
 }
@@ -453,6 +443,8 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
 
