@@ -269,7 +269,7 @@ export default function AboutUsPage() {
     <div className="flex min-h-screen flex-col bg-background">
         <div className="sticky top-0 z-50">
             <div style={{ backgroundColor: '#c4b282' }} className="py-2 text-center text-xs sm:text-sm text-white">
-                <p>Envíos gratis en CDMX - <span className="font-bold">un día mínimo</span> de anticipación.</p>
+                <p>Envíos con costo adicional en CDMX. Pedidos con 24 horas de anticipación, antes de las 16:00 hrs.</p>
             </div>
             <Header />
         </div>
@@ -311,3 +311,5 @@ export default function AboutUsPage() {
     </div>
   );
 }
+
+    
