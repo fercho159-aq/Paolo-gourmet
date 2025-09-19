@@ -103,7 +103,7 @@ function Header() {
                 <nav className="flex flex-col gap-4 mt-8 h-full">
                     {navLinks.map(link => (
                          <SheetClose asChild key={link.href}>
-                            <Link href={link.href} className="text-lg font-medium hover:underline hover:text-[#c5b282] underline-offset-4">
+                            <Link href={link.href} className="text-lg font-medium hover:underline hover:text-[#dcd0b3] underline-offset-4">
                                 {link.label}
                             </Link>
                         </SheetClose>
@@ -121,22 +121,22 @@ function Header() {
                         ))}
                     </div>
                      <div className="mt-auto flex justify-center space-x-6 pb-8">
-                        <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer"><Instagram style={{ color: '#c5b282' }} className="h-7 w-7" /></a>
-                        <a href="https://www.facebook.com/people/Tablas-Paolo-Gourmet/61578410386269/" target="_blank" rel="noopener noreferrer"><Facebook style={{ color: '#c5b282' }} className="h-7 w-7" /></a>
-                        <a href="https://www.tiktok.com/@paolo.gourmet?_t=ZS-8zSIPIt2AER&_r=1" target="_blank" rel="noopener noreferrer"><TikTokIcon style={{ color: '#c5b282' }} className="h-7 w-7" /></a>
+                        <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer"><Instagram style={{ color: '#dcd0b3' }} className="h-7 w-7" /></a>
+                        <a href="https://www.facebook.com/people/Tablas-Paolo-Gourmet/61578410386269/" target="_blank" rel="noopener noreferrer"><Facebook style={{ color: '#dcd0b3' }} className="h-7 w-7" /></a>
+                        <a href="https://www.tiktok.com/@paolo.gourmet?_t=ZS-8zSIPIt2AER&_r=1" target="_blank" rel="noopener noreferrer"><TikTokIcon style={{ color: '#dcd0b3' }} className="h-7 w-7" /></a>
                   </div>
                 </nav>
                 </SheetContent>
             </Sheet>
             ) : (
             <nav className="ml-auto flex items-center space-x-1">
-                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-[#c5b282] underline-offset-4">
+                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-[#dcd0b3] underline-offset-4">
                     <Link href="/nosotros">Nosotros</Link>
                 </Button>
 
                 <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" className="hover:bg-transparent hover:underline hover:text-[#c5b282] underline-offset-4">
+                    <Button variant="ghost" className="hover:bg-transparent hover:underline hover:text-[#dcd0b3] underline-offset-4">
                     Productos <ChevronDown className="ml-1 h-4 w-4" />
                     </Button>
                 </DropdownMenuTrigger>
@@ -150,11 +150,11 @@ function Header() {
                 </DropdownMenuContent>
                 </DropdownMenu>
 
-                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-[#c5b282] underline-offset-4">
+                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-[#dcd0b3] underline-offset-4">
                     <Link href="/preguntas-frecuentes">Preguntas Frecuentes</Link>
                 </Button>
 
-                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-[#c5b282] underline-offset-4">
+                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-[#dcd0b3] underline-offset-4">
                     <a href="/#contact">Contacto</a>
                 </Button>
             </nav>
@@ -168,7 +168,7 @@ function Footer() {
     const isMobile = useIsMobile();
     
     return (
-        <footer className="w-full text-white py-6" style={{ backgroundColor: '#c5b282' }}>
+        <footer className="w-full text-white py-6" style={{ backgroundColor: '#dcd0b3' }}>
             <div className="container flex flex-col md:flex-row items-center justify-between">
                 {isMobile ? (
                     <div className="flex flex-col items-center w-full">
@@ -247,7 +247,7 @@ function TestimonialsCarousel() {
                                 </div>
                                 <p className="text-sm text-foreground/80 italic mt-2">
                                   "{testimonial.comment[0]}
-                                  <span className="font-bold" style={{ color: '#c4b282' }}>{testimonial.comment[1]}</span>
+                                  <span className="font-bold" style={{ color: '#dcd0b3' }}>{testimonial.comment[1]}</span>
                                   {testimonial.comment[2]}"
                                 </p>
                             </div>
@@ -269,13 +269,13 @@ export default function AboutUsPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
         <div className="sticky top-0 z-50">
-            <div style={{ backgroundColor: '#c4b282' }} className="py-2 text-center text-xs sm:text-sm text-white">
+            <div style={{ backgroundColor: '#dcd0b3' }} className="py-2 text-center text-xs sm:text-sm text-white">
                 <p>Envíos con costo adicional en CDMX. Pedidos con 24 horas de anticipación, antes de las 16:00 hrs.</p>
             </div>
             <Header />
         </div>
         <main className="flex-grow">
-            <section className="w-full py-12 md:py-16 text-white" style={{ backgroundColor: '#c5b282' }}>
+            <section className="w-full py-12 md:py-16 text-white" style={{ backgroundColor: '#dcd0b3' }}>
                 <div className="container px-4 md:px-6 text-center animate-fade-in-up">
                     <h1 className="text-3xl font-normal tracking-tighter sm:text-5xl">Sobre Paolo Gourmet</h1>
                     <p className="mx-auto max-w-[700px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mt-4">
