@@ -214,7 +214,7 @@ export default function TermsOfServicePage() {
 
           <h2 className="mt-8 text-2xl font-semibold">4. Cancelaciones y Reembolsos</h2>
           <p>
-            Debido a la naturaleza perecedera de nuestros productos, las cancelaciones deben realizarse con al menos 48 horas de antelación a la fecha de entrega programada. No se ofrecerán reembolsos por cancelaciones tardías. Si recibe un producto dañado o incorrecto, por favor contáctenos inmediatamente.
+            Una vez confirmado el pago y enviado el número de pedido al cliente, las órdenes no podrán ser canceladas ni modificadas. Por el manejo de productos perecederos, cualquier cancelación por parte del cliente no será sujeta a reembolso. Si recibe un producto dañado o incorrecto, por favor contáctenos inmediatamente.
           </p>
 
           <h2 className="mt-8 text-2xl font-semibold">5. Propiedad Intelectual</h2>
