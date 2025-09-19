@@ -218,7 +218,7 @@ const faqItems = [
     {
       value: "item-1",
       question: "¿Cuáles son las zonas de entrega y los costos?",
-      answer: <>Cubrimos <Highlight>toda la Ciudad de México</Highlight>. El costo de envío varía según la zona: Zona Céntrica (Álvaro Obregón, Azcapotzalco, Benito Juárez, Coyoacán, Cuauhtémoc, GAM, Iztacalco, Iztapalapa, Miguel Hidalgo, Venustiano Carranza) tiene un <Highlight>costo de $99 MXN</Highlight>. Para la Zona Extendida (Cuajimalpa, Magdalena Contreras, Milpa Alta, Tláhuac, Tlalpan, Xochimilco) el costo es de $150 MXN.</>,
+      answer: <>Cubrimos <Highlight>toda la Ciudad de México</Highlight>. El costo de envío varía según la zona y se calcula al momento de realizar el pedido.</>,
       icon: <Truck className="h-5 w-5 text-primary" />
     },
     {
@@ -298,5 +298,3 @@ export default function FaqPage() {
     </div>
   );
 }
-
-    
