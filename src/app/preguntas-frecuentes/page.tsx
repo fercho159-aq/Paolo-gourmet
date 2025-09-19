@@ -92,7 +92,7 @@ function Header() {
 
     return (
         <header className="sticky top-0 z-50 w-full border-b" style={{ backgroundColor: '#f5f5f5' }}>
-        <div className="container flex h-16 items-center">
+        <div className="container flex h-24 items-center">
             <Logo />
             {isMobile ? (
             <Sheet>
