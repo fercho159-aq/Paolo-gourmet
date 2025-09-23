@@ -72,7 +72,7 @@ export const cheeseBoards: CheeseBoard[] = [
     cheeses: ["Gorgonzola", "Danablu"],
     fruits: ["Rodajas de pera", "Frutas de temporada"],
     accompaniments: ["Nueces pecanas confitadas", "Tostadas de centeno"],
-    serving: "1-2",
+    serving: "6-8",
     dimensions: "20x30 cm",
     tags: ["premium", "chica", "intenso"],
   },
