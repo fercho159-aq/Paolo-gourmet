@@ -287,7 +287,7 @@ export default function AboutUsPage() {
                 <div className="container px-4 md:px-6">
                     <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
                         <div className="flex flex-col justify-center space-y-4">
-                            <h2 className="text-3xl font-normal tracking-tighter sm:text-5xl">Nuestra Historia</h2>
+                            <h2 className="text-3xl font-normal tracking-tighter sm:text-5xl">Nuestra Misión</h2>
                             <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                             En paolo gourmet, creemos que el queso es más que un alimento, es una experiencia. Nuestra misión es seleccionar los mejores quesos artesanales y combinarlos con los acompañamientos perfectos para crear tablas inolvidables que unen a las personas.
                             </p>
