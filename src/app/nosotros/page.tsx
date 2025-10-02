@@ -87,6 +87,16 @@ function Header() {
         { href: "/#contact", label: "Contacto" },
     ]
 
+    if (isMobile === undefined) {
+        return (
+            <header className="sticky top-0 z-50 w-full border-b" style={{ backgroundColor: '#f5f5f5' }}>
+                <div className="container flex h-28 items-center">
+                    <Logo />
+                </div>
+            </header>
+        );
+    }
+    
     return (
         <header className="sticky top-0 z-50 w-full border-b" style={{ backgroundColor: '#f5f5f5' }}>
         <div className="container flex h-28 items-center">
@@ -167,6 +177,10 @@ function Header() {
 function Footer() {
     const isMobile = useIsMobile();
     
+    if (isMobile === undefined) {
+        return <footer className="w-full text-white py-6" style={{ backgroundColor: '#c4870a', minHeight: '158px' }}></footer>;
+    }
+
     return (
         <footer className="w-full text-white py-6" style={{ backgroundColor: '#c4870a' }}>
             <div className="container flex flex-col md:flex-row items-center justify-between">
@@ -312,9 +326,3 @@ export default function AboutUsPage() {
     </div>
   );
 }
-
-    
-
-    
-
-    

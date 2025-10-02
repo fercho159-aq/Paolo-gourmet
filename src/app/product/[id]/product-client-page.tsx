@@ -81,7 +81,15 @@ function Header() {
         { href: "/preguntas-frecuentes", label: "Preguntas Frecuentes" },
         { href: "/#contact", label: "Contacto" },
     ]
-
+    if (isMobile === undefined) {
+        return (
+            <header className="sticky top-0 z-50 w-full border-b" style={{ backgroundColor: '#f5f5f5' }}>
+                <div className="container flex h-28 items-center">
+                    <Logo />
+                </div>
+            </header>
+        );
+    }
     return (
         <header className="sticky top-0 z-50 w-full border-b" style={{ backgroundColor: '#f5f5f5' }}>
         <div className="container flex h-28 items-center">
@@ -162,6 +170,10 @@ function Header() {
 
 function Footer() {
     const isMobile = useIsMobile();
+    
+    if (isMobile === undefined) {
+        return <footer className="w-full text-white py-6 mt-auto" style={{ backgroundColor: '#c4870a', minHeight: '158px' }}></footer>;
+    }
 
     return (
         <footer className="w-full text-white py-6 mt-auto" style={{ backgroundColor: '#c4870a' }}>
@@ -212,10 +224,10 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
   const [totalPrice, setTotalPrice] = useState(board.price);
 
   const productImages = board.gallery;
-  const cheeses = typeof board.cheeses === 'string' ? board.cheeses.split(/, | y\/o | o | ó | \/ /) : board.cheeses || [];
-  const fruits = typeof board.fruits === 'string' ? board.fruits.split(/, | y\/o | o | ó | \/ /) : board.fruits || [];
-  const meats = typeof board.meats === 'string' ? board.meats.split(/, | y\/o | o | ó /) : board.meats || [];
-  const accompaniments = typeof board.accompaniments === 'string' ? board.accompaniments.split(/, | y\/o | o | ó /) : board.accompaniments || [];
+  const cheeses = Array.isArray(board.cheeses) ? board.cheeses : (typeof board.cheeses === 'string' ? board.cheeses.split(/, | y\/o | o | ó | \/ /) : []);
+  const fruits = Array.isArray(board.fruits) ? board.fruits : (typeof board.fruits === 'string' ? board.fruits.split(/, | y\/o | o | ó | \/ /) : []);
+  const meats = Array.isArray(board.meats) ? board.meats : (typeof board.meats === 'string' ? board.meats.split(/, | y\/o | o | ó /) : []);
+  const accompaniments = Array.isArray(board.accompaniments) ? board.accompaniments : (typeof board.accompaniments === 'string' ? board.accompaniments.split(/, | y\/o | o | ó /) : []);
 
   const extraOrders = cheeseBoards.filter(b => b.line === 'Ordenes extras' && b.price > 0);
   const relatedProducts = cheeseBoards.filter(b => b.id !== board.id && b.image && b.line !== 'Ordenes extras' && b.line !== 'Edicion especial');

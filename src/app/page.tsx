@@ -78,6 +78,16 @@ function Header() {
     { href: "/preguntas-frecuentes", label: "Preguntas Frecuentes" },
     { href: "/#contact", label: "Contacto" },
   ]
+  
+  if (isMobile === undefined) {
+    return (
+        <header className="sticky top-0 z-50 w-full border-b" style={{ backgroundColor: '#f5f5f5' }}>
+            <div className="container flex h-28 items-center">
+                <Logo />
+            </div>
+        </header>
+    );
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b" style={{ backgroundColor: '#f5f5f5' }}>
@@ -309,10 +319,10 @@ function Contact() {
           </div>
           <div className="w-full h-full flex items-center justify-center">
             <Image
-                src="/Imagen/FOOTER.png"
+                src="/Imagen/Galeria/IMG_0836.jpg"
                 alt="Tabla de quesos variada"
-                width={225}
-                height={225}
+                width={1000}
+                height={1000}
                 className="object-cover rounded-xl shadow-lg"
                 data-ai-hint="cheese board"
             />
@@ -327,6 +337,10 @@ function Contact() {
 function Footer() {
     const isMobile = useIsMobile();
     
+    if (isMobile === undefined) {
+        return <footer className="w-full text-white py-6 bg-primary h-[158px] md:h-[104px]"></footer>;
+    }
+
     return (
         <footer className="w-full text-white py-6 bg-primary">
             <div className="container flex flex-col md:flex-row items-center justify-between">
@@ -442,14 +456,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-    
-
-    
-
-
-    
-
-    
