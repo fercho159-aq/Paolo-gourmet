@@ -81,7 +81,7 @@ function Header() {
   
   if (isMobile === undefined) {
     return (
-        <header className="sticky top-0 z-50 w-full border-b" style={{ backgroundColor: '#f5f5f5' }}>
+        <header className="sticky top-0 z-50 w-full border-b bg-background">
             <div className="container flex h-28 items-center">
                 <Logo />
             </div>
@@ -90,7 +90,7 @@ function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b" style={{ backgroundColor: '#f5f5f5' }}>
+    <header className="sticky top-0 z-50 w-full border-b bg-background">
       <div className="container flex h-28 items-center">
         <Logo />
         {isMobile ? (
@@ -350,9 +350,9 @@ function Footer() {
                             <LogoBlanco />
                         </div>
                         <div className="flex items-center space-x-6">
-                            <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer"><Instagram style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
-                            <a href="https://www.facebook.com/people/Tablas-Paolo-Gourmet/61578410386269/" target="_blank" rel="noopener noreferrer"><Facebook style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
-                            <a href="https://www.tiktok.com/@paolo.gourmet?_t=ZS-8zSIPIt2AER&_r=1" target="_blank" rel="noopener noreferrer"><TikTokIcon style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
+                            <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer"><Instagram className="text-white h-6 w-6" /></a>
+                            <a href="https://www.facebook.com/people/Tablas-Paolo-Gourmet/61578410386269/" target="_blank" rel="noopener noreferrer"><Facebook className="text-white h-6 w-6" /></a>
+                            <a href="https://www.tiktok.com/@paolo.gourmet?_t=ZS-8zSIPIt2AER&_r=1" target="_blank" rel="noopener noreferrer"><TikTokIcon className="text-white h-6 w-6" /></a>
                         </div>
                     </div>
                 ) : (
@@ -370,9 +370,9 @@ function Footer() {
                             <p className="text-sm text-white">&copy; 2025 paolo gourmet. Todos los derechos reservados.</p>
                         </div>
                         <div className="flex items-center space-x-4">
-                            <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer"><Instagram style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
-                            <a href="https://www.facebook.com/people/Tablas-Paolo-Gourmet/61578410386269/" target="_blank" rel="noopener noreferrer"><Facebook style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
-                            <a href="https://www.tiktok.com/@paolo.gourmet?_t=ZS-8zSIPIt2AER&_r=1" target="_blank" rel="noopener noreferrer"><TikTokIcon style={{ color: '#ffffff' }} className="h-6 w-6" /></a>
+                            <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer"><Instagram className="text-white h-6 w-6" /></a>
+                            <a href="https://www.facebook.com/people/Tablas-Paolo-Gourmet/61578410386269/" target="_blank" rel="noopener noreferrer"><Facebook className="text-white h-6 w-6" /></a>
+                            <a href="https://www.tiktok.com/@paolo.gourmet?_t=ZS-8zSIPIt2AER&_r=1" target="_blank" rel="noopener noreferrer"><TikTokIcon className="text-white h-6 w-6" /></a>
                         </div>
                     </>
                 )}
