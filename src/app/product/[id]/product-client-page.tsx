@@ -211,11 +211,11 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
   const [selectedExtras, setSelectedExtras] = useState<Record<number, boolean>>({});
   const [totalPrice, setTotalPrice] = useState(board.price);
 
-  const productImages = typeof board.gallery === 'string' ? board.gallery.split('|') : [];
-  const cheeses = typeof board.cheeses === 'string' ? board.cheeses.split(/, | y\/o | o | ó /) : [];
-  const fruits = typeof board.fruits === 'string' ? board.fruits.split(/, | y\/o | o | ó | \/ /) : [];
-  const meats = typeof board.meats === 'string' ? board.meats.split(/, | y\/o | o | ó /) : [];
-  const accompaniments = typeof board.accompaniments === 'string' ? board.accompaniments.split(/, | y\/o | o | ó /) : [];
+  const productImages = board.gallery;
+  const cheeses = typeof board.cheeses === 'string' ? board.cheeses.split(/, | y\/o | o | ó | \/ /) : board.cheeses || [];
+  const fruits = typeof board.fruits === 'string' ? board.fruits.split(/, | y\/o | o | ó | \/ /) : board.fruits || [];
+  const meats = typeof board.meats === 'string' ? board.meats.split(/, | y\/o | o | ó /) : board.meats || [];
+  const accompaniments = typeof board.accompaniments === 'string' ? board.accompaniments.split(/, | y\/o | o | ó /) : board.accompaniments || [];
 
   const extraOrders = cheeseBoards.filter(b => b.line === 'Ordenes extras' && b.price > 0);
   const relatedProducts = cheeseBoards.filter(b => b.id !== board.id && b.image && b.line !== 'Ordenes extras' && b.line !== 'Edicion especial');
@@ -366,25 +366,25 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
               <Separator />
 
               <div className="space-y-4">
-                {cheeses.length > 0 && cheeses[0] && (
+                {cheeses.length > 0 && (
                   <div>
                     <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Leaf className="h-5 w-5 text-primary" />Quesos</h3>
                     <p className="text-muted-foreground">{cheeses.join(', ')}</p>
                   </div>
                 )}
-                {meats.length > 0 && meats[0] && (
+                {meats.length > 0 && (
                   <div>
                     <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Leaf className="h-5 w-5 text-primary" />Carnes Frías</h3>
                     <p className="text-muted-foreground">{meats.join(', ')}</p>
                   </div>
                 )}
-                {fruits.length > 0 && fruits[0] && (
+                {fruits.length > 0 && (
                   <div>
                     <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Apple className="h-5 w-5 text-primary" />Frutos</h3>
                     <p className="text-muted-foreground">{fruits.join(', ')}</p>
                   </div>
                 )}
-                {accompaniments.length > 0 && accompaniments[0] && (
+                {accompaniments.length > 0 && (
                   <div>
                     <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Grape className="h-5 w-5 text-primary" />Acompañamientos</h3>
                     <p className="text-muted-foreground">{accompaniments.join(', ')}</p>
