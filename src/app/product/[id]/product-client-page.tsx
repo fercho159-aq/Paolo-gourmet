@@ -211,11 +211,11 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
   const [selectedExtras, setSelectedExtras] = useState<Record<number, boolean>>({});
   const [totalPrice, setTotalPrice] = useState(board.price);
 
-  const productImages = Array.isArray(board.gallery) ? board.gallery : [];
-  const cheeses = Array.isArray(board.cheeses) ? board.cheeses : [];
-  const fruits = Array.isArray(board.fruits) ? board.fruits : [];
-  const meats = Array.isArray(board.meats) ? board.meats : [];
-  const accompaniments = Array.isArray(board.accompaniments) ? board.accompaniments : [];
+  const productImages = typeof board.gallery === 'string' ? board.gallery.split('|') : [];
+  const cheeses = typeof board.cheeses === 'string' ? board.cheeses.split(/, | y\/o | o | ó /) : [];
+  const fruits = typeof board.fruits === 'string' ? board.fruits.split(/, | y\/o | o | ó | \/ /) : [];
+  const meats = typeof board.meats === 'string' ? board.meats.split(/, | y\/o | o | ó /) : [];
+  const accompaniments = typeof board.accompaniments === 'string' ? board.accompaniments.split(/, | y\/o | o | ó /) : [];
 
   const extraOrders = cheeseBoards.filter(b => b.line === 'Ordenes extras' && b.price > 0);
   const relatedProducts = cheeseBoards.filter(b => b.id !== board.id && b.image && b.line !== 'Ordenes extras' && b.line !== 'Edicion especial');
@@ -279,6 +279,10 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
   const getWhatsAppLink = () => {
     const baseLink = "https://wa.me/525562206020";
     let message = `Hola, me gustaría solicitar una cotización para el producto: ${board.name}.\n`;
+
+    if (accompaniments.length > 0) {
+        message += `\nAcompañamientos: ${accompaniments.join(', ')}\n`;
+    }
     
     if (addWine) {
         message += "Con botella de vino.\n";
@@ -362,25 +366,25 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
               <Separator />
 
               <div className="space-y-4">
-                {cheeses.length > 0 && (
+                {cheeses.length > 0 && cheeses[0] && (
                   <div>
                     <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Leaf className="h-5 w-5 text-primary" />Quesos</h3>
                     <p className="text-muted-foreground">{cheeses.join(', ')}</p>
                   </div>
                 )}
-                {meats.length > 0 && (
+                {meats.length > 0 && meats[0] && (
                   <div>
                     <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Leaf className="h-5 w-5 text-primary" />Carnes Frías</h3>
                     <p className="text-muted-foreground">{meats.join(', ')}</p>
                   </div>
                 )}
-                {fruits.length > 0 && (
+                {fruits.length > 0 && fruits[0] && (
                   <div>
                     <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Apple className="h-5 w-5 text-primary" />Frutos</h3>
                     <p className="text-muted-foreground">{fruits.join(', ')}</p>
                   </div>
                 )}
-                {accompaniments.length > 0 && (
+                {accompaniments.length > 0 && accompaniments[0] && (
                   <div>
                     <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Grape className="h-5 w-5 text-primary" />Acompañamientos</h3>
                     <p className="text-muted-foreground">{accompaniments.join(', ')}</p>
@@ -395,7 +399,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
 
               <div className="space-y-4">
                   <h3 className="font-headline text-xl">Personaliza tu orden</h3>
-                  {typeof board.priceWithWine === 'number' && (
+                  {typeof board.priceWithWine === 'number' && board.priceWithWine > 0 && (
                     <div className="flex items-center space-x-2">
                       <Wine className="h-5 w-5 text-primary" />
                       <Switch id="add-wine" checked={addWine} onCheckedChange={handleWineSwitchChange} />
@@ -440,7 +444,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2 text-md" style={{ color: '#c4870a' }}>
                     <Users className="h-5 w-5" />
-                    <span className="font-medium">Sirve para {board.serving} personas</span>
+                    <span className="font-medium">Sirve para {board.serving}</span>
                 </div>
                 {board.dimensions && (
                     <div className={cn("items-center gap-2 text-md", board.name === "Set de 12 Conos" ? "flex" : "hidden md:flex")} style={{ color: '#c4870a' }}>
@@ -477,7 +481,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                                         <Card className="p-4 shadow-sm h-full">
                                             <div className="flex items-start gap-4">
                                                 <Avatar className="h-12 w-12 flex-shrink-0">
-                                                    <AvatarImage src={testimonial.product.image} alt={testimonial.product.name} />
+                                                    <AvatarImage src={testimonial.product.image || 'https://picsum.photos/seed/avatar/100'} alt={testimonial.product.name} />
                                                     <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
                                                 </Avatar>
                                                 <div className="flex-grow">
@@ -528,7 +532,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                                 <Card className="flex flex-col h-full overflow-hidden transition-shadow hover:shadow-xl rounded-none border-0 shadow-none">
                                     <div className="relative aspect-square w-full">
                                     <Image
-                                        src={relatedBoard.image}
+                                        src={relatedBoard.image || 'https://picsum.photos/seed/related/600'}
                                         alt={relatedBoard.name}
                                         data-ai-hint={relatedBoard.dataAiHint}
                                         fill
