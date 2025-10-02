@@ -68,17 +68,17 @@ export default function CheeseBoardCarousel({ boards }: { boards: CheeseBoard[] 
                         {board.name}
                     </CardTitle>
                     <div className="flex items-center justify-between mt-auto">
-                        <div className="flex items-center gap-2 text-sm" style={{ color: '#dcd0b3' }}>
+                        <div className="flex items-center gap-2 text-sm" style={{ color: '#c4870a' }}>
                             <Users className="h-4 w-4" />
                             <span className="font-medium">{board.serving}</span>
                         </div>
                         {board.dimensions && (
-                            <div className={cn("items-center gap-2 text-sm", board.name === "Set de 12 Conos" ? "flex" : "hidden md:flex")} style={{ color: '#dcd0b3' }}>
+                            <div className={cn("items-center gap-2 text-sm", board.name === "Set de 12 Conos" ? "flex" : "hidden md:flex")} style={{ color: '#c4870a' }}>
                                 <Ruler className="h-4 w-4" />
                                 <span className="font-medium">{board.dimensions}</span>
                             </div>
                         )}
-                        <Badge style={{ backgroundColor: '#dcd0b3', color: 'white' }} className="capitalize text-xs">
+                        <Badge style={{ backgroundColor: '#c4870a', color: 'white' }} className="capitalize text-xs">
                           {board.line === 'Tablas Premium' ? <CuttingBoardIcon className="h-3 w-3 mr-1" /> : <Box className="h-3 w-3 mr-1" />}
                           {board.line === 'Tablas Premium' ? 'Tablas' : board.line}
                         </Badge>
@@ -94,3 +94,5 @@ export default function CheeseBoardCarousel({ boards }: { boards: CheeseBoard[] 
     </Carousel>
   );
 }
+
+    
