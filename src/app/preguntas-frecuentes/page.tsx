@@ -3,7 +3,7 @@
 
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Truck, Clock, Award, Users, Menu, Box, ChevronDown, Instagram, Facebook, Image as ImageIcon } from 'lucide-react';
+import { Truck, Clock, Award, Users, Menu, Box, ChevronDown, Instagram, Facebook, Image as ImageIcon, Gift } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { LogoBlanco } from '@/components/logo-blanco';
@@ -256,6 +256,12 @@ const faqItems = [
         question: "¿Mi tabla será exactamente igual a la de la foto?",
         answer: <>Las imágenes que mostramos son de <Highlight>carácter ilustrativo</Highlight> para que conozcas nuestro estilo y la calidad de los productos que manejamos. Cada una de nuestras tablas es una <Highlight>creación artesanal y única</Highlight>. La variedad de frutas puede cambiar según la temporada para garantizar siempre la máxima frescura. Sin embargo, la cantidad y la calidad de los quesos y carnes frías siempre será la misma que la descrita en el producto.</>,
         icon: <ImageIcon className="h-5 w-5 text-primary" />
+    },
+    {
+        value: "item-6",
+        question: "¿La tabla o base viene incluida con mi pedido?",
+        answer: <>¡Sí! Todas nuestras <Highlight>Tablas Premium</Highlight> vienen sobre una tabla de madera de pino curada para uso alimenticio, la cual <Highlight>¡te quedas de regalo!</Highlight>. Nuestros productos de la línea <Highlight>Cajas</Highlight> se entregan en una caja de cartón que también te quedas.</>,
+        icon: <Gift className="h-5 w-5 text-primary" />
     }
 ]
 
@@ -317,5 +323,7 @@ export default function FaqPage() {
   );
 }
 
+
+    
 
     
