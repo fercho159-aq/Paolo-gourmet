@@ -285,7 +285,11 @@ export default function AboutUsPage() {
         { src: "/Imagen/Caja grande/1.jpg", alt: "Caja de quesos grande", hint: "cheese box" },
         { src: "/Imagen/Conos/IMG_5197.JPG", alt: "Conos de queso", hint: "cheese cones" },
         { src: "/Imagen/ProductosAldo/32.jpg", alt: "Tabla de quesos chica", hint: "small cheese board" },
-        { src: "/Imagen/ProductosAldo/Premium/1.jpg", alt: "Tabla de quesos premium", hint: "premium cheese board" }
+        { src: "/Imagen/ProductosAldo/Premium/1.jpg", alt: "Tabla de quesos premium", hint: "premium cheese board" },
+        { src: "/Imagen/Caja1/IMG_5247.JPG", alt: "Caja de quesos para pareja", hint: "cheese box couple" },
+        { src: "/Imagen/ProductosAldo/12.jpg", alt: "Detalle de tabla de quesos", hint: "cheese board detail" },
+        { src: "/Imagen/ProductosAldo/13.jpg", alt: "Variedad de quesos y frutas", hint: "cheese fruit variety" },
+        { src: "/Imagen/ProductosAldo/14.jpg", alt: "Tabla de quesos con carnes frías", hint: "cheese board meats" }
     ];
 
   return (
@@ -350,3 +354,5 @@ export default function AboutUsPage() {
     </div>
   );
 }
+
+    
