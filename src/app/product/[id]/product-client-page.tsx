@@ -204,7 +204,7 @@ function Footer() {
 }
 
 export default function ProductClientPage({ board }: { board: CheeseBoard }) {
-  const productImages = board.gallery;
+  const productImages = typeof board.gallery === 'string' ? board.gallery.split('|') : board.gallery;
   const [api, setApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState(0)
   const [addWine, setAddWine] = useState(false);
@@ -481,6 +481,8 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
     </div>
   );
 }
+
+    
 
     
 
