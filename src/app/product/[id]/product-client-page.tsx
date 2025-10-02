@@ -204,54 +204,102 @@ function Footer() {
 }
 
 export default function ProductClientPage({ board }: { board: CheeseBoard }) {
-  const productImages = typeof board.gallery === 'string' ? board.gallery.split('|') : [];
-  const cheeses = typeof board.cheeses === 'string' ? (board.cheeses as string).split(/, | y\/o | ó /) : [];
-  const fruits = typeof board.fruits === 'string' ? (board.fruits as string).split(/, | \/ /) : [];
-  const accompaniments = typeof board.accompaniments === 'string' ? (board.accompaniments as string).split(', ') : [];
-
-  const [api, setApi] = useState<CarouselApi>()
-  const [current, setCurrent] = useState(0)
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
   const [addWine, setAddWine] = useState(false);
   const [isAlertOpen, setIsAlertOpen] = useState(false);
+  const [selectedExtras, setSelectedExtras] = useState<Record<number, boolean>>({});
+  const [totalPrice, setTotalPrice] = useState(board.price);
 
-  const relatedProducts = cheeseBoards.filter(b => b.id !== board.id && b.image);
+  const productImages = Array.isArray(board.gallery) ? board.gallery : [];
+  const cheeses = Array.isArray(board.cheeses) ? board.cheeses : [];
+  const fruits = Array.isArray(board.fruits) ? board.fruits : [];
+  const meats = Array.isArray(board.meats) ? board.meats : [];
+  const accompaniments = Array.isArray(board.accompaniments) ? board.accompaniments : [];
+
+  const extraOrders = cheeseBoards.filter(b => b.line === 'Ordenes extras' && b.price > 0);
+  const relatedProducts = cheeseBoards.filter(b => b.id !== board.id && b.image && b.line !== 'Ordenes extras' && b.line !== 'Edicion especial');
 
   const productTestimonials = testimonials.filter(t => t.productId === board.id);
 
-  const fullTestimonials = (productTestimonials.length > 0 ? productTestimonials : testimonials.slice(0,3)).map(testimonial => {
+  const fullTestimonials = (productTestimonials.length > 0 ? productTestimonials : testimonials.slice(0, 3)).map(testimonial => {
     const product = cheeseBoards.find(p => p.id === testimonial.productId) || board;
     return { ...testimonial, product };
   });
 
   useEffect(() => {
-    if (!api) {
-      return
+    let currentTotal = board.price;
+    if (addWine && typeof board.priceWithWine === 'number') {
+      currentTotal = board.priceWithWine;
     }
+    
+    for (const extraId in selectedExtras) {
+        if (selectedExtras[extraId]) {
+            const extra = extraOrders.find(e => e.id === Number(extraId));
+            if (extra) {
+                currentTotal += extra.price;
+            }
+        }
+    }
+    
+    setTotalPrice(currentTotal);
+  }, [addWine, selectedExtras, board.price, board.priceWithWine, extraOrders]);
 
-    setCurrent(api.selectedScrollSnap())
 
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+    setCurrent(api.selectedScrollSnap());
     api.on("select", () => {
-      setCurrent(api.selectedScrollSnap())
-    })
-  }, [api])
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
 
   const handleThumbnailClick = (index: number) => {
-    api?.scrollTo(index)
-  }
+    api?.scrollTo(index);
+  };
   
   const handleWineSwitchChange = (checked: boolean) => {
     if (checked) {
+        if (typeof board.priceWithWine !== 'number') {
+            // Maybe show a toast or alert that wine is not available
+            return;
+        }
         setIsAlertOpen(true);
     } else {
         setAddWine(false);
     }
   };
 
+  const handleExtraChange = (extraId: number, checked: boolean) => {
+    setSelectedExtras(prev => ({...prev, [extraId]: checked}));
+  };
+
   const getWhatsAppLink = () => {
     const baseLink = "https://wa.me/525562206020";
-    const message = `Hola, me gustaría solicitar una cotización para el producto: ${board.name}${addWine ? ' con una botella de vino' : ''}.`;
+    let message = `Hola, me gustaría solicitar una cotización para el producto: ${board.name}.\n`;
+    
+    if (addWine) {
+        message += "Con botella de vino.\n";
+    }
+
+    const extras = Object.entries(selectedExtras).filter(([,isSelected]) => isSelected);
+
+    if(extras.length > 0){
+        message += "\nExtras:\n";
+        extras.forEach(([id]) => {
+            const extra = extraOrders.find(e => e.id === Number(id));
+            if(extra){
+                message += `- ${extra.name}\n`;
+            }
+        });
+    }
+
+    message += `\nPrecio total: $${totalPrice.toFixed(2)}`;
+    
     return `${baseLink}?text=${encodeURIComponent(message)}`;
-  }
+  };
 
 
   return (
@@ -314,29 +362,61 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
               <Separator />
 
               <div className="space-y-4">
-                <div>
-                  <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Leaf className="h-5 w-5 text-primary" />Quesos</h3>
-                  <p className="text-muted-foreground">{cheeses.join(', ')}</p>
-                </div>
-                <div>
-                  <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Apple className="h-5 w-5 text-primary" />Frutos</h3>
-                  <p className="text-muted-foreground">{fruits.join(', ')}</p>
-                </div>
-                <div>
-                  <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Grape className="h-5 w-5 text-primary" />Acompañamientos</h3>
-                  <p className="text-muted-foreground">{accompaniments.join(', ')}</p>
-                </div>
+                {cheeses.length > 0 && (
+                  <div>
+                    <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Leaf className="h-5 w-5 text-primary" />Quesos</h3>
+                    <p className="text-muted-foreground">{cheeses.join(', ')}</p>
+                  </div>
+                )}
+                {meats.length > 0 && (
+                  <div>
+                    <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Leaf className="h-5 w-5 text-primary" />Carnes Frías</h3>
+                    <p className="text-muted-foreground">{meats.join(', ')}</p>
+                  </div>
+                )}
+                {fruits.length > 0 && (
+                  <div>
+                    <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Apple className="h-5 w-5 text-primary" />Frutos</h3>
+                    <p className="text-muted-foreground">{fruits.join(', ')}</p>
+                  </div>
+                )}
+                {accompaniments.length > 0 && (
+                  <div>
+                    <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Grape className="h-5 w-5 text-primary" />Acompañamientos</h3>
+                    <p className="text-muted-foreground">{accompaniments.join(', ')}</p>
+                  </div>
+                )}
                 <p className="text-sm text-muted-foreground italic">
                     *Las imágenes son de carácter ilustrativo. La variedad de frutos puede cambiar según la temporada, garantizando siempre la máxima frescura y calidad.
                 </p>
               </div>
               
               <Separator />
-               <div className="flex items-center space-x-2">
-                 <Wine className="h-5 w-5 text-primary" />
-                 <Switch id="add-wine" checked={addWine} onCheckedChange={handleWineSwitchChange} />
-                 <Label htmlFor="add-wine" className="text-md">Agregar botella de vino</Label>
-               </div>
+
+              <div className="space-y-4">
+                  <h3 className="font-headline text-xl">Personaliza tu orden</h3>
+                  {typeof board.priceWithWine === 'number' && (
+                    <div className="flex items-center space-x-2">
+                      <Wine className="h-5 w-5 text-primary" />
+                      <Switch id="add-wine" checked={addWine} onCheckedChange={handleWineSwitchChange} />
+                      <Label htmlFor="add-wine" className="text-md">Agregar botella de vino</Label>
+                    </div>
+                  )}
+                  {extraOrders.map(extra => (
+                    <div key={extra.id} className="flex items-center justify-between">
+                        <div className="flex items-center space-x-2">
+                           <Switch 
+                             id={`extra-${extra.id}`}
+                             checked={!!selectedExtras[extra.id]}
+                             onCheckedChange={(checked) => handleExtraChange(extra.id, checked)}
+                           />
+                           <Label htmlFor={`extra-${extra.id}`} className="text-md">{extra.name}</Label>
+                        </div>
+                        <span className="text-md font-medium text-primary">+ ${extra.price.toFixed(2)}</span>
+                    </div>
+                  ))}
+              </div>
+
                <AlertDialog open={isAlertOpen} onOpenChange={setIsAlertOpen}>
                 <AlertDialogContent>
                     <AlertDialogHeader>
@@ -369,6 +449,10 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                     </div>
                 )}
                 <Badge style={{ backgroundColor: '#c4870a', color: 'white' }} className="capitalize text-sm">{board.line}</Badge>
+              </div>
+
+              <div className="text-3xl font-bold font-headline text-primary">
+                  ${totalPrice.toFixed(2)}
               </div>
 
                <Button size="lg" className="w-full md:w-auto shadow-md hover:shadow-lg transition-shadow" asChild>
@@ -485,5 +569,3 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
     </div>
   );
 }
-
-    
