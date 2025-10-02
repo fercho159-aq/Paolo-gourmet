@@ -19,6 +19,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext
 import { testimonials, cheeseBoards, Testimonial } from '@/lib/data';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Logo } from '@/components/logo';
+import { Gallery } from '@/components/gallery';
 
 function CuttingBoardIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -64,8 +65,7 @@ function WhatsAppButton() {
       href="https://wa.me/525562206020"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-4 right-4 z-50 text-white p-4 rounded-full shadow-lg transition-colors"
-      style={{ backgroundColor: '#c4870a' }}
+      className="fixed bottom-4 right-4 z-50 text-white p-4 rounded-full shadow-lg transition-colors bg-primary"
       aria-label="Contactar por WhatsApp"
     >
       <WhatsAppIcon className="h-8 w-8 text-white" />
@@ -89,7 +89,7 @@ function Header() {
 
     if (isMobile === undefined) {
         return (
-            <header className="sticky top-0 z-50 w-full border-b" style={{ backgroundColor: '#f5f5f5' }}>
+            <header className="sticky top-0 z-50 w-full border-b bg-background">
                 <div className="container flex h-28 items-center">
                     <Logo />
                 </div>
@@ -98,7 +98,7 @@ function Header() {
     }
     
     return (
-        <header className="sticky top-0 z-50 w-full border-b" style={{ backgroundColor: '#f5f5f5' }}>
+        <header className="sticky top-0 z-50 w-full border-b bg-background">
         <div className="container flex h-28 items-center">
             <Logo />
             {isMobile ? (
@@ -113,7 +113,7 @@ function Header() {
                 <nav className="flex flex-col gap-4 mt-8 h-full">
                     {navLinks.map(link => (
                          <SheetClose asChild key={link.href}>
-                            <Link href={link.href} className="text-lg font-medium hover:underline hover:text-[#c4870a] underline-offset-4">
+                            <Link href={link.href} className="text-lg font-medium hover:underline hover:text-primary underline-offset-4">
                                 {link.label}
                             </Link>
                         </SheetClose>
@@ -131,22 +131,22 @@ function Header() {
                         ))}
                     </div>
                      <div className="mt-auto flex justify-center space-x-6 pb-8">
-                        <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer"><Instagram style={{ color: '#c4870a' }} className="h-7 w-7" /></a>
-                        <a href="https://www.facebook.com/people/Tablas-Paolo-Gourmet/61578410386269/" target="_blank" rel="noopener noreferrer"><Facebook style={{ color: '#c4870a' }} className="h-7 w-7" /></a>
-                        <a href="https://www.tiktok.com/@paolo.gourmet?_t=ZS-8zSIPIt2AER&_r=1" target="_blank" rel="noopener noreferrer"><TikTokIcon style={{ color: '#c4870a' }} className="h-7 w-7" /></a>
+                        <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer"><Instagram className="text-primary h-7 w-7" /></a>
+                        <a href="https://www.facebook.com/people/Tablas-Paolo-Gourmet/61578410386269/" target="_blank" rel="noopener noreferrer"><Facebook className="text-primary h-7 w-7" /></a>
+                        <a href="https://www.tiktok.com/@paolo.gourmet?_t=ZS-8zSIPIt2AER&_r=1" target="_blank" rel="noopener noreferrer"><TikTokIcon className="text-primary h-7 w-7" /></a>
                   </div>
                 </nav>
                 </SheetContent>
             </Sheet>
             ) : (
             <nav className="ml-auto flex items-center space-x-1">
-                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-[#c4870a] underline-offset-4">
+                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-primary underline-offset-4">
                     <Link href="/nosotros">Nosotros</Link>
                 </Button>
 
                 <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" className="hover:bg-transparent hover:underline hover:text-[#c4870a] underline-offset-4">
+                    <Button variant="ghost" className="hover:bg-transparent hover:underline hover:text-primary underline-offset-4">
                     Productos <ChevronDown className="ml-1 h-4 w-4" />
                     </Button>
                 </DropdownMenuTrigger>
@@ -160,11 +160,11 @@ function Header() {
                 </DropdownMenuContent>
                 </DropdownMenu>
 
-                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-[#c4870a] underline-offset-4">
+                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-primary underline-offset-4">
                     <Link href="/preguntas-frecuentes">Preguntas Frecuentes</Link>
                 </Button>
 
-                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-[#c4870a] underline-offset-4">
+                <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-primary underline-offset-4">
                     <a href="/#contact">Contacto</a>
                 </Button>
             </nav>
@@ -178,11 +178,11 @@ function Footer() {
     const isMobile = useIsMobile();
     
     if (isMobile === undefined) {
-        return <footer className="w-full text-white py-6" style={{ backgroundColor: '#c4870a', minHeight: '158px' }}></footer>;
+        return <footer className="w-full text-white py-6 bg-primary" style={{ minHeight: '158px' }}></footer>;
     }
 
     return (
-        <footer className="w-full text-white py-6" style={{ backgroundColor: '#c4870a' }}>
+        <footer className="w-full text-white py-6 bg-primary">
             <div className="container flex flex-col md:flex-row items-center justify-between">
                 {isMobile ? (
                     <div className="flex flex-col items-center w-full">
@@ -261,7 +261,7 @@ function TestimonialsCarousel() {
                                 </div>
                                 <p className="text-sm text-foreground/80 italic mt-2">
                                   "{testimonial.comment[0]}
-                                  <span className="font-bold" style={{ color: '#c4870a' }}>{testimonial.comment[1]}</span>
+                                  <span className="font-bold text-primary">{testimonial.comment[1]}</span>
                                   {testimonial.comment[2]}"
                                 </p>
                             </div>
@@ -280,16 +280,24 @@ function TestimonialsCarousel() {
 }
 
 export default function AboutUsPage() {
+    const galleryImages = [
+        { src: "/Imagen/ProductosAldo/11.jpg", alt: "Tabla de quesos mediana", hint: "cheese board" },
+        { src: "/Imagen/Caja grande/1.jpg", alt: "Caja de quesos grande", hint: "cheese box" },
+        { src: "/Imagen/Conos/IMG_5197.JPG", alt: "Conos de queso", hint: "cheese cones" },
+        { src: "/Imagen/ProductosAldo/32.jpg", alt: "Tabla de quesos chica", hint: "small cheese board" },
+        { src: "/Imagen/ProductosAldo/Premium/1.jpg", alt: "Tabla de quesos premium", hint: "premium cheese board" }
+    ];
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
         <div className="sticky top-0 z-50">
-            <div style={{ backgroundColor: '#c4870a' }} className="py-2 text-center text-xs sm:text-sm text-white">
+            <div className="bg-primary py-2 text-center text-xs sm:text-sm text-primary-foreground">
                 <p>Envíos con costo adicional en CDMX. Pedidos con 24 horas de anticipación, antes de las 16:00 hrs.</p>
             </div>
             <Header />
         </div>
         <main className="flex-grow">
-            <section className="w-full py-12 md:py-16 text-white" style={{ backgroundColor: '#c4870a' }}>
+            <section className="w-full py-12 md:py-16 text-white bg-primary">
                 <div className="container px-4 md:px-6 text-center animate-fade-in-up">
                     <h1 className="text-3xl font-normal tracking-tighter sm:text-5xl">Sobre Paolo Gourmet</h1>
                     <p className="mx-auto max-w-[700px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mt-4">
@@ -317,6 +325,22 @@ export default function AboutUsPage() {
                                 data-ai-hint="team portrait"
                             />
                         </div>
+                    </div>
+                </div>
+            </section>
+
+             <section id="gallery" className="w-full py-12 md:py-24 lg:py-32 bg-secondary animate-fade-in-up">
+                <div className="container px-4 md:px-6">
+                     <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                        <div className="space-y-2">
+                            <h2 className="text-3xl font-normal tracking-tighter sm:text-5xl">Nuestra Galería</h2>
+                            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                                Un vistazo a nuestras creaciones más deliciosas.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="mt-12">
+                        <Gallery images={galleryImages} />
                     </div>
                 </div>
             </section>
