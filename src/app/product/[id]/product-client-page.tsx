@@ -205,6 +205,10 @@ function Footer() {
 
 export default function ProductClientPage({ board }: { board: CheeseBoard }) {
   const productImages = typeof board.gallery === 'string' ? board.gallery.split('|') : board.gallery;
+  const cheeses = typeof board.cheeses === 'string' ? (board.cheeses as string).split(/, | y\/o | ó /) : board.cheeses;
+  const fruits = typeof board.fruits === 'string' ? (board.fruits as string).split(/, | \/ /) : board.fruits;
+  const accompaniments = typeof board.accompaniments === 'string' ? (board.accompaniments as string).split(', ') : board.accompaniments;
+
   const [api, setApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState(0)
   const [addWine, setAddWine] = useState(false);
@@ -264,7 +268,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
             <div className="space-y-4">
               <Carousel setApi={setApi} className="w-full">
                 <CarouselContent>
-                  {productImages.map((src, index) => (
+                  {Array.isArray(productImages) && productImages.map((src, index) => (
                     <CarouselItem key={index}>
                       <Card className="overflow-hidden rounded-none border-0 shadow-none">
                         <CardContent className="p-0">
@@ -285,7 +289,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                 <CarouselNext />
               </Carousel>
               <div className="grid grid-cols-5 gap-2">
-                {productImages.map((src, index) => (
+                {Array.isArray(productImages) && productImages.map((src, index) => (
                   <button key={index} onClick={() => handleThumbnailClick(index)} className={`overflow-hidden rounded-md focus:ring-2 focus:ring-ring focus:outline-none ${current === index ? 'ring-2 ring-primary' : ''}`}>
                     <div className="relative aspect-square w-full">
                         <Image
@@ -312,15 +316,15 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
               <div className="space-y-4">
                 <div>
                   <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Leaf className="h-5 w-5 text-primary" />Quesos</h3>
-                  <p className="text-muted-foreground">{board.cheeses.join(', ')}</p>
+                  <p className="text-muted-foreground">{Array.isArray(cheeses) ? cheeses.join(', ') : ''}</p>
                 </div>
                 <div>
                   <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Apple className="h-5 w-5 text-primary" />Frutos</h3>
-                  <p className="text-muted-foreground">{board.fruits.join(', ')}</p>
+                  <p className="text-muted-foreground">{Array.isArray(fruits) ? fruits.join(', ') : ''}</p>
                 </div>
                 <div>
                   <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Grape className="h-5 w-5 text-primary" />Acompañamientos</h3>
-                  <p className="text-muted-foreground">{board.accompaniments.join(', ')}</p>
+                  <p className="text-muted-foreground">{Array.isArray(accompaniments) ? accompaniments.join(', ') : ''}</p>
                 </div>
                 <p className="text-sm text-muted-foreground italic">
                     *Las imágenes son de carácter ilustrativo. La variedad de frutos puede cambiar según la temporada, garantizando siempre la máxima frescura y calidad.
@@ -481,9 +485,3 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
     </div>
   );
 }
-
-    
-
-    
-
-    
