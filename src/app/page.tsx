@@ -95,7 +95,7 @@ function Header() {
               <nav className="flex flex-col gap-4 mt-8 h-full">
                   {navLinks.map(link => (
                       <SheetClose asChild key={link.href}>
-                        <Link href={link.href} className="text-lg font-medium hover:underline hover:text-[#c4870a] underline-offset-4">
+                        <Link href={link.href} className="text-lg font-medium hover:underline hover:text-primary underline-offset-4">
                             {link.label}
                         </Link>
                       </SheetClose>
@@ -114,22 +114,22 @@ function Header() {
                   </div>
 
                   <div className="mt-auto flex justify-center space-x-6 pb-8">
-                        <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer"><Instagram style={{ color: '#c4870a' }} className="h-7 w-7" /></a>
-                        <a href="https://www.facebook.com/people/Tablas-Paolo-Gourmet/61578410386269/" target="_blank" rel="noopener noreferrer"><Facebook style={{ color: '#c4870a' }} className="h-7 w-7" /></a>
-                        <a href="https://www.tiktok.com/@paolo.gourmet?_t=ZS-8zSIPIt2AER&_r=1" target="_blank" rel="noopener noreferrer"><TikTokIcon style={{ color: '#c4870a' }} className="h-7 w-7" /></a>
+                        <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer"><Instagram className="text-primary h-7 w-7" /></a>
+                        <a href="https://www.facebook.com/people/Tablas-Paolo-Gourmet/61578410386269/" target="_blank" rel="noopener noreferrer"><Facebook className="text-primary h-7 w-7" /></a>
+                        <a href="https://www.tiktok.com/@paolo.gourmet?_t=ZS-8zSIPIt2AER&_r=1" target="_blank" rel="noopener noreferrer"><TikTokIcon className="text-primary h-7 w-7" /></a>
                   </div>
               </nav>
             </SheetContent>
           </Sheet>
         ) : (
           <nav className="ml-auto flex items-center space-x-1">
-            <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-[#c4870a] underline-offset-4">
+            <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-primary underline-offset-4">
                 <Link href="/nosotros">Nosotros</Link>
             </Button>
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="hover:bg-transparent hover:underline hover:text-[#c4870a] underline-offset-4">
+                <Button variant="ghost" className="hover:bg-transparent hover:underline hover:text-primary underline-offset-4">
                   Productos <ChevronDown className="ml-1 h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
@@ -143,11 +143,11 @@ function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-[#c4870a] underline-offset-4">
+            <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-primary underline-offset-4">
                 <Link href="/preguntas-frecuentes">Preguntas Frecuentes</Link>
             </Button>
 
-            <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-[#c4870a] underline-offset-4">
+            <Button variant="ghost" asChild className="hover:bg-transparent hover:underline hover:text-primary underline-offset-4">
                 <a href="#contact">Contacto</a>
             </Button>
           </nav>
@@ -178,7 +178,7 @@ function Hero() {
         <p className="mt-4 max-w-2xl text-lg text-white font-semibold md:text-xl">
           Descubre tablas de <i>queso</i> meticulosamente elaboradas, <i>perfectas</i> para cualquier <i>ocasión</i>.
         </p>
-        <Button size="lg" className="mt-8 text-white" asChild style={{ backgroundColor: '#c4870a' }}>
+        <Button size="lg" className="mt-8" asChild>
           <a href="#products">Explora Nuestras Tablas</a>
         </Button>
       </div>
@@ -234,7 +234,7 @@ function Testimonials() {
                               </div>
                               <p className="text-sm text-foreground/80 italic mt-2">
                                   "{testimonial.comment[0]}
-                                  <span className="font-bold" style={{ color: '#c4870a' }}>{testimonial.comment[1]}</span>
+                                  <span className="font-bold text-primary">{testimonial.comment[1]}</span>
                                   {testimonial.comment[2]}"
                               </p>
                           </div>
@@ -258,7 +258,7 @@ function Contact() {
     <section id="contact" className="w-full py-16 md:py-20 lg:py-24 animate-fade-in-up">
       <div className="container px-4 md:px-6">
         <div className="space-y-3 mb-12 text-center">
-          <h2 className="text-3xl font-normal tracking-tighter md:text-4xl/tight" style={{ color: '#c4870a' }}>
+          <h2 className="text-3xl font-normal tracking-tighter md:text-4xl/tight text-primary">
             Pedidos Personalizados y Consultas
           </h2>
           <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -271,13 +271,13 @@ function Contact() {
             <div className="bg-secondary/50 p-6 rounded-lg space-y-4">
               <h3 className="text-xl font-normal">Información de Contacto</h3>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild className="flex-1" style={{ backgroundColor: '#c4870a', color: 'white' }}>
+                <Button asChild className="flex-1">
                     <a href="tel:+525562206020">
                         <Phone className="mr-2 h-4 w-4" />
                         Llamar
                     </a>
                 </Button>
-                <Button asChild className="flex-1" style={{ backgroundColor: '#c4870a', color: 'white' }}>
+                <Button asChild className="flex-1">
                     <a href="https://wa.me/525562206020" target="_blank" rel="noopener noreferrer">
                         <WhatsAppIcon className="mr-2 h-5 w-5" />
                         WhatsApp
@@ -296,13 +296,13 @@ function Contact() {
               </div>
                 <div className="flex items-center gap-4 pt-4">
                     <a href="https://www.instagram.com/paolo.gourmet/" target="_blank" rel="noopener noreferrer">
-                        <Instagram style={{ color: '#c4870a' }} className="h-6 w-6" />
+                        <Instagram className="text-primary h-6 w-6" />
                     </a>
                      <a href="https://www.facebook.com/people/Tablas-Paolo-Gourmet/61578410386269/" target="_blank" rel="noopener noreferrer">
-                        <Facebook style={{ color: '#c4870a' }} className="h-6 w-6" />
+                        <Facebook className="text-primary h-6 w-6" />
                     </a>
                      <a href="https://www.tiktok.com/@paolo.gourmet?_t=ZS-8zSIPIt2AER&_r=1" target="_blank" rel="noopener noreferrer">
-                        <TikTokIcon style={{ color: '#c4870a' }} className="h-6 w-6" />
+                        <TikTokIcon className="text-primary h-6 w-6" />
                     </a>
                 </div>
             </div>
@@ -328,7 +328,7 @@ function Footer() {
     const isMobile = useIsMobile();
     
     return (
-        <footer className="w-full text-white py-6" style={{ backgroundColor: '#c4870a' }}>
+        <footer className="w-full text-white py-6 bg-primary">
             <div className="container flex flex-col md:flex-row items-center justify-between">
                 {isMobile ? (
                     <div className="flex flex-col items-center w-full">
@@ -373,8 +373,7 @@ function WhatsAppButton() {
       href="https://wa.me/525562206020"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-4 right-4 z-50 text-white p-4 rounded-full shadow-lg transition-colors"
-      style={{ backgroundColor: '#c4870a' }}
+      className="fixed bottom-4 right-4 z-50 text-white p-4 rounded-full shadow-lg transition-colors bg-primary"
       aria-label="Contactar por WhatsApp"
     >
       <WhatsAppIcon className="h-8 w-8 text-white" />
@@ -389,7 +388,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <div className="sticky top-0 z-50">
-        <div style={{ backgroundColor: '#c4870a' }} className="py-2 text-center text-xs md:text-sm text-white">
+        <div className="bg-primary py-2 text-center text-xs md:text-sm text-primary-foreground">
             <p>Envíos con costo adicional en CDMX. Pedidos con 24 horas de anticipación, antes de las 16:00 hrs.</p>
         </div>
         <Header />
@@ -429,7 +428,7 @@ export default function Home() {
             <p className="mt-4 max-w-3xl mx-auto">
               Envíanos un mail a <a href="mailto:hola@paologourmet.com.mx" className="underline">hola@paologourmet.com.mx</a> o <a href="https://api.whatsapp.com/send/?phone=525562206020&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="underline">escríbenos por Whatsapp</a> para cotizarte. Tenemos opciones personalizadas en CDMX a partir de 20 personas.
             </p>
-            <Button asChild className="mt-6" style={{ backgroundColor: '#c4870a', color: '#ffffff' }}>
+            <Button asChild className="mt-6">
               <a href="#contact">Contacto</a>
             </Button>
           </div>
@@ -450,5 +449,7 @@ export default function Home() {
 
     
 
+
+    
 
     
