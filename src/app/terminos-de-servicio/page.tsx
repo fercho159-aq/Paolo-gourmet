@@ -13,7 +13,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Menu, ChevronDown, Box, Instagram, Facebook } from 'lucide-react';
+import { Menu, ChevronDown, Box, Instagram, Facebook, Sparkles } from 'lucide-react';
 
 function CuttingBoardIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -51,6 +51,7 @@ function Header() {
     const productLinks = [
         { href: "/#premium-boards", label: "Tablas Premium", icon: <CuttingBoardIcon className="h-4 w-4" /> },
         { href: "/#cajas-boards", label: "Cajas", icon: <Box className="h-4 w-4" /> },
+        { href: "/edicion-especial", label: "Edición Especial", icon: <Sparkles className="h-4 w-4" /> },
     ]
 
     const navLinks = [
@@ -123,12 +124,11 @@ function Header() {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
-                  <DropdownMenuItem asChild>
-                    <Link href="/#premium-boards" className="flex items-center gap-2"><CuttingBoardIcon className="h-4 w-4" />Tablas Premium</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/#cajas-boards" className="flex items-center gap-2"><Box className="h-4 w-4" />Cajas</Link>
-                  </DropdownMenuItem>
+                    {productLinks.map(link => (
+                        <DropdownMenuItem asChild key={link.href}>
+                            <Link href={link.href} className="flex items-center gap-2">{link.icon}{link.label}</Link>
+                        </DropdownMenuItem>
+                    ))}
                 </DropdownMenuContent>
               </DropdownMenu>
   
@@ -265,3 +265,5 @@ export default function TermsOfServicePage() {
     </div>
   );
 }
+
+    

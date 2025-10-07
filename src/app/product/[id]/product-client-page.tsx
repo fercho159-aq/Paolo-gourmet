@@ -8,7 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Carousel, CarouselContent, CarouselItem, CarouselApi, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
-import { Users, Leaf, Grape, Send, Wine, Star, Menu, Box, ChevronDown, Instagram, Facebook, Ruler, Apple } from 'lucide-react';
+import { Users, Leaf, Grape, Send, Wine, Star, Menu, Box, ChevronDown, Instagram, Facebook, Ruler, Apple, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { LogoBlanco } from '@/components/logo-blanco';
@@ -74,6 +74,7 @@ function Header() {
     const productLinks = [
         { href: "/#premium-boards", label: "Tablas Premium", icon: <CuttingBoardIcon className="h-4 w-4" /> },
         { href: "/#cajas-boards", label: "Cajas", icon: <Box className="h-4 w-4" /> },
+        { href: "/edicion-especial", label: "Edición Especial", icon: <Sparkles className="h-4 w-4" /> },
     ]
 
     const navLinks = [
@@ -144,12 +145,11 @@ function Header() {
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
-                    <DropdownMenuItem asChild>
-                        <Link href="/#premium-boards" className="flex items-center gap-2"><CuttingBoardIcon className="h-4 w-4" />Tablas Premium</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                         <Link href="/#cajas-boards" className="flex items-center gap-2"><Box className="h-4 w-4" />Cajas</Link>
-                    </DropdownMenuItem>
+                    {productLinks.map(link => (
+                        <DropdownMenuItem asChild key={link.href}>
+                            <Link href={link.href} className="flex items-center gap-2">{link.icon}{link.label}</Link>
+                        </DropdownMenuItem>
+                    ))}
                 </DropdownMenuContent>
                 </DropdownMenu>
 
@@ -221,18 +221,11 @@ function ProductDescription({ description }: { description: string }) {
     return (
       <p className="text-muted-foreground mt-2 text-lg">
         {parts.map((part, index) => {
+          if (part.startsWith('**') && part.endsWith('**')) {
+            return <strong key={index}>{part.slice(2, -2)}</strong>;
+          }
           if (part.startsWith('*') && part.endsWith('*')) {
-            const innerText = part.slice(1, -1);
-            const boldRegex = /\*\*(.*?)\*\*/g;
-            const subParts = innerText.split(boldRegex);
-
-            return (
-              <i key={index}>
-                {subParts.map((subPart, subIndex) => 
-                    subIndex % 2 === 1 ? <strong key={subIndex}>{subPart}</strong> : subPart
-                )}
-              </i>
-            );
+            return <i key={index}>{part.slice(1, -1)}</i>;
           }
           return part;
         })}
@@ -480,7 +473,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2 text-md text-primary">
                     <Users className="h-5 w-5" />
-                    <span className="font-medium">Sirve para {board.serving}</span>
+                    <span className="font-medium">{board.serving}</span>
                 </div>
                 {board.dimensions && (
                     <div className={cn("items-center gap-2 text-md text-primary", board.name === "Set de 12 Conos" ? "flex" : "hidden md:flex")}>
@@ -609,3 +602,5 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
     </div>
   );
 }
+
+    

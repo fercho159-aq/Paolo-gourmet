@@ -18,7 +18,7 @@ export default {
     },
     extend: {
       backgroundImage: {
-        'events-bg': "url('/Imagen/Productos/Tabla 5.jpg')",
+        'events-bg': "url('/Imagen/Galeria/IMG_0836.jpg')",
       },
       fontFamily: {
         body: ['Montserrat', 'sans-serif'],

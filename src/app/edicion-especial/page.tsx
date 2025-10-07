@@ -3,7 +3,9 @@
 
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { Truck, Clock, Award, Users, Menu, Box, ChevronDown, Instagram, Facebook, Sparkles } from 'lucide-react';
 import Link from 'next/link';
+import { Logo } from '@/components/logo';
 import { LogoBlanco } from '@/components/logo-blanco';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -12,14 +14,11 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Menu, ChevronDown, Box, Instagram, Facebook, Star, Quote, Sparkles } from 'lucide-react';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
-import { testimonials, cheeseBoards, Testimonial } from '@/lib/data';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Logo } from '@/components/logo';
-import { Gallery } from '@/components/gallery';
+} from "@/components/ui/dropdown-menu";
+import { cheeseBoards } from '@/lib/data';
+import { Card, CardContent, CardTitle } from '@/components/ui/card';
+import { cn } from '@/lib/utils';
+
 
 function CuttingBoardIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -97,7 +96,6 @@ function Header() {
             </header>
         );
     }
-    
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background">
         <div className="container flex h-28 items-center">
@@ -178,7 +176,7 @@ function Footer() {
     const isMobile = useIsMobile();
     
     if (isMobile === undefined) {
-        return <footer className="w-full text-white py-6 bg-primary" style={{ minHeight: '158px' }}></footer>;
+        return <footer className="w-full text-white py-6 bg-primary h-[158px] md:h-[104px]"></footer>;
     }
 
     return (
@@ -221,76 +219,8 @@ function Footer() {
     );
 }
 
-function TestimonialsCarousel() {
-    const fullTestimonials = testimonials.map(testimonial => {
-        const product = cheeseBoards.find(p => p.id === testimonial.productId) || cheeseBoards[0];
-        return { ...testimonial, product };
-    });
-
-  return (
-    <div className="w-full mt-8">
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          className="w-full max-w-md mx-auto"
-        >
-          <CarouselContent>
-            {fullTestimonials.map((testimonial) => (
-              <CarouselItem key={testimonial.id}>
-                <div className="p-1 h-full">
-                  <Card className="h-full shadow-lg overflow-hidden">
-                    <CardContent className="p-6 flex flex-col justify-center">
-                        <div className="flex items-center gap-4">
-                           <Avatar className="h-12 w-12 flex-shrink-0">
-                                <AvatarImage src={testimonial.product.image} alt={testimonial.product.name} />
-                                <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                           </Avatar>
-                            <div className="flex-grow">
-                                <div className="flex justify-between items-start">
-                                    <div>
-                                        <p className="text-sm font-bold">{testimonial.name}</p>
-                                        <p className="text-xs text-muted-foreground">{testimonial.location}</p>
-                                    </div>
-                                    <div className="flex items-center gap-0.5 flex-shrink-0">
-                                        {Array.from({ length: 5 }).map((_, i) => (
-                                            <Star key={i} className={`h-4 w-4 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-muted-foreground'}`} />
-                                        ))}
-                                    </div>
-                                </div>
-                                <p className="text-sm text-foreground/80 italic mt-2">
-                                  "{testimonial.comment[0]}
-                                  <span className="font-bold text-primary">{testimonial.comment[1]}</span>
-                                  {testimonial.comment[2]}"
-                                </p>
-                            </div>
-                        </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="-left-4" />
-          <CarouselNext className="-right-4" />
-        </Carousel>
-      </div>
-  );
-}
-
-export default function AboutUsPage() {
-    const galleryImages = [
-        { src: "/Imagen/ProductosAldo/11.jpg", alt: "Tabla de quesos mediana", hint: "cheese board" },
-        { src: "/Imagen/Caja grande/1.jpg", alt: "Caja de quesos grande", hint: "cheese box" },
-        { src: "/Imagen/Conos/IMG_5197.JPG", alt: "Conos de queso", hint: "cheese cones" },
-        { src: "/Imagen/ProductosAldo/32.jpg", alt: "Tabla de quesos chica", hint: "small cheese board" },
-        { src: "/Imagen/ProductosAldo/Premium/1.jpg", alt: "Tabla de quesos premium", hint: "premium cheese board" },
-        { src: "/Imagen/Caja1/IMG_5247.JPG", alt: "Caja de quesos para pareja", hint: "cheese box couple" },
-        { src: "/Imagen/ProductosAldo/12.jpg", alt: "Detalle de tabla de quesos", hint: "cheese board detail" },
-        { src: "/Imagen/ProductosAldo/13.jpg", alt: "Variedad de quesos y frutas", hint: "cheese fruit variety" },
-        { src: "/Imagen/ProductosAldo/14.jpg", alt: "Tabla de quesos con carnes frías", hint: "cheese board meats" }
-    ];
+export default function SpecialEditionPage() {
+    const specialEditions = cheeseBoards.filter(b => b.line === 'Edicion especial');
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -300,51 +230,46 @@ export default function AboutUsPage() {
             </div>
             <Header />
         </div>
-        <main className="flex-grow">
+        <main className="flex-grow animate-fade-in-up">
             <section className="w-full py-12 md:py-16 text-white bg-primary">
                 <div className="container px-4 md:px-6 text-center animate-fade-in-up">
-                    <h1 className="text-3xl font-normal tracking-tighter sm:text-5xl">Sobre Paolo Gourmet</h1>
+                    <h1 className="text-3xl font-normal tracking-tighter sm:text-5xl">Edición Especial</h1>
                     <p className="mx-auto max-w-[700px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mt-4">
-                        Descubre la pasión y el arte detrás de cada una de nuestras tablas de queso.
+                        Descubre nuestras creaciones de temporada, disponibles por tiempo limitado.
                     </p>
                 </div>
             </section>
-            <section id="about" className="w-full py-12 md:py-24 lg:py-32 animate-fade-in-up">
+            <section id="special-products" className="w-full py-12 md:py-24 lg:py-32">
                 <div className="container px-4 md:px-6">
-                    <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
-                        <div className="flex flex-col justify-center space-y-4">
-                            <h2 className="text-3xl font-normal tracking-tighter sm:text-5xl">Nuestra Misión</h2>
-                            <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                            En paolo gourmet, creemos que el queso es más que un alimento, es una experiencia. Nuestra misión es seleccionar los mejores quesos artesanales y combinarlos con los acompañamientos perfectos para crear tablas inolvidables que unen a las personas.
-                            </p>
-                            <TestimonialsCarousel />
-                        </div>
-                        <div className="flex flex-col justify-center items-center space-y-8">
-                           <Image
-                                src="/Imagen/Galeria/IMG_0836.jpg"
-                                alt="El equipo de Paolo Gourmet"
-                                width={400}
-                                height={300}
-                                className="object-cover rounded-xl shadow-lg w-full max-w-sm"
-                                data-ai-hint="team portrait"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-             <section id="gallery" className="w-full py-12 md:py-24 lg:py-32 bg-secondary animate-fade-in-up">
-                <div className="container px-4 md:px-6">
-                     <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                        <div className="space-y-2">
-                            <h2 className="text-3xl font-normal tracking-tighter sm:text-5xl">Nuestra Galería</h2>
-                            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                                Un vistazo a nuestras creaciones más deliciosas.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="mt-12">
-                        <Gallery images={galleryImages} />
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {specialEditions.map(board => (
+                           <Link href={`/product/${board.id}`} key={board.id} className="block h-full">
+                           <Card className="flex flex-col h-full overflow-hidden transition-shadow hover:shadow-xl rounded-lg border-border shadow-md">
+                             <div className="relative aspect-square w-full">
+                               <Image
+                                 src={board.image}
+                                 alt={board.name}
+                                 data-ai-hint={board.dataAiHint}
+                                 fill
+                                 className="object-cover"
+                               />
+                             </div>
+                             <CardContent className="p-4 flex-grow flex flex-col">
+                               <CardTitle className="text-lg mb-2 flex-grow">{board.name}</CardTitle>
+                               <p className="text-sm text-muted-foreground mb-4">{board.description}</p>
+                               <div className="flex items-center justify-between mt-auto">
+                                   <div className="flex items-center gap-2 text-md text-primary">
+                                       <Users className="h-5 w-5" />
+                                       <span className="font-medium">{board.serving}</span>
+                                   </div>
+                                   <div className="text-xl font-bold font-headline text-primary">
+                                     ${board.price.toFixed(2)}
+                                   </div>
+                               </div>
+                             </CardContent>
+                           </Card>
+                         </Link>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -354,11 +279,5 @@ export default function AboutUsPage() {
     </div>
   );
 }
-
-    
-
-    
-
-    
 
     

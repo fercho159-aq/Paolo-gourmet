@@ -205,16 +205,16 @@ export const cheeseBoards: CheeseBoard[] = [
     "name": "Box Mediano edicion Halloween",
     "description": "Con un diseño divertido, disfruta de este Box edicion Halloween 2025",
     "image": "https://picsum.photos/seed/halloween/600/600",
-    "gallery": [],
+    "gallery": ["https://picsum.photos/seed/halloween1/600/600", "https://picsum.photos/seed/halloween2/600/600"],
     "dataAiHint": "caja halloween",
-    "cheeses": [],
-    "fruits": [],
+    "cheeses": ["Queso de calabaza", "Cheddar negro"],
+    "fruits": ["Uvas negras", "Mandarinas"],
     "meats": [],
-    "accompaniments": [],
-    "serving": "",
-    "dimensions": "",
-    "tags": [],
-    "price": 0,
+    "accompaniments": ["Galletas de araña", "Dulces de maíz"],
+    "serving": "2-4 personas",
+    "dimensions": "20x20 cm",
+    "tags": ["halloween", "temporada", "especial"],
+    "price": 850,
     "priceWithWine": ""
   },
   {
@@ -223,16 +223,16 @@ export const cheeseBoards: CheeseBoard[] = [
     "name": "Navidad y año nuevo 2026",
     "description": "Edicion especial navidad 2025",
     "image": "https://picsum.photos/seed/navidad/600/600",
-    "gallery": [],
+    "gallery": ["https://picsum.photos/seed/navidad1/600/600", "https://picsum.photos/seed/navidad2/600/600"],
     "dataAiHint": "caja navidad",
-    "cheeses": [],
-    "fruits": [],
-    "meats": [],
-    "accompaniments": [],
-    "serving": "",
-    "dimensions": "",
-    "tags": [],
-    "price": 0,
+    "cheeses": ["Queso de arándano", "Gouda ahumado"],
+    "fruits": ["Granada", "Peras"],
+    "meats": ["Pavo en rodajas"],
+    "accompaniments": ["Nueces confitadas", "Bastones de caramelo"],
+    "serving": "4-6 personas",
+    "dimensions": "30x30 cm",
+    "tags": ["navidad", "temporada", "fiesta"],
+    "price": 1200,
     "priceWithWine": ""
   }
 ];
@@ -329,3 +329,5 @@ export const testimonials: Testimonial[] = [
     productId: 3,
   },
 ];
+
+    
