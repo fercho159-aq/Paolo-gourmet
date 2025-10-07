@@ -387,7 +387,7 @@ function WhatsAppButton() {
       href="https://wa.me/525562206020"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-4 right-4 z-50 text-white p-4 rounded-full shadow-lg transition-colors bg-primary"
+      className="fixed bottom-4 right-4 z-50 text-white p-4 rounded-full shadow-lg transition-colors bg-[#25D366] hover:bg-[#25D366]/90"
       aria-label="Contactar por WhatsApp"
     >
       <WhatsAppIcon className="h-8 w-8 text-white" />
@@ -456,3 +456,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
