@@ -281,15 +281,15 @@ function TestimonialsCarousel() {
 
 export default function AboutUsPage() {
     const galleryImages = [
-        { src: "/Imagen/ProductosAldo/11.jpg", alt: "Tabla de quesos mediana", hint: "cheese board" },
-        { src: "/Imagen/Caja grande/1.jpg", alt: "Caja de quesos grande", hint: "cheese box" },
+        { src: "/Imagen/Caja grande/4.jpg", alt: "Tabla de quesos mediana", hint: "cheese board" },
+        { src: "/Imagen/Galeria/IMG_1199.jpg", alt: "Tabla de quesos chica", hint: "small cheese board" },
         { src: "/Imagen/Conos/IMG_5197.JPG", alt: "Conos de queso", hint: "cheese cones" },
-        { src: "/Imagen/ProductosAldo/32.jpg", alt: "Tabla de quesos chica", hint: "small cheese board" },
         { src: "/Imagen/ProductosAldo/Premium/1.jpg", alt: "Tabla de quesos premium", hint: "premium cheese board" },
+        { src: "/Imagen/Productos/Tabla 4.jpg", alt: "Tabla de quesos con carnes frías", hint: "cheese board meats" },
         { src: "/Imagen/Caja1/IMG_5247.JPG", alt: "Caja de quesos para pareja", hint: "cheese box couple" },
-        { src: "/Imagen/ProductosAldo/12.jpg", alt: "Detalle de tabla de quesos", hint: "cheese board detail" },
+        { src: "/Imagen/Caja grande/1.jpg", alt: "Caja de quesos grande", hint: "cheese box" },
+        { src: "/Imagen/Galeria/IMG_1243.jpg", alt: "Detalle de tabla de quesos", hint: "cheese board detail" },
         { src: "/Imagen/ProductosAldo/13.jpg", alt: "Variedad de quesos y frutas", hint: "cheese fruit variety" },
-        { src: "/Imagen/ProductosAldo/14.jpg", alt: "Tabla de quesos con carnes frías", hint: "cheese board meats" }
     ];
 
   return (
