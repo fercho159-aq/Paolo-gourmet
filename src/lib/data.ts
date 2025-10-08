@@ -1,7 +1,7 @@
 
 export type CheeseBoard = {
   id: number;
-  line: 'Cajas' | 'Tablas Premium' | 'Ordenes extras' | 'Edicion especial';
+  line: 'Cajas' | 'Tablas Premium' | 'Ordenes extras' | 'Edicion especial' | 'Letras';
   name: string;
   description: string;
   image: string;
@@ -22,7 +22,7 @@ export const cheeseBoards: CheeseBoard[] = [
   {
     "id": 1,
     "line": "Cajas",
-    "name": "Set de 12 Vasos",
+    "name": "Set de 12 Conos",
     "description": "Vasos individuales con una cobinacion iconica de ingredientes perfectos para tu paladar. Ideal para cualquier evento o reunion.",
     "image": "/Imagen/Conos/IMG_5197.JPG",
     "gallery": ["/Imagen/Conos/IMG_5197.JPG", "/Imagen/Conos/IMG_5202.JPG", "/Imagen/Conos/IMG_5219.JPG", "/Imagen/Conos/IMG_5227.JPG"],
@@ -96,8 +96,8 @@ export const cheeseBoards: CheeseBoard[] = [
     "line": "Tablas Premium",
     "name": "Tabla Mediana",
     "description": "Una de nuestras tablas mas lujosas, diseñanada para ser el centro de atención de cualquier evento. Un festín para la vista y el paladar. *Nuestras tablas son de madera de pino y están curadas para uso alimenticio. **¡Te la quedas de regalo!***",
-    "image": "https://images.unsplash.com/photo-1579916087028-2cedd4dceceb?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "gallery": ["https://images.unsplash.com/photo-1579916087028-2cedd4dceceb?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "/Imagen/ProductosAldo/12.jpg", "/Imagen/ProductosAldo/13.jpg", "/Imagen/ProductosAldo/14.jpg"],
+    "image": "/Imagen/ProductosAldo/11.jpg",
+    "gallery": ["/Imagen/ProductosAldo/11.jpg", "/Imagen/ProductosAldo/12.jpg", "/Imagen/ProductosAldo/13.jpg", "/Imagen/ProductosAldo/14.jpg"],
     "dataAiHint": "tabla de queso premium mediana",
     "cheeses": ["Brie y/o camembert", "Esferas de queso crema con arandanos o nuez", "Cheddar y/o manchego y/o Gouda"],
     "fruits": ["Uvas", "Kiwi", "Blueberries", "Zarzamoras", "Frambuesas", "Fresa", "Higo", "chabacano"],
@@ -233,6 +233,24 @@ export const cheeseBoards: CheeseBoard[] = [
     "dimensions": "30x30 cm",
     "tags": ["navidad", "temporada", "fiesta"],
     "price": 1200,
+    "priceWithWine": ""
+  },
+  {
+    "id": 13,
+    "line": "Letras",
+    "name": "Letras para una celebracion especial.",
+    "description": "Divertidas letras personalizadas para celebrar cualquier ocasión. Cumpleaños, aniversarios, día de las madres, graduaciones.",
+    "image": "https://picsum.photos/seed/letters/600",
+    "gallery": [],
+    "dataAiHint": "cheese letters",
+    "cheeses": [],
+    "fruits": [],
+    "meats": [],
+    "accompaniments": [],
+    "serving": "",
+    "dimensions": "",
+    "tags": ["letras", "personalizado", "celebracion"],
+    "price": 0,
     "priceWithWine": ""
   }
 ];
