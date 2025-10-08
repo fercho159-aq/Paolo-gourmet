@@ -240,7 +240,7 @@ export const cheeseBoards: CheeseBoard[] = [
     "line": "Letras",
     "name": "Letras para una celebracion especial.",
     "description": "Divertidas letras personalizadas para celebrar cualquier ocasión. Cumpleaños, aniversarios, día de las madres, graduaciones.",
-    "image": "https://picsum.photos/seed/letters/600",
+    "image": "/Imagen/tabla chica/IMG_3256.jpg",
     "gallery": [],
     "dataAiHint": "cheese letters",
     "cheeses": [],
