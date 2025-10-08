@@ -396,7 +396,7 @@ function WhatsAppButton() {
 }
 
 export default function Home() {
-  const premiumBoards = cheeseBoards.filter(b => b.line === 'Tablas Premium');
+  const premiumBoards = cheeseBoards.filter(b => b.line === 'Tablas Premium' || b.line === 'Letras');
   const cajasBoards = cheeseBoards.filter(b => b.line === 'Cajas');
 
   return (
@@ -458,3 +458,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
