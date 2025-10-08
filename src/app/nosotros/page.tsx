@@ -37,7 +37,7 @@ function CuttingBoardIcon(props: React.SVGProps<SVGSVGElement>) {
     >
       <path d="M14 8h.01" />
       <path d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4" />
-      <path d="M16 4h2a2 2 0 0 1 2 2v2" />
+      <path d="M16 4h2a2 2 0 0_1 2 2v2" />
       <path d="M22 10a2 2 0 0 0-2-2m0 0a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2z" />
     </svg>
   );
@@ -79,7 +79,6 @@ function Header() {
     const productLinks = [
         { href: "/tablas", label: "Tablas Premium", icon: <CuttingBoardIcon className="h-4 w-4" /> },
         { href: "/cajas", label: "Cajas", icon: <Box className="h-4 w-4" /> },
-        { href: "/tablas#letras", label: "Letras", icon: <Sigma className="h-4 w-4" /> },
         { href: "/edicion-especial", label: "Edición Especial", icon: <Sparkles className="h-4 w-4" /> },
     ]
 

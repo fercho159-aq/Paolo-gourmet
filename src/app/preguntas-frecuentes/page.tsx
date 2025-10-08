@@ -81,7 +81,6 @@ function Header() {
     const productLinks = [
         { href: "/tablas", label: "Tablas Premium", icon: <CuttingBoardIcon className="h-4 w-4" /> },
         { href: "/cajas", label: "Cajas", icon: <Box className="h-4 w-4" /> },
-        { href: "/tablas#letras", label: "Letras", icon: <Sigma className="h-4 w-4" /> },
         { href: "/edicion-especial", label: "Edición Especial", icon: <Sparkles className="h-4 w-4" /> },
     ]
 
