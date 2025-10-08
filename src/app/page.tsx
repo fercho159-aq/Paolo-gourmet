@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
-import { Quote, Users, Mail, Leaf, Grape, Phone, MapPin, Instagram, Facebook, Menu, Star, Box, Ruler, Sparkles } from 'lucide-react';
+import { Quote, Users, Mail, Leaf, Grape, Phone, MapPin, Instagram, Facebook, Menu, Star, Box, Ruler, Sparkles, Sigma } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { LogoBlanco } from '@/components/logo-blanco';
 import { cheeseBoards, testimonials, Testimonial } from '@/lib/data';
@@ -69,8 +69,9 @@ function Header() {
   const isMobile = useIsMobile();
 
   const productLinks = [
-      { href: "/#premium-boards", label: "Tablas Premium", icon: <CuttingBoardIcon className="h-4 w-4" /> },
-      { href: "/#cajas-boards", label: "Cajas", icon: <Box className="h-4 w-4" /> },
+      { href: "/tablas", label: "Tablas Premium", icon: <CuttingBoardIcon className="h-4 w-4" /> },
+      { href: "/cajas", label: "Cajas", icon: <Box className="h-4 w-4" /> },
+      { href: "/tablas#letras", label: "Letras", icon: <Sigma className="h-4 w-4" /> },
       { href: "/edicion-especial", label: "Edición Especial", icon: <Sparkles className="h-4 w-4" /> },
   ]
 
@@ -425,10 +426,12 @@ export default function Home() {
                     </p>
                 </div>
                 <div className="space-y-16">
-                    <div id="premium-boards">
+                    <div>
+                        <h3 className="text-2xl font-normal tracking-tighter sm:text-3xl text-center mb-8"><Link href="/tablas">Tablas Premium</Link></h3>
                         <CheeseBoardCarousel boards={premiumBoards} />
                     </div>
-                    <div id="cajas-boards">
+                    <div>
+                        <h3 className="text-2xl font-normal tracking-tighter sm:text-3xl text-center mb-8"><Link href="/cajas">Cajas</Link></h3>
                         <CheeseBoardCarousel boards={cajasBoards} />
                     </div>
                 </div>
@@ -456,7 +459,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-    

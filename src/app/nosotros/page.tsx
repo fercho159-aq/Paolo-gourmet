@@ -13,7 +13,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Menu, ChevronDown, Box, Instagram, Facebook, Star, Quote, Sparkles } from 'lucide-react';
+import { Menu, ChevronDown, Box, Instagram, Facebook, Star, Quote, Sparkles, Sigma } from 'lucide-react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
 import { testimonials, cheeseBoards, Testimonial } from '@/lib/data';
@@ -77,8 +77,9 @@ function Header() {
     const isMobile = useIsMobile();
 
     const productLinks = [
-        { href: "/#premium-boards", label: "Tablas Premium", icon: <CuttingBoardIcon className="h-4 w-4" /> },
-        { href: "/#cajas-boards", label: "Cajas", icon: <Box className="h-4 w-4" /> },
+        { href: "/tablas", label: "Tablas Premium", icon: <CuttingBoardIcon className="h-4 w-4" /> },
+        { href: "/cajas", label: "Cajas", icon: <Box className="h-4 w-4" /> },
+        { href: "/tablas#letras", label: "Letras", icon: <Sigma className="h-4 w-4" /> },
         { href: "/edicion-especial", label: "Edición Especial", icon: <Sparkles className="h-4 w-4" /> },
     ]
 
@@ -354,11 +355,3 @@ export default function AboutUsPage() {
     </div>
   );
 }
-
-    
-
-    
-
-    
-
-    

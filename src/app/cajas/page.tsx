@@ -3,16 +3,10 @@
 
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Truck, Clock, Award, Users, Menu, Box, ChevronDown, Instagram, Facebook, Image as ImageIcon, Gift, Sparkles, Sigma } from 'lucide-react';
+import { Truck, Clock, Award, Users, Menu, Box, ChevronDown, Instagram, Facebook, Sparkles, Sigma } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { LogoBlanco } from '@/components/logo-blanco';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { useIsMobile } from '@/hooks/use-mobile';
 import {
@@ -21,6 +15,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { cheeseBoards } from '@/lib/data';
+import { Card, CardContent, CardTitle } from '@/components/ui/card';
 
 
 function CuttingBoardIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -223,50 +219,9 @@ function Footer() {
     );
 }
 
-const Highlight = ({ children }: { children: React.ReactNode }) => (
-    <span className="font-bold text-primary">{children}</span>
-);
+export default function CajasPage() {
+    const cajas = cheeseBoards.filter(b => b.line === 'Cajas');
 
-const faqItems = [
-    {
-      value: "item-1",
-      question: "¿Cuáles son las zonas de entrega y los costos?",
-      answer: <>Cubrimos <Highlight>toda la Ciudad de México</Highlight>. El costo de envío varía según la zona y se calcula al momento de realizar el pedido.</>,
-      icon: <Truck className="h-5 w-5 text-primary" />
-    },
-    {
-      value: "item-2",
-      question: "¿Con cuánto tiempo de anticipación debo hacer mi pedido?",
-      answer: <>Para asegurar la frescura y calidad de nuestros ingredientes, todos los pedidos requieren un <Highlight>mínimo de 24 horas</Highlight> de anticipación. Para <Highlight>eventos grandes</Highlight>, te recomendamos contactarnos con al menos una semana de antelación.</>,
-      icon: <Clock className="h-5 w-5 text-primary" />
-    },
-    {
-      value: "item-3",
-      question: "¿Qué garantía de calidad ofrecen?",
-      answer: <>En paolo gourmet, nuestra prioridad es tu <Highlight>satisfacción total</Highlight>. Seleccionamos cuidadosamente cada ingrediente y preparamos tu tabla el mismo día de la entrega para garantizar la <Highlight>máxima frescura</Highlight>. Si por alguna razón no estás satisfecho con tu pedido, por favor contáctanos dentro de las primeras 3 horas de haberlo recibido para encontrar una solución.</>,
-      icon: <Award className="h-5 w-5 text-primary" />
-    },
-    {
-      value: "item-4",
-      question: "¿Puedo personalizar mi tabla de quesos?",
-      answer: <>¡Claro que sí! Ofrecemos <Highlight>opciones personalizadas</Highlight> para eventos a partir de 20 personas. Podemos adaptar las tablas a tus gustos, preferencias o <Highlight>restricciones alimentarias</Highlight>. Contáctanos por WhatsApp o correo electrónico para cotizar un pedido especial.</>,
-      icon: <Users className="h-5 w-5 text-primary" />
-    },
-    {
-        value: "item-5",
-        question: "¿Mi tabla será exactamente igual a la de la foto?",
-        answer: <>Las imágenes que mostramos son de <Highlight>carácter ilustrativo</Highlight> para que conozcas nuestro estilo y la calidad de los productos que manejamos. Cada una de nuestras tablas es una <Highlight>creación artesanal y única</Highlight>. La variedad de frutas puede cambiar según la temporada para garantizar siempre la máxima frescura. Sin embargo, la cantidad y la calidad de los quesos y carnes frías siempre será la misma que la descrita en el producto.</>,
-        icon: <ImageIcon className="h-5 w-5 text-primary" />
-    },
-    {
-        value: "item-6",
-        question: "¿La tabla o base viene incluida con mi pedido?",
-        answer: <>¡Sí! Todas nuestras <Highlight>Tablas Premium</Highlight> vienen sobre una tabla de madera de pino curada para uso alimenticio, la cual <Highlight>¡te quedas de regalo!</Highlight>. Nuestros productos de la línea <Highlight>Cajas</Highlight> se entregan en una caja de cartón que también te quedas.</>,
-        icon: <Gift className="h-5 w-5 text-primary" />
-    }
-]
-
-export default function FaqPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
         <div className="sticky top-0 z-50">
@@ -278,44 +233,45 @@ export default function FaqPage() {
         <main className="flex-grow animate-fade-in-up">
             <section className="w-full py-12 md:py-16 text-white bg-primary">
                 <div className="container px-4 md:px-6 text-center animate-fade-in-up">
-                    <h1 className="text-3xl font-normal tracking-tighter sm:text-5xl">Preguntas Frecuentes</h1>
+                    <h1 className="text-3xl font-normal tracking-tighter sm:text-5xl">Nuestras Cajas</h1>
                     <p className="mx-auto max-w-[700px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mt-4">
-                        Resolvemos tus dudas para que disfrutes de la mejor experiencia.
+                        Descubre nuestras cajas, perfectas para cualquier ocasión.
                     </p>
                 </div>
             </section>
-            <section id="faq" className="w-full py-12 md:py-24 lg:py-32">
-              <div className="container px-4 md:px-6">
-                <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start max-w-6xl mx-auto">
-                  <div className="flex flex-col justify-center">
-                    <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
-                        {faqItems.map((item) => (
-                             <AccordionItem key={item.value} value={item.value}>
-                                <AccordionTrigger>
-                                    <div className="flex items-center gap-4">
-                                        {item.icon}
-                                        <span className="text-left">{item.question}</span>
-                                    </div>
-                                </AccordionTrigger>
-                                <AccordionContent className="text-muted-foreground">
-                                    {item.answer}
-                                </AccordionContent>
-                             </AccordionItem>
+            <section id="cajas-products" className="w-full py-12 md:py-24 lg:py-32">
+                <div className="container px-4 md:px-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {cajas.map(board => (
+                           <Link href={`/product/${board.id}`} key={board.id} className="block h-full">
+                           <Card className="flex flex-col h-full overflow-hidden transition-shadow hover:shadow-xl rounded-lg border-border shadow-md">
+                             <div className="relative aspect-square w-full">
+                               <Image
+                                 src={board.image}
+                                 alt={board.name}
+                                 data-ai-hint={board.dataAiHint}
+                                 fill
+                                 className="object-cover"
+                               />
+                             </div>
+                             <CardContent className="p-4 flex-grow flex flex-col">
+                               <CardTitle className="text-lg mb-2 flex-grow">{board.name}</CardTitle>
+                               <p className="text-sm text-muted-foreground mb-4">{board.description}</p>
+                               <div className="flex items-center justify-between mt-auto">
+                                   <div className="flex items-center gap-2 text-md text-primary">
+                                       <Users className="h-5 w-5" />
+                                       <span className="font-medium">{board.serving}</span>
+                                   </div>
+                                   <div className="text-xl font-bold font-headline text-primary">
+                                     ${board.price.toFixed(2)}
+                                   </div>
+                               </div>
+                             </CardContent>
+                           </Card>
+                         </Link>
                         ))}
-                    </Accordion>
-                  </div>
-                   <div className="flex justify-center items-center">
-                        <Image
-                            src="/Imagen/Galeria/IMG_0852.jpg"
-                            alt="Tabla de quesos en un evento"
-                            width={300}
-                            height={400}
-                            className="object-cover rounded-lg shadow-lg"
-                            data-ai-hint="cheese board event"
-                        />
-                   </div>
+                    </div>
                 </div>
-              </div>
             </section>
         </main>
         <Footer />
