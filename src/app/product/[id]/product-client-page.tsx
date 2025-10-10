@@ -444,7 +444,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                              checked={!!selectedExtras[extra.id]}
                              onCheckedChange={(checked) => handleExtraChange(extra.id, checked)}
                            />
-                           <Label htmlFor={`extra-${extra.id}`} className="text-md">{extra.name}</Label>
+                           <Label htmlFor={`extra-${extra.id}`} className="text-md">{extra.name} ({extra.serving})</Label>
                         </div>
                         <span className="text-md font-medium text-primary">+ ${extra.price.toFixed(2)}</span>
                     </div>
