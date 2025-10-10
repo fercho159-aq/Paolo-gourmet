@@ -18,7 +18,7 @@ export default {
     },
     extend: {
       backgroundImage: {
-        'events-bg': "url('/Imagen/Galeria/IMG_0836.jpg')",
+        'events-bg': "url('/Imagen/GaleriaPaolo/WhatsApp Image 2025-10-10 at 1.39.20 PM.jpeg')",
       },
       fontFamily: {
         body: ['Montserrat', 'sans-serif'],

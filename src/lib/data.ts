@@ -214,7 +214,7 @@ export const cheeseBoards: CheeseBoard[] = [
     "serving": "2-4 personas",
     "dimensions": "20x20 cm",
     "tags": ["halloween", "temporada", "especial"],
-    "price": 850,
+    "price": 950,
     "priceWithWine": ""
   },
   {
