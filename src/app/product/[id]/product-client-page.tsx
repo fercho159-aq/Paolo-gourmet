@@ -399,25 +399,25 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                 {cheeses.length > 0 && (
                   <div>
                     <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Leaf className="h-5 w-5 text-primary" />Quesos</h3>
-                    <p className="text-muted-foreground text-justify">{cheeses.join(', ')}</p>
+                    <p className="text-muted-foreground text-justify">{cheeses.join(', ')}.</p>
                   </div>
                 )}
                 {meats.length > 0 && (
                   <div>
                     <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Leaf className="h-5 w-5 text-primary" />Carnes Frías</h3>
-                    <p className="text-muted-foreground text-justify">{meats.join(', ')}</p>
+                    <p className="text-muted-foreground text-justify">{meats.join(', ')}.</p>
                   </div>
                 )}
                 {fruits.length > 0 && (
                   <div>
                     <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Apple className="h-5 w-5 text-primary" />Frutos</h3>
-                    <p className="text-muted-foreground text-justify">{fruits.join(', ')}</p>
+                    <p className="text-muted-foreground text-justify">{fruits.join(', ')}.</p>
                   </div>
                 )}
                 {accompaniments.length > 0 && (
                   <div>
                     <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Grape className="h-5 w-5 text-primary" />Acompañamientos</h3>
-                    <p className="text-muted-foreground text-justify">{accompaniments.join(', ')}</p>
+                    <p className="text-muted-foreground text-justify">{accompaniments.join(', ')}.</p>
                   </div>
                 )}
                 <p className="text-sm text-muted-foreground italic text-justify">
