@@ -264,7 +264,7 @@ export default function SpecialEditionPage() {
                                        <span className="font-medium">{board.serving}</span>
                                    </div>
                                    <div className="text-xl font-bold font-headline text-primary">
-                                     ${board.price.toFixed(2)}
+                                     {board.price > 0 ? `$${board.price.toFixed(2)}` : 'Próximamente'}
                                    </div>
                                </div>
                              </CardContent>
