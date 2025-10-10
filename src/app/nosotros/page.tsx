@@ -13,13 +13,12 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Menu, ChevronDown, Box, Instagram, Facebook, Star, Quote, Sparkles, Sigma } from 'lucide-react';
+import { Menu, ChevronDown, Box, Instagram, Facebook, Star, Quote, Sparkles, Sigma, Image as ImageIcon } from 'lucide-react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
 import { testimonials, cheeseBoards, Testimonial } from '@/lib/data';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Logo } from '@/components/logo';
-import { Gallery } from '@/components/gallery';
 
 function CuttingBoardIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -80,6 +79,7 @@ function Header() {
         { href: "/tablas", label: "Tablas Premium", icon: <CuttingBoardIcon className="h-4 w-4" /> },
         { href: "/cajas", label: "Cajas", icon: <Box className="h-4 w-4" /> },
         { href: "/edicion-especial", label: "Edición Especial", icon: <Sparkles className="h-4 w-4" /> },
+        { href: "/galeria", label: "Galería", icon: <ImageIcon className="h-4 w-4" /> },
     ]
 
     const navLinks = [
@@ -280,17 +280,6 @@ function TestimonialsCarousel() {
 }
 
 export default function AboutUsPage() {
-    const galleryImages = [
-        { src: "/Imagen/Caja grande/4.jpg", alt: "Tabla de quesos mediana", hint: "cheese board" },
-        { src: "/Imagen/Galeria/IMG_1199.jpg", alt: "Tabla de quesos chica", hint: "small cheese board" },
-        { src: "/Imagen/Conos/IMG_5197.JPG", alt: "Conos de queso", hint: "cheese cones" },
-        { src: "/Imagen/ProductosAldo/Premium/1.jpg", alt: "Tabla de quesos premium", hint: "premium cheese board" },
-        { src: "/Imagen/Productos/Tabla 4.jpg", alt: "Tabla de quesos con carnes frías", hint: "cheese board meats" },
-        { src: "/Imagen/Caja1/IMG_5247.JPG", alt: "Caja de quesos para pareja", hint: "cheese box couple" },
-        { src: "/Imagen/Caja grande/1.jpg", alt: "Caja de quesos grande", hint: "cheese box" },
-        { src: "/Imagen/Galeria/IMG_1243.jpg", alt: "Detalle de tabla de quesos", hint: "cheese board detail" },
-        { src: "/Imagen/ProductosAldo/13.jpg", alt: "Variedad de quesos y frutas", hint: "cheese fruit variety" },
-    ];
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -329,22 +318,6 @@ export default function AboutUsPage() {
                                 data-ai-hint="team portrait"
                             />
                         </div>
-                    </div>
-                </div>
-            </section>
-
-             <section id="gallery" className="w-full py-12 md:py-24 lg:py-32 bg-secondary animate-fade-in-up">
-                <div className="container px-4 md:px-6">
-                     <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                        <div className="space-y-2">
-                            <h2 className="text-3xl font-normal tracking-tighter sm:text-5xl">Nuestra Galería</h2>
-                            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                                Un vistazo a nuestras creaciones más deliciosas.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="mt-12">
-                        <Gallery images={galleryImages} />
                     </div>
                 </div>
             </section>

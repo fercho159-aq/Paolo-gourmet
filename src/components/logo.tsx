@@ -5,7 +5,7 @@ export function Logo() {
   return (
     <a href="/" className="flex items-center text-foreground transition-colors hover:text-primary">
       <Image
-        src="/Imagen/logo/logo (1).png"
+        src="/Imagen/logo/Negro.png"
         alt="paolo gourmet logo"
         width={8}
         height={8}

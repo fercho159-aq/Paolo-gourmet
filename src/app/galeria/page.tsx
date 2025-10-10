@@ -3,9 +3,7 @@
 
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Truck, Clock, Award, Users, Menu, Box, ChevronDown, Instagram, Facebook, Sparkles, Sigma, Image as ImageIcon } from 'lucide-react';
 import Link from 'next/link';
-import { Logo } from '@/components/logo';
 import { LogoBlanco } from '@/components/logo-blanco';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -14,10 +12,10 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { cheeseBoards } from '@/lib/data';
-import { Card, CardContent, CardTitle } from '@/components/ui/card';
-
+} from "@/components/ui/dropdown-menu"
+import { Menu, ChevronDown, Box, Instagram, Facebook, Sparkles, Sigma, Image as ImageIcon } from 'lucide-react';
+import { Logo } from '@/components/logo';
+import { Gallery } from '@/components/gallery';
 
 function CuttingBoardIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -96,6 +94,7 @@ function Header() {
             </header>
         );
     }
+    
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background">
         <div className="container flex h-28 items-center">
@@ -176,7 +175,7 @@ function Footer() {
     const isMobile = useIsMobile();
     
     if (isMobile === undefined) {
-        return <footer className="w-full text-white py-6 bg-primary h-[158px] md:h-[104px]"></footer>;
+        return <footer className="w-full text-white py-6 bg-primary" style={{ minHeight: '158px' }}></footer>;
     }
 
     return (
@@ -219,8 +218,18 @@ function Footer() {
     );
 }
 
-export default function CajasPage() {
-    const cajas = cheeseBoards.filter(b => b.line === 'Cajas');
+export default function GalleryPage() {
+    const galleryImages = [
+        { src: "/Imagen/Caja grande/4.jpg", alt: "Tabla de quesos mediana", hint: "cheese board" },
+        { src: "/Imagen/Galeria/IMG_1199.jpg", alt: "Tabla de quesos chica", hint: "small cheese board" },
+        { src: "/Imagen/Conos/IMG_5197.JPG", alt: "Conos de queso", hint: "cheese cones" },
+        { src: "/Imagen/ProductosAldo/Premium/1.jpg", alt: "Tabla de quesos premium", hint: "premium cheese board" },
+        { src: "/Imagen/Productos/Tabla 4.jpg", alt: "Tabla de quesos con carnes frías", hint: "cheese board meats" },
+        { src: "/Imagen/Caja1/IMG_5247.JPG", alt: "Caja de quesos para pareja", hint: "cheese box couple" },
+        { src: "/Imagen/Caja grande/1.jpg", alt: "Caja de quesos grande", hint: "cheese box" },
+        { src: "/Imagen/Galeria/IMG_1243.jpg", alt: "Detalle de tabla de quesos", hint: "cheese board detail" },
+        { src: "/Imagen/ProductosAldo/13.jpg", alt: "Variedad de quesos y frutas", hint: "cheese fruit variety" },
+    ];
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -230,46 +239,20 @@ export default function CajasPage() {
             </div>
             <Header />
         </div>
-        <main className="flex-grow animate-fade-in-up">
+        <main className="flex-grow">
             <section className="w-full py-12 md:py-16 text-white bg-primary">
                 <div className="container px-4 md:px-6 text-center animate-fade-in-up">
-                    <h1 className="text-3xl font-normal tracking-tighter sm:text-5xl">Nuestras Cajas</h1>
+                    <h1 className="text-3xl font-normal tracking-tighter sm:text-5xl">Nuestra Galería</h1>
                     <p className="mx-auto max-w-[700px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mt-4">
-                        Descubre nuestras cajas, perfectas para cualquier ocasión.
+                        Un vistazo a nuestras creaciones más deliciosas.
                     </p>
                 </div>
             </section>
-            <section id="cajas-products" className="w-full py-12 md:py-24 lg:py-32">
+            
+             <section id="gallery" className="w-full py-12 md:py-24 lg:py-32 bg-secondary animate-fade-in-up">
                 <div className="container px-4 md:px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {cajas.map(board => (
-                           <Link href={`/product/${board.id}`} key={board.id} className="block h-full">
-                           <Card className="flex flex-col h-full overflow-hidden transition-shadow hover:shadow-xl rounded-lg border-border shadow-md">
-                             <div className="relative aspect-square w-full">
-                               <Image
-                                 src={board.image}
-                                 alt={board.name}
-                                 data-ai-hint={board.dataAiHint}
-                                 fill
-                                 className="object-cover"
-                               />
-                             </div>
-                             <CardContent className="p-4 flex-grow flex flex-col">
-                               <CardTitle className="text-lg mb-2 flex-grow">{board.name}</CardTitle>
-                               <p className="text-sm text-muted-foreground mb-4">{board.description}</p>
-                               <div className="flex items-center justify-between mt-auto">
-                                   <div className="flex items-center gap-2 text-md text-primary">
-                                       <Users className="h-5 w-5" />
-                                       <span className="font-medium">{board.serving}</span>
-                                   </div>
-                                   <div className="text-xl font-bold font-headline text-primary">
-                                     ${board.price.toFixed(2)}
-                                   </div>
-                               </div>
-                             </CardContent>
-                           </Card>
-                         </Link>
-                        ))}
+                    <div className="mt-12">
+                        <Gallery images={galleryImages} />
                     </div>
                 </div>
             </section>

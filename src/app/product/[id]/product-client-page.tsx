@@ -8,7 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Carousel, CarouselContent, CarouselItem, CarouselApi, CarouselPrevious, CarouselNext } from '@/components/ui/carousel';
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
-import { Users, Leaf, Grape, Send, Wine, Star, Menu, Box, ChevronDown, Instagram, Facebook, Ruler, Apple, Sparkles, Sigma } from 'lucide-react';
+import { Users, Leaf, Grape, Send, Wine, Star, Menu, Box, ChevronDown, Instagram, Facebook, Ruler, Apple, Sparkles, Sigma, Image as ImageIcon } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { LogoBlanco } from '@/components/logo-blanco';
@@ -75,6 +75,7 @@ function Header() {
         { href: "/tablas", label: "Tablas Premium", icon: <CuttingBoardIcon className="h-4 w-4" /> },
         { href: "/cajas", label: "Cajas", icon: <Box className="h-4 w-4" /> },
         { href: "/edicion-especial", label: "Edición Especial", icon: <Sparkles className="h-4 w-4" /> },
+        { href: "/galeria", label: "Galería", icon: <ImageIcon className="h-4 w-4" /> },
     ]
 
     const navLinks = [

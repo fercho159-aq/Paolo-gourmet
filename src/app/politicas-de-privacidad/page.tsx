@@ -12,7 +12,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Menu, ChevronDown, Box, Instagram, Facebook, Sparkles, Sigma } from 'lucide-react';
+import { Menu, ChevronDown, Box, Instagram, Facebook, Sparkles, Sigma, Image as ImageIcon } from 'lucide-react';
 import { Logo } from '@/components/logo';
 
 function CuttingBoardIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -52,6 +52,7 @@ function Header() {
         { href: "/tablas", label: "Tablas Premium", icon: <CuttingBoardIcon className="h-4 w-4" /> },
         { href: "/cajas", label: "Cajas", icon: <Box className="h-4 w-4" /> },
         { href: "/edicion-especial", label: "Edición Especial", icon: <Sparkles className="h-4 w-4" /> },
+        { href: "/galeria", label: "Galería", icon: <ImageIcon className="h-4 w-4" /> },
     ]
 
     const navLinks = [

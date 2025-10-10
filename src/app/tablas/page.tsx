@@ -3,7 +3,7 @@
 
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Truck, Clock, Award, Users, Menu, Box, ChevronDown, Instagram, Facebook, Sparkles, Sigma } from 'lucide-react';
+import { Truck, Clock, Award, Users, Menu, Box, ChevronDown, Instagram, Facebook, Sparkles, Sigma, Image as ImageIcon } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { LogoBlanco } from '@/components/logo-blanco';
@@ -79,6 +79,7 @@ function Header() {
         { href: "/tablas", label: "Tablas Premium", icon: <CuttingBoardIcon className="h-4 w-4" /> },
         { href: "/cajas", label: "Cajas", icon: <Box className="h-4 w-4" /> },
         { href: "/edicion-especial", label: "Edición Especial", icon: <Sparkles className="h-4 w-4" /> },
+        { href: "/galeria", label: "Galería", icon: <ImageIcon className="h-4 w-4" /> },
     ]
 
     const navLinks = [

@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
-import { Quote, Users, Mail, Leaf, Grape, Phone, MapPin, Instagram, Facebook, Menu, Star, Box, Ruler, Sparkles, Sigma } from 'lucide-react';
+import { Quote, Users, Mail, Leaf, Grape, Phone, MapPin, Instagram, Facebook, Menu, Star, Box, Ruler, Sparkles, Sigma, Image as ImageIcon } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { LogoBlanco } from '@/components/logo-blanco';
 import { cheeseBoards, testimonials, Testimonial } from '@/lib/data';
@@ -72,6 +72,7 @@ function Header() {
       { href: "/tablas", label: "Tablas Premium", icon: <CuttingBoardIcon className="h-4 w-4" /> },
       { href: "/cajas", label: "Cajas", icon: <Box className="h-4 w-4" /> },
       { href: "/edicion-especial", label: "Edición Especial", icon: <Sparkles className="h-4 w-4" /> },
+      { href: "/galeria", label: "Galería", icon: <ImageIcon className="h-4 w-4" /> },
   ]
 
   const navLinks = [
