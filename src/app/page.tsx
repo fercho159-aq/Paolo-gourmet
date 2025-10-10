@@ -320,7 +320,7 @@ function Contact() {
           </div>
           <div className="w-full h-full flex items-center justify-center">
             <Image
-                src="/Imagen/Galeria/IMG_0836.jpg"
+                src="/Imagen/GaleriaPaolo/IMG_5146.JPG"
                 alt="Tabla de quesos variada"
                 width={1000}
                 height={1000}

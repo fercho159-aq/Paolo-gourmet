@@ -306,7 +306,7 @@ export default function FaqPage() {
                   </div>
                    <div className="flex justify-center items-center">
                         <Image
-                            src="/Imagen/Galeria/IMG_0852.jpg"
+                            src="/Imagen/GaleriaPaolo/WhatsApp Image 2025-10-10 at 1.39.20 PM.jpeg"
                             alt="Tabla de quesos en un evento"
                             width={300}
                             height={400}

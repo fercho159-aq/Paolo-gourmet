@@ -310,7 +310,7 @@ export default function AboutUsPage() {
                         </div>
                         <div className="flex flex-col justify-center items-center space-y-8">
                            <Image
-                                src="/Imagen/Galeria/IMG_0836.jpg"
+                                src="/Imagen/GaleriaPaolo/IMG_5173.JPG"
                                 alt="El equipo de Paolo Gourmet"
                                 width={400}
                                 height={300}
