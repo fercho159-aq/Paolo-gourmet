@@ -308,7 +308,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
 
   const getWhatsAppLink = () => {
     const baseLink = "https://wa.me/525562206020";
-    let message = `Hola, me gustaría solicitar una cotización para el producto: ${board.name}.\n`;
+    let message = `Hola, me gustaría confirmar un pedido para el producto: ${board.name}.\n`;
 
     if (accompaniments.length > 0) {
         message += `\nAcompañamientos: ${accompaniments.join(', ')}\n`;
@@ -492,7 +492,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                <Button size="lg" className="w-full md:w-auto shadow-md hover:shadow-lg transition-shadow" asChild>
                 <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer">
                   <Send className="mr-2 h-4 w-4" />
-                  Solicitar Cotización
+                  Confirmar pedido
                 </a>
               </Button>
               
