@@ -7,9 +7,9 @@ export type CheeseBoard = {
   image: string;
   gallery: string[];
   dataAiHint: string;
-  cheeses: string[];
+  cheeses: string[] | string;
   fruits: string[];
-  meats: string[];
+  meats: string[] | string;
   accompaniments: string[];
   serving: string;
   dimensions?: string;
@@ -27,7 +27,7 @@ export const cheeseBoards: CheeseBoard[] = [
     "image": "/Imagen/Conos/IMG_5197.JPG",
     "gallery": ["/Imagen/Conos/IMG_5197.JPG", "/Imagen/Conos/IMG_5202.JPG", "/Imagen/Conos/IMG_5219.JPG", "/Imagen/Conos/IMG_5227.JPG"],
     "dataAiHint": "conos de queso",
-    "cheeses": ["Cheddar", "Manchego", "Gouda"],
+    "cheeses": "Cheddar / Manchego / Gouda",
     "fruits": ["Uvas", "Blueberries", "Zarzamoras", "Fresas", "Chabacano"],
     "meats": ["Jamón Serrano (15 meses de maduración)", "Salami Seco Estilo Italiano"],
     "accompaniments": ["Galleta Integral", "Aceitunas", "Mix de Nueces y Pistaches", "Pretzel Salado", "Pretzel de Chocolate Blanco"],
@@ -45,7 +45,7 @@ export const cheeseBoards: CheeseBoard[] = [
     "image": "/Imagen/Caja1/IMG_5247.JPG",
     "gallery": ["/Imagen/Caja1/IMG_5247.JPG", "/Imagen/Caja1/IMG_5250.JPG", "/Imagen/Caja1/IMG_5257.JPG", "/Imagen/Caja1/IMG_5260.JPG"],
     "dataAiHint": "caja de queso mediana",
-    "cheeses": ["Cheddar", "Manchego", "Gouda"],
+    "cheeses": "Cheddar / Manchego / Gouda",
     "fruits": ["Uvas", "Blueberries", "Zarzamoras", "Frambuesas", "Fresas", "Higo", "Chabacano"],
     "meats": ["Jamón Serrano (15 meses de maduración)", "Salami Seco Estilo Italiano"],
     "accompaniments": ["Galletas Integrales", "Miel de Abeja", "Ate de Membrillo", "Pretzel", "Nueces", "Pistaches"],
@@ -63,7 +63,7 @@ export const cheeseBoards: CheeseBoard[] = [
     "image": "/Imagen/Caja grande/1.jpg",
     "gallery": ["/Imagen/Caja grande/1.jpg", "/Imagen/Caja grande/2.jpg", "/Imagen/Caja grande/3.jpg", "/Imagen/Caja grande/4.jpg", "/Imagen/Caja grande/5.jpg", "/Imagen/Caja grande/6.jpg"],
     "dataAiHint": "caja de queso grande",
-    "cheeses": ["Esferas de Queso Crema con Arándano o Nuez", "Cheddar", "Manchego", "Gouda"],
+    "cheeses": "Esferas de Queso Crema con Arándano o Nuez, Cheddar / Manchego / Gouda",
     "fruits": ["Uvas", "Blueberries", "Zarzamoras", "Frambuesas", "Fresas", "Higo", "Chabacano"],
     "meats": ["Jamón Serrano (15 meses de maduración)", "Salami Seco Estilo Italiano"],
     "accompaniments": ["Galletas Integrales", "Aceitunas", "Miel de Abeja", "Ate de Membrillo", "Pretzel", "Nueces y Pistaches"],
@@ -117,7 +117,7 @@ export const cheeseBoards: CheeseBoard[] = [
     "image": "/Imagen/ProductosAldo/Premium/1.jpg",
     "gallery": ["/Imagen/ProductosAldo/Premium/1.jpg", "/Imagen/ProductosAldo/Premium/2.jpg", "/Imagen/ProductosAldo/Premium/3.jpg", "/Imagen/ProductosAldo/Premium/4.jpg", "/Imagen/ProductosAldo/Premium/5.jpg"],
     "dataAiHint": "tabla de queso premium grande",
-    "cheeses": ["Selección de 5 quesos diferentes como: Queso Brie / Queso Camembert", "Queso Grana Padano", "Queso Manchego Cavernet Sauvignon", "Queso Azul", "Queso de Leche de Oveja Curado al Brandy", "Queso Parmesano", "Queso Provolone", "Queso de Cabra con Arándanos", "Queso Cheddar"],
+    "cheeses": "Selección de 5 quesos diferentes como: Queso Brie / Queso Camembert, Queso Grana Padano, Queso Manchego Cavernet Sauvignon, Queso Azul, Queso de Leche de Oveja Curado al Brandy, Queso Parmesano, Queso Provolone, Queso de Cabra con Arándanos, Queso Cheddar.",
     "fruits": ["Uvas", "Kiwi", "Blueberries", "Zarzamoras", "Frambuesas", "Fresas", "Higo", "Chabacano"],
     "meats": [],
     "accompaniments": ["Galletas Integrales", "Palitos de Pan con Cebolla y Pimienta", "Aceitunas", "Miel de Abeja", "Mermelada de Chabacano", "Nueces y Pistaches", "Almendras con Chocolate"],
@@ -156,7 +156,7 @@ export const cheeseBoards: CheeseBoard[] = [
     "cheeses": [],
     "fruits": [],
     "meats": [],
-    "accompaniments": ["Jamón Serrano 15 meses de maduración"],
+    "accompaniments": ["Jamón Serrano 15 meses de maduración."],
     "serving": "75 g.",
     "dimensions": "",
     "tags": [],
@@ -174,7 +174,7 @@ export const cheeseBoards: CheeseBoard[] = [
     "cheeses": [],
     "fruits": [],
     "meats": [],
-    "accompaniments": ["Salami Seco Estilo Italiano"],
+    "accompaniments": ["Salami Seco Estilo Italiano."],
     "serving": "75 g.",
     "dimensions": "",
     "tags": [],
@@ -185,14 +185,14 @@ export const cheeseBoards: CheeseBoard[] = [
     "id": 10,
     "line": "Ordenes extras",
     "name": "Miel de Abeja",
-    "description": "Miel de Abeja.",
+    "description": "Miel de abeja.",
     "image": "https://picsum.photos/seed/miel/600/600",
     "gallery": [],
     "dataAiHint": "miel",
     "cheeses": [],
     "fruits": [],
     "meats": [],
-    "accompaniments": ["Miel de abeja 60ml"],
+    "accompaniments": ["Miel de abeja."],
     "serving": "60 ml.",
     "dimensions": "",
     "tags": [],
@@ -243,9 +243,9 @@ export const cheeseBoards: CheeseBoard[] = [
     "image": "/Imagen/tabla chica/IMG_3256.jpg",
     "gallery": ["/Imagen/tabla chica/IMG_3256.jpg"],
     "dataAiHint": "cheese letters",
-    "cheeses": ["Cheddar y Manchego / Gouda"],
+    "cheeses": "Cheddar y Manchego / Gouda",
     "fruits": ["Uvas", "Blueberries", "Zarzamoras", "Frambuesas", "Fresa", "Higo", "Chabacano", "(Frutas de temporada)"],
-    "meats": ["Jamón Serrano 15 meses de maduración", "Salami seco estilo italiano y/o chorizo español"],
+    "meats": "Jamón Serrano 15 meses de maduración, Salami seco estilo italiano y/o chorizo español",
     "accompaniments": ["Galletas integrales", "Aceitunas", "Ate de membrillo", "Pretzel", "Nueces y pistaches"],
     "serving": "1 a 2 personas",
     "dimensions": "25x25 cm",

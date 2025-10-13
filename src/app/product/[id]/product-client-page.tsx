@@ -243,9 +243,10 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
   const [totalPrice, setTotalPrice] = useState(board.price);
 
   const productImages = Array.isArray(board.gallery) ? board.gallery : [];
-  const cheeses = Array.isArray(board.cheeses) ? board.cheeses : [];
+  
+  const cheeses = board.cheeses || [];
   const fruits = Array.isArray(board.fruits) ? board.fruits : [];
-  const meats = Array.isArray(board.meats) ? board.meats : [];
+  const meats = board.meats || [];
   const accompaniments = Array.isArray(board.accompaniments) ? board.accompaniments : [];
 
   const extraOrders = cheeseBoards.filter(b => b.line === 'Ordenes extras' && b.price > 0);
@@ -310,7 +311,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
     const baseLink = "https://wa.me/525562206020";
     let message = `Hola, me gustaría confirmar un pedido para el producto: ${board.name}.\n`;
 
-    if (accompaniments.length > 0) {
+    if (Array.isArray(accompaniments) && accompaniments.length > 0) {
         message += `\nAcompañamientos: ${accompaniments.join(', ')}\n`;
     }
     
@@ -399,25 +400,25 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                 {cheeses.length > 0 && (
                   <div>
                     <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Leaf className="h-5 w-5 text-primary" />Quesos</h3>
-                    <p className="text-muted-foreground text-justify">{cheeses.join(', ')}.</p>
+                    <p className="text-muted-foreground text-justify">{Array.isArray(cheeses) ? `${cheeses.join(', ')}.` : `${cheeses}.`}</p>
                   </div>
                 )}
                 {meats.length > 0 && (
                   <div>
                     <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Leaf className="h-5 w-5 text-primary" />Carnes Frías</h3>
-                    <p className="text-muted-foreground text-justify">{meats.join(', ')}.</p>
+                    <p className="text-muted-foreground text-justify">{Array.isArray(meats) ? `${meats.join(', ')}.` : `${meats}.`}</p>
                   </div>
                 )}
                 {fruits.length > 0 && (
                   <div>
                     <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Apple className="h-5 w-5 text-primary" />Frutos</h3>
-                    <p className="text-muted-foreground text-justify">{fruits.join(', ')}.</p>
+                    <p className="text-muted-foreground text-justify">{`${fruits.join(', ')}.`}</p>
                   </div>
                 )}
                 {accompaniments.length > 0 && (
                   <div>
                     <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Grape className="h-5 w-5 text-primary" />Acompañamientos</h3>
-                    <p className="text-muted-foreground text-justify">{accompaniments.join(', ')}.</p>
+                    <p className="text-muted-foreground text-justify">{`${accompaniments.join(', ')}.`}</p>
                   </div>
                 )}
                 <p className="text-sm text-muted-foreground italic text-justify">
