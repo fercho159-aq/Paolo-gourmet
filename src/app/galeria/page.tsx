@@ -229,6 +229,9 @@ export default function GalleryPage() {
         { src: "/Imagen/GaleriaPaolo/IMG_5152.JPG", alt: "Variedad de quesos y frutas", hint: "cheese fruit variety" },
         { src: "/Imagen/Caja grande/1.jpg", alt: "Caja de quesos grande", hint: "cheese box" },
         { src: "/Imagen/GaleriaPaolo/IMG_5146.JPG", alt: "Detalle de tabla de quesos", hint: "cheese board detail" },
+        { src: "/Imagen/GaleriaPaolo/PAOLO GOURMET POST.jpg", alt: "Caja de quesos grande", hint: "cheese box" },
+        { src: "/Imagen/GaleriaPaolo/PAOLO GOURMET POST (1).jpg", alt: "Detalle de tabla de quesos", hint: "cheese board detail" },
+        { src: "/Imagen/GaleriaPaolo/PAOLO GOURMET POST (2).jpg", alt: "Detalle de tabla de quesos", hint: "cheese board detail" },
     ];
 
   return (
