@@ -23,7 +23,7 @@ export const cheeseBoards: CheeseBoard[] = [
     "id": 1,
     "line": "Cajas",
     "name": "Set de 12 Conos",
-    "description": "Vasos individuales con una icónica combinación de ingredientes, perfectos para tu paladar. Ideal para cualquier evento o reunión.",
+    "description": "Vasos individuales con una icónica combinación de ingredientes perfectos para tu paladar. Ideal para cualquier evento o reunión.",
     "image": "/Imagen/Conos/IMG_5197.JPG",
     "gallery": ["/Imagen/Conos/IMG_5197.JPG", "/Imagen/Conos/IMG_5202.JPG", "/Imagen/Conos/IMG_5219.JPG", "/Imagen/Conos/IMG_5227.JPG"],
     "dataAiHint": "conos de queso",
@@ -59,7 +59,7 @@ export const cheeseBoards: CheeseBoard[] = [
     "id": 3,
     "line": "Cajas",
     "name": "Box Mediano",
-    "description": "Ideal para reuniones entre amigos o familiares, esta caja está llena de una variedad de sabores para complacer a todos.",
+    "description": "Ideal para reuniones entre amigos y/o familiares, esta caja está llena de una variedad de sabores para complacer a todos.",
     "image": "/Imagen/Caja grande/1.jpg",
     "gallery": ["/Imagen/Caja grande/1.jpg", "/Imagen/Caja grande/2.jpg", "/Imagen/Caja grande/3.jpg", "/Imagen/Caja grande/4.jpg", "/Imagen/Caja grande/5.jpg", "/Imagen/Caja grande/6.jpg"],
     "dataAiHint": "caja de queso grande",
@@ -88,7 +88,7 @@ export const cheeseBoards: CheeseBoard[] = [
     "serving": "3 a 5 personas",
     "dimensions": "20x30 cm",
     "tags": ["premium", "chica", "intenso"],
-    "price": 1175,
+    "price": 1225,
     "priceWithWine": 1300
   },
   {
@@ -106,7 +106,7 @@ export const cheeseBoards: CheeseBoard[] = [
     "serving": "6 a 8 personas",
     "dimensions": "40x22 cm",
     "tags": ["premium", "mediana", "francés", "gourmet"],
-    "price": 1425,
+    "price": 1475,
     "priceWithWine": 1550
   },
   {
@@ -124,7 +124,7 @@ export const cheeseBoards: CheeseBoard[] = [
     "serving": "6 a 8 personas",
     "dimensions": "40x22 cm",
     "tags": ["premium", "grande", "lujoso", "celebración"],
-    "price": 1575,
+    "price": 1850,
     "priceWithWine": 1700
   },
   {
@@ -142,7 +142,7 @@ export const cheeseBoards: CheeseBoard[] = [
     "serving": "120 g.",
     "dimensions": "",
     "tags": [],
-    "price": 240,
+    "price": 250,
     "priceWithWine": ""
   },
   {
@@ -160,7 +160,7 @@ export const cheeseBoards: CheeseBoard[] = [
     "serving": "75 g.",
     "dimensions": "",
     "tags": [],
-    "price": 150,
+    "price": 175,
     "priceWithWine": ""
   },
   {
@@ -178,7 +178,7 @@ export const cheeseBoards: CheeseBoard[] = [
     "serving": "75 g.",
     "dimensions": "",
     "tags": [],
-    "price": 150,
+    "price": 175,
     "priceWithWine": ""
   },
   {
@@ -207,7 +207,7 @@ export const cheeseBoards: CheeseBoard[] = [
     "image": "/Imagen/Galeria Halloween/WhatsApp Image 2025-10-10 at 1.47.08 PM.jpeg",
     "gallery": ["/Imagen/Galeria Halloween/WhatsApp Image 2025-10-10 at 1.47.08 PM.jpeg","/Imagen/Galeria Halloween/WhatsApp Image 2025-10-10 at 1.47.28 PM.jpeg","/Imagen/Galeria Halloween/WhatsApp Image 2025-10-10 at 1.49.02 PM (1).jpeg","/Imagen/Galeria Halloween/WhatsApp Image 2025-10-10 at 1.49.02 PM.jpeg","/Imagen/Galeria Halloween/WhatsApp Image 2025-10-10 at 1.44.40 PM.jpeg"],
     "dataAiHint": "halloween cheese board",
-    "cheeses": "Esferas de Queso Crema con Arándano o Nuez, Queso de Calabaza, Cheddar Negro, Cheddar / Manchego / Gouda",
+    "cheeses": "Esferas de Queso Crema con Arándano o Nuez, Cheddar / Manchego / Gouda, Queso de Calabaza, Cheddar Negro.",
     "fruits": ["Uvas", "Blueberries", "Zarzamoras", "Frambuesas", "Fresas", "Higo", "Chabacano", "Uvas Negras", "Mandarinas"],
     "meats": ["Jamón Serrano (15 meses de maduración)", "Salami Seco Estilo Italiano"],
     "accompaniments": ["Galletas Integrales", "Aceitunas", "Miel de Abeja", "Ate de Membrillo", "Pretzel", "Nueces y Pistaches", "Galletas de Araña", "Dulces de Maíz"],
@@ -220,7 +220,7 @@ export const cheeseBoards: CheeseBoard[] = [
   {
     "id": 12,
     "line": "Edicion especial",
-    "name": "Navidad y Año Nuevo 2026",
+    "name": "Edición especial navidad 2025.",
     "description": "Edición especial de Navidad 2025.",
     "image": "https://images.unsplash.com/photo-1678572823447-45fc146df43c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "gallery": ["https://images.unsplash.com/photo-1678572823447-45fc146df43c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
@@ -238,19 +238,37 @@ export const cheeseBoards: CheeseBoard[] = [
   {
     "id": 13,
     "line": "Letras",
-    "name": "Letras para una Celebración Especial",
-    "description": "Divertidas letras personalizadas para celebrar cualquier ocasión. Cumpleaños, aniversarios, Día de las Madres, graduaciones.",
+    "name": "Letras y números personalizados",
+    "description": "Divertidas letras personalizadas para celebrar cualquier ocasión. Cumpleaños, aniversarios, día de las madres, graduaciones.",
     "image": "/Imagen/tabla chica/IMG_3256.jpg",
     "gallery": ["/Imagen/tabla chica/IMG_3256.jpg"],
     "dataAiHint": "cheese letters",
-    "cheeses": "Cheddar y Manchego / Gouda",
+    "cheeses": "Cheddar y Manchego / Gouda.",
     "fruits": ["Uvas", "Blueberries", "Zarzamoras", "Frambuesas", "Fresas", "Higo", "Chabacano", "(Frutas de temporada)"],
     "meats": "Jamón Serrano 15 meses de maduración, Salami seco estilo italiano y/o chorizo español.",
     "accompaniments": ["Galletas integrales", "Aceitunas", "Ate de membrillo", "Pretzel", "Nueces y pistaches"],
     "serving": "1 a 2 personas",
     "dimensions": "25x25 cm",
     "tags": ["letras", "personalizado", "celebracion"],
-    "price": 800,
+    "price": 850,
+    "priceWithWine": ""
+  },
+  {
+    "id": 14,
+    "line": "Ordenes extras",
+    "name": "Vino",
+    "description": "Botella de vino Selección Concha y Toro Cavernet Sauvignon 750 ml.",
+    "image": "https://picsum.photos/seed/vino/600/600",
+    "gallery": [],
+    "dataAiHint": "vino",
+    "cheeses": [],
+    "fruits": [],
+    "meats": [],
+    "accompaniments": [],
+    "serving": "750 ml.",
+    "dimensions": "",
+    "tags": ["vino", "bebida"],
+    "price": 300,
     "priceWithWine": ""
   }
 ];
