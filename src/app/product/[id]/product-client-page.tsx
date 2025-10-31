@@ -442,9 +442,11 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                   {extraOrders.map(extra => (
                     <div key={extra.id} className="flex items-center justify-between">
                         <div className="flex items-center space-x-4">
+                            {extra.image && (
                            <div className="relative h-10 w-10 rounded-md overflow-hidden">
                              <Image src={extra.image} alt={extra.name} fill className="object-cover" />
                            </div>
+                           )}
                            <Switch 
                              id={`extra-${extra.id}`}
                              checked={!!selectedExtras[extra.id]}
@@ -609,5 +611,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
     </div>
   );
 }
+
+    
 
     
