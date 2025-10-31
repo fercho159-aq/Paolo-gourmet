@@ -96,8 +96,8 @@ export const cheeseBoards: CheeseBoard[] = [
     "line": "Tablas Premium",
     "name": "Tabla Mediana",
     "description": "Una de nuestras tablas más lujosas, diseñada para ser el centro de atención de cualquier evento. Un festín para la vista y el paladar. *Nuestras tablas son de madera de pino y están curadas para uso alimenticio. **¡Te la quedas de regalo!**.",
-    "image": "https://images.unsplash.com/photo-1637179440419-6d3f8e7f373f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2940",
-    "gallery": ["https://images.unsplash.com/photo-1637179440419-6d3f8e7f373f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2940"],
+    "image": "/Imagen/Tabla mediana/IMG_6077.JPG",
+    "gallery": ["/Imagen/Tabla mediana/IMG_6077.JPG", "/Imagen/Tabla mediana/IMG_6082.JPGG", "/Imagen/Tabla mediana/IMG_6088.JPG", "/Imagen/Tabla mediana/IMG_6089.JPG","/Imagen/Tabla mediana/IMG_6134.JPG"],
     "dataAiHint": "tabla de queso premium mediana",
     "cheeses": ["Esferas de Queso Crema con Arándano o Nuez", "Cheddar", "Manchego", "Gouda", "Provolone"],
     "fruits": ["Uvas", "Kiwi", "Blueberries", "Zarzamoras", "Frambuesas", "Fresas", "Higo", "Chabacano"],
@@ -124,8 +124,8 @@ export const cheeseBoards: CheeseBoard[] = [
     "serving": "6 a 8 personas",
     "dimensions": "40x22 cm",
     "tags": ["premium", "grande", "lujoso", "celebración"],
-    "price": 1850,
-    "priceWithWine": 1700
+    "price": 1700,
+    "priceWithWine": 1850
   },
   {
     "id": 7,

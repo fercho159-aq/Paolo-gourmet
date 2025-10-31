@@ -312,7 +312,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
     let message = `Hola, me gustaría confirmar un pedido para el producto: ${board.name}.\n`;
 
     if (Array.isArray(accompaniments) && accompaniments.length > 0) {
-        message += `\nAcompañamientos: ${accompaniments.join(', ')}\n`;
+        message += `\nAcompañamientos: ${accompaniments.join(', ')}.\n`;
     }
     
     if (addWine) {
@@ -400,13 +400,13 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                 {cheeses.length > 0 && (
                   <div>
                     <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Leaf className="h-5 w-5 text-primary" />Quesos</h3>
-                    <p className="text-muted-foreground text-justify">{Array.isArray(cheeses) ? `${cheeses.join(', ')}.` : `${cheeses}.`}</p>
+                    <p className="text-muted-foreground text-justify">{typeof cheeses === 'string' ? `${cheeses}.` : `${cheeses.join(', ')}.`}</p>
                   </div>
                 )}
                 {meats.length > 0 && (
                   <div>
                     <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Leaf className="h-5 w-5 text-primary" />Carnes Frías</h3>
-                    <p className="text-muted-foreground text-justify">{Array.isArray(meats) ? `${meats.join(', ')}.` : `${meats}.`}</p>
+                    <p className="text-muted-foreground text-justify">{typeof meats === 'string' ? `${meats}.` : `${meats.join(', ')}.`}</p>
                   </div>
                 )}
                 {fruits.length > 0 && (
@@ -431,15 +431,20 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
               <div className="space-y-4">
                   <h3 className="font-headline text-xl">Personaliza tu orden</h3>
                   {typeof board.priceWithWine === 'number' && board.priceWithWine > 0 && (
-                    <div className="flex items-center space-x-2">
-                      <Wine className="h-5 w-5 text-primary" />
-                      <Switch id="add-wine" checked={addWine} onCheckedChange={handleWineSwitchChange} />
-                      <Label htmlFor="add-wine" className="text-md">Agregar botella de vino</Label>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-2">
+                        <Wine className="h-5 w-5 text-primary" />
+                        <Switch id="add-wine" checked={addWine} onCheckedChange={handleWineSwitchChange} />
+                        <Label htmlFor="add-wine" className="text-md">Agregar botella de vino</Label>
+                      </div>
                     </div>
                   )}
                   {extraOrders.map(extra => (
                     <div key={extra.id} className="flex items-center justify-between">
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center space-x-4">
+                           <div className="relative h-10 w-10 rounded-md overflow-hidden">
+                             <Image src={extra.image} alt={extra.name} fill className="object-cover" />
+                           </div>
                            <Switch 
                              id={`extra-${extra.id}`}
                              checked={!!selectedExtras[extra.id]}
@@ -604,3 +609,5 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
     </div>
   );
 }
+
+    
