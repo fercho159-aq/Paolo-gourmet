@@ -418,7 +418,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                 {accompaniments.length > 0 && (
                   <div>
                     <h3 className="font-headline text-xl flex items-center gap-2 mb-2"><Grape className="h-5 w-5 text-primary" />Acompañamientos</h3>
-                    <p className="text-muted-foreground text-justify">{`${accompaniments.join(', ')}.`}</p>
+                    <p className="text-muted-foreground text-justify">{typeof accompaniments === 'string' ? `${accompaniments}.` : `${accompaniments.join(', ')}.`}</p>
                   </div>
                 )}
                 <p className="text-sm text-muted-foreground italic text-justify">
@@ -443,7 +443,7 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
                     <div key={extra.id} className="flex items-center justify-between">
                         <div className="flex items-center space-x-4">
                             {extra.image && (
-                           <div className="relative h-10 w-10 rounded-md overflow-hidden">
+                           <div className="relative h-12 w-12 rounded-md overflow-hidden">
                              <Image src={extra.image} alt={extra.name} fill className="object-cover" />
                            </div>
                            )}
@@ -611,6 +611,8 @@ export default function ProductClientPage({ board }: { board: CheeseBoard }) {
     </div>
   );
 }
+
+    
 
     
 
